@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T17:19:18.157816+00:00",
+  "checked_utc": "2026-11-04T17:34:00.695109+00:00",
   "scope": "One atomic local ledger snapshot for cooperating research API callers, not account-wide invoices. External holds include coding/unreceipted use and are reserves, not charges.",
   "providers": {
     "meta": {
@@ -33,5 +33,5 @@
   "last_fable_call": "Incomplete max_tokens response with no visible answer; recorded cost1.64735, settled.",
   "background_first_gate_cost_usd": "0.74812",
   "background_optimal_support_cost_usd": "0.425292",
-  "no_additional_paid_calls_this_checkpoint": true
+  "no_additional_meta_or_claude_api_calls": true
 }

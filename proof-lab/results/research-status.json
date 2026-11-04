@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T17:19:18.157816+00:00",
+  "checked_utc": "2026-11-04T17:34:00.695109+00:00",
   "status": "P_VS_NP_NOT_SOLVED",
   "original_deadline_utc": "2026-11-04T19:42:17Z",
   "phases": [
@@ -82,7 +82,7 @@
     "claim_status": "UNVERIFIED"
   },
   "active_api_requests": 0,
-  "current_activity": "Publishing the verified algebraic and subset-zeta checkpoint; independently formalizing the diagonal-width boundary without paid calls.",
+  "current_activity": "Publishing the independently verified diagonal-width boundary; no paid API job active.",
   "scope": "Snapshot only; live response state is ignored by Git. No generated output is executed or accepted as a proof.",
   "background_optimal_support": {
     "directory": "frontier/background-meta/optimal-support",
@@ -139,10 +139,16 @@
         "frontier/subset_zeta.py"
       ],
       "scope": "Kernel correctness and exact weight-addition count; Python refinement and bit complexity separate. No full SAT speedup or Williams reduction proved."
+    },
+    {
+      "status": "LEAN_VERIFIED",
+      "name": "Exponential original-coordinate diagonal width for a linear arithmetic formula",
+      "sources": [
+        "frontier/FiniteDimension.lean",
+        "frontier/DiagonalWidth.lean"
+      ],
+      "scope": "H_m=product(x_i+y_i) has a verified4m+1-node formula, but every weighted original-coordinate product representation agreeing on Boolean inputs needsW>=2^m. No general PIT/circuit/proof-system impossibility."
     }
   ],
-  "active_unverified_formal_work": [
-    "frontier/FiniteDimension.lean",
-    "frontier/DiagonalWidth.lean"
-  ]
+  "active_unverified_formal_work": []
 }

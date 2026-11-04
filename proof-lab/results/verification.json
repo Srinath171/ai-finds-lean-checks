@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T17:19:18.157816+00:00",
+  "checked_utc": "2026-11-04T17:34:00.695109+00:00",
   "python_tests_passed": 312,
   "test_seconds": 21.013,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 23,
+  "formal_source_count": 25,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -142,8 +142,33 @@
       "sha256": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
       "sha256_lf": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
       "compiled": true
+    },
+    {
+      "path": "frontier/FiniteDimension.lean",
+      "sha256": "060e011e56b5c4954c35207c084a3665bbe9200301df97d974a3374812dd4ad7",
+      "sha256_lf": "67bd9b4209bdc9e590516a08f5ed5023c13dffc92ac9fb39dbe60271a69a13ef",
+      "compiled": true
+    },
+    {
+      "path": "frontier/DiagonalWidth.lean",
+      "sha256": "7b6fc4e913c6c095dd091e7ecbc20eed9b88137a62560f81b51ee3d251b4adad",
+      "sha256_lf": "7b6fc4e913c6c095dd091e7ecbc20eed9b88137a62560f81b51ee3d251b4adad",
+      "compiled": true
     }
   ],
-  "scope": "Full offline Python suite and all registered Lean research sources. No skipped tests; no API calls. Existing compiler warnings remain in the log. In-progress unregistered sources are excluded.",
-  "log": "frontier/verification-output.txt"
+  "scope": "312 Python tests passed in the last full replay; all25currentLeanmodulescompiled. Two formal-only additions were replayed separately; exact source hashes recorded. No API calls during verification.",
+  "log": "frontier/verification-output.txt",
+  "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
+  "full_suite_formal_source_count": 23,
+  "post_full_suite_replays": [
+    {
+      "paths": [
+        "frontier/FiniteDimension.lean",
+        "frontier/DiagonalWidth.lean"
+      ],
+      "exit_code": 0,
+      "log": "frontier/diagonal-width-verification.txt",
+      "scope": "Two new formal-only modules independently compiled after the full 312-test/23-source run; no Python implementation changed."
+    }
+  ]
 }

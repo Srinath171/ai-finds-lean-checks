@@ -1,6 +1,6 @@
 # Research checkpoint
 
-P vs NP remains unsolved. The full current replay passes **312 Python tests and 23 registered Lean research files**, with no skipped tests and no API calls during verification. Exact hashes and scope are in [verification.json](results/verification.json).
+P vs NP remains unsolved. Verification records **312 passing Python tests and 25 compiled Lean research files**. The full23-source run had no skips; the two subsequent formal-only modules were independently replayed without repeating unchanged Python tests. No API calls occurred during verification. Exact hashes and scope are in [verification.json](results/verification.json).
 
 ## General rational certificate result
 
@@ -18,12 +18,12 @@ An [OR-chain 3-CNF encoding](frontier/TSEITIN_CERTIFICATE.md) with extension var
 
 [SubsetZeta.lean](frontier/SubsetZeta.lean) verifies a shared all-values subset-zeta kernel, its output ordering/length, exact `n*2^(n-1)` scalar weight additions (zero for n=0), and positive-AND histogram/SYM correctness. The [bounded Python implementation](frontier/SUBSET_ZETA.md) is separately tested, not a formal refinement. An independent iterative implementation reproduced all 65,536 n=16 demo rows, with 524,288 transform additions and 18,961 true outputs.
 
-This reconstructs one established evaluation component. It does not provide the stronger uniform worst-case SAT saving required by the algorithms-to-lower-bounds implication. The [primary-source route review](frontier/RESEARCH_ROUTES.md) states the missing conditions and a fixed-coordinate diagonal-format boundary. A further formalization of that boundary is in progress and is NOT included in the passed23-source checkpoint.
+This reconstructs one established evaluation component. It does not provide the stronger uniform worst-case SAT saving required by the algorithms-to-lower-bounds implication. The [primary-source route review](frontier/RESEARCH_ROUTES.md) states the missing conditions and a fixed-coordinate diagonal-format boundary. That boundary is now [Lean verified](frontier/DIAGONAL_WIDTH.md): a `4m+1`-node formula for product_i(x_i+y_i) requires at least `2^m` weighted original-coordinate product terms. The explicit inverse and constructive rational dimension proof are checked; coordinate changes and other PIT methods remain outside the restriction.
 
 The earlier [optimal-support obstruction](frontier/OPTIMAL_SUPPORT.md) remains verified: exact-optimal partial extensions can require all n+1 total coordinates, with2^n holes beyond every requested starting arity. The unrestricted structured Partial-MCSP to total-MCSP reduction remains unconstructed.
 
 ## Spending, deadline and access
 
-No additional paid model calls were made for this checkpoint. Local commitments INCLUDING holds remain **Meta $31.909548/$125; Claude API $6.82518/$40**. Recorded settled research API amounts are $5.425948 and $5.82518; four old uncertain Meta reservations stay held. These are cooperating-client records, not account-wide provider invoices. The last authorized Meta dashboard check did not load billing, so account-wide spending remains unverified. See [spending-checkpoint.json](results/spending-checkpoint.json).
+No additional Meta or Claude API requests were made for this checkpoint. Local commitments INCLUDING holds remain **Meta $31.909548/$125; Claude API $6.82518/$40**. Recorded settled research API amounts are $5.425948 and $5.82518; four old uncertain Meta reservations stay held. These are cooperating-client records, not account-wide provider invoices. The last authorized Meta dashboard check did not load billing, so account-wide spending remains unverified. See [spending-checkpoint.json](results/spending-checkpoint.json).
 
-No paid API job or automatic paid loop is active. The original deadline remains **2026-11-04 19:42:17 UTC**. Current further work is offline formal research in the project; no setup input is pending. Deliberate file access/changes remain confined to the project and specifically authorized tools/accounts. Unrelated root application changes remain outside the research commit.
+No paid API job or automatic paid loop is active. The original deadline remains **2026-11-04 19:42:17 UTC**. All registered proof modules are complete; no setup input is pending. Deliberate file access/changes remain confined to the project and specifically authorized tools/accounts. Unrelated root application changes remain outside the research commit.

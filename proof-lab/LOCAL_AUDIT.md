@@ -167,8 +167,16 @@ One targeted Wonder MAX audit completed at recorded cost $0.425292, followed by 
 
 ## Algebraic proof-format and algorithm checkpoint
 
-The complete offline replay now passes **312 Python tests and 23 registered Lean research sources**, with no skipped tests. [The rational sparse bound](frontier/SPARSE_CERTIFICATE_BOUND.md) derives at least2^n nonzero records from the actual evaluated certificate, including arbitrary exponents and Boolean corrections. [The bounded compiler](frontier/SPARSE_NS.md) checks supplied sparse identities; it is tested independently but not formally refined to the Lean definitions.
+The complete offline replay now passes **312 Python tests and 23 registered Lean research sources**, with no skipped tests. [The rational sparse bound](frontier/SPARSE_CERTIFICATE_BOUND.md) derives at least `2^n` nonzero records from the actual evaluated certificate, including arbitrary exponents and Boolean corrections. [The bounded compiler](frontier/SPARSE_NS.md) checks supplied sparse identities; it is tested independently but not formally refined to the Lean definitions.
 
 The [factored prefix witness](frontier/WIDE_CLAUSE_CERTIFICATE.md) and [OR-chain 3-CNF witness](frontier/TSEITIN_CERTIFICATE.md) demonstrate representation and encoding limits on that lower bound. The [subset-zeta kernel](frontier/SUBSET_ZETA.md) adds a verified standard evaluation component, not a complete fast SAT algorithm. [Primary-source route notes](frontier/RESEARCH_ROUTES.md) state the remaining gaps. No P versus NP result or novelty claim follows.
 
 This checkpoint used no additional paid model calls. Current local commitments, including reserves, remain $31.909548/$125 Meta and $6.82518/$40 Claude API. Account-wide billing is unverified. Further diagonal-width formalization is in progress and excluded from the passed-source count until independently compiled and registered; see [current progress](PROGRESS.md) and [verification](results/verification.json).
+
+## Verified diagonal-width boundary
+
+Current verification comprises **312 passing Python tests and 25 compiled Lean modules**. The full312-test/23-source run was followed by independent replay of the two new formal-only modules; unchanged Python tests were not repeated. Exact hashes and both logs are in [verification.json](results/verification.json).
+
+[DiagonalWidth.lean](frontier/DiagonalWidth.lean) proves that product_i(x_i+y_i) has a `4m+1`-node arithmetic formula, while any weighted sum of products of functions of its fixed original coordinates needs at least `2^m` terms. It proves the actual term-to-matrix factorization and explicit tensor inverse. [FiniteDimension.lean](frontier/FiniteDimension.lean) derives the rational dimension inequality by pivot elimination; no rank bound is assumed. [The scope note](frontier/DIAGONAL_WIDTH.md) explains why this restricts a universal polynomial-width compiler into the current format, without ruling out coordinate changes, other PIT methods, general arithmetic circuits, or proof systems.
+
+No additional Meta or Claude API requests were needed. Local commitments including holds remain $31.909548/$125 and $6.82518/$40, respectively; account-wide billing remains unverified. P vs NP is still unsolved.

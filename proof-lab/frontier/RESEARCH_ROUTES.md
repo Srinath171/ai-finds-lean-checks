@@ -14,7 +14,7 @@ This project now gives concrete counterpoints: the wide-clause family has a shor
 
 ## A general boundary of the existing diagonal checker
 
-Here is a self-contained mathematical argument, not a Lean theorem or a novelty claim. Work over Q in the ORIGINAL coordinates X=(x_1,...,x_m), Y=(y_1,...,y_m). Let
+The original coefficient-matrix argument below is self-contained. An equivalent Boolean-evaluation-matrix argument is now verified in [DiagonalWidth.lean](DiagonalWidth.lean), including the actual weighted factorization and a `4m+1`-node formula. The exact source statement and limits are in [DIAGONAL_WIDTH.md](DIAGONAL_WIDTH.md). No novelty is claimed. Work over Q in the ORIGINAL coordinates X=(x_1,...,x_m), Y=(y_1,...,y_m). Let
 
     H_m(X,Y) = product_i(x_i+y_i).
 
@@ -26,4 +26,4 @@ requires W>=2^m. Form its squarefree coefficient matrix, with rows x_S and colum
 
 Thus arbitrary small arithmetic formulas cannot always be compiled with polynomial width into this fixed-coordinate sum-of-univariate-products representation. This is a representation lower bound, not an impossibility theorem for general PIT, invertible variable changes, other preprocessing, or all proof certificates. The standard coefficient-matrix rank method is explained in [Raz, ECCC TR03-067 (2003), section 3](https://eccc.weizmann.ac.il/report/2003/067/download/).
 
-A useful future formalization would verify this finite-dimensional rank argument. It would close another format-change gap; it would not resolve P versus NP. No paid model call is justified merely to repeat these established missing premises.
+The completed formalization uses the explicit inverse of [[0,1],[1,2]] and its tensor products. [FiniteDimension.lean](FiniteDimension.lean) proves the needed rectangular right-inverse dimension inequality by actual rational pivot elimination. Neither a general PIT algorithm nor a lower bound on all certificates follows. A future paid call needs a concrete new hypothesis to test, rather than repeating these established missing premises.

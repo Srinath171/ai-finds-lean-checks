@@ -27,3 +27,10 @@ requires W>=2^m. Form its squarefree coefficient matrix, with rows x_S and colum
 Thus arbitrary small arithmetic formulas cannot always be compiled with polynomial width into this fixed-coordinate sum-of-univariate-products representation. This is a representation lower bound, not an impossibility theorem for general PIT, invertible variable changes, other preprocessing, or all proof certificates. The standard coefficient-matrix rank method is explained in [Raz, ECCC TR03-067 (2003), section 3](https://eccc.weizmann.ac.il/report/2003/067/download/).
 
 The completed formalization uses the explicit inverse of [[0,1],[1,2]] and its tensor products. [FiniteDimension.lean](FiniteDimension.lean) proves the needed rectangular right-inverse dimension inequality by actual rational pivot elimination. Neither a general PIT algorithm nor a lower bound on all certificates follows. A future paid call needs a concrete new hypothesis to test, rather than repeating these established missing premises.
+
+
+## A proposed paid probe rejected after the primary-source check
+
+We considered asking a model for a deterministic polynomial-factor saving for positive-AND/SYM decision with polynomially many bottom gates. That target is already covered by [Sakai, Seto, Tamaki and Teruyama, ECCC TR15-136, Theorem1.1](https://eccc.weizmann.ac.il/report/2015/136/download/). Their counting algorithm covers the more general weighted, possibly negated-input class and yields superpolynomial savings for every fixed polynomial gate bound. Our repeated gates can be merged into multiplicities, empty AND gates into a constant offset, and the accepted-count set into a lookup table.
+
+Consequently no Meta or Claude API request was sent for that probe. This known restricted-class algorithm supplies no automatic application to an arbitrary class containing AC0 and closed under composition. Reconstructing more of its restriction/DP proof would reproduce an established component; a new unrestricted claim still needs a new argument. The project has not established that argument or a P versus NP result.

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T17:34:00.695109+00:00",
+  "checked_utc": "2026-11-04T17:39:42.487435+00:00",
   "scope": "One atomic local ledger snapshot for cooperating research API callers, not account-wide invoices. External holds include coding/unreceipted use and are reserves, not charges.",
   "providers": {
     "meta": {

@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-04T23:13:23.538029+00:00",
-  "previous_snapshot_path": "continuation/provider-results/budget-snapshot-20261104T230116Z.json",
+  "checked_utc": "2026-11-04T23:33:30.014029+00:00",
+  "previous_snapshot_path": "continuation/provider-results/budget-snapshot-20261104T231323Z.json",
   "providers": {
     "claude": {
       "available_usd": "29.80610",
@@ -12,15 +12,15 @@
       "settled_count": 7
     },
     "meta": {
-      "available_usd": "70.224392",
+      "available_usd": "74.837968",
       "cap_usd": "115",
-      "committed_usd": "44.775608",
+      "committed_usd": "40.162032",
       "external_hold_usd": "25",
       "over_cap": false,
-      "pending_count": 5,
-      "settled_count": 26
+      "pending_count": 4,
+      "settled_count": 28
     }
   },
-  "scope": "Read-only aggregate snapshot after the fifth terminal continuation job settled. At this timestamp five Meta reservations were pending: four older unresolved requests and one active audit reported by its controller. Subsequent activity may change these historical values; no live provider billing query was made.",
+  "scope": "Read-only historical aggregate after seven continuation jobs settled. Four old uncertain Meta reservations remain; no holds, reservations, caps, or ledger bytes changed. At this checkpoint assigned controllers report no active Meta jobs; later activity can change these values. Local cooperating-client accounting, not account-wide provider invoices.",
   "source": "existing local budget ledger; no provider billing API called"
 }

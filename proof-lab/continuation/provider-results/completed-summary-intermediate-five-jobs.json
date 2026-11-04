@@ -1,0 +1,104 @@
+{
+  "cost_usd_total": "4.045912",
+  "records": [
+    {
+      "answer_status": "VISIBLE_ANSWER",
+      "cost_usd": "0.853312",
+      "finished": true,
+      "incomplete": false,
+      "job": "scalar-profile-theory-01",
+      "prompt_sha256": "1a4657bd75d659b6fa7dafeff9896a9e58bcb29bcc7554b02ff71f8c099a5f5a",
+      "provider": "Meta",
+      "remote_status": "completed",
+      "source_state_path": "continuation/jobs/scalar-profile-theory-01/state.json",
+      "usage": {
+        "input_tokens": 1103,
+        "output_tokens": 42445,
+        "total_tokens": 43548
+      },
+      "visible_answer_path": "continuation/provider-results/scalar-profile-theory-01-visible.md",
+      "visible_answer_sha256": "8b26657f08c8daab1a49fe3872b816f805e140515b3a30dd7513706a093dc265",
+      "visible_text_characters": 11274
+    },
+    {
+      "answer_status": "NO_VISIBLE_ANSWER",
+      "cost_usd": "1.313672",
+      "finished": true,
+      "incomplete": true,
+      "job": "low-cost-two-01",
+      "note": "The request ended incomplete at the output-token limit with no visible answer. No answer text was invented.",
+      "prompt_sha256": "4db156d9e03c72ed5c724ee75d4324944297712bb36deae1a090716e59052ac8",
+      "provider": "Meta",
+      "remote_status": "incomplete",
+      "source_state_path": "continuation/jobs/low-cost-two-01/state.json",
+      "usage": {
+        "input_tokens": 738,
+        "output_tokens": 65536,
+        "total_tokens": 66274
+      },
+      "visible_answer_path": null,
+      "visible_text_characters": 0
+    },
+    {
+      "answer_status": "VISIBLE_ANSWER",
+      "cost_usd": "0.356468",
+      "finished": true,
+      "incomplete": false,
+      "job": "low-cost-support-audit-01",
+      "prompt_sha256": "411edf116314c31b1b0c013e0d1346d8fe4ce5c6137f2ed7ccbedc4c9a2ff246",
+      "provider": "Meta",
+      "remote_status": "completed",
+      "source_state_path": "continuation/jobs/low-cost-support-audit-01/state.json",
+      "usage": {
+        "input_tokens": 737,
+        "output_tokens": 17676,
+        "total_tokens": 18413
+      },
+      "visible_answer_path": "continuation/provider-results/low-cost-support-audit-01-visible.md",
+      "visible_answer_sha256": "f565b582a44d9f301caccd887e7c3960f841535cb5cd1c957a1bfb9f459b5c3c",
+      "visible_text_characters": 4886
+    },
+    {
+      "answer_status": "NO_VISIBLE_ANSWER",
+      "cost_usd": "1.313976",
+      "finished": true,
+      "incomplete": true,
+      "job": "one-reuse-reconstruction-01",
+      "note": "The request ended incomplete at the output-token limit with no visible answer. No answer text was invented.",
+      "prompt_sha256": "f7e98bddbe7b36c069b4f72bafcc44ad68e8b858c32f62943b279766874fcb13",
+      "provider": "Meta",
+      "remote_status": "incomplete",
+      "source_state_path": "continuation/jobs/one-reuse-reconstruction-01/state.json",
+      "usage": {
+        "input_tokens": 814,
+        "output_tokens": 65536,
+        "total_tokens": 66350
+      },
+      "visible_answer_path": null,
+      "visible_text_characters": 0
+    },
+    {
+      "answer_status": "VISIBLE_ANSWER",
+      "cost_usd": "0.208484",
+      "finished": true,
+      "incomplete": false,
+      "job": "one-reuse-rectangle-01",
+      "prompt_sha256": "ad1ee4b1edd432fc2ae0d1adc0569cd7f04b138df0b1f4d526c59c449b1798e5",
+      "provider": "Meta",
+      "remote_status": "completed",
+      "source_state_path": "continuation/jobs/one-reuse-rectangle-01/state.json",
+      "source_visible_text_sha256": "5df6c10305084b0fb7686e1428a7cd4766966e118880c785a8fb594741c314e2",
+      "usage": {
+        "input_tokens": 746,
+        "output_tokens": 10275,
+        "total_tokens": 11021
+      },
+      "visible_answer_note": "Existing artifact prepends provenance metadata to the unchanged visible answer.",
+      "visible_answer_path": "continuation/results/one-reuse-rectangle-01-answer.md",
+      "visible_answer_review_path": "continuation/results/one-reuse-rectangle-01-review.md",
+      "visible_answer_sha256": "b7cd978da5de5f651423e50ab1e4ddc28b54380d94789c0d8a97f70a25ce18a4",
+      "visible_text_characters": 5063
+    }
+  ],
+  "scope": "Five terminal continuation jobs only. Visible assistant answer links and safe receipt metadata; no hidden reasoning, provider identifiers, credentials, or active job state is copied."
+}

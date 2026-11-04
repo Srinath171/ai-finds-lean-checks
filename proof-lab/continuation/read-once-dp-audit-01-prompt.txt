@@ -1,0 +1,31 @@
+Independently and harshly audit the following PUBLIC mathematical algorithm. Give at most 2000 words of FINISHED visible answer. Focus only on this algorithm and theorem; do not broaden to P versus NP, other research programs, or a repeated-signal theorem. Find a counterexample or the first missing step if one exists. Otherwise give a concise complete correctness and complexity justification. Do not assume the claims below are already proved.
+
+MODEL AND PROMISE
+Input is the full Boolean truth table of a nonconstant function f on exactly d labelled primary variables, d>=1, and ALL d variables are essential. Gate basis is binary NAND only. Repeated fanins and DAG sharing are allowed in a general circuit; original variables are the only free signals, with no free constants or complemented inputs. Output may select any available signal. C(f) is the minimum paid NAND gate count. The target is decision and reconstruction of C(f)=d-1, equivalently whether the essential-input lower bound is attained. Constants are outside this promise and can be handled separately.
+
+STATE GENERATION
+Enumerate every restriction rho in {0,1,*}^d. For each, include both f restricted by rho and its Boolean complement. Reduce the truth table to its EXACT essential support, retaining ORIGINAL VARIABLE LABELS and their positive-input semantics. Deduplicate by labelled support plus the exact reduced truth table. Thus there are at most 2*3^d states. A minus sign means the complement function is present as a separate exact table; it does NOT give a free NOT gate.
+
+DP IN INCREASING ESSENTIAL SUPPORT SIZE
+Reject constant states. For a singleton support {x_i}, accept only the positive projection q=x_i with a zero-gate leaf; reject q=NOT x_i.
+For a state q on support K with |K|>=2, enumerate all nonempty proper bipartitions K=U disjoint-union V. Pick ANY zero (u0,v0) of q. Define
+  g(u)=1-q(u,v0),
+  h(v)=1-q(u0,v).
+Test every table entry for
+  1-q(u,v)=g(u)*h(v).
+Require nonconstant children, lookup their exact labelled essential-support tables among the smaller generated states, and require both child DP states to accept. If successful, return the literal circuit NAND(g,h), including all gates reconstructed for the children. Complementation used to create a candidate table is never implemented as a free circuit operation. Reject if every bipartition fails.
+
+CLAIMED CORRECTNESS
+Soundness is by literal NAND construction on disjoint supports, with gate count (|U|-1)+(|V|-1)+1=|K|-1. Factorization plus exact essentiality should ensure no essential input is silently lost when reducing the child tables.
+Completeness has two parts:
+1. A pruned connected strict NAND DAG with d essential original inputs and d-1 gates saturates its underlying edge-count bound and must be a read-once d-leaf tree, not merely a DAG with sharing. Repeated fanins, unused gates and output selecting a primary input must be treated correctly, including d=1.
+2. Every subtree of a read-once NAND tree is plus or minus a cofactor of f: assign each disjoint ancestor sibling an assignment making it output1, so each ancestor toggles the subtree sign. Therefore all needed subtree states are generated. For a correct NAND split, any chosen zero of q forces both factors to1 at that row/column, so the displayed candidate g,h recover the correct children. The candidate children also arise as signed cofactors, so their state lookup is legitimate.
+
+CLAIMED STRAIGHTFORWARD COMPLEXITY
+State-table generation, essential-support reduction and storage can be done in poly(d)*4^d time/space. Scanning all support bipartitions and all q table entries over all generated states takes poly(d)*6^d time, using exact finite truth tables and ordinary canonicalization. The accepted output has exactly d-1 NAND gates. These are input-table-size polynomial bounds, with N=2^d; no subexponential-in-d claim is made.
+
+REQUIRED SANITY FIXTURES
+Positive singleton x is accepted with zero gates. Negative singleton NOT x is rejected. NAND(x,y) is accepted with one gate. The three-input NAND NOT(x*y*z) must be REJECTED at its d-1=2 gate target, even though its complement has an AND factorization; that factorization may require a child that the strict-basis DP rejects.
+
+AUDIT REQUEST
+Check missing/cofactor states, original-variable labels, essential-support reduction, base cases, cost accounting, the DAG-to-tree equality argument, the arbitrary-zero factor recovery and each claimed runtime/storage bound. Search for a concrete counterexample, including a deceptively plausible factorization whose child complement would require a paid gate. Distinguish a mathematical flaw from an implementation detail. Return VALID, INVALID, or NEEDS REPAIR and justify that verdict precisely. No source files, tools, account access, code execution or secrets are supplied or needed.

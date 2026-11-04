@@ -1,0 +1,313 @@
+{
+  "format": "sparse-nand-reconstruction-demo-v1",
+  "scope": "Nonconstant strictNAND C(f)<=d boundary, ordinary proof and bounded checks; not Lean-formalized/novelty/PvsNP.",
+  "mask_encoding": "bit assignment; assignment=sum_i x_i*2^i",
+  "source_sha256_lf": "3b9b005af505ee68bf8af0aa75ea8aac8c7c4d050de31d7c6835a87d84a56e24",
+  "source_hash_normalization": "CRLF->LF then CR->LF; other bytes unchanged",
+  "report_hash_encoding": "compact sorted-key ASCII JSON excluding report_sha256, one terminal LF",
+  "limits": {
+    "max_n": 4,
+    "max_partitions": 15,
+    "max_table_lookups": 100000,
+    "max_recognizer_calls": 64,
+    "seconds": 20.0
+  },
+  "examples": [
+    {
+      "name": "positive_projection",
+      "n": 1,
+      "mask": 2,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "read_once",
+        "counters": {
+          "partitions": 0,
+          "table_lookups": 2,
+          "recognizer_calls": 1
+        },
+        "essential_inputs": [
+          0
+        ],
+        "gate_count": 0,
+        "witness": {
+          "gates": [],
+          "output": 0
+        }
+      }
+    },
+    {
+      "name": "negative_projection",
+      "n": 1,
+      "mask": 1,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "single_shared_subtree",
+        "counters": {
+          "partitions": 1,
+          "table_lookups": 4,
+          "recognizer_calls": 4
+        },
+        "essential_inputs": [
+          0
+        ],
+        "gate_count": 1,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ]
+          ],
+          "output": 1
+        },
+        "decomposition": {
+          "w_inputs": [
+            0
+          ],
+          "y_inputs": [],
+          "q_mask": 2,
+          "outer_mask": 1,
+          "orientation": 1
+        }
+      }
+    },
+    {
+      "name": "and2_empty_outer_group",
+      "n": 2,
+      "mask": 8,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "single_shared_subtree",
+        "counters": {
+          "partitions": 3,
+          "table_lookups": 20,
+          "recognizer_calls": 10
+        },
+        "essential_inputs": [
+          0,
+          1
+        ],
+        "gate_count": 2,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "output": 3
+        },
+        "decomposition": {
+          "w_inputs": [
+            0,
+            1
+          ],
+          "y_inputs": [],
+          "q_mask": 7,
+          "outer_mask": 1,
+          "orientation": 1
+        }
+      }
+    },
+    {
+      "name": "nand3",
+      "n": 3,
+      "mask": 127,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "single_shared_subtree",
+        "counters": {
+          "partitions": 1,
+          "table_lookups": 32,
+          "recognizer_calls": 4
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2
+        ],
+        "gate_count": 3,
+        "witness": {
+          "gates": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "output": 5
+        },
+        "decomposition": {
+          "w_inputs": [
+            0
+          ],
+          "y_inputs": [
+            1,
+            2
+          ],
+          "q_mask": 2,
+          "outer_mask": 127,
+          "orientation": 1
+        }
+      }
+    },
+    {
+      "name": "reused_primary",
+      "n": 4,
+      "mask": 57224,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "single_shared_subtree",
+        "counters": {
+          "partitions": 1,
+          "table_lookups": 38,
+          "recognizer_calls": 4
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "gate_count": 4,
+        "witness": {
+          "gates": [
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "output": 7
+        },
+        "decomposition": {
+          "w_inputs": [
+            0
+          ],
+          "y_inputs": [
+            1,
+            2,
+            3
+          ],
+          "q_mask": 2,
+          "outer_mask": 47856,
+          "orientation": 1
+        }
+      }
+    },
+    {
+      "name": "shared_internal",
+      "n": 4,
+      "mask": 30576,
+      "result": {
+        "status": "RECONSTRUCTED",
+        "reason": "single_shared_subtree",
+        "counters": {
+          "partitions": 3,
+          "table_lookups": 68,
+          "recognizer_calls": 9
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "gate_count": 4,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "output": 7
+        },
+        "decomposition": {
+          "w_inputs": [
+            0,
+            1
+          ],
+          "y_inputs": [
+            2,
+            3
+          ],
+          "q_mask": 7,
+          "outer_mask": 224,
+          "orientation": 0
+        }
+      }
+    },
+    {
+      "name": "parity4",
+      "n": 4,
+      "mask": 27030,
+      "result": {
+        "status": "NO_SMALL_CIRCUIT",
+        "reason": "all_partitions_and_orientations_exhausted",
+        "counters": {
+          "partitions": 15,
+          "table_lookups": 248,
+          "recognizer_calls": 35
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "gate_budget": 4
+      }
+    },
+    {
+      "name": "constant_one_excluded",
+      "n": 2,
+      "mask": 15,
+      "result": {
+        "status": "CONSTANT_OUT_OF_SCOPE",
+        "reason": "contract_requires_nonconstant",
+        "counters": {
+          "partitions": 0,
+          "table_lookups": 8,
+          "recognizer_calls": 0
+        },
+        "essential_inputs": []
+      }
+    }
+  ],
+  "report_sha256": "dc0aaf2155fd021742e497f3b03eaa96c459382549fe4f01ead1ea86692594f1"
+}

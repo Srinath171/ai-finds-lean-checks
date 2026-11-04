@@ -1,0 +1,92 @@
+## Verdict: VALID
+
+No counterexample exists under the stated promise. The complement-factorization trap is correctly rejected because candidate children are accepted only when their exact functions have circuits of the required size.
+
+### 1. The \(d-1\) lower bound and DAG-to-tree step
+
+Let a circuit with \(m\) NAND gates compute \(f\), where every one of the \(d\) inputs is essential. Delete gates that are not ancestors of the selected output, leaving \(m'\le m\) gates.
+
+Every retained gate and every essential input has a directed path to the output. Hence the underlying undirected graph is connected. It has \(d+m'\) vertices and at most \(2m'\) distinct edges, since each gate has two fanin slots. Connectivity gives
+
+\[
+d+m'-1\le 2m',
+\qquad\text{so}\qquad
+m'\ge d-1.
+\]
+
+Thus \(C(f)\ge d-1\).
+
+If \(m=d-1\), no gate can have been pruned. Equality holds throughout: the graph is a tree, repeated fanins are impossible, and every gate has two distinct predecessors. Every non-output vertex has at least one successor because it lies on a path to the output; the number of edges is exactly one less than the number of vertices, so every non-output vertex has exactly one successor. This is precisely a read-once binary tree whose \(d\) leaves are the original inputs. The case \(d=1,m=0\) is the trivial one-leaf tree.
+
+### 2. Soundness
+
+Proceed by induction on the size \(k\) of a state’s exact essential support.
+
+A singleton is accepted only as the positive projection \(x_i\), costing \(0=1-1\) gates. Constants are rejected.
+
+Suppose \(q\) on \(K=U\sqcup V\) passes
+
+\[
+1-q(u,v)=g(u)h(v),
+\]
+
+so \(q=\operatorname{NAND}(g,h)\), with \(g,h\) nonconstant. The children really have supports \(U\) and \(V\): if \(g\) ignored some variable in \(U\), then \(q\) would also ignore it, contradicting the exactness of \(K\). The same argument applies to \(h\). By induction, accepted children have circuits with \(|U|-1\) and \(|V|-1\) gates. Adding the final NAND gives
+
+\[
+(|U|-1)+(|V|-1)+1=|K|-1.
+\]
+
+Thus acceptance of \(f\) constructs a \(d-1\)-gate circuit. Complementing a table while forming a candidate is only algebra: the candidate itself must subsequently be accepted by an actual NAND construction. In particular, \(\neg x\) is not accepted as a free singleton.
+
+### 3. Completeness
+
+Assume \(C(f)=d-1\). By the first part, an optimal circuit is a read-once NAND tree.
+
+Every function computed at a tree node attains both \(0\) and \(1\): this is true for a leaf, and a NAND node attains \(0\) by setting both children to \(1\), and \(1\) by setting either child to \(0\).
+
+Let \(s\) be the function at a subtree with leaf set \(L\). The variables outside \(L\) are partitioned among the sibling subtrees along the path to the root. Fix each sibling subtree’s variables so that the sibling outputs \(1\). At every ancestor, the NAND then complements the signal coming from the subtree. Therefore the resulting cofactor of \(f\) is either \(s\) or \(\neg s\), according to the parity of the number of ancestors.
+
+State generation includes both signs of every such cofactor. Reduction retains all of \(L\), because if \(s\) ignored one of its leaves, \(f\) would ignore that leaf as well. Hence every subtree function occurs as a generated state.
+
+Finally, factor recovery is forced. If \(q=\operatorname{NAND}(g,h)\) and \(q(u_0,v_0)=0\), then \(g(u_0)=h(v_0)=1\). Consequently
+
+\[
+1-q(u,v_0)=g(u),\qquad
+1-q(u_0,v)=h(v),
+\]
+
+so the algorithm recovers exactly the tree children for the leaf-set bipartition. Induction from the leaves therefore accepts the root \(f\).
+
+### 4. Required fixtures
+
+- \(x\) is accepted with zero gates; \(\neg x\) is rejected.
+- \(\operatorname{NAND}(x,y)\) is accepted by the split \(\{x\}\mid\{y\}\).
+- For \(f=\neg(xyz)\), a \(1+2\) split produces a singleton child and the child \(yz\), i.e. an AND. The AND state is rejected: its only split would require either constant children or a negative singleton, and the displayed product test fails for every possible chosen zero. Thus the three-input NAND is correctly rejected at the two-gate target. Its complement’s AND factorization does not yield a free NOT.
+
+### 5. Complexity
+
+For a fixed support \(K\) of size \(k\), a generated state has a canonical representative determined by a sign and an assignment to the \(d-k\) variables outside \(K\): variables dropped as inessential may be fixed arbitrarily without changing the reduced function. Hence there are at most
+
+\[
+\binom dk 2^{d-k+1}
+\]
+
+states on supports of size \(k\), each with a table of length \(2^k\). Total state-table storage is therefore bounded by
+
+\[
+\sum_k \binom dk 2^{d-k+1}2^k
+=2\cdot 4^d,
+\]
+
+up to polynomial label/index factors. Generating restrictions by their star sets also costs \(\sum_S 2^{d-|S|}2^{|S|}=4^d\), times a polynomial factor for essentiality checks and canonical hashing.
+
+For DP, a state of support size \(k\) has at most \(2^k\) bipartitions and \(2^k\) table entries to test. Thus the total work is bounded by
+
+\[
+\sum_k \binom dk 2^{d-k+1}4^k
+=2\cdot 6^d,
+\]
+
+again up to polynomial factors for indexing and canonical child lookup. Processing supports in increasing order ensures both children have already been decided. Stored split pointers reconstruct a tree with exactly \(d-1\) gates.
+
+Therefore the algorithm is correct and meets the claimed bounds.

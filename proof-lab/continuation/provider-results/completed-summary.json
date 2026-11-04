@@ -1,5 +1,7 @@
 {
-  "cost_usd_total": "4.045912",
+  "checked_utc": "2026-11-04T23:33:30.014029+00:00",
+  "cost_usd_total": "4.937360",
+  "previous_summary_path": "continuation/provider-results/completed-summary-intermediate-five-jobs.json",
   "records": [
     {
       "answer_status": "VISIBLE_ANSWER",
@@ -98,7 +100,53 @@
       "visible_answer_review_path": "continuation/results/one-reuse-rectangle-01-review.md",
       "visible_answer_sha256": "b7cd978da5de5f651423e50ab1e4ddc28b54380d94789c0d8a97f70a25ce18a4",
       "visible_text_characters": 5063
+    },
+    {
+      "answer_status": "VISIBLE_ANSWER",
+      "cost_usd": "0.447812",
+      "finished": true,
+      "incomplete": false,
+      "job": "read-once-dp-audit-01",
+      "prompt_sha256": "1954b81a2b29c8b16471537dbc277b32fe41972ffb74c82925712e14f0001e94",
+      "provider": "Meta",
+      "remote_status": "completed",
+      "source_state_path": "continuation/jobs/read-once-dp-audit-01/state.json",
+      "source_visible_text_sha256": "2b4f4e5536b3afc20bb9e7542c57a44bead60cc41c4ff05a2aa2578d75676f9a",
+      "usage": {
+        "input_tokens": 1038,
+        "output_tokens": 22183,
+        "total_tokens": 23221
+      },
+      "usage_status": "settled",
+      "visible_answer_note": "Existing public artifact is the exact visible answer without a prefix.",
+      "visible_answer_path": "continuation/read-once-dp-audit-01-response.txt",
+      "visible_answer_review_path": "continuation/read-once-dp-audit-01-review.md",
+      "visible_answer_sha256": "2b4f4e5536b3afc20bb9e7542c57a44bead60cc41c4ff05a2aa2578d75676f9a",
+      "visible_text_characters": 5355
+    },
+    {
+      "answer_status": "VISIBLE_ANSWER",
+      "cost_usd": "0.443636",
+      "finished": true,
+      "incomplete": false,
+      "job": "shared-subtree-reconstruction-audit-01",
+      "prompt_sha256": "20451e6ab13a21b2d686be1f91bf52de702df9efdcf9dfc80ae10cc3a4b7417f",
+      "provider": "Meta",
+      "remote_status": "completed",
+      "source_state_path": "continuation/jobs/shared-subtree-reconstruction-audit-01/state.json",
+      "source_visible_text_sha256": "e495259fabc067b0772e8c83f27a0ab743fb3d551b1dd0ec4a10cc93cacabf6d",
+      "usage": {
+        "input_tokens": 1484,
+        "output_tokens": 21885,
+        "total_tokens": 23369
+      },
+      "usage_status": "settled",
+      "visible_answer_note": "Existing public artifact is the exact visible answer without a prefix.",
+      "visible_answer_path": "continuation/results/shared-subtree-reconstruction-audit-01-answer.md",
+      "visible_answer_review_path": "continuation/results/shared-subtree-reconstruction-audit-01-review.md",
+      "visible_answer_sha256": "e495259fabc067b0772e8c83f27a0ab743fb3d551b1dd0ec4a10cc93cacabf6d",
+      "visible_text_characters": 9541
     }
   ],
-  "scope": "Five terminal continuation jobs only. Visible assistant answer links and safe receipt metadata; no hidden reasoning, provider identifiers, credentials, or active job state is copied."
+  "scope": "Seven terminal continuation Meta jobs: five visible answers and two NO_VISIBLE_ANSWER results. Safe receipt metadata and existing public answer links only; no hidden reasoning, provider identifiers, credentials, or runtime state copied. This is this continuation subset, not the whole-project provider invoice."
 }

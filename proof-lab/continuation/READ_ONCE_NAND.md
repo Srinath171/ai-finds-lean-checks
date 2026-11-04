@@ -2,6 +2,8 @@
 
 This is independently AI-reviewed ordinary mathematics with a bounded Python implementation; it is not an end-to-end Lean proof, a novelty claim, or a solution of P versus NP. The current implementation accepts at most five input variables and makes resource refusals explicit.
 
+The frozen [Meta audit response](read-once-dp-audit-01-response.txt) preserves the exact visible text; its [independent AI review](read-once-dp-audit-01-review.md) and [recorded result metadata](read-once-dp-audit-01-result.json) are linked separately. This public-math audit is distinct from source-code review, executable tests, Lean checking, or human peer review.
+
 ## Exact model and statement
 
 A circuit starts with positive input wires only. Every paid gate is binary NAND, including equal fanins; output selection is free. Constants and NOT are not free. A strict read-once tree is a full binary NAND tree whose leaves are distinct positive inputs. Unused ambient inputs are allowed.

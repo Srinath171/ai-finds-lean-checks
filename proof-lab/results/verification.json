@@ -1,7 +1,7 @@
 {
-  "checked_utc": "2026-11-04T23:19:09.775564+00:00",
-  "python_tests_passed": 410,
-  "test_seconds": 26.286,
+  "checked_utc": "2026-11-04T23:34:28.316661+00:00",
+  "python_tests_passed": 475,
+  "test_seconds": 27.992,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
   "formal_source_count": 34,
   "formal_sources": [
@@ -244,7 +244,7 @@
       "verification_log": "continuation/six-case-root-verification.txt"
     }
   ],
-  "scope": "Latest successful full Python replay remains 410 tests passed in 26.286 seconds. A later 438-test attempt had 437 passes and one Windows atomic-replace error in an existing isolated campaign test; its focused recheck passed, without upgrading that failed combined run. All 28 new finite-math tests passed in that attempt. Separately reviewed read-once (9 tests) and rectangle (11 tests) focused checks are recorded independently. All 34 Lean modules are cumulatively compiled through the earlier 23-source full replay and separate later postchecks; no full 34-source replay is claimed. Verification made no paid calls or real ledger changes.",
+  "scope": "Latest full Python replay: 475 passed in 27.992s, with earlier 410 green replay and failed 438-test / isolated 1-pass provenance preserved. Lean evidence covers 34 cumulatively compiled modules: original 23-source full replay plus independent later compilations, not one combined 34-source run. This metadata update rechecked source hashes but did not recompile Lean. Mathematical claims remain scoped to their separate proofs and bounded implementations; no P-versus-NP solution claim.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -361,10 +361,15 @@
   "full_suite_test_seconds": 21.013,
   "source_hash_normalization": "sha256 hashes actual file bytes; sha256_lf normalizes CRLF to LF, then CR to LF; other bytes unchanged.",
   "latest_full_python_replay": {
-    "python_tests_passed": 410,
-    "test_seconds": 26.286,
+    "python_tests_passed": 475,
+    "test_seconds": 27.992,
     "exit_code": 0,
-    "log": "continuation/python-resume-verification.txt",
+    "log": "continuation/python-reconstruction-verification.txt",
+    "log_hashes": {
+      "path": "continuation/python-reconstruction-verification.txt",
+      "sha256": "098e447d801f687d12e075ac6dd023551df8bc12193be3d9dbe36d1bb6c75f07",
+      "sha256_lf": "86d92610928e90992502c0e3985017e093d3e0b95d635bf328bb9b359bd08abd"
+    },
     "runner": "python -B -m hour2.verify_python",
     "suite_breakdown": {
       "existing_tests": 353,
@@ -373,16 +378,27 @@
       "hour2.test_joint_nand": 10,
       "hour2.test_sat_boolean_mux": 6,
       "continuation.test_meta_guard": 15,
-      "continuation.test_profile_sat": 7
+      "continuation.test_profile_sat": 7,
+      "continuation.test_low_cost_two": 9,
+      "continuation.test_low_cost_profiles": 11,
+      "continuation.test_c2_truncated_profile": 8,
+      "continuation.test_read_once_nand": 9,
+      "continuation.test_rectangle_recovery": 11,
+      "continuation.test_repeated_z_nand": 9,
+      "continuation.test_sparse_nand_reconstruction": 8
     },
-    "scope": "One combined offline unittest execution with project-local TEMP, existing test discovery, four hour2 modules, and both continuation modules. Includes the continuation guard deadline-race regression and focused profile tests; does not rerun the large n3 profile investigation or any Lean modules. API transports are mocked; no paid calls or real ledger changes.",
+    "wall_seconds": 29.452,
+    "source_integrity_check": {
+      "python_files_checked": 82,
+      "changed_files": [],
+      "scope": "Raw SHA256 before and after the run for all existing top-level Python files in core, tests, frontier, hour2, and continuation."
+    },
     "runner_source_at_replay": {
       "path": "hour2/verify_python.py",
-      "sha256": "12a61b08afdbb734e3ac8f6b36f59238413e5384824c4604f27d44d0838e6ba7",
-      "sha256_lf": "69d3f9d259fd8034160d9ee3306702478fbf37d64df11783fff964512325bf61",
-      "verification_log": "continuation/python-resume-verification.txt",
-      "scope": "Importable Windows-spawn-safe runner assembling existing discovery, four hour2 modules, and two continuation modules in one unittest execution."
-    }
+      "sha256": "4d9ec35e0efa76b37d05184146c2cbc60ec3613a8b00ef28a76d02054b60b211",
+      "sha256_lf": "4d9ec35e0efa76b37d05184146c2cbc60ec3613a8b00ef28a76d02054b60b211"
+    },
+    "scope": "One unified offline replay from the importable Windows-spawn-safe runner, with project-local TEMP. New read-once, rectangle, repeated-z, and sparse-assembler modules are included. No large profile search or 196608-case repeated-z experiment was rerun; no Lean compilation, paid calls, or real ledger mutation. The prior 438-test Windows I/O failure and its isolated passing recheck remain separate history."
   },
   "full_python_replay_history": [
     {
@@ -456,6 +472,31 @@
         "verification_log": "hour2/python-final-verification.txt",
         "scope": "Importable Windows-spawn-safe runner assembling the old suite and four hour2 test modules in a single unittest execution."
       }
+    },
+    {
+      "python_tests_passed": 410,
+      "test_seconds": 26.286,
+      "exit_code": 0,
+      "log": "continuation/python-resume-verification.txt",
+      "runner": "python -B -m hour2.verify_python",
+      "suite_breakdown": {
+        "existing_tests": 353,
+        "hour2.test_phase_guard": 10,
+        "hour2.test_claude_guard": 9,
+        "hour2.test_joint_nand": 10,
+        "hour2.test_sat_boolean_mux": 6,
+        "continuation.test_meta_guard": 15,
+        "continuation.test_profile_sat": 7
+      },
+      "scope": "One combined offline unittest execution with project-local TEMP, existing test discovery, four hour2 modules, and both continuation modules. Includes the continuation guard deadline-race regression and focused profile tests; does not rerun the large n3 profile investigation or any Lean modules. API transports are mocked; no paid calls or real ledger changes.",
+      "runner_source_at_replay": {
+        "path": "hour2/verify_python.py",
+        "sha256": "12a61b08afdbb734e3ac8f6b36f59238413e5384824c4604f27d44d0838e6ba7",
+        "sha256_lf": "69d3f9d259fd8034160d9ee3306702478fbf37d64df11783fff964512325bf61",
+        "verification_log": "continuation/python-resume-verification.txt",
+        "scope": "Importable Windows-spawn-safe runner assembling existing discovery, four hour2 modules, and two continuation modules in one unittest execution."
+      },
+      "historical_status": "PRIOR_410_TEST_SUITE"
     }
   ],
   "python_source_evidence": [
@@ -463,77 +504,131 @@
       "path": "frontier/orbit_sparsity.py",
       "sha256": "9ccd6473818fb64e437076c18c70ef4c859d96e55a57625131e5dd68729a91eb",
       "sha256_lf": "9ccd6473818fb64e437076c18c70ef4c859d96e55a57625131e5dd68729a91eb",
-      "verification_log": "frontier/python-orbit-verification.txt",
-      "scope": "Bounded exact checker for explicitly supplied rational matrices; tested Python implementation only. No formal refinement or universal orbit-sparsity theorem is claimed."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Bounded exact checker for explicitly supplied rational matrices; tested Python implementation only. No formal refinement or universal orbit-sparsity theorem is claimed.",
+      "verification_history": [
+        {
+          "verification_log": "frontier/python-orbit-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "frontier/normal_crossing.py",
       "sha256": "7945ad7dfdfbb89c34a91ad1774b687084847dfd24d0528f10676a5d6795ad0d",
       "sha256_lf": "7945ad7dfdfbb89c34a91ad1774b687084847dfd24d0528f10676a5d6795ad0d",
-      "verification_log": "frontier/python-normal-crossing-final-verification.txt",
-      "scope": "Bounded exact geometric certificate generator/verifier for supplied rational matrices; tested Python implementation without a verified Lean refinement link or a universal sparsity conclusion from testing."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Bounded exact geometric certificate generator/verifier for supplied rational matrices; tested Python implementation without a verified Lean refinement link or a universal sparsity conclusion from testing.",
+      "verification_history": [
+        {
+          "verification_log": "frontier/python-normal-crossing-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "frontier/normal_crossing_moments.py",
       "sha256": "415b42b938fad91b0aa7c1a565f7f9802d01f13abb58925bdc488ad54553f9d4",
       "sha256_lf": "276748de405fc47f693b445906ddb484905d71ccd340d4d246352434edb0a297",
-      "verification_log": "frontier/python-normal-crossing-final-verification.txt",
-      "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests.",
+      "verification_history": [
+        {
+          "verification_log": "frontier/python-normal-crossing-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "hour2/phase_guard.py",
       "sha256": "c4b8e48f6d74a85af4c84f9e31516c3c0ea8b61897b3a65aef3dc3932562a8d8",
       "sha256_lf": "8dd9cad0a4c1bda86593ab7dcdad99c11cd16736f1b3a56e5a59210c5ad1729c",
-      "verification_log": "hour2/python-final-verification.txt",
-      "scope": "Bounded phase/deadline and shared-budget guard; offline mocked transport tests only, not a guarantee of remote cancellation or billing reconciliation."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Bounded phase/deadline and shared-budget guard; offline mocked transport tests only, not a guarantee of remote cancellation or billing reconciliation.",
+      "verification_history": [
+        {
+          "verification_log": "hour2/python-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "hour2/claude_guard.py",
       "sha256": "24aae9c3416d6921511ed9e862887027aacbf566fe1aa7bc1138b321a1377791",
       "sha256_lf": "24aae9c3416d6921511ed9e862887027aacbf566fe1aa7bc1138b321a1377791",
-      "verification_log": "hour2/python-final-verification.txt",
-      "scope": "Bounded subprocess/API guard with shared-budget reservation; offline mocked tests only, not a guarantee of provider-side cancellation."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Bounded subprocess/API guard with shared-budget reservation; offline mocked tests only, not a guarantee of provider-side cancellation.",
+      "verification_history": [
+        {
+          "verification_log": "hour2/python-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "hour2/joint_nand.py",
       "sha256": "de3be2db118b090694e0ba863f0fb0b14a08a766a1b4d69419a8569f809813ac",
       "sha256_lf": "c1935531294b119f6a067ab41603356f42a145dde9c63038e6f1f609f1bf703c",
-      "verification_log": "hour2/python-final-verification.txt",
-      "scope": "Exact finite n1/n2 shared-output NAND state search and independently simulated witnesses; no asymptotic lower-bound or Lean-refinement claim."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Exact finite n1/n2 shared-output NAND state search and independently simulated witnesses; no asymptotic lower-bound or Lean-refinement claim.",
+      "verification_history": [
+        {
+          "verification_log": "hour2/python-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "hour2/sat_boolean_mux.py",
       "sha256": "f8924ba7c0359ef31bc8585f8b77b46e2e4eb5b1ac9a44aab6fe79ace72c2b37",
       "sha256_lf": "da67bfdac5a64eb037e9a9141b98c3dea0a7d40491016d5f8075471ae50a6876",
-      "verification_log": "hour2/python-final-verification.txt",
-      "scope": "Boolean one-hot NAND encoding; independent encoding corroboration in the same Z3 solver, with SAT witnesses independently evaluated. UNSAT is solver evidence, not a formally checked proof."
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Boolean one-hot NAND encoding; independent encoding corroboration in the same Z3 solver, with SAT witnesses independently evaluated. UNSAT is solver evidence, not a formally checked proof.",
+      "verification_history": [
+        {
+          "verification_log": "hour2/python-final-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "hour2/verify_python.py",
-      "sha256": "f1d1ab0dc1a8bdc9b81bc03868be4f3506643b5a552dc722e8b848a0079f14f4",
-      "sha256_lf": "f4220ef05090e3c215929c3e3656d257f4325094fbb6e1929a98319abd4fe5b9",
-      "verification_log": "continuation/python-c2-verification.txt",
-      "scope": "Windows-spawn-safe runner assembled 438 tests, including three new finite-math modules. The combined attempt failed one existing campaign atomic-replace test; all 28 new cases passed. Last successful full replay remains 410 tests.",
-      "execution_status": "438_TEST_COMBINED_ATTEMPT_FAILED_ONE_EXISTING_TEST"
+      "sha256": "4d9ec35e0efa76b37d05184146c2cbc60ec3613a8b00ef28a76d02054b60b211",
+      "sha256_lf": "4d9ec35e0efa76b37d05184146c2cbc60ec3613a8b00ef28a76d02054b60b211",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "scope": "Importable main-guarded Windows-spawn-safe runner for one 475-test suite; combines existing discovery, four hour2 modules, and nine continuation modules.",
+      "execution_status": "438_TEST_COMBINED_ATTEMPT_FAILED_ONE_EXISTING_TEST",
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-c2-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "continuation/meta_guard.py",
       "sha256": "8d8b9c35729de2d0690da6750e224add44734a99c32655e010d9853a519975a4",
       "sha256_lf": "a8f00f338b13cd67b4b70a818aff6d3f9d43bab6eb43e81962211a0328fa3cc0",
-      "verification_log": "continuation/python-resume-verification.txt",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
       "scope": "Bounded Meta continuation guard, including recomputation of the transport timeout after ledger-lock waits. Offline mocked-transport tests only; no guarantee of provider-side cancellation or billing reconciliation.",
       "test_source": {
         "path": "continuation/test_meta_guard.py",
         "sha256": "bb05630ef750e7d31c82346cc08fd343f81e08e18b495d342e246a007de03733",
         "sha256_lf": "0fcb49aaadb01d3b8697babbe9bdef3c47f1ed7f88738e06b53cda5fcec7b957",
         "tests_in_combined_suite": 15
-      }
+      },
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-resume-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "continuation/profile_sat.py",
       "sha256": "983e31737d0db0c73496e2ce187e8ab7ce5f36860d80ecb3d4591e562ee6713e",
       "sha256_lf": "1648d940b7de9a7cc6ec22b459837de303b8c2459613d268441363e1d203348a",
-      "verification_log": "continuation/python-resume-verification.txt",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
       "scope": "Bounded three-input NAND scalar-profile investigation. Focused tests and independent saved-artifact audit validate SAT witnesses, orbit/grouping coverage, and bound indexing. Lower bounds remain Z3 UNSAT evidence, not formally checked certificates or a full independent-encoding replay.",
       "test_source": {
         "path": "continuation/test_profile_sat.py",
@@ -547,15 +642,19 @@
         "sha256": "e4cf29594168af1ee5fec08cbb182353b2ab2aa574f71268681c618cdbd80959",
         "sha256_lf": "2f4a6e37cf922a67359c3008580b6230b371d8ecb46fdc7e20ce09eea1738b2d",
         "audit_scope": "Existing artifact audited without rerunning the investigation; retained UNKNOWN is not used in final exact-cost claims."
-      }
+      },
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-resume-verification.txt"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "continuation/low_cost_two.py",
       "sha256": "7658e2274353abea8e6c266511bd3f5ee5d3c2b1e6ddfbb630e5bf61d3f0a3db",
       "sha256_lf": "29851895a31e804d22d008694f4d9743dc8b33e6152d3b1826b62cfc5b952054",
-      "verification_log": "continuation/python-c2-verification.txt",
-      "module_tests_passed_in_failed_combined_attempt": 9,
-      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
       "scope": "Complete finite two-gate catalogue: all 926 ordered lists, 915 pairs, 22 input-permutation classes; independent Boolean witnesses, no SAT or Lean-refinement claim.",
       "test_source": {
         "path": "continuation/test_low_cost_two.py",
@@ -566,15 +665,21 @@
         "path": "continuation/results/low-cost-two-n5.json",
         "sha256": "1dbb11150f5a7563475c89cc898feb9d8ea892edb76d007386cc3f1bd2826839",
         "sha256_lf": "597066d99c13230a1e2910466eb00b0ad6c1ac3bbd014915ce1b9d39c3923050"
-      }
+      },
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-c2-verification.txt",
+          "module_tests_passed_in_failed_combined_attempt": 9,
+          "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "continuation/low_cost_profiles.py",
       "sha256": "29ba72d8c13bd8c54654e622a43ad4ab311c620183ac6920919ebb9f3eebe67b",
       "sha256_lf": "6763809088b10abb2ddfc675ca31ea02e1883205b142c5c90ea81ff4929616dd",
-      "verification_log": "continuation/python-c2-verification.txt",
-      "module_tests_passed_in_failed_combined_attempt": 11,
-      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
       "scope": "Only the six larger-support NAND coordinates were queried. Twelve local SAT queries and independently evaluated upper witnesses; full 44-target campaign unrun. Source includes separately tested interval/cache helpers.",
       "test_source": {
         "path": "continuation/test_low_cost_profiles.py",
@@ -586,15 +691,21 @@
         "sha256": "e34baab6c02dc1a6341c620a3b1a73901fb8c8f7ef7722b3478a57f0daa36123",
         "sha256_lf": "e5786a177a4451064added3441421fbb320b48b2d7e7141e138865d357c0096c"
       },
-      "focused_verification_log": "continuation/low-cost-profile-tests.txt"
+      "focused_verification_log": "continuation/low-cost-profile-tests.txt",
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-c2-verification.txt",
+          "module_tests_passed_in_failed_combined_attempt": 11,
+          "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
     },
     {
       "path": "continuation/c2_truncated_profile.py",
       "sha256": "82ff7a261046c06935c06ad082d5ef1ac7dceda08309d06e9f16ea3aca2cc6f0",
       "sha256_lf": "82ff7a261046c06935c06ad082d5ef1ac7dceda08309d06e9f16ea3aca2cc6f0",
-      "verification_log": "continuation/python-c2-verification.txt",
-      "module_tests_passed_in_failed_combined_attempt": 8,
-      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
       "scope": "Solver-free enumeration of all gate prefixes through three gates. Truncation value four means cost at least four, not exact cost four. The explicit h-coordinate permutation reconciles the earlier profile convention; no Lean refinement claim.",
       "test_source": {
         "path": "continuation/test_c2_truncated_profile.py",
@@ -607,6 +718,100 @@
         "sha256_lf": "96c706900b283b45d9926bd98c490908e4bd7a461574efd5dc6cc2ccf237d52c",
         "canonical_report_sha256": "34b1a1afeb323b4ec7b61ff5144ba47bd04d0aee62247a1677d137127d9d6411",
         "canonical_hash_encoding": "UTF-8 compact sorted-key ASCII JSON excluding report_sha256, followed by one LF"
+      },
+      "verification_history": [
+        {
+          "verification_log": "continuation/python-c2-verification.txt",
+          "module_tests_passed_in_failed_combined_attempt": 8,
+          "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST"
+        }
+      ],
+      "overall_combined_status": "PASSED_475_TESTS"
+    },
+    {
+      "path": "continuation/read_once_nand.py",
+      "sha256": "09544f8065f159c714a19b530b03e1a67a64329380dbc0ce84533986cd96f791",
+      "sha256_lf": "09544f8065f159c714a19b530b03e1a67a64329380dbc0ce84533986cd96f791",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "module_tests_passed": 9,
+      "overall_combined_status": "PASSED_475_TESTS",
+      "test_source": {
+        "path": "continuation/test_read_once_nand.py",
+        "sha256": "2c5d6543ed2ad9186e195b86019203c948fe56bb881bce3b5f8567b5ece94bcc",
+        "sha256_lf": "2c5d6543ed2ad9186e195b86019203c948fe56bb881bce3b5f8567b5ece94bcc"
+      },
+      "scope": "Strict read-once NAND formula reconstruction; actual truth-table witnesses independently checked. Restricted implementation, not general circuit minimization.",
+      "scope_document": {
+        "path": "continuation/READ_ONCE_NAND.md",
+        "sha256": "9f37090d7ecce9002f0ac078ab693123a1c635b09c6e5a6721b88a2f26785e53",
+        "sha256_lf": "9f37090d7ecce9002f0ac078ab693123a1c635b09c6e5a6721b88a2f26785e53"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/read-once-nand-demo.json",
+        "sha256": "274f0af5ea912c9fcbc2464467c4d920b16a4d40204ca9abe95c0b620f6c6229",
+        "sha256_lf": "274f0af5ea912c9fcbc2464467c4d920b16a4d40204ca9abe95c0b620f6c6229"
+      }
+    },
+    {
+      "path": "continuation/rectangle_recovery.py",
+      "sha256": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa",
+      "sha256_lf": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "module_tests_passed": 11,
+      "overall_combined_status": "PASSED_475_TESTS",
+      "test_source": {
+        "path": "continuation/test_rectangle_recovery.py",
+        "sha256": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61",
+        "sha256_lf": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61"
+      },
+      "scope": "Exact recovery of genuine nonempty Cartesian zero rectangles, including all 194 exhaustive branch-pair cases with at most five inputs; restricted helper."
+    },
+    {
+      "path": "continuation/repeated_z_nand.py",
+      "sha256": "1431e91d3b76794603c7e7e9e61c4bd07d2c4e1eb4704538402cc8778d3cae18",
+      "sha256_lf": "1431e91d3b76794603c7e7e9e61c4bd07d2c4e1eb4704538402cc8778d3cae18",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "module_tests_passed": 9,
+      "overall_combined_status": "PASSED_475_TESTS",
+      "test_source": {
+        "path": "continuation/test_repeated_z_nand.py",
+        "sha256": "e03499d0151828ac7bb83fca2b52b664e01bf81429938a5cd5e889cb2da9ea67",
+        "sha256_lf": "e03499d0151828ac7bb83fca2b52b664e01bf81429938a5cd5e889cb2da9ea67"
+      },
+      "scope": "Restricted NAND formulas with one distinguished variable occurring at most twice; nine fast tests in this replay. The separate 196,608-case experiment is saved evidence and was not rerun in the suite.",
+      "scope_document": {
+        "path": "continuation/REPEATED_Z_NAND.md",
+        "sha256": "bc982c6a40b6492dd85b4108889e4a8a6bbab6b1e8b26e822de92e6f0cd977de",
+        "sha256_lf": "bc982c6a40b6492dd85b4108889e4a8a6bbab6b1e8b26e822de92e6f0cd977de"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/repeated-z-exhaustive-four-input.json",
+        "sha256": "da94cce40f0da72cc1e75a3519960a1360123d0e6dcade9625eb344509ccc8b5",
+        "sha256_lf": "35fe5a37616da4d8cad94da3f7c5e406c194d89335f99e65858b583b45ee9328"
+      }
+    },
+    {
+      "path": "continuation/sparse_nand_reconstruction.py",
+      "sha256": "3b9b005af505ee68bf8af0aa75ea8aac8c7c4d050de31d7c6835a87d84a56e24",
+      "sha256_lf": "3b9b005af505ee68bf8af0aa75ea8aac8c7c4d050de31d7c6835a87d84a56e24",
+      "verification_log": "continuation/python-reconstruction-verification.txt",
+      "module_tests_passed": 8,
+      "overall_combined_status": "PASSED_475_TESTS",
+      "test_source": {
+        "path": "continuation/test_sparse_nand_reconstruction.py",
+        "sha256": "d66120c88ae1f67115df85f5254d3e3bb05efc2ab28c98f13f09281ccd917ccc",
+        "sha256_lf": "d66120c88ae1f67115df85f5254d3e3bb05efc2ab28c98f13f09281ccd917ccc"
+      },
+      "scope": "Exact bounded shared-subtree NAND reconstruction assembled from separately reviewed helpers. Resource limits are refusals. Scope follows the documented restricted circuit promise, not unrestricted minimization.",
+      "scope_document": {
+        "path": "continuation/SPARSE_NAND_RECONSTRUCTION.md",
+        "sha256": "7e0b010d9ae5db00ed4e822cea46fe478a75372fe53c76a8a9201338e4be152e",
+        "sha256_lf": "7e0b010d9ae5db00ed4e822cea46fe478a75372fe53c76a8a9201338e4be152e"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/sparse-nand-reconstruction-demo.json",
+        "sha256": "d64802df46430e9c9bcdd03e72e1f53290bba78a2c456e5efdeb70a4dd879d08",
+        "sha256_lf": "d64802df46430e9c9bcdd03e72e1f53290bba78a2c456e5efdeb70a4dd879d08"
       }
     }
   ],
@@ -629,7 +834,15 @@
       "historical_status": "WINDOWS_ATOMIC_REPLACE_ERROR",
       "failing_test": "test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped",
       "exception": "PermissionError [WinError 5] at frontier/campaign.py _atomic os.replace",
-      "scope": "One combined run failed in a fresh project-local test directory with mocked providers. The campaign controller uses an exclusive lock; no live campaign status-writer race was identified. Actual Windows sharing/permission cause is unproven. All 28 newly added tests passed; this attempt is not a green full-suite result."
+      "scope": "One combined run failed in a fresh project-local test directory with mocked providers. The campaign controller uses an exclusive lock; no live campaign status-writer race was identified. Actual Windows sharing/permission cause is unproven. All 28 newly added tests passed; this attempt is not a green full-suite result.",
+      "runner_source_at_replay": {
+        "path": "hour2/verify_python.py",
+        "sha256": "f1d1ab0dc1a8bdc9b81bc03868be4f3506643b5a552dc722e8b848a0079f14f4",
+        "sha256_lf": "f4220ef05090e3c215929c3e3656d257f4325094fbb6e1929a98319abd4fe5b9",
+        "verification_log": "continuation/python-c2-verification.txt",
+        "scope": "Windows-spawn-safe runner assembled 438 tests, including three new finite-math modules. The combined attempt failed one existing campaign atomic-replace test; all 28 new cases passed. Last successful full replay remains 410 tests.",
+        "execution_status": "438_TEST_COMBINED_ATTEMPT_FAILED_ONE_EXISTING_TEST"
+      }
     }
   ],
   "continuation_formal_postcheck": {
@@ -663,16 +876,13 @@
     "scope": "Independent root replay of six explicitly defined functions, each with a four-gate upper bound and exclusion of at most three gates. This is not a generic C(f)=2 classification/refinement theorem or a combined 34-source Lean replay."
   },
   "latest_full_python_attempt": {
-    "tests_run": 438,
-    "tests_passed": 437,
-    "errors": 1,
-    "test_seconds": 28.203,
-    "exit_code": 1,
-    "log": "continuation/python-c2-verification.txt",
-    "historical_status": "WINDOWS_ATOMIC_REPLACE_ERROR",
-    "failing_test": "test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped",
-    "exception": "PermissionError [WinError 5] at frontier/campaign.py _atomic os.replace",
-    "scope": "One combined run failed in a fresh project-local test directory with mocked providers. The campaign controller uses an exclusive lock; no live campaign status-writer race was identified. Actual Windows sharing/permission cause is unproven. All 28 newly added tests passed; this attempt is not a green full-suite result."
+    "tests_run": 475,
+    "tests_passed": 475,
+    "errors": 0,
+    "test_seconds": 27.992,
+    "exit_code": 0,
+    "log": "continuation/python-reconstruction-verification.txt",
+    "scope": "One unified offline replay from the importable Windows-spawn-safe runner, with project-local TEMP. New read-once, rectangle, repeated-z, and sparse-assembler modules are included. No large profile search or 196608-case repeated-z experiment was rerun; no Lean compilation, paid calls, or real ledger mutation. The prior 438-test Windows I/O failure and its isolated passing recheck remain separate history."
   },
   "focused_python_rechecks": [
     {
@@ -733,13 +943,37 @@
     }
   ],
   "provider_results_checkpoint": {
+    "path": "continuation/provider-results/completed-summary.json",
+    "sha256": "e9be3719533fe026dc460ce95bc281801f833a0e488a4c97bf17463d75b9ac24",
+    "sha256_lf": "e9be3719533fe026dc460ce95bc281801f833a0e488a4c97bf17463d75b9ac24",
     "summary_path": "continuation/provider-results/completed-summary.json",
-    "sha256": "cda029bda305cdbe222df2714adcd36f6b140f2a8a28099a7ccd0be5f8a309ba",
-    "sha256_lf": "84fb0b1331fb4da6e3e7d0277e282942007bae911ad89d4e40776f1f3441395f",
-    "terminal_jobs": 5,
-    "visible_answers": 3,
+    "terminal_jobs": 7,
+    "visible_answers": 5,
     "no_visible_answers": 2,
-    "recorded_api_cost_usd": "4.045912",
-    "scope": "Completed public visible answers and safe receipt metadata only; active audits are monitored separately."
+    "recorded_api_cost_usd": "4.937360",
+    "scope": "Seven settled Meta continuation jobs only; public visible answers and safe receipts. Not the whole-project provider invoice. Two incomplete jobs contain no visible answer."
+  },
+  "provider_results_checkpoint_history": [
+    {
+      "summary_path": "continuation/provider-results/completed-summary-intermediate-five-jobs.json",
+      "sha256": "cda029bda305cdbe222df2714adcd36f6b140f2a8a28099a7ccd0be5f8a309ba",
+      "sha256_lf": "84fb0b1331fb4da6e3e7d0277e282942007bae911ad89d4e40776f1f3441395f",
+      "terminal_jobs": 5,
+      "visible_answers": 3,
+      "no_visible_answers": 2,
+      "recorded_api_cost_usd": "4.045912",
+      "scope": "Completed public visible answers and safe receipt metadata only; active audits are monitored separately."
+    }
+  ],
+  "budget_snapshot_checkpoint": {
+    "path": "continuation/provider-results/budget-snapshot.json",
+    "sha256": "ff0c502e6e8e4af275898b0aff03acb4d7f1e6ec418a01bd58c20d66e54ce772",
+    "sha256_lf": "ff0c502e6e8e4af275898b0aff03acb4d7f1e6ec418a01bd58c20d66e54ce772"
+  },
+  "subscription_audit_note": {
+    "provider": "Claude Code subscription",
+    "informational_list_price_usd": "0.5309818",
+    "api_ledger_charge": false,
+    "scope": "Author-reported completed repeated-z mathematical audit; informational list price is not added to the Claude API budget."
   }
 }

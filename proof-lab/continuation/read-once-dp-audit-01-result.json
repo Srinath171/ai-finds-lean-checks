@@ -1,0 +1,47 @@
+{
+  "job": "read-once-dp-audit-01",
+  "checked_utc": "2026-11-04T23:19:44.488161+00:00",
+  "model": "muse-wonder-1.0",
+  "reasoning_effort": "max",
+  "max_job_seconds": 900,
+  "phase": "TERMINAL",
+  "remote_status": "completed",
+  "finished": true,
+  "incomplete": false,
+  "usage_status": "settled",
+  "recorded_guard_cost_usd": "0.447812",
+  "request_count": 15,
+  "cancel_requested": false,
+  "cancellation_confirmed": false,
+  "error_category": null,
+  "input_tokens": 1038,
+  "output_tokens": 22183,
+  "visible_word_count": 824,
+  "model_verdict": "VALID",
+  "mathematical_scope": "Public-math independent AI audit only; no implementation verification, Lean formalization or novelty certification.",
+  "submission_count": 1,
+  "cli_exec_session": 70132,
+  "providers_local_snapshot": {
+    "meta": {
+      "cap_usd": "115",
+      "committed_usd": "45.223420",
+      "available_usd": "69.776580",
+      "over_cap": false,
+      "external_hold_usd": "25",
+      "pending_count": 5,
+      "settled_count": 27
+    },
+    "claude": {
+      "cap_usd": "40",
+      "committed_usd": "10.19390",
+      "available_usd": "29.80610",
+      "over_cap": false,
+      "external_hold_usd": "1",
+      "pending_count": 0,
+      "settled_count": 7
+    }
+  },
+  "billing_scope": "Local cooperating-client accounting only; not account-wide provider invoices.",
+  "prompt_sha256": "1954b81a2b29c8b16471537dbc277b32fe41972ffb74c82925712e14f0001e94",
+  "visible_response_sha256": "2b4f4e5536b3afc20bb9e7542c57a44bead60cc41c4ff05a2aa2578d75676f9a"
+}

@@ -16,6 +16,10 @@ def main():
         'continuation.test_low_cost_two',
         'continuation.test_low_cost_profiles',
         'continuation.test_c2_truncated_profile',
+        'continuation.test_read_once_nand',
+        'continuation.test_rectangle_recovery',
+        'continuation.test_repeated_z_nand',
+        'continuation.test_sparse_nand_reconstruction',
     ]))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     return 0 if result.wasSuccessful() else 1

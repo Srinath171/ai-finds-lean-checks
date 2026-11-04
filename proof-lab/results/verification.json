@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T19:11:57.115507+00:00",
+  "checked_utc": "2026-11-04T19:24:25.677235+00:00",
   "python_tests_passed": 353,
   "test_seconds": 21.453,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 28,
+  "formal_source_count": 29,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -200,9 +200,16 @@
       "sha256_lf": "dffa0a1c8daebab6cd2eefdb6fd8486e7860d35bcfd9381d7ddc5094ffc95385",
       "compiled": true,
       "verification_log": "frontier/triangular-dimension-verification.txt"
+    },
+    {
+      "path": "frontier/GradedDimension.lean",
+      "sha256": "eb57c500043614ece29ef79e169c8171dae02be258fb71c73414062a9bc6ea0b",
+      "sha256_lf": "21c3f69c7b13bd0ab5cf628c630be4308e4115463c210073318469d4fddc3a41",
+      "compiled": true,
+      "verification_log": "frontier/graded-dimension-verification.txt"
     }
   ],
-  "scope": "Latest full Python-only replay: 353 tests passed in 21.453 seconds after operation-accounting fixes. Prior 324-test, 334-test, and explicitly pre-fix 350-test runs are retained in history. All 28 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1-module postchecks. No single full 28-source replay is claimed. No API calls during verification.",
+  "scope": "Latest full Python-only replay remains 353 tests passed in 21.453 seconds after operation-accounting fixes; no Python source changed for the GradedDimension formal-only addition. Prior 324-test, 334-test, and explicitly pre-fix 350-test runs remain historical. All 29 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1+1-module postchecks. No single full 29-source replay is claimed. No API calls during verification.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -257,6 +264,20 @@
         "propext"
       ],
       "scope": "TriangularDimension independently compiled after the earlier 23-source full replay and subsequent two-module, CoordinateChange, and IsotropicDimension postchecks. Two standard-axiom theorem outputs; not a combined 28-source replay."
+    },
+    {
+      "paths": [
+        "frontier/GradedDimension.lean"
+      ],
+      "exit_code": 0,
+      "log": "frontier/graded-dimension-verification.txt",
+      "printed_axiom_checks": 3,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "GradedDimension independently compiled as a formal-only addition after the earlier 23-source full replay and separate two-module, CoordinateChange, IsotropicDimension, and TriangularDimension postchecks. Three standard-axiom theorem outputs; Python remains the existing 353-test replay. Not a combined 29-source replay."
     }
   ],
   "full_suite_python_tests_passed": 312,

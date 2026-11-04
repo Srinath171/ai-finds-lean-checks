@@ -341,10 +341,10 @@ would also not establish the security of deployed cryptography.
 ## Verification coverage
 
 The latest full Python replay passed **353 tests** in **21.453 seconds**.
-Independent Lean replay coverage totals **28 research modules**: the original
+Independent Lean replay coverage totals **29 research modules**: the original
 23-module run, the two-module FiniteDimension/DiagonalWidth check, and separate
-CoordinateChange, IsotropicDimension and TriangularDimension replays. This is
-cumulative coverage, not one combined28-module replay. Exact hashes and log
+CoordinateChange, IsotropicDimension, TriangularDimension and GradedDimension replays. This is
+cumulative coverage, not one combined 29-module replay. Exact hashes and log
 provenance are recorded in [verification.json](results/verification.json).
 
 Earlier Windows budget concurrency checks also passed 50 threaded stress
@@ -440,3 +440,9 @@ These arguments are independently AI-reviewed, **not fully Lean-formalized or hu
 The [bounded geometry checker](frontier/NORMAL_CROSSING_CHECKER.md) and [actual moment pipeline](frontier/NORMAL_CROSSING_MOMENTS.md) validate finite supplied-matrix certificates. The full suite includes the audited refusal-accounting fixes and scoped moment bit metric. [Demo evidence](frontier/results/normal-crossing-moments-demo.json) is computational evidence, not a universal proof or formal refinement.
 
 The new complete-proof Muse Wonder MAX audit returned visible confirmation at recorded cost $0.218024, followed by a regular Claude subscription critique. [Model outputs](frontier/results/normal-crossing-audit.json) remain critiques rather than certificates. Current limits, exact local commitments, account-billing uncertainty and the unresolved complexity-class blockers are recorded in [PROGRESS.md](PROGRESS.md).
+
+## Final verification map
+
+[GradedDimension.lean](frontier/GradedDimension.lean) adds an actual grade-wise inverse and dimension bound, removing sorting from the conditional matrix step. Its independent replay and source audit passed with standard axioms only. The full mathematical application is still outside Lean; [the dependency and trust map](frontier/FORMALIZATION_GAPS.md) states exactly which links remain.
+
+[The determinant-three example](frontier/DETERMINANT_DEMO.md) records six derivative vectors with exact matrix determinant 1, independently checked by Leibniz expansion and rational elimination. Its complete initial quadratic was also verified. This is a finite illustration of the separate general argument.

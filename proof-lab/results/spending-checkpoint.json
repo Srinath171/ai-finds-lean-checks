@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T19:13:05.389349+00:00",
+  "checked_utc": "2026-11-04T19:32:05.620944+00:00",
   "scope": "One atomic local ledger snapshot for cooperating research API callers, not account-wide invoices. External holds include coding/unreceipted use and are reserves, not charges.",
   "providers": {
     "meta": {
@@ -60,5 +60,6 @@
     "usage_status": "settled",
     "visible_answer_received": true,
     "regular_claude_critique": "completed"
-  }
+  },
+  "new_meta_or_claude_api_calls_in_final_verification_phase": 0
 }

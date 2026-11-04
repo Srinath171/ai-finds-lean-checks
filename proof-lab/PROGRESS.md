@@ -1,6 +1,6 @@
 # Research checkpoint
 
-The original P versus NP target remains unresolved. The latest offline replay passes **353 Python tests in 21.453 seconds**, with no skips. **28 Lean research modules** have compiled across the original 23-source replay and independent postchecks of 2+1+1+1 modules; no single combined 28-module run is claimed. [Verification records](results/verification.json) contain exact source hashes and log provenance. Verification made no paid API calls.
+The original P versus NP target remains unresolved. The latest offline replay passes **353 Python tests in 21.453 seconds**, with no skips. **29 Lean research modules** have compiled across the original 23-source replay and independent postchecks of 2+1+1+1+1 modules; no single combined 29-module run is claimed. [Verification records](results/verification.json) contain exact source hashes and log provenance. Verification made no paid API calls.
 
 ## Complete restricted mathematical arguments
 
@@ -37,3 +37,9 @@ The new complete-proof Wonder MAX audit finished with visible output at recorded
 No paid job or automatic paid loop is active. No setup or approval input is pending. The original deadline remains **2026-11-04 19:42:17 UTC**. Deliberate access and changes stay within this project and the specifically authorized tools/accounts; unrelated root application changes are outside the research commit.
 
 For the original P versus NP objective, no general short-certificate guarantee, eligible-class worst-case SAT saving, or unrestricted Partial-MCSP-to-total-MCSP reduction has been established. Completing formal verification of the new restricted arguments is a separate engineering task and would not itself resolve that complexity-class gap.
+
+## Final verification map
+
+[GradedDimension.lean](frontier/GradedDimension.lean) adds an actual grade-wise inverse and dimension bound, removing sorting from the conditional matrix step. Its independent replay and source audit passed with standard axioms only. The full mathematical application is still outside Lean; [the dependency and trust map](frontier/FORMALIZATION_GAPS.md) states exactly which links remain.
+
+[The determinant-three example](frontier/DETERMINANT_DEMO.md) records six derivative vectors with exact matrix determinant 1, independently checked by Leibniz expansion and rational elimination. Its complete initial quadratic was also verified. This is a finite illustration of the separate general argument.

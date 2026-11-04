@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T19:13:05.389349+00:00",
+  "checked_utc": "2026-11-04T19:32:05.620944+00:00",
   "status": "P_VS_NP_NOT_SOLVED",
   "original_deadline_utc": "2026-11-04T19:42:17Z",
   "phases": [
@@ -82,7 +82,7 @@
     "claim_status": "UNVERIFIED"
   },
   "active_api_requests": 0,
-  "current_activity": "New restricted all-m proof and determinant application independently AI-reviewed; bounded geometry/moment code and audit fixes verified. No paid job or repetitive loop active.",
+  "current_activity": "Mathematical and source verification complete; final checkpoint integrity/push only before the authorized deadline. No controlled paid request or background research loop is active.",
   "scope": "Snapshot only; live response state is ignored by Git. No generated output is executed or accepted as a proof.",
   "background_optimal_support": {
     "directory": "frontier/background-meta/optimal-support",
@@ -178,6 +178,12 @@
         "frontier/normal_crossing_moments.py"
       ],
       "scope": "Geometry m1..6; actual full expansion and every A/B/AB moment entry m1..3. Dense fixture2002 terms444301 aggregateoperations. No universal program proof or Lean refinement."
+    },
+    {
+      "status": "LEAN_VERIFIED_CONDITIONAL_MATRIX_BRIDGE",
+      "name": "Bounded-grade product dimension without sorting",
+      "source": "frontier/GradedDimension.lean",
+      "scope": "Actual grade-wise iteration supplies a right inverse of C=AB under bounded grades, graded-upper/equal-offdiagonal zeros and nonzero diagonal. Gives N<=W without sorting, assumed rank or assumed nilpotence. Full orbit/derivative application remains unformalized."
     }
   ],
   "active_unverified_formal_work": [],
@@ -250,8 +256,30 @@
     "python_tests_passed": 353,
     "python_seconds": 21.453,
     "python_log": "frontier/python-normal-crossing-final-verification.txt",
-    "compiled_lean_modules": 28,
-    "lean_scope": "Cumulative23+2+1+1+1, no single combined28-source replay.",
+    "compiled_lean_modules": 29,
+    "lean_scope": "Cumulative23+2+1+1+1+1, no combined29-source replay; Python unchanged353/21.453s.",
     "post_audit_accounting_regressions": "Geometry final-failure cost and moment precharge fixed; exact cap73/cap143 refusals and scoped bit metric independently rechecked."
+  },
+  "determinant3_demo": {
+    "status": "EXACT_FINITE_CHECK_NOT_UNIVERSAL_PROOF",
+    "data": "frontier/results/determinant3-derivative-demo.json",
+    "documentation": "frontier/DETERMINANT_DEMO.md",
+    "vectors": 6,
+    "coefficient_matrix_determinant": 1,
+    "independent_elimination_rank": 6,
+    "initial_quadratic_coefficients_compared": 45,
+    "nonzero_initial_quadratic_terms": 18,
+    "documented_reproducer_executed": true
+  },
+  "formalization_map": "frontier/FORMALIZATION_GAPS.md",
+  "run_state": "FINAL_CHECKPOINT_NO_BACKGROUND_WORK",
+  "final_verification": {
+    "graded_source_audit": "passed",
+    "documentation_consistency_audit": "passed",
+    "project_local_document_links_checked": 34,
+    "determinant_demo_reproducer": "passed; original six permutations and signed exponent vectors reconstructed",
+    "graded_iteration_boundary_example": "exact unsorted-grade example verified; M steps fail and M+1 steps succeed",
+    "additional_paid_calls": 0,
+    "stop_deadline_utc": "2026-11-04T19:42:00Z"
   }
 }

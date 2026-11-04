@@ -1,6 +1,7 @@
 {
-  "python_tests_passed": 149,
-  "test_seconds": 14.234,
+  "checked_utc": "2026-11-04T13:14:30.616853+00:00",
+  "python_tests_passed": 207,
+  "test_seconds": 18.531,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
   "formal_sources": [
     {
@@ -32,8 +33,38 @@
       "path": "HardFunction.lean",
       "sha256": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
       "compiled": true
+    },
+    {
+      "path": "frontier/LexCounterexample.lean",
+      "sha256": "7d7b3be09fe782dfa1cdf04046ecb8f2f95c781590bc30e1faf5aae28670474c",
+      "compiled": true
+    },
+    {
+      "path": "frontier/AntiChecker.lean",
+      "sha256": "5b82d7bf7b84b47dc712a0cabbc9a242c49f068e699a68af226bee5641826d09",
+      "compiled": true
+    },
+    {
+      "path": "frontier/AntiCheckerRepair.lean",
+      "sha256": "e330d9b5d5bce5970b14353c73353c413f106f74a3f2612095a085c23eadbd01",
+      "compiled": true
+    },
+    {
+      "path": "frontier/ExplicitSchedule.lean",
+      "sha256": "005bb2bf8f3f46940a1c4df0bf654f12e62b544b0cec4f09338304cd56345d5e",
+      "compiled": true
+    },
+    {
+      "path": "frontier/SampleInterpolation.lean",
+      "sha256": "c60d4a86dd88bf2300caadb864fcc8930967fccf0a526c3221573860908c5f61",
+      "compiled": true
+    },
+    {
+      "path": "frontier/ParityTeaching.lean",
+      "sha256": "9fca9b8d13eba52646c6d0cbb151714308251d608474218c2491feabded41d15",
+      "compiled": true
     }
   ],
   "api_calls_during_verification": 0,
-  "scope": "Known finite/combinatorial results, not a P vs NP solution."
+  "scope": "Offline verification command only. All twelve included research sources compile; model proposals remain independently unverified."
 }

@@ -1,0 +1,243 @@
+{
+  "format": "antichecker-v1",
+  "model": {
+    "gate": "NAND (fan-in 2, ordered pairs, repetition allowed)",
+    "assumptions": [
+      "inputs are the variables x0..x(n-1) only",
+      "no free constants: 0 and 1 are not available unless built by gates",
+      "no free complemented inputs: NOT xi is not available unless built",
+      "only gate is binary NAND; fan-in exactly two; ordered pairs; repetition allowed (NAND(v,v) = NOT v)",
+      "unlimited fanout: computed signals may be reused by any later gates (DAG sharing)",
+      "output may be any input or computed signal; size = number of NAND gates",
+      "truth tables are bit masks over assignments a in [0, 2**n), bit i of a = value of xi"
+    ]
+  },
+  "max_descriptions": 100000,
+  "scope": "Exact finite results for (2,2), (2,4), (3,3) only. A finite 4>3 outcome does not prove an omega(s) asymptotic lower bound, and nothing here proves or implies anything about P vs NP.",
+  "conjecture": "For lex-first missing T at (n,s), some distinguishing assignment set A with |A| <= s hits every realised truth table.",
+  "cases": [
+    {
+      "n": 2,
+      "s": 2,
+      "description_count_exact": 158,
+      "num_distinct_reachable": 9,
+      "reachable_masks_lex_order": [
+        8,
+        12,
+        10,
+        5,
+        13,
+        3,
+        11,
+        7,
+        15
+      ],
+      "target_mask": 0,
+      "target_truth_vector": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lex_order": "assignment 0 first: compare (b0, b1, ..., b_{2^n - 1})",
+      "minimum_distinguishing_size": 2,
+      "minimum_distinguishing_set": [
+        0,
+        3
+      ],
+      "all_minimum_distinguishing_sets": [
+        [
+          0,
+          3
+        ]
+      ],
+      "conjecture_holds_for_case": true,
+      "singleton_disagreement_witnesses": [
+        {
+          "reachable_mask": 8,
+          "forced_assignment": 3
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "s": 4,
+      "description_count_exact": 89438,
+      "num_distinct_reachable": 15,
+      "reachable_masks_lex_order": [
+        0,
+        8,
+        4,
+        12,
+        2,
+        10,
+        6,
+        14,
+        1,
+        5,
+        13,
+        3,
+        11,
+        7,
+        15
+      ],
+      "target_mask": 9,
+      "target_truth_vector": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "lex_order": "assignment 0 first: compare (b0, b1, ..., b_{2^n - 1})",
+      "minimum_distinguishing_size": 4,
+      "minimum_distinguishing_set": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "all_minimum_distinguishing_sets": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "conjecture_holds_for_case": true,
+      "singleton_disagreement_witnesses": [
+        {
+          "reachable_mask": 8,
+          "forced_assignment": 0
+        },
+        {
+          "reachable_mask": 1,
+          "forced_assignment": 3
+        },
+        {
+          "reachable_mask": 13,
+          "forced_assignment": 2
+        },
+        {
+          "reachable_mask": 11,
+          "forced_assignment": 1
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "s": 3,
+      "description_count_exact": 22359,
+      "num_distinct_reachable": 48,
+      "reachable_masks_lex_order": [
+        0,
+        192,
+        160,
+        224,
+        80,
+        48,
+        112,
+        240,
+        136,
+        200,
+        168,
+        248,
+        68,
+        12,
+        76,
+        204,
+        236,
+        252,
+        34,
+        10,
+        42,
+        170,
+        234,
+        250,
+        238,
+        85,
+        213,
+        117,
+        245,
+        93,
+        221,
+        51,
+        179,
+        115,
+        243,
+        59,
+        187,
+        119,
+        15,
+        143,
+        79,
+        207,
+        47,
+        175,
+        95,
+        63,
+        127,
+        255
+      ],
+      "target_mask": 128,
+      "target_truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "lex_order": "assignment 0 first: compare (b0, b1, ..., b_{2^n - 1})",
+      "minimum_distinguishing_size": 4,
+      "minimum_distinguishing_set": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "all_minimum_distinguishing_sets": [
+        [
+          3,
+          5,
+          6,
+          7
+        ]
+      ],
+      "conjecture_holds_for_case": false,
+      "singleton_disagreement_witnesses": [
+        {
+          "reachable_mask": 0,
+          "forced_assignment": 7
+        },
+        {
+          "reachable_mask": 192,
+          "forced_assignment": 6
+        },
+        {
+          "reachable_mask": 160,
+          "forced_assignment": 5
+        },
+        {
+          "reachable_mask": 136,
+          "forced_assignment": 3
+        }
+      ]
+    }
+  ],
+  "conjecture_holds_for_all_cases": false,
+  "counterexample_case": {
+    "n": 3,
+    "s": 3,
+    "target_mask": 128,
+    "minimum_distinguishing_size": 4,
+    "minimum_distinguishing_set": [
+      3,
+      5,
+      6,
+      7
+    ]
+  }
+}

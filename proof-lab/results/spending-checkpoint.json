@@ -1,0 +1,31 @@
+{
+  "checked_utc": "2026-11-04T13:09:13.301314+00:00",
+  "scope": "Local cooperating API callers only, not account-wide billing. External holds reserve coding/unreceipted use; holds are not invoices.",
+  "providers": {
+    "meta": {
+      "cap_usd": "125",
+      "committed_usd": "25.804684",
+      "available_usd": "99.195316",
+      "over_cap": false,
+      "external_hold_usd": "25",
+      "pending_count": 2,
+      "settled_count": 2,
+      "recorded_settled_usd": "0.094908"
+    },
+    "claude": {
+      "cap_usd": "40",
+      "committed_usd": "5.17783",
+      "available_usd": "34.82217",
+      "over_cap": false,
+      "external_hold_usd": "1",
+      "pending_count": 0,
+      "settled_count": 4,
+      "recorded_settled_usd": "4.17783"
+    }
+  },
+  "meta_coding_completed_receipt_estimate_usd": "15.1559384",
+  "meta_billing_status": "UI remains Loading billing; no fresh account balance verified.",
+  "claude_account_wide_billing": "not verified",
+  "claude_code": "regular subscription public-math audits; no API key in child environment",
+  "api_campaign": "stopped after two errors; uncertain Meta reservations retained"
+}

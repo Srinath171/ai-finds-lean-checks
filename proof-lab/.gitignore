@@ -16,3 +16,5 @@ generated_images/
 .env.*
 !.env.example
 .verification-tmp/
+frontier/campaign-results/
+frontier/campaign-followup/

@@ -1,0 +1,12 @@
+{
+  "status": "UNVERIFIED_MODEL_AUDIT",
+  "prompt": "Public mathematics only. Audit this narrow elementary claim, return a concise final answer under600words, not an attempt to solve PvsNP. For n>=2, class C={xi,NAND(xi,xj)} (includingNOTxi), parity P. Minimum sample-set distinguishing P from all C is2 if n even,3 if n odd. Upper even samples0^n,1^n; upperodd samples0^n,onesexceptbit0,onesexceptbit1. Lower1 xi/NOTxi complementary. Lower2odd: samplesu,v paritylabelsp,q; rejectingxi andNOTxi excludes columns(p,q),(!p,!q). Ifp=q rowscomplement, contradictoryoddparities; ifp!=q rowsidentical, contradictorylabels. Independently verify every step, identify any flaw. This generalizes a finite antichecker obstruction only; no asymptotic complexity separation. Do not claim novelty or solve PvsNP. If true provide exact theorem and concise proof; if false counterexample.",
+  "text": "**Verdict:** True; no flaw found.\n\n**Theorem.** For $n\\ge2$, let $P(x)=x_0\\oplus\\cdots\\oplus x_{n-1}$ and $\\mathcal C=\\{x_i\\}\\cup\\{\\neg(x_i\\land x_j):i,j\\}$ (so $\\neg x_i\\in\\mathcal C$). Let $m(n)$ be the least $|S|$, $S\\subseteq\\{0,1\\}^n$, such that every $f\\in\\mathcal C$ disagrees with $P$ somewhere on $S$. Then $m(n)=2$ for $n$ even and $m(n)=3$ for $n$ odd.\n\n**Proof.** One point never suffices: if $S=\\{u\\}$ and $p=P(u)$, then for any $i$, either $x_i(u)=p$ or $\\neg x_i(u)=p$; that member of $\\mathcal C$ is not distinguished.\n\nLet $n$ be odd and $S=\\{u,v\\}$, with $p=P(u)$, $q=P(v)$. Distinguishing both $x_i$ and $\\neg x_i$ requires $(x_i(u),x_i(v))\\notin\\{(p,q),(\\neg p,\\neg q)\\}$ for every $i$. If $p=q$, the remaining columns are $(0,1),(1,0)$, so $v=\\bar u$; but for odd $n$, $P(\\bar u)=\\neg P(u)$, contradicting $p=q$. If $p\\ne q$, the remaining columns are $(0,0),(1,1)$, so $u=v$, contradicting $p\\ne q$. Thus $m(n)\\ge3$.\n\nIf $n$ is even, $S=\\{0^n,1^n\\}$ works: $P=0$ at both points; every NAND, including $\\neg x_i$, equals $1$ at $0^n$, and every $x_i$ equals $1$ at $1^n$. Hence $m(n)=2$.\n\nIf $n$ is odd, take $0^n$, all-ones except bit $0$ is $0$, and all-ones except bit $1$ is $0$. Each has $P=0$, since $n-1$ is even. Every NAND equals $1$ at $0^n$; every $x_i$ equals $1$ at one of the other two points. Hence $m(n)\\le3$, so $m(n)=3$. ∎\n\nThis is only a finite distinguishing-set statement; it implies no asymptotic complexity separation.",
+  "usage": {
+    "input_tokens": 207,
+    "output_tokens": 4662,
+    "total_tokens": 4869,
+    "reasoning_tokens": 4113
+  },
+  "model": "muse-wonder-1.0"
+}

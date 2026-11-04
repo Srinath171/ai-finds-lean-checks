@@ -123,4 +123,17 @@ the expanded suite. A final full-suite result is pending at this update.
   runtime lower bound or polynomial-time SAT algorithm. The formally verified
   search still enumerates `2 ^ n` assignments.
 
-Final checkpoint verification: **149 Python tests passed** and all six research Lean sources compiled. See `results/verification.json` and `results/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.
+Final checkpoint verification: **207 Python tests passed** and all twelve research Lean sources compiled. See `results/verification.json` and `frontier/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.
+
+## Continued research audit
+
+The frontier mathematical review rejects the current routes as a solution and corrects the sample-only certificate proposal using an explicit NAND interpolation construction. Independent reviewers checked the two finite conjecture refutations and the general exponential counting inequality. The completed formal results have standard axiom dependencies only. The general SampleInterpolation theorem and finite-budget obstruction, and the all-width exact ParityTeaching minima, are now completed and replayed with independent well-formed circuit semantics. Their bounds and scopes are explicit; neither solves the complexity-class problem.
+
+The current offline replay passed 207 Python tests and twelve included Lean research sources. Campaign transport/limits/error metadata tests use mocks only. The live campaign stopped after two errors, retaining uncertain Meta reservations. A tiny connectivity request and a narrow MAX audit subsequently returned visible output. This does not diagnose the original errors as a particular HTTP status.
+
+The Claude API client explicitly rejects caps above $40 and reserves the maximum expected charge before sending a request. The existing ledger was checked with the exact authorized caps. Settled Claude API records total $4.17783; the additional $1 hold is a reserve, not another invoice. No fresh account-wide billing figure was verified. Regular Claude public-math audits disable tools and omit API-key environment variables; no existing source file was sent to Anthropic.
+
+The explicit interpolation implementation is independently checked against Boolean evaluation and DNF semantics. It validates wiring in cost checks and rejects excessive aggregate verification work before simulation. Resource refusal is not a mathematical counterexample. Its ten focused tests passed; its full Lean circuit theorem is accepted with the separate looser bound 3+(3n+7)m, and the no-distinguisher corollary is also checked.
+
+
+Current follow-up: a narrower public-math campaign was launched under the ORIGINAL deadline (2026-11-04 19:42 UTC), with at most ten additional rounds after the first two failures. It uses the same API guard and regular Claude subscription critique, with no Fable calls by default. Live status and responses are in ignored `frontier/campaign-followup/`; put a `STOP` file there to stop between requests. This is proposal exploration only; results are not automatically accepted or executed. See `results/spending-checkpoint.json` for the last checked accounting scope.

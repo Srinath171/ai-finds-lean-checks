@@ -1,0 +1,439 @@
+{
+  "claim_tested": "AC2: every f missing at size s has <=s testpoints distinguishing it from size<=floor(s/2) circuits",
+  "n": 3,
+  "s": 2,
+  "target_mask": 150,
+  "target": "three-input parity",
+  "missing_at_size_s": true,
+  "completed_bfs_layers": 2,
+  "reachable_size_s": [
+    15,
+    51,
+    63,
+    85,
+    95,
+    119,
+    136,
+    143,
+    160,
+    170,
+    175,
+    179,
+    187,
+    192,
+    204,
+    207,
+    213,
+    221,
+    240,
+    243,
+    245,
+    255
+  ],
+  "reachable_size_floor_s_over_2": [
+    15,
+    51,
+    63,
+    85,
+    95,
+    119,
+    170,
+    204,
+    240
+  ],
+  "minimum_distinguishing_size": 3,
+  "all_minimum_sets": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      0,
+      1,
+      4
+    ],
+    [
+      0,
+      1,
+      5
+    ],
+    [
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      2,
+      4
+    ],
+    [
+      0,
+      2,
+      6
+    ],
+    [
+      0,
+      3,
+      5
+    ],
+    [
+      0,
+      3,
+      6
+    ],
+    [
+      0,
+      4,
+      5
+    ],
+    [
+      0,
+      4,
+      6
+    ],
+    [
+      0,
+      5,
+      6
+    ],
+    [
+      1,
+      2,
+      7
+    ],
+    [
+      1,
+      3,
+      5
+    ],
+    [
+      1,
+      3,
+      7
+    ],
+    [
+      1,
+      4,
+      7
+    ],
+    [
+      1,
+      5,
+      7
+    ],
+    [
+      2,
+      3,
+      6
+    ],
+    [
+      2,
+      3,
+      7
+    ],
+    [
+      2,
+      4,
+      7
+    ],
+    [
+      2,
+      6,
+      7
+    ],
+    [
+      3,
+      5,
+      6
+    ],
+    [
+      3,
+      5,
+      7
+    ],
+    [
+      3,
+      6,
+      7
+    ],
+    [
+      4,
+      5,
+      6
+    ],
+    [
+      4,
+      5,
+      7
+    ],
+    [
+      4,
+      6,
+      7
+    ],
+    [
+      5,
+      6,
+      7
+    ]
+  ],
+  "all_size_at_most_s_subsets_refuted": [
+    {
+      "points": [],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        0
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        1
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        2
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        3
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        4
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        5
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        6
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        7
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        0,
+        1
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        0,
+        2
+      ],
+      "matching_small_function": 204
+    },
+    {
+      "points": [
+        0,
+        3
+      ],
+      "matching_small_function": 240
+    },
+    {
+      "points": [
+        0,
+        4
+      ],
+      "matching_small_function": 240
+    },
+    {
+      "points": [
+        0,
+        5
+      ],
+      "matching_small_function": 204
+    },
+    {
+      "points": [
+        0,
+        6
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        0,
+        7
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        1,
+        2
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        1,
+        3
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        1,
+        4
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        1,
+        5
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        1,
+        6
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        1,
+        7
+      ],
+      "matching_small_function": 170
+    },
+    {
+      "points": [
+        2,
+        3
+      ],
+      "matching_small_function": 85
+    },
+    {
+      "points": [
+        2,
+        4
+      ],
+      "matching_small_function": 63
+    },
+    {
+      "points": [
+        2,
+        5
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        2,
+        6
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        2,
+        7
+      ],
+      "matching_small_function": 204
+    },
+    {
+      "points": [
+        3,
+        4
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        3,
+        5
+      ],
+      "matching_small_function": 85
+    },
+    {
+      "points": [
+        3,
+        6
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        3,
+        7
+      ],
+      "matching_small_function": 240
+    },
+    {
+      "points": [
+        4,
+        5
+      ],
+      "matching_small_function": 85
+    },
+    {
+      "points": [
+        4,
+        6
+      ],
+      "matching_small_function": 51
+    },
+    {
+      "points": [
+        4,
+        7
+      ],
+      "matching_small_function": 240
+    },
+    {
+      "points": [
+        5,
+        6
+      ],
+      "matching_small_function": 15
+    },
+    {
+      "points": [
+        5,
+        7
+      ],
+      "matching_small_function": 204
+    },
+    {
+      "points": [
+        6,
+        7
+      ],
+      "matching_small_function": 170
+    }
+  ],
+  "counterexample": true,
+  "scope": "Exact finite counterexample, no asymptotic or PvsNP conclusion."
+}

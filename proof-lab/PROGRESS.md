@@ -1,36 +1,21 @@
 # Research checkpoint
 
-P vs NP remains unsolved in this project. No polynomial-time SAT algorithm, explicit hard NP family, or separation is claimed.
+P vs NP remains unsolved. No polynomial-time SAT algorithm, explicit hard NP family, or separation has been established.
 
-## Verified results
+The latest completed offline verification passed **207 Python tests and twelve research Lean sources**, pinned to Lean 4.35.0. Exact source hashes are saved in results/verification.json. The original catalog, SAT-search, circuit counting, coverage, mask semantics, and conditional hard-function results remain accepted.
 
-- All 30 saved model benchmark proof bodies pass offline replay through the hardened Lean checker.
-- SATSearch.lean proves exhaustive finite Boolean-search soundness, completeness, and enumeration size.
-- CircuitBounds.lean and CircuitCoverage.lean prove two-input XOR needs exactly four NAND gates under the stated model, including coverage of all well-formed circuits.
-- CircuitCounting.lean proves the general exact syntactic circuit count and an explicit upper bound, with a finite pigeonhole corollary.
-- CircuitSemantics.lean proves pointwise Boolean correctness and the finite truth-table mask correspondence.
-- HardFunction.lean combines these into a conditional nonconstructive hard-Boolean-function existence theorem.
-- Independent reviewers replayed the formal sources and inspected their exact quantifiers and standard axiom dependencies.
+New accepted results:
 
-## Computational evidence
+- A formal counterexample to unrestricted first-missing-is-hardest at threshold zero.
+- Two formally refuted antichecker conjectures: AND3 at n=3,s=3 requires at least four points against size-three circuits; parity at n=3,s=2 requires exactly three against size-one circuits.
+- An all-n counting inequality for n>=16 at the fixed exponential threshold 2^(floor(n/4)), with a hard-function existence corollary in independent Boolean circuit semantics.
 
-- Spark MAX and Wonder MAX each proved 15/15 fixed elementary catalog exercises.
-- The independent SAT solvers agree on 24 saved cases.
-- Z3 synthesis and exhaustive BFS agree on every one of the 16 two-input functions.
-- Three-input parity has an eight-gate witness; Z3 reports budgets zero through seven UNSAT. This is bounded solver evidence, separate from the Lean proofs.
+The key missing step remains a uniform polynomial-time NP verifier for a designated hard family. The computable lex-first construction has a huge enumeration upper bound; that does not establish NP membership or rule it out. The review in frontier/PROOF_ATTEMPT_REVIEW.md identifies further quantified and transfer gaps.
 
-## Remaining mathematical blocker
+The explicit sample-interpolation builder and ten focused tests pass. The sharp mathematical NAND bound is 3+n+(2n+1)m. Lean now proves a complete circuit interpolator and the no-sample-distinguisher consequence with the looser bound 3+(3n+7)m. The general parity minima (two for even n>=2; three for odd n>=3) are also verified, including equivalence to all independently well-formed zero/one-gate circuits.
 
-The counting theorem produces an unnamed hard Boolean function. It does not give a single explicit language in NP with superpolynomial circuit complexity. Such a result would also need careful uniformity and asymptotic statements; finite experiments cannot supply them. NP not contained in P/poly would imply P != NP, but that stronger nonuniform separation is not proved here.
+The first bounded API campaign stopped safely after two provider errors. Tiny connectivity and narrow MAX math requests succeeded afterward. A narrower follow-up campaign is active at this checkpoint, with the original 19:42 UTC deadline and at most ten further rounds, using Wonder MAX and regular Claude critique. Its proposals remain UNVERIFIED. Live status is in ignored frontier/campaign-followup/status.json; STOP there halts between calls. No solution or future progress is promised.
 
-The results reproduce known elementary counting and circuit facts. They are reusable, checked building blocks, not a new solution to P vs NP.
+Claude API ceiling: $40. Latest checked local ledger settled $4.17783, with an additional $1 external-use hold, leaving $34.82217 available. This is cooperating-call accounting, not account-wide Anthropic billing. Meta ceiling: $125; conservative external holds cover coding/uncertain usage. Meta billing page currently stays on Loading billing, so no fresh provider balance is verified. Secrets and private ledger/raw logs remain ignored.
 
-## Reproduction
-
-Run `./verify.ps1` from this directory. It runs project tests and compiles all six formal research sources without API calls. Temporary verification files stay within the project.
-
-The local dashboard is `http://127.0.0.1:8501`. API secrets remain in the ignored parent `.env`; logs and the private spending ledger are ignored by Git.
-
-Meta's local ceiling is $125 and Claude API's is $40. Reservations govern cooperating project callers only. External holds are reserves rather than actual invoices; provider billing can be delayed. See saved token estimates for completed metered runs.
-
-Final verification: 149 tests passed; all six research Lean sources compiled. No paid model request remains running from this checkpoint.
+All access and edits remain limited to project files and the specific tools/accounts authorized for this task. Unrelated existing root app changes remain outside the research commit.

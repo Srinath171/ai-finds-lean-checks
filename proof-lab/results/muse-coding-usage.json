@@ -1,0 +1,197 @@
+{
+  "checked_utc": "2026-11-04T13:09:13.255794+00:00",
+  "status": "ESTIMATES_NOT_PROVIDER_INVOICE",
+  "rates_per_million_usd": {
+    "input": "4",
+    "cached_input": ".20",
+    "output": "20"
+  },
+  "source": "https://dev.meta.ai/docs/pricing-rate-limits",
+  "completed_receipt_runs": [
+    {
+      "receipt": "muse-antichecker.jsonl",
+      "receipt_sha256": "3310a2ee11839a458fd81cd99c1922d63dd3b64908e4e7d18a57e2c25ed9f54f",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 1620368,
+          "cached_tokens": 1503272,
+          "output_tokens": 18695,
+          "reasoning_tokens": 6905,
+          "calls": 19
+        }
+      ],
+      "estimated_usd": "1.1429384"
+    },
+    {
+      "receipt": "muse-circuit.jsonl",
+      "receipt_sha256": "773dd061b059c92de25f034ec07c8b874bb0cc187c02340391ff512b94d41226",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 1245504,
+          "cached_tokens": 1166456,
+          "output_tokens": 34421,
+          "reasoning_tokens": 16989,
+          "calls": 23
+        }
+      ],
+      "estimated_usd": "1.2379032"
+    },
+    {
+      "receipt": "muse-counting.jsonl",
+      "receipt_sha256": "86d1271423772077664cec899805c5dc0b071859bf2c63e66933009fc57f1e10",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 1882718,
+          "cached_tokens": 1642268,
+          "output_tokens": 74992,
+          "reasoning_tokens": 58205,
+          "calls": 21
+        }
+      ],
+      "estimated_usd": "2.7900936"
+    },
+    {
+      "receipt": "muse-coverage.jsonl",
+      "receipt_sha256": "fe221a362fcf6228b2de72f0ec8498746d98d4450b7638fb786d9eb55287e89e",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 972223,
+          "cached_tokens": 909596,
+          "output_tokens": 23138,
+          "reasoning_tokens": 13157,
+          "calls": 20
+        }
+      ],
+      "estimated_usd": "0.8951872"
+    },
+    {
+      "receipt": "muse-diagonal.jsonl",
+      "receipt_sha256": "6b7657024739291bc55ab6e75675e309c6460ccc31242ec7bd3a6a9970482004",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 1543453,
+          "cached_tokens": 1437352,
+          "output_tokens": 33241,
+          "reasoning_tokens": 16585,
+          "calls": 19
+        }
+      ],
+      "estimated_usd": "1.3766944"
+    },
+    {
+      "receipt": "muse-hard-function.jsonl",
+      "receipt_sha256": "d3bf24e016179e3e4d9ab4d8917d7800849a18e278603d5a9756b1816249f227",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 395228,
+          "cached_tokens": 334892,
+          "output_tokens": 8487,
+          "reasoning_tokens": 5217,
+          "calls": 8
+        }
+      ],
+      "estimated_usd": "0.4780624"
+    },
+    {
+      "receipt": "muse-interpolation-formal.jsonl",
+      "receipt_sha256": "9b7720fb97a4717ef801bf2f4d9986e7b9571ff3f6c7c00a27225a7f263d2a86",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 2267181,
+          "cached_tokens": 2159048,
+          "output_tokens": 57748,
+          "reasoning_tokens": 43344,
+          "calls": 26
+        }
+      ],
+      "estimated_usd": "2.0193016"
+    },
+    {
+      "receipt": "muse-interpolation.jsonl",
+      "receipt_sha256": "84102aa2f8dc2eda3af9424a79c2696ce2b4f7ff50b9592c99e61e180edbd169",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 2699455,
+          "cached_tokens": 2495980,
+          "output_tokens": 72777,
+          "reasoning_tokens": 59415,
+          "calls": 24
+        }
+      ],
+      "estimated_usd": "2.768636"
+    },
+    {
+      "receipt": "muse-lex-counterexample.jsonl",
+      "receipt_sha256": "adc25f8ed5367b38a8bb027a8618ccaa9b976e7f25708d5e65d60d62b273421d",
+      "terminal": "run.terminal.failed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 505666,
+          "cached_tokens": 445076,
+          "output_tokens": 14404,
+          "reasoning_tokens": 9770,
+          "calls": 10
+        }
+      ],
+      "estimated_usd": "0.6194552"
+    },
+    {
+      "receipt": "muse-proof-attempt.jsonl",
+      "receipt_sha256": "85ca9f49d0157e0c0b26cf24f09b4f0127576aac54a6e81bce84b3420a7a069d",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 110682,
+          "cached_tokens": 63208,
+          "output_tokens": 13924,
+          "reasoning_tokens": 6031,
+          "calls": 3
+        }
+      ],
+      "estimated_usd": "0.4810176"
+    },
+    {
+      "receipt": "muse-semantics.jsonl",
+      "receipt_sha256": "6e5c317aa88f4fdab7b69411386a92f63587ecc92a9e0d5daab08f07f1bfd52e",
+      "terminal": "run.terminal.completed",
+      "models": [
+        {
+          "model": "muse-wonder-1.0",
+          "input_tokens": 1820146,
+          "cached_tokens": 1714004,
+          "output_tokens": 28964,
+          "reasoning_tokens": 16900,
+          "calls": 26
+        }
+      ],
+      "estimated_usd": "1.3466488"
+    }
+  ],
+  "estimated_usd_sum": "15.1559384",
+  "exclusions": [
+    "unfinished coding runs",
+    "interrupted initial runs without final receipts",
+    "catalog API benchmarks",
+    "guarded API campaign requests",
+    "other account activity"
+  ],
+  "billing_ui": "Loading billing; no fresh balance verified. Dashboard spend $0.00 can be delayed and does not establish zero usage."
+}

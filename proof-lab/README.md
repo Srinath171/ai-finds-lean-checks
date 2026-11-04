@@ -338,4 +338,24 @@ Reproduction depends on the pinned toolchain, source, prompts, model version,
 and effort; hosted models may change. A worst-case complexity separation alone
 would also not establish the security of deployed cryptography.
 
-Final checkpoint verification: **149 Python tests passed** and all six research Lean sources compiled. See `results/verification.json` and `results/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.
+Final checkpoint verification: **207 Python tests passed** and all twelve research Lean sources compiled. See `results/verification.json` and `frontier/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.
+
+## Continued research: checked counterexamples and exact scope
+
+P vs NP remains unsolved. The current proof attempts and critiques are in [frontier/PROOF_ATTEMPT.md](frontier/PROOF_ATTEMPT.md) and [its mathematical review](frontier/PROOF_ATTEMPT_REVIEW.md). Model output is not accepted as a theorem.
+
+- [LexCounterexample.lean](frontier/LexCounterexample.lean) refutes unrestricted first-missing-is-hardest at threshold zero; it makes no positive-threshold claim.
+- [AntiChecker.lean](frontier/AntiChecker.lean) proves AND3 is the true first missing three-input function at size three in assignment-zero-first lexicographic order, and no three sample points distinguish it from all well-formed size-at-most-three circuits.
+- [AntiCheckerRepair.lean](frontier/AntiCheckerRepair.lean) refutes repaired AC2 at n=3,s=2: parity is missing at size two, and exactly three points are needed against circuits of size at most one. Neither finite result proves an asymptotic separation.
+- [ExplicitSchedule.lean](frontier/ExplicitSchedule.lean) proves the counting inequality for every n>=16 with s=2^(floor(n/4)), then the existence of a Boolean function outside all well-formed circuits at that threshold. The [separate selector analysis](frontier/EXPLICIT_SCHEDULE.md) describes a computable family; Lean does not formalize that selector or prove NP membership.
+- [interpolation.py](frontier/interpolation.py), [tests](tests/test_interpolation.py), and [construction note](frontier/SAMPLE_INTERPOLATION.md) implement the general sample-interpolation obstruction with bound 3+n+(2n+1)m. The full [Lean circuit interpolation theorem](frontier/SampleInterpolation.lean) proves the looser bound 3+(3n+7)m, including wiring, cost, sample agreement, and the explicit no-sample-distinguisher corollary. The sharp Python coefficient is separate.
+- Muse Wonder MAX and regular Claude independently agree with the [parity sample-count argument](frontier/muse-parity-teaching.json): two points for even n, three for odd n. The general theorem is now [Lean verified](frontier/ParityTeaching.lean), including equivalence to every independently well-formed circuit with at most one NAND gate; see [the exact scope](frontier/PARITY_TEACHING.md). It is not a lower bound against growing circuit sizes.
+
+The offline checkpoint currently records 207 passing Python tests and twelve completed research Lean files in [verification.json](results/verification.json). Run `./verify.ps1` for the current included sources. Every included source has been independently replayed; the saved report records exact hashes.
+
+The [bounded research runner](frontier/campaign.py) uses public math prompts only, existing API spending reservations, Wonder MAX, and regular Claude Code with tools disabled. It never executes model output or marks it solved. It limits a campaign to twelve rounds and seven hours, preserves deadlines/counters across restart, and honors `frontier/campaign-results/STOP` between requests. Its first live campaign stopped after two provider failures; this is not an active promise of unattended progress. The tiny connectivity test and a later narrow Wonder MAX audit succeeded. Raw live state is ignored by Git. `--fable` is opt-in; default campaigns do not call the Claude API.
+
+Claude API spending is guarded at $40; Meta at $125 for cooperating callers. The ledger preserves uncertain reservations and separate external-use holds. Recorded charges, holds, and token estimates are not account-wide invoices. Meta billing currently stays on Loading billing; its displayed dashboard spend may lag. See [completed coding receipt estimates](results/muse-coding-usage.json), which exclude unfinished or unreceipted calls. Regular Claude Code subscription list prices are not added to API spend.
+
+
+Current follow-up: a narrower public-math campaign was launched under the ORIGINAL deadline (2026-11-04 19:42 UTC), with at most ten additional rounds after the first two failures. It uses the same API guard and regular Claude subscription critique, with no Fable calls by default. Live status and responses are in ignored `frontier/campaign-followup/`; put a `STOP` file there to stop between requests. This is proposal exploration only; results are not automatically accepted or executed. See `results/spending-checkpoint.json` for the last checked accounting scope.

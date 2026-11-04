@@ -1,0 +1,8 @@
+'circuitsOfLen_zero_output_masks' depends on axioms: [propext]
+'lex_first_missing_at_zero' depends on axioms: [propext, Quot.sound]
+'constZero_witness_wellformed' depends on axioms: [propext, Quot.sound]
+'constZero_witness_eval' depends on axioms: [propext]
+'computableLE_three_zero' depends on axioms: [propext, Quot.sound]
+'not_computableLE_three_xor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'not_maximally_hard_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'lex_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

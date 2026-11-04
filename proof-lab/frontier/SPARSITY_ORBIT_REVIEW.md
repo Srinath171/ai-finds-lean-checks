@@ -1,3 +1,5 @@
+> **Historical checkpoint.** The earlier unresolved orbit and F_5 rank statements below are superseded by [Normal crossings give a monomial-sparsity bound](NORMAL_CROSSING_SPARSITY.md). That subsequent independently AI-reviewed mathematical proof derives the full restricted minimum 2^m for every m, including h_2(E) >= 16 for F_5. The complete theorem is not Lean-formalized; no human review, accepted novelty, or P-versus-NP solution is claimed. The older arguments are preserved as research history.
+
 # Independent AI review: monomial sparsity in the linear orbit of disjoint binary cubics
 
 This is a self-contained, independently AI-reviewed, not Lean-formalized mathematical argument. It is **not Lean-formalized**, and no Python experiment is a substitute for its universal quantifiers. Including the stronger argument in Section 9, it proves the exact minima for at most four blocks and a necessary condition on any smallest-block counterexample to the general conjecture. It does not prove the conjecture for arbitrary block count, general PIT, a general circuit lower bound, or P versus NP. No claim of literature novelty is made.

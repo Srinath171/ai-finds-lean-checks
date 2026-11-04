@@ -1,0 +1,69 @@
+{
+  "claim_status": "INDEPENDENT_MODEL_CRITIQUES_NOT_FORMAL_CERTIFICATES",
+  "scope": "The complete proof concerns a restricted rational GL orbit-sparsity family only. No human review, novelty, general PIT or PvsNP solution is claimed.",
+  "public_prompt": "frontier/NORMAL_CROSSING_AUDIT_PROMPT.md",
+  "muse": {
+    "prompt_sha256": "238b782516ac40c7183ea4f15c1e60841a9f645379af55029ae6e2336a09b6a8",
+    "remote_status": "completed",
+    "finished": true,
+    "incomplete": false,
+    "usage_status": "settled",
+    "cost_usd": "0.218024",
+    "usage": {
+      "input_tokens": 1031,
+      "output_tokens": 10695,
+      "total_tokens": 11726,
+      "reasoning_tokens": 9944
+    },
+    "visible_text": "## Audit verdict\n\nBoth claims are correct in the stated restricted form. No concrete gap was found.\n\n### Claim 1\n\n- With \\(z_j=p_je^{T_j}\\), \\(p_j\\ne0\\),\n  \\[\n  f(T)=\\sum_\\alpha v_\\alpha e^{\\alpha\\cdot T},\\qquad v_\\alpha\\ne0.\n  \\]\n  Since \\(p_j(e^{T_j}-1)\\) has linear part \\(p_jT_j\\), the initial form is the original initial form composed with the invertible diagonal map \\(\\operatorname{diag}(p)\\). It therefore remains \\(C\\prod_{j=1}^mL_j\\), with \\(L_j\\) linearly independent.\n\n- Each directional derivative preserves the span \\(V\\) of the exponentials because\n  \\[\n  D_i e^{\\alpha\\cdot T}=(D_i(\\alpha\\cdot T))e^{\\alpha\\cdot T}.\n  \\]\n  Moreover,\n  \\[\n  D_Sf=C\\prod_{j\\notin S}L_j+\\text{terms of degree }>m-|S|.\n  \\]\n\n- For linear independence, taking \\(|S|\\) maximal isolates the lowest possible degree \\(m-|S|\\). Derivatives with smaller \\(|S|\\) contribute only in strictly higher degrees, while distinct maximal subsets give distinct square-free monomials in the independent forms \\(L_j\\). Hence the \\(2^m\\) derivatives are independent, proving \\(2^m\\le \\dim V\\le t\\).\n\n- The finite-moment version is also correct. For \\(|S|<|T|\\), the total derivative order is \\(<m\\), so the entry vanishes. For \\(|S|=|T|\\), only the initial form contributes, giving \\(C\\) when \\(S=T\\) and \\(0\\) otherwise. Thus \\(AB\\) is block lower-triangular with diagonal blocks \\(CI\\), hence invertible, forcing \\(2^m\\le t\\).\n\n### Claim 2\n\n- Expressing the coordinate forms in the basis \\(\\{l_i,r_i\\}\\) gives an invertible matrix. A nonzero determinant permutation assigns each coordinate form to a distinct basis column. Each block contains two columns, so at most two coordinate forms are assigned to each block.\n- In block \\(i\\), their nonzero \\(U_i\\)-components determine at most two forbidden lines. One of the three lines spanned by \\(l_i,r_i,l_i+r_i\\) can therefore be chosen as \\(M_i\\). The resulting \\(R=\\bigoplus_iM_i\\) contains no coordinate form; the key point is \\(R\\cap U_i=M_i\\).\n- The annihilator \\(K=R^\\perp\\) has dimension \\(m\\). Neither a coordinate form nor either unselected factor in a block vanishes identically on \\(K\\). Since \\(\\mathbb Q\\) is infinite, a rational point \\(p\\in K\\) avoids these finitely many proper subspaces.\n- At such \\(p\\), exactly one factor from each block vanishes, the other \\(2m\\) factors and all coordinates are nonzero. Thus\n  \\[\n  P(z)=F_m(Az)\n  \\]\n  has exact order \\(m\\) at \\(p\\), with initial form a nonzero constant times the product of the \\(m\\) independent selected forms. Claim 1 gives sparsity at least \\(2^m\\).\n- For \\(A=I\\), each block expands as \\(x_i^2y_i+x_iy_i^2\\), giving exactly \\(2^m\\) monomials.\n\nTherefore, for every \\(A\\in GL_{2m}(\\mathbb Q)\\), the sparsity of \\(F_m(Az)\\) is at least \\(2^m\\), and the identity attains \\(2^m\\). This confirms only the stated result for this explicit family.",
+    "visible_text_sha256": "2eb5e3d4d8da974c23df13df8c2a049ed6b175caabc1653f645e2d958a4695e6"
+  },
+  "muse_model": "muse-wonder-1.0",
+  "muse_effort": "max",
+  "muse_job_limit_seconds": 900,
+  "claude": {
+    "model": "opus",
+    "text": "# Audit verdict: both claims hold as stated. I found no gap and no counterexample.\n\nThis is a careful manual check, not a formal verification. The conclusion applies only to the explicit family F_m and to homogeneous changes A \u2208 GL(2m, Q). The proof works over any field of characteristic 0, because it needs `exp` and an infinite field. I make no claim beyond that.\n\n## Claim 1: checked step by step\n\n**Logarithmic substitution.** Write z \u2212 p = diag(p)(T + O(T\u00b2)). Each homogeneous Taylor part G_k of P at p then contributes terms of degree k and higher. Its degree-k part is exactly G_k(diag(p)T).\n\n- So f has exact order m at 0.\n- Its initial form is H(T) = C\u00b7\u220f L_j(diag(p)T).\n- The forms L_j\u2218diag(p) are still independent because diag(p) is invertible. This uses that every p_j is nonzero.\n- v_\u03b1 \u2260 0 is not actually needed. The bound only uses dim V \u2264 t.\n\n**Dual directions.** These exist because the L_j are independent, which also forces m \u2264 n. Implicitly the D_i are dual to the transformed forms L_j\u2218diag(p), which is fine.\n\n**Lowest parts of D_S f.** By the product rule, D_i(\u220f_{j\u2208J} L_j) equals \u220f_{j\u2208J\u2216{i}} L_j if i \u2208 J, and 0 otherwise. Iterating gives D_S H = C\u00b7\u220f_{j\u2209S} L_j, which is nonzero. A homogeneous term of degree d \u2265 m+1 maps to degree d \u2212 |S| or to zero. The claim is correct.\n\n**Independence across grades.** Take the maximal k = |S| with a_S \u2260 0. Terms with smaller |S| have lowest degree m \u2212 |S| > m \u2212 k, so they do not touch degree m \u2212 k. After a linear change making the L_j coordinates, the products \u220f_{j\u2209S} L_j become distinct monomials, so they are independent. Taking the maximum (not the minimum) is the right choice, and no linearity of the initial-form map is used. The argument is correct.\n\n**Finite moment matrix.** (AB)_{S,T} = \u03a3_\u03b1 v_\u03b1 \u220f_{i\u2208S}(\u03b1\u00b7d_i) \u220f_{i\u2209T}(\u03b1\u00b7d_i) = D_S D_{T^c} f(0), with derivative order |S| + m \u2212 |T|.\n\n- If |S| < |T|, the order is below m, so the entry is 0.\n- If |S| = |T|, only H contributes. The entry is C times the permanent of [L_j(u_k)].\n  - This permanent is 1 exactly when the multiset S \u228e T^c equals {1,\u2026,m}.\n  - Since S \u2229 T^c = \u2205 and |S| = |T|, that happens iff S = T.\n  - Otherwise some index is missing, giving a zero row, so the entry is 0.\n\nWith rows and columns ordered by cardinality, the zero entries sit above the diagonal. The matrix is therefore genuinely lower triangular with diagonal C. That gives rank 2^m \u2264 rank A \u2264 t. The statement is correct.\n\n## Claim 2: checked step by step\n\n**Determinant assignment direction.** The coefficients of z_j in the {l_i, r_i} basis form the matrix A\u207b\u00b9 (rows indexed by j). A nonzero permutation term assigns each z_j to a basis column where its coefficient is nonzero. Each block has two columns, so at most two z_j land in any block. Each assigned z_j has a nonzero projection \u03c0_i(z_j).\n\nThis is the correct direction. Using A itself (expressing l_i, r_i in the z_j) would assign blocks to coordinates and would not give what is needed.\n\n**Choosing M_i.** The lines l_i, r_i, l_i+r_i are pairwise distinct, and at most two lines must be avoided, so a valid M_i exists. R is the direct sum of the M_i, so \u03c0_i(R) = M_i and R \u2229 U_i = M_i. Hence \u03c0_i(z_j) \u2209 M_i implies z_j \u2209 R. This is correct.\n\n**Kernel and avoidance.** dim R = m, so dim K = m. A form \u03c6 vanishes on K iff \u03c6 \u2208 R. The coordinate forms are not in R, as shown above. The other two factor forms in each block are in U_i but not in M_i, so they are not in R either.\n\nThat leaves 4m proper subspaces of K \u2245 Q^m. A finite union of proper subspaces cannot cover a vector space over an infinite field, so a valid p exists.\n\n**Exact order at p.** P(p+w) = \u220f M_i(w) \u00b7 \u220f (\u03c6(p) + \u03c6(w)) over the other factors \u03c6. Its lowest part is C\u00b7\u220f M_i(w), with C = \u220f \u03c6(p) \u2260 0 and the M_i independent. All coordinates of p are nonzero. So Claim 1 applies and gives t \u2265 2^m.\n\n**Attainment.** F_m = \u220f (x_i\u00b2 y_i + x_i y_i\u00b2). The factors use disjoint variables, so the expansion has exactly 2^m distinct monomials.\n\n## Minor presentation fixes (none affect correctness)\n\n1. State explicitly that the field must have characteristic 0. Claim 1 can fail in characteristic p.\n2. State explicitly that R \u2229 U_i = M_i, since \"outside R\" relies on it.\n3. Write out the permanent formula for the order-m entries instead of describing them as \"repeated/missing directions.\"\n4. Note that \"minimum\" refers only to linear (homogeneous) changes. Affine shifts are not covered.\n5. Cite de Boor\u2013Ron only as context for the least-space viewpoint, as you planned. The proof is self-contained without it.\n\nThe old 30-term example cannot contradict Claim 1 unless it satisfies the exact hypothesis: exact order m with an initial form that is a product of m independent linear forms. You state that it does not, and I did not verify that example.\n\nNo broader lower bound for proof systems or circuits follows. This is a sparsity bound for one explicit product family.",
+    "billing": "subscription; informational list price only",
+    "list_price_usd": 0.17833739999999998,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2666,
+      "cache_read_input_tokens": 1407,
+      "output_tokens": 7836,
+      "output_tokens_details": {
+        "thinking_tokens": 5776
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 2666,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 7836,
+          "cache_read_input_tokens": 1407,
+          "cache_creation_input_tokens": 2666,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2666
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "visible_text_sha256": "782b79d151f8999e8c9fa7fe9e92506fc8711844dd6d684316688834544be58f"
+  },
+  "review_notes": [
+    "Both models found no substantive gap in the explicit proof. Model agreement does not formally certify it.",
+    "One Claude sentence suggests S intersect complement(T) is empty without qualification. That equality holds only when S=T at equal cardinality. The actual proof uses S!=T to find a repeated/missing derivative direction, and does not assume the incorrect general statement."
+  ]
+}

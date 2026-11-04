@@ -1,3 +1,5 @@
+> **Historical checkpoint.** The bare-moment counterexample below remains valid. Its missing product-specific F_5 lemma is resolved in [Normal crossings give a monomial-sparsity bound](NORMAL_CROSSING_SPARSITY.md), which derives h_2(E) >= 16 under the actual factor-orbit hypotheses and the restricted minimum 2^m for every m. This subsequent proof is independently AI-reviewed, not a complete Lean formalization, human review, accepted novelty, or a P-versus-NP solution. The original obstruction and its former gap statement are preserved as research history.
+
 # An obstruction to the bare quadratic-moment rank argument
 
 This note is independently AI-reviewed, not Lean-formalized. It gives a counterexample to a proposed implication between abstract support and moment conditions. It is **not** a counterexample to the sparsity-orbit conjecture, a P-versus-NP result, or a claim of novelty.

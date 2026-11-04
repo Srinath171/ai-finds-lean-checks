@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T18:35:06.410690+00:00",
+  "checked_utc": "2026-11-04T19:13:05.389349+00:00",
   "status": "P_VS_NP_NOT_SOLVED",
   "original_deadline_utc": "2026-11-04T19:42:17Z",
   "phases": [
@@ -82,7 +82,7 @@
     "claim_status": "UNVERIFIED"
   },
   "active_api_requests": 0,
-  "current_activity": "Checkpoint complete. Paid orbit probe stopped incomplete; no retry or paid loop. Exact moment obstruction blocks repeating the same abstract argument.",
+  "current_activity": "New restricted all-m proof and determinant application independently AI-reviewed; bounded geometry/moment code and audit fixes verified. No paid job or repetitive loop active.",
   "scope": "Snapshot only; live response state is ignored by Git. No generated output is executed or accepted as a proof.",
   "background_optimal_support": {
     "directory": "frontier/background-meta/optimal-support",
@@ -107,7 +107,7 @@
     "quantifiers": "For every n>=2, a cheaper parity phase and an optimal first gate give exact residual cost C-1; every optimal residual uses all n+1 coordinates. Violations of every linear hole cap occur beyond every arity threshold.",
     "scope": "Refutes one internal optimal-support premise; no MCSP oracle reduction, NP-hardness or PvsNP solution."
   },
-  "remaining_mathematical_blocker": "No general short-certificate guarantee, eligible-class uniform SAT saving, or unrestricted Partial-MCSP-to-total-MCSP bridge has been proved. The new restricted F5 orbit route additionally needs a product-specific structural lemma; bare rank/moment assumptions provably do not imply32terms.",
+  "remaining_mathematical_blocker": "The original PvsNP target remains unresolved: no general short-certificate guarantee, eligible-class uniform SAT saving, or unrestricted Partial-MCSP-to-total-MCSP bridge. The new restricted all-m proof is not a complexity-class separation and its full analytic/combinatorial application is not Lean-formalized.",
   "setup_blockers": [],
   "additional_material_results": [
     {
@@ -163,6 +163,21 @@
       "name": "Nondegenerate diagonal isotropy dimension bound",
       "source": "frontier/IsotropicDimension.lean",
       "scope": "Given actual ER=I, all d_k nonzero, and actual E diag(d) E^T=0, an explicit doubled right inverse proves2n<=t. Full orbit application, transversals, moments and rank-to-R bridge remain unformalized."
+    },
+    {
+      "status": "LEAN_VERIFIED_CONDITIONAL_MATRIX_LEMMA",
+      "name": "Triangular product dimension bound",
+      "source": "frontier/TriangularDimension.lean",
+      "scope": "Constructs actual triangular right inverse, then AB lower triangular with nonzero diagonal implies N<=W. The derivative and polynomial application remains unformalized."
+    },
+    {
+      "status": "TESTED_BOUNDED_EXACT_IMPLEMENTATIONS",
+      "name": "Normal-crossing geometry and actual moment factorization",
+      "sources": [
+        "frontier/normal_crossing.py",
+        "frontier/normal_crossing_moments.py"
+      ],
+      "scope": "Geometry m1..6; actual full expansion and every A/B/AB moment entry m1..3. Dense fixture2002 terms444301 aggregateoperations. No universal program proof or Lean refinement."
     }
   ],
   "active_unverified_formal_work": [],
@@ -189,7 +204,7 @@
   },
   "draft_research_results": [
     {
-      "status": "INDEPENDENTLY_AI_REVIEWED_NOT_FORMALIZED",
+      "status": "HISTORICAL_SUPERSEDED_BY_ALL_M_NORMAL_CROSSING_PROOF",
       "name": "Orbit sparsity draft throughfour disjoint binary-cubic blocks",
       "source": "frontier/SPARSITY_ORBIT_REVIEW.md",
       "scope": "Draft minima2,4,8,16 underGL(2m,Q); not a proof of the general conjecture, general PIT or PvsNP."
@@ -199,7 +214,44 @@
       "source": "frontier/SPARSITY_MOMENT_OBSTRUCTION.md",
       "evidence": "frontier/results/moment-obstruction.json",
       "scope": "30exponentpoints withrank10/difference9, quadraticrank15 and all1001degree<=4 weightedmomentszero. Refutes only baremoment/rank sufficiency; its polynomial is not in the F5 orbit."
+    },
+    {
+      "status": "COMPLETE_MATHEMATICAL_ARGUMENT_INDEPENDENTLY_AI_REVIEWED_NOT_LEAN_FORMALIZED",
+      "name": "Exact orbit sparsity for all disjoint binary-cubic block counts",
+      "source": "frontier/NORMAL_CROSSING_SPARSITY.md",
+      "statement": "For F_m=product_i x_i*y_i*(x_i+y_i), every A in GL_(2m)(Q) has at least2^m nonzero global monomials; identity attains. A separate highest-homogeneous-component corollary extends the minimum to invertible affine changes.",
+      "scope": "Restricted representation lower bound for an already-small arithmetic formula. No novelty, human/peer review, general circuit/proof-system lower bound, general PIT, or PvsNP result.",
+      "previous_gap_resolved": "The same derivative independence gives h2(E)>=16 for F5, adding the exact independent-product initial-form information absent from the valid30-point bare-moment obstruction."
+    },
+    {
+      "status": "INDEPENDENTLY_AI_REVIEWED_NOT_FORMALIZED",
+      "name": "Determinant orbit-sparsity application",
+      "source": "frontier/DETERMINANT_SPARSITY.md",
+      "statement": "Every rational invertible linear presentation of det_n has at least binomial(2n-2,n-1) monomials; the bound also survives affine shifts. Exact minima2 and6 for n2 andn3; n4 only20<=minimum<=24.",
+      "scope": "A representation bound for a polynomial with efficient circuits. No full Lean/Python proof, new complexity separation, accepted novelty or human/peer review."
     }
   ],
-  "next_paid_probe_decision": "NOT_JUSTIFIED_ON_CURRENT_PREMISES: same MAX request produced no visible text at65536tokens; bare higher-moment rank claim has an explicit counterexample. No repeat sent."
+  "next_paid_probe_decision": "New complete-proof audit was justified by materially new normal-crossing argument and completed at$0.218024; no repeat of disproved bare-moment inference or further paid request is active.",
+  "background_normal_crossing_audit": {
+    "directory": "frontier/background-meta/normal-crossing-audit",
+    "phase": "TERMINAL",
+    "remote_status": "completed",
+    "finished": true,
+    "incomplete": false,
+    "usage_status": "settled",
+    "cost_usd": "0.218024",
+    "claim_status": "UNVERIFIED",
+    "visible_answer_received": true,
+    "regular_claude_critique": "completed",
+    "scope": "One complete public-math proof audit, distinct from the old empty-answer search. Both model critiques found no substantive gap; this is not formal certification."
+  },
+  "active_implementation_work": [],
+  "verification_summary": {
+    "python_tests_passed": 353,
+    "python_seconds": 21.453,
+    "python_log": "frontier/python-normal-crossing-final-verification.txt",
+    "compiled_lean_modules": 28,
+    "lean_scope": "Cumulative23+2+1+1+1, no single combined28-source replay.",
+    "post_audit_accounting_regressions": "Geometry final-failure cost and moment precharge fixed; exact cap73/cap143 refusals and scoped bit metric independently rechecked."
+  }
 }

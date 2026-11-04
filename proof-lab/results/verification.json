@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T18:31:24.768322+00:00",
-  "python_tests_passed": 334,
-  "test_seconds": 20.758,
+  "checked_utc": "2026-11-04T19:11:57.115507+00:00",
+  "python_tests_passed": 353,
+  "test_seconds": 21.453,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 27,
+  "formal_source_count": 28,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -193,9 +193,16 @@
       "sha256_lf": "12ec1c0569b3de738130e1b893ecbe2de558d19d6dbba2f471d123354de1b919",
       "compiled": true,
       "verification_log": "frontier/isotropic-dimension-verification.txt"
+    },
+    {
+      "path": "frontier/TriangularDimension.lean",
+      "sha256": "0e5b2854bb46859ca32277654b399ab8c57e90d58845e9175d10ab6f4572a2d6",
+      "sha256_lf": "dffa0a1c8daebab6cd2eefdb6fd8486e7860d35bcfd9381d7ddc5094ffc95385",
+      "compiled": true,
+      "verification_log": "frontier/triangular-dimension-verification.txt"
     }
   ],
-  "scope": "Latest full Python-only replay remains 334 tests passed in 20.758 seconds; Python sources did not change for this formal-only addition. The prior 324-test replay is retained in history. All 27 registered Lean modules have compiled across the earlier 23-source full replay, the two-module postcheck, the CoordinateChange postcheck, and the IsotropicDimension postcheck. No single full 27-source replay is claimed. No API calls during verification.",
+  "scope": "Latest full Python-only replay: 353 tests passed in 21.453 seconds after operation-accounting fixes. Prior 324-test, 334-test, and explicitly pre-fix 350-test runs are retained in history. All 28 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1-module postchecks. No single full 28-source replay is claimed. No API calls during verification.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -236,17 +243,31 @@
         "propext"
       ],
       "scope": "IsotropicDimension independently compiled as a formal-only addition after the 23-source full replay and later two-module and CoordinateChange postchecks. Python results remain the existing 334-test replay; not a combined 27-source replay."
+    },
+    {
+      "paths": [
+        "frontier/TriangularDimension.lean"
+      ],
+      "exit_code": 0,
+      "log": "frontier/triangular-dimension-verification.txt",
+      "printed_axiom_checks": 2,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "TriangularDimension independently compiled after the earlier 23-source full replay and subsequent two-module, CoordinateChange, and IsotropicDimension postchecks. Two standard-axiom theorem outputs; not a combined 28-source replay."
     }
   ],
   "full_suite_python_tests_passed": 312,
   "full_suite_test_seconds": 21.013,
   "source_hash_normalization": "sha256 hashes actual file bytes; sha256_lf normalizes CRLF to LF, then CR to LF; other bytes unchanged.",
   "latest_full_python_replay": {
-    "python_tests_passed": 334,
-    "test_seconds": 20.758,
+    "python_tests_passed": 353,
+    "test_seconds": 21.453,
     "exit_code": 0,
-    "log": "frontier/python-orbit-verification.txt",
-    "scope": "Full unittest discovery of the current Python suite including the bounded orbit-sparsity checker; this execution did not replay Lean modules."
+    "log": "frontier/python-normal-crossing-final-verification.txt",
+    "scope": "Full unittest discovery after the independently audited geometry/pipeline operation-accounting fixes and new regression tests; bounded Python checks only, with no Lean replay in this execution."
   },
   "full_python_replay_history": [
     {
@@ -255,6 +276,38 @@
       "exit_code": 0,
       "log": "frontier/python-coordinate-verification.txt",
       "scope": "Full unittest discovery of the current Python suite; this execution did not replay Lean modules."
+    },
+    {
+      "python_tests_passed": 334,
+      "test_seconds": 20.758,
+      "exit_code": 0,
+      "log": "frontier/python-orbit-verification.txt",
+      "scope": "Full unittest discovery of the current Python suite including the bounded orbit-sparsity checker; this execution did not replay Lean modules."
+    },
+    {
+      "python_tests_passed": 350,
+      "test_seconds": 21.197,
+      "exit_code": 0,
+      "log": "frontier/python-normal-crossing-verification.txt",
+      "scope": "Full unittest discovery including the bounded normal-crossing geometry and moment checkers; this execution did not replay Lean modules.",
+      "historical_status": "PRE_ACCOUNTING_FIX",
+      "note": "This 350-test run predates the geometry/pipeline operation-accounting fixes and their additional regression tests. It is retained as historical evidence, not the current source verification.",
+      "pre_fix_source_evidence": [
+        {
+          "path": "frontier/normal_crossing.py",
+          "sha256": "fe99c18f130ee70f9641d933ea392853de0115ee8cd02a87ec7a2093ca66f0cf",
+          "sha256_lf": "fe99c18f130ee70f9641d933ea392853de0115ee8cd02a87ec7a2093ca66f0cf",
+          "verification_log": "frontier/python-normal-crossing-verification.txt",
+          "scope": "Bounded exact geometric certificate generator/verifier for supplied rational matrices; tested Python implementation without a verified Lean refinement link or a universal sparsity conclusion from testing."
+        },
+        {
+          "path": "frontier/normal_crossing_moments.py",
+          "sha256": "d1ea798750e655d78cdddbe134116dabf0399e163d96b886d9e3f1755ca7f946",
+          "sha256_lf": "adfc23855db41b52b42de17244a9baa6b2413e68951e2b498b07577ab98a12e0",
+          "verification_log": "frontier/python-normal-crossing-verification.txt",
+          "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests."
+        }
+      ]
     }
   ],
   "python_source_evidence": [
@@ -264,6 +317,20 @@
       "sha256_lf": "9ccd6473818fb64e437076c18c70ef4c859d96e55a57625131e5dd68729a91eb",
       "verification_log": "frontier/python-orbit-verification.txt",
       "scope": "Bounded exact checker for explicitly supplied rational matrices; tested Python implementation only. No formal refinement or universal orbit-sparsity theorem is claimed."
+    },
+    {
+      "path": "frontier/normal_crossing.py",
+      "sha256": "7945ad7dfdfbb89c34a91ad1774b687084847dfd24d0528f10676a5d6795ad0d",
+      "sha256_lf": "7945ad7dfdfbb89c34a91ad1774b687084847dfd24d0528f10676a5d6795ad0d",
+      "verification_log": "frontier/python-normal-crossing-final-verification.txt",
+      "scope": "Bounded exact geometric certificate generator/verifier for supplied rational matrices; tested Python implementation without a verified Lean refinement link or a universal sparsity conclusion from testing."
+    },
+    {
+      "path": "frontier/normal_crossing_moments.py",
+      "sha256": "415b42b938fad91b0aa7c1a565f7f9802d01f13abb58925bdc488ad54553f9d4",
+      "sha256_lf": "276748de405fc47f693b445906ddb484905d71ccd340d4d246352434edb0a297",
+      "verification_log": "frontier/python-normal-crossing-final-verification.txt",
+      "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests."
     }
   ]
 }

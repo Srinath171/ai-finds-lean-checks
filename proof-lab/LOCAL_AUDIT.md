@@ -125,15 +125,12 @@ the cumulative independent Lean-module replays.
 
 ## Verification coverage
 
-The latest full Python replay passed **334 tests** in **20.758 seconds**.
-Independent Lean replay coverage totals **27 research modules**: the earlier
-full 23-module run, subsequent checks of `FiniteDimension.lean` and
-`DiagonalWidth.lean`, the `CoordinateChange.lean` replay including moved
-Boolean-domain additions, and the `IsotropicDimension.lean` replay. This is
-cumulative module coverage;
-[verification.json](results/verification.json) records the run scopes and
-source hashes. The [main replay log](frontier/verification-output.txt) and
-the linked research notes provide the supporting evidence.
+The latest full Python replay passed **353 tests** in **21.453 seconds**.
+Independent Lean replay coverage totals **28 research modules**: the original
+23-module run, the two-module FiniteDimension/DiagonalWidth check, and separate
+CoordinateChange, IsotropicDimension and TriangularDimension replays. This is
+cumulative coverage, not one combined28-module replay. Exact hashes and log
+provenance are recorded in [verification.json](results/verification.json).
 
 Earlier Windows budget concurrency checks also passed 50 threaded stress
 rounds and five multiprocessing rounds. These historical checks are separate
@@ -212,10 +209,12 @@ that equals 2 at the incorrectly admitted row (u,v)=(0,1).
 constraint transport from Boolean-cube preservation, general coordinate
 selection, and a PIT or P-versus-NP algorithm.
 
-## Rational isotropy and the next restricted gap
+## Normal-crossing research checkpoint
 
-[IsotropicDimension.lean](frontier/IsotropicDimension.lean) proves the conditional rational inequality `ER=I`, nonzero diagonal `D`, and `EDE^T=0` imply `2n<=t`, through an explicit doubled right inverse. It was independently recompiled and audited; standard axioms only. Cumulative Lean coverage is 23+2+1+1 modules, not one combined 27-module replay. Python remains 334 passed tests.
+The [complete restricted mathematical argument](frontier/NORMAL_CROSSING_SPARSITY.md) gives minimum monomial sparsity 2^m for product_i x_i*y_i*(x_i+y_i) under invertible rational linear changes; a separate top-degree corollary includes affine shifts. It also supplies the product-specific F_5 rank lemma missing from the historical bare-moment route. The [determinant application](frontier/DETERMINANT_SPARSITY.md) obtains a central-binomial monomial bound for a different efficient polynomial family.
 
-The [orbit-sparsity draft](frontier/SPARSITY_ORBIT_REVIEW.md) is independently AI-reviewed, **not Lean-formalized or human/peer-reviewed**. Its four-block conclusion is separate from the formal matrix lemma. The [explicit 30-point obstruction](frontier/SPARSITY_MOMENT_OBSTRUCTION.md) and [exact checks](frontier/results/moment-obstruction.json) show that bare higher-moment/rank conditions cannot establish the next 32-term bound; the missing step must use more of the product's structure. This is not a counterexample to the orbit conjecture or a PvsNP result.
+These arguments are independently AI-reviewed, **not fully Lean-formalized or human/peer-reviewed**, and make no novelty or PvsNP claim. [TriangularDimension.lean](frontier/TriangularDimension.lean) verifies the conditional matrix dimension step through an actual inverse. The polynomial, matching, Taylor and derivative application remains separate.
 
-The single new Wonder MAX request exhausted 65,536 output tokens with no visible answer and recorded $1.314964. It was not retried. Two regular Claude subscription critiques produced visible mathematical reviews; [their recorded outcomes](frontier/results/sparsity-orbit-proposals.json) remain model output, not proof certificates. No paid request is active; see [current progress](PROGRESS.md) and [spending snapshot](results/spending-checkpoint.json).
+The [bounded geometry checker](frontier/NORMAL_CROSSING_CHECKER.md) and [actual moment pipeline](frontier/NORMAL_CROSSING_MOMENTS.md) validate finite supplied-matrix certificates. The full suite includes the audited refusal-accounting fixes and scoped moment bit metric. [Demo evidence](frontier/results/normal-crossing-moments-demo.json) is computational evidence, not a universal proof or formal refinement.
+
+The new complete-proof Muse Wonder MAX audit returned visible confirmation at recorded cost $0.218024, followed by a regular Claude subscription critique. [Model outputs](frontier/results/normal-crossing-audit.json) remain critiques rather than certificates. Current limits, exact local commitments, account-billing uncertainty and the unresolved complexity-class blockers are recorded in [PROGRESS.md](PROGRESS.md).

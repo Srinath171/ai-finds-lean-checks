@@ -1,0 +1,3 @@
+'mem_circuitsUpToN_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exists_hard_bool_function' depends on axioms: [propext, Classical.choice, Quot.sound]
+'exists_hard_bool_function_mem' depends on axioms: [propext, Classical.choice, Quot.sound]

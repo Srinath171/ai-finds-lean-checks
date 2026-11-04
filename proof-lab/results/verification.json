@@ -1,0 +1,39 @@
+{
+  "python_tests_passed": 149,
+  "test_seconds": 14.234,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "formal_sources": [
+    {
+      "path": "SATSearch.lean",
+      "sha256": "bc0a141734e4ec5fd785dae2bf7f547400136fb66fb193d37f68662e229434f9",
+      "compiled": true
+    },
+    {
+      "path": "CircuitBounds.lean",
+      "sha256": "abe21091e640192ac77f1e83fbf25dfe36275c61d78cda7fbf67ad51b118998e",
+      "compiled": true
+    },
+    {
+      "path": "CircuitCoverage.lean",
+      "sha256": "1d63b5d27445a6ca82716e9d57b7b527571759ed6fcf0b872ff8527502c8d777",
+      "compiled": true
+    },
+    {
+      "path": "CircuitCounting.lean",
+      "sha256": "9eef3b51b57ad1b2aba6021d063f2993e0e9095e038f0734267622cf26be6ece",
+      "compiled": true
+    },
+    {
+      "path": "CircuitSemantics.lean",
+      "sha256": "ded37d5d9d0a69916e0380ece6e2cbdeb6ba7c9ecb2ef4edc2cedc7495704511",
+      "compiled": true
+    },
+    {
+      "path": "HardFunction.lean",
+      "sha256": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
+      "compiled": true
+    }
+  ],
+  "api_calls_during_verification": 0,
+  "scope": "Known finite/combinatorial results, not a P vs NP solution."
+}

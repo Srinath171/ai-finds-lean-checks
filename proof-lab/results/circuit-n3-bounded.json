@@ -1,0 +1,9474 @@
+{
+  "model": {
+    "gate": "NAND (fan-in 2, repetition allowed)",
+    "assumptions": [
+      "inputs are the variables x0..x(n-1) only",
+      "no free constants: 0 and 1 are not available unless built by gates",
+      "no free complemented inputs: NOT xi is not available unless built",
+      "only gate is binary NAND; fan-in exactly two; repetition allowed (NAND(s,s) = NOT s)",
+      "unlimited fanout: computed signals may be reused by any later gates (DAG sharing)",
+      "output may be any input or computed signal; size = number of NAND gates",
+      "truth tables are bit masks over assignments a in [0, 2**n), bit i of a = value of xi"
+    ],
+    "scope": "Exact finite results for the stated n and caps only. No asymptotic, superpolynomial, or P-vs-NP claim is made or implied."
+  },
+  "n": 3,
+  "input_masks": [
+    170,
+    204,
+    240
+  ],
+  "num_functions": 256,
+  "exhausted_all_functions": false,
+  "truncated": true,
+  "truncation_reason": "state cap max_states=100000 reached",
+  "completed_layers": 6,
+  "states_per_layer": [
+    1,
+    6,
+    36,
+    206,
+    1252,
+    8188,
+    56097,
+    34214
+  ],
+  "visited_states": 100000,
+  "expanded_nodes": 14087,
+  "caps": {
+    "max_gates": 8,
+    "max_states": 100000,
+    "max_states_per_layer": 100000,
+    "max_nodes": 3000000,
+    "timeout_seconds": 30.0
+  },
+  "functions": [
+    {
+      "mask": 0,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_0",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 0
+      }
+    },
+    {
+      "mask": 1,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_1",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 1
+      }
+    },
+    {
+      "mask": 2,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_2",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 2
+      }
+    },
+    {
+      "mask": 3,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_3",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 3
+      }
+    },
+    {
+      "mask": 4,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_4",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 4
+      }
+    },
+    {
+      "mask": 5,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_5",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 5
+      }
+    },
+    {
+      "mask": 6,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_6",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 7,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_7",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 7
+      }
+    },
+    {
+      "mask": 8,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_8",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 8
+      }
+    },
+    {
+      "mask": 9,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_9",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 10,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_10",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 10
+      }
+    },
+    {
+      "mask": 11,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_11",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 11
+      }
+    },
+    {
+      "mask": 12,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_12",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 12
+      }
+    },
+    {
+      "mask": 13,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_13",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 13
+      }
+    },
+    {
+      "mask": 14,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_14",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 14
+      }
+    },
+    {
+      "mask": 15,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "f_15",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            2,
+            2
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 15
+      }
+    },
+    {
+      "mask": 16,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_16",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 16
+      }
+    },
+    {
+      "mask": 17,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_17",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 17
+      }
+    },
+    {
+      "mask": 18,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_18",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 19,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_19",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 19
+      }
+    },
+    {
+      "mask": 20,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_20",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 20
+      }
+    },
+    {
+      "mask": 21,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_21",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 21
+      }
+    },
+    {
+      "mask": 22,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_22",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 23,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_23",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            5,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 23
+      }
+    },
+    {
+      "mask": 24,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_24",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 25,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_25",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 25
+      }
+    },
+    {
+      "mask": 26,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_26",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 26
+      }
+    },
+    {
+      "mask": 27,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_27",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 27
+      }
+    },
+    {
+      "mask": 28,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_28",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 28
+      }
+    },
+    {
+      "mask": 29,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_29",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 29
+      }
+    },
+    {
+      "mask": 30,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_30",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 30
+      }
+    },
+    {
+      "mask": 31,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "name": "f_31",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 31
+      }
+    },
+    {
+      "mask": 32,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_32",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 32
+      }
+    },
+    {
+      "mask": 33,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_33",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 34,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_34",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 34
+      }
+    },
+    {
+      "mask": 35,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_35",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 35
+      }
+    },
+    {
+      "mask": 36,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_36",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 37,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_37",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 37
+      }
+    },
+    {
+      "mask": 38,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_38",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 39,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_39",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 39
+      }
+    },
+    {
+      "mask": 40,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_40",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 40
+      }
+    },
+    {
+      "mask": 41,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_41",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 42,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_42",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 42
+      }
+    },
+    {
+      "mask": 43,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_43",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 43
+      }
+    },
+    {
+      "mask": 44,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_44",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 44
+      }
+    },
+    {
+      "mask": 45,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_45",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 45
+      }
+    },
+    {
+      "mask": 46,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_46",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 46
+      }
+    },
+    {
+      "mask": 47,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "name": "f_47",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 47
+      }
+    },
+    {
+      "mask": 48,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_48",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 48
+      }
+    },
+    {
+      "mask": 49,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_49",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 49
+      }
+    },
+    {
+      "mask": 50,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_50",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 50
+      }
+    },
+    {
+      "mask": 51,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_51",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 51
+      }
+    },
+    {
+      "mask": 52,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_52",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 53,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_53",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 53
+      }
+    },
+    {
+      "mask": 54,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_54",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 55,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_55",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 55
+      }
+    },
+    {
+      "mask": 56,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_56",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 56
+      }
+    },
+    {
+      "mask": 57,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_57",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 57
+      }
+    },
+    {
+      "mask": 58,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_58",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 58
+      }
+    },
+    {
+      "mask": 59,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_59",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 59
+      }
+    },
+    {
+      "mask": 60,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_60",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 60
+      }
+    },
+    {
+      "mask": 61,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_61",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 61
+      }
+    },
+    {
+      "mask": 62,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_62",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 62
+      }
+    },
+    {
+      "mask": 63,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "name": "f_63",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 63
+      }
+    },
+    {
+      "mask": 64,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_64",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 64
+      }
+    },
+    {
+      "mask": 65,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_65",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 66,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_66",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 67,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_67",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 67
+      }
+    },
+    {
+      "mask": 68,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_68",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 68
+      }
+    },
+    {
+      "mask": 69,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_69",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 69
+      }
+    },
+    {
+      "mask": 70,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_70",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 71,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_71",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 71
+      }
+    },
+    {
+      "mask": 72,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_72",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 72
+      }
+    },
+    {
+      "mask": 73,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_73",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 74,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_74",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 74
+      }
+    },
+    {
+      "mask": 75,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_75",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 75
+      }
+    },
+    {
+      "mask": 76,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_76",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 76
+      }
+    },
+    {
+      "mask": 77,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_77",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 77
+      }
+    },
+    {
+      "mask": 78,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_78",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 78
+      }
+    },
+    {
+      "mask": 79,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "name": "f_79",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 79
+      }
+    },
+    {
+      "mask": 80,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_80",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 80
+      }
+    },
+    {
+      "mask": 81,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_81",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 81
+      }
+    },
+    {
+      "mask": 82,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_82",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 83,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_83",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 83
+      }
+    },
+    {
+      "mask": 84,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_84",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 84
+      }
+    },
+    {
+      "mask": 85,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_85",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 85
+      }
+    },
+    {
+      "mask": 86,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_86",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 87,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_87",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 87
+      }
+    },
+    {
+      "mask": 88,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_88",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 88
+      }
+    },
+    {
+      "mask": 89,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_89",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 89
+      }
+    },
+    {
+      "mask": 90,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_90",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 90
+      }
+    },
+    {
+      "mask": 91,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_91",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 91
+      }
+    },
+    {
+      "mask": 92,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_92",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 92
+      }
+    },
+    {
+      "mask": 93,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_93",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 93
+      }
+    },
+    {
+      "mask": 94,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_94",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 94
+      }
+    },
+    {
+      "mask": 95,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "name": "f_95",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 95
+      }
+    },
+    {
+      "mask": 96,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_96",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 96
+      }
+    },
+    {
+      "mask": 97,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_97",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 98,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_98",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 98
+      }
+    },
+    {
+      "mask": 99,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_99",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 99
+      }
+    },
+    {
+      "mask": 100,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_100",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 100
+      }
+    },
+    {
+      "mask": 101,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_101",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 101
+      }
+    },
+    {
+      "mask": 102,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_102",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 102
+      }
+    },
+    {
+      "mask": 103,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_103",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 103
+      }
+    },
+    {
+      "mask": 104,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_104",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 105,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_105",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 106,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_106",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 106
+      }
+    },
+    {
+      "mask": 107,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_107",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 108,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_108",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 108
+      }
+    },
+    {
+      "mask": 109,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_109",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 110,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_110",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 110
+      }
+    },
+    {
+      "mask": 111,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "name": "f_111",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 111
+      }
+    },
+    {
+      "mask": 112,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_112",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 112
+      }
+    },
+    {
+      "mask": 113,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_113",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 113
+      }
+    },
+    {
+      "mask": 114,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_114",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 114
+      }
+    },
+    {
+      "mask": 115,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_115",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 115
+      }
+    },
+    {
+      "mask": 116,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_116",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 116
+      }
+    },
+    {
+      "mask": 117,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_117",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 117
+      }
+    },
+    {
+      "mask": 118,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_118",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            8,
+            6
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 118
+      }
+    },
+    {
+      "mask": 119,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_119",
+      "cost": 1,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ]
+        ],
+        "output": 3,
+        "size": 1,
+        "target": 119
+      }
+    },
+    {
+      "mask": 120,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_120",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 120
+      }
+    },
+    {
+      "mask": 121,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_121",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 122,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_122",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 122
+      }
+    },
+    {
+      "mask": 123,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_123",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 123
+      }
+    },
+    {
+      "mask": 124,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_124",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 124
+      }
+    },
+    {
+      "mask": 125,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_125",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 125
+      }
+    },
+    {
+      "mask": 126,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_126",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 126
+      }
+    },
+    {
+      "mask": 127,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "name": "f_127",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 127
+      }
+    },
+    {
+      "mask": 128,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_128",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 128
+      }
+    },
+    {
+      "mask": 129,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_129",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 130,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_130",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 131,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_131",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 131
+      }
+    },
+    {
+      "mask": 132,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_132",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 132
+      }
+    },
+    {
+      "mask": 133,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_133",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 133
+      }
+    },
+    {
+      "mask": 134,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_134",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 135,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_135",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 135
+      }
+    },
+    {
+      "mask": 136,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_136",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 136
+      }
+    },
+    {
+      "mask": 137,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_137",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 138,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_138",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 138
+      }
+    },
+    {
+      "mask": 139,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_139",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 139
+      }
+    },
+    {
+      "mask": 140,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_140",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 140
+      }
+    },
+    {
+      "mask": 141,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_141",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 141
+      }
+    },
+    {
+      "mask": 142,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_142",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 142
+      }
+    },
+    {
+      "mask": 143,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "f_143",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 143
+      }
+    },
+    {
+      "mask": 144,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_144",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 144
+      }
+    },
+    {
+      "mask": 145,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_145",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 145
+      }
+    },
+    {
+      "mask": 146,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_146",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 147,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_147",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 147
+      }
+    },
+    {
+      "mask": 148,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_148",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 149,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_149",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 149
+      }
+    },
+    {
+      "mask": 150,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_150",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 151,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_151",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 152,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_152",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            6
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 152
+      }
+    },
+    {
+      "mask": 153,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_153",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 153
+      }
+    },
+    {
+      "mask": 154,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_154",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 155,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_155",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 155
+      }
+    },
+    {
+      "mask": 156,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_156",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 156
+      }
+    },
+    {
+      "mask": 157,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_157",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 157
+      }
+    },
+    {
+      "mask": 158,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_158",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 159,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "name": "f_159",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 159
+      }
+    },
+    {
+      "mask": 160,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_160",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 160
+      }
+    },
+    {
+      "mask": 161,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_161",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 162,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_162",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 162
+      }
+    },
+    {
+      "mask": 163,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_163",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 163
+      }
+    },
+    {
+      "mask": 164,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_164",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 164
+      }
+    },
+    {
+      "mask": 165,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_165",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 165
+      }
+    },
+    {
+      "mask": 166,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_166",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 167,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_167",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 167
+      }
+    },
+    {
+      "mask": 168,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_168",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 168
+      }
+    },
+    {
+      "mask": 169,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_169",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 170,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_170",
+      "cost": 0,
+      "witness": {
+        "n": 3,
+        "gates": [],
+        "output": 0,
+        "size": 0,
+        "target": 170
+      }
+    },
+    {
+      "mask": 171,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_171",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 171
+      }
+    },
+    {
+      "mask": 172,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_172",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 172
+      }
+    },
+    {
+      "mask": 173,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_173",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 173
+      }
+    },
+    {
+      "mask": 174,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_174",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 174
+      }
+    },
+    {
+      "mask": 175,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "name": "f_175",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 175
+      }
+    },
+    {
+      "mask": 176,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_176",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 176
+      }
+    },
+    {
+      "mask": 177,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_177",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 177
+      }
+    },
+    {
+      "mask": 178,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_178",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            4
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 178
+      }
+    },
+    {
+      "mask": 179,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_179",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 179
+      }
+    },
+    {
+      "mask": 180,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_180",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 180
+      }
+    },
+    {
+      "mask": 181,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_181",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 181
+      }
+    },
+    {
+      "mask": 182,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_182",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 183,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_183",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 183
+      }
+    },
+    {
+      "mask": 184,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_184",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 184
+      }
+    },
+    {
+      "mask": 185,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_185",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 185
+      }
+    },
+    {
+      "mask": 186,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_186",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 186
+      }
+    },
+    {
+      "mask": 187,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_187",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 187
+      }
+    },
+    {
+      "mask": 188,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_188",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 188
+      }
+    },
+    {
+      "mask": 189,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_189",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 189
+      }
+    },
+    {
+      "mask": 190,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_190",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 190
+      }
+    },
+    {
+      "mask": 191,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "name": "f_191",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 191
+      }
+    },
+    {
+      "mask": 192,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_192",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 192
+      }
+    },
+    {
+      "mask": 193,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_193",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 194,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_194",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 195,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_195",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 195
+      }
+    },
+    {
+      "mask": 196,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_196",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 196
+      }
+    },
+    {
+      "mask": 197,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_197",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 197
+      }
+    },
+    {
+      "mask": 198,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_198",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 199,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_199",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 199
+      }
+    },
+    {
+      "mask": 200,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_200",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 200
+      }
+    },
+    {
+      "mask": 201,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_201",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 202,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_202",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 202
+      }
+    },
+    {
+      "mask": 203,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_203",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 203
+      }
+    },
+    {
+      "mask": 204,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_204",
+      "cost": 0,
+      "witness": {
+        "n": 3,
+        "gates": [],
+        "output": 1,
+        "size": 0,
+        "target": 204
+      }
+    },
+    {
+      "mask": 205,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_205",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 205
+      }
+    },
+    {
+      "mask": 206,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_206",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 206
+      }
+    },
+    {
+      "mask": 207,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "name": "f_207",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 207
+      }
+    },
+    {
+      "mask": 208,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_208",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 208
+      }
+    },
+    {
+      "mask": 209,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_209",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 209
+      }
+    },
+    {
+      "mask": 210,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_210",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 211,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_211",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 211
+      }
+    },
+    {
+      "mask": 212,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_212",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 212
+      }
+    },
+    {
+      "mask": 213,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_213",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 213
+      }
+    },
+    {
+      "mask": 214,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_214",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 215,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_215",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 215
+      }
+    },
+    {
+      "mask": 216,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_216",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 216
+      }
+    },
+    {
+      "mask": 217,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_217",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 217
+      }
+    },
+    {
+      "mask": 218,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_218",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            4
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 218
+      }
+    },
+    {
+      "mask": 219,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_219",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 219
+      }
+    },
+    {
+      "mask": 220,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_220",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 220
+      }
+    },
+    {
+      "mask": 221,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_221",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 221
+      }
+    },
+    {
+      "mask": 222,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_222",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 223,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "name": "f_223",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 223
+      }
+    },
+    {
+      "mask": 224,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_224",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 224
+      }
+    },
+    {
+      "mask": 225,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_225",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 226,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_226",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 226
+      }
+    },
+    {
+      "mask": 227,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_227",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 227
+      }
+    },
+    {
+      "mask": 228,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_228",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 228
+      }
+    },
+    {
+      "mask": 229,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_229",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            5,
+            7
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 229
+      }
+    },
+    {
+      "mask": 230,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_230",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            7,
+            4
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 230
+      }
+    },
+    {
+      "mask": 231,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_231",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 231
+      }
+    },
+    {
+      "mask": 232,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_232",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 232
+      }
+    },
+    {
+      "mask": 233,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_233",
+      "cost": "UNKNOWN",
+      "witness": null
+    },
+    {
+      "mask": 234,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_234",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 234
+      }
+    },
+    {
+      "mask": 235,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_235",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 235
+      }
+    },
+    {
+      "mask": 236,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_236",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 236
+      }
+    },
+    {
+      "mask": 237,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_237",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            5
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 237
+      }
+    },
+    {
+      "mask": 238,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_238",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 238
+      }
+    },
+    {
+      "mask": 239,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "name": "f_239",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            2
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 239
+      }
+    },
+    {
+      "mask": 240,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_240",
+      "cost": 0,
+      "witness": {
+        "n": 3,
+        "gates": [],
+        "output": 2,
+        "size": 0,
+        "target": 240
+      }
+    },
+    {
+      "mask": 241,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_241",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 241
+      }
+    },
+    {
+      "mask": 242,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_242",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 242
+      }
+    },
+    {
+      "mask": 243,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_243",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 243
+      }
+    },
+    {
+      "mask": 244,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_244",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 244
+      }
+    },
+    {
+      "mask": 245,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_245",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 245
+      }
+    },
+    {
+      "mask": 246,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_246",
+      "cost": 7,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "output": 9,
+        "size": 7,
+        "target": 246
+      }
+    },
+    {
+      "mask": 247,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_247",
+      "cost": 4,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "output": 6,
+        "size": 4,
+        "target": 247
+      }
+    },
+    {
+      "mask": 248,
+      "truth_vector": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_248",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 248
+      }
+    },
+    {
+      "mask": 249,
+      "truth_vector": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_249",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 249
+      }
+    },
+    {
+      "mask": 250,
+      "truth_vector": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_250",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 250
+      }
+    },
+    {
+      "mask": 251,
+      "truth_vector": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_251",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 251
+      }
+    },
+    {
+      "mask": 252,
+      "truth_vector": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_252",
+      "cost": 3,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "output": 5,
+        "size": 3,
+        "target": 252
+      }
+    },
+    {
+      "mask": 253,
+      "truth_vector": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_253",
+      "cost": 5,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            5
+          ]
+        ],
+        "output": 7,
+        "size": 5,
+        "target": 253
+      }
+    },
+    {
+      "mask": 254,
+      "truth_vector": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_254",
+      "cost": 6,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            6
+          ]
+        ],
+        "output": 8,
+        "size": 6,
+        "target": 254
+      }
+    },
+    {
+      "mask": 255,
+      "truth_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "f_255",
+      "cost": 2,
+      "witness": {
+        "n": 3,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "output": 4,
+        "size": 2,
+        "target": 255
+      }
+    }
+  ]
+}

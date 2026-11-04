@@ -1,0 +1,341 @@
+# AI Finds, Lean Checks
+
+A local proof and finite-search laboratory: Meta models propose Lean proof
+bodies, a restricted checker validates them, and separate SAT and NAND-circuit
+experiments make the difference between finding and checking concrete.
+
+**This project does not solve P vs NP.** Its elementary theorems, exhaustive
+SAT-search correctness results, finite NAND bounds, and conditional counting results are known facts
+reproduced here, not novel mathematical discoveries.
+
+- [prover.py](prover.py): Python standard-library core; HTTPS model calls,
+  restricted proof checking, retries, and JSONL logs.
+- [app.py](app.py): optional Streamlit interface.
+- [SATSearch.lean](SATSearch.lean) and [sat_lab.py](sat_lab.py): formal finite
+  search and separately tested Python SAT experiments.
+- [CircuitBounds.lean](CircuitBounds.lean),
+  [CircuitCoverage.lean](CircuitCoverage.lean), and
+  [circuit_lab.py](circuit_lab.py): finite NAND bounds and witness checking.
+- No Mathlib. [lean-toolchain](lean-toolchain) pins
+  `leanprover/lean4:v4.35.0`.
+
+## Windows setup
+
+Run commands from `C:\Users\email\muse-spark-chat\proof-lab`.
+
+1. Install Python 3.11+ and [elan](https://lean-lang.org/install/).
+   Ensure the pinned Lean 4.35.0 toolchain is installed. The checker does not
+   download a toolchain or run a Lake build automatically.
+2. The prover core needs only Python's standard library. For the UI and Z3 synthesis, install the
+   pinned dependencies in a local virtual environment:
+
+   ```powershell
+   py -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   python -m pip install -r requirements.txt
+   ```
+
+   If this project's environment already exists, activate it and reuse it.
+3. Keep the Meta credential as `MODEL_API_KEY` in the existing parent
+   `../.env`, i.e. `C:\Users\email\muse-spark-chat\.env`, or set it in the
+   current shell. Runtime lookup checks the shell first, then
+   `proof-lab/.env`, then the parent `.env`. No shell evaluation or variable
+   interpolation is performed on the file. Do not commit credentials.
+4. Check readiness and start the UI:
+
+   ```powershell
+   python prover.py preflight
+   python -m streamlit run app.py
+   ```
+
+The optional [research_client.py](research_client.py) reads
+`ANTHROPIC_API_KEY` from the environment, then the same parent `../.env`.
+It sends only an explicitly supplied public-mathematics prompt to
+`claude-fable-5` with maximum effort; it does not attach project files
+automatically. An API response is an unverified suggestion until checked.
+
+## Fixed-theorem prover
+
+```powershell
+python prover.py list
+python prover.py check nat_add_comm --proof "exact Nat.add_comm a b"
+python prover.py prove nat_add_comm --model muse-wonder-1.0 --effort max
+python prover.py prove nat_add_comm --attempts 5 --max-tokens 8192 --timeout 180
+python prover.py benchmark --limit 3
+python demo.py
+```
+
+The two supported Meta models are `muse-spark-1.3` and `muse-wonder-1.0`,
+using `https://api.meta.ai/v1/chat/completions`. Defaults are Wonder,
+maximum effort, 8,192 output tokens, five attempts, and a 180-second
+per-operation timeout. The output-token limit is configurable from 1 to
+16,384. Failed proofs feed checker diagnostics back to the model.
+
+The 15 fixed exercises in [theorems.json](theorems.json) are:
+
+| Category | Exercises |
+|---|---|
+| Natural numbers (6) | Add zero, zero add, add commutativity/associativity, multiply one, multiply commutativity |
+| Lists (3) | Append nil on either side, append associativity |
+| Logic (3) | Swap conjunction, identity implication, introduce left disjunct |
+| Finite decisions (3) | `2 + 2 = 4`, `3 < 7`, membership of 2 in `[1, 2, 3]` |
+
+[theorems.lean](theorems.lean) is a human-readable catalog with `sorry`
+placeholders. It is not a verified result. The separately imported
+[Witness reference catalog](references/witness-theorems.json) remains
+explicitly unverified and is not part of this benchmark; see
+[ARCHIVE_REVIEW.md](ARCHIVE_REVIEW.md).
+
+## How proof verification works
+
+1. The name and statement come from the fixed local catalog; the model
+   supplies only the proof body.
+2. A conservative allowlist restricts tactics and terms. Comments, extra
+   declarations, imports, commands, string literals, non-ASCII candidate
+   tokens, `sorry`, `admit`, `axiom`, `native_decide`, `IO`, and
+   metaprogramming constructs are rejected.
+3. The checker generates the complete source, including a 200,000-heartbeat
+   cap and `#print axioms`. It resolves the installed pinned Lean executable,
+   verifies its version, and invokes it directly without a shell or Lake
+   build. Candidate input is limited to 8,000 characters. Combined process
+   output is drained with a 65,536-byte cap; timeouts or excess output stop
+   the launched process tree. Secret-looking environment variables are removed.
+4. Verification requires a zero Lean exit status and exactly one complete,
+   correctly named axiom report. Only `propext`, `Classical.choice`, and
+   `Quot.sound` are permitted. Both `sorryAx` and `Lean.ofReduceBool` are
+   rejected. Missing, malformed, duplicate, or conflicting reports fail closed.
+
+This is a conservative checker for a trusted local machine, not an operating
+system sandbox for hostile tenants. The separate trusted Lean research
+modules are reviewed source files; they do not pass through the narrow
+model-proof-body interface. See [LOCAL_AUDIT.md](LOCAL_AUDIT.md).
+
+## Recorded Meta benchmark
+
+These are actual saved model runs from November 4, 2026, on the same 15
+fixed theorems with effort `max` and Lean 4.35.0. Totals below were computed
+from each file's run records, including failed attempts.
+
+| Model | Verified | Attempts | Avg attempts | Input / output tokens | Recorded estimated cost |
+|---|---:|---:|---:|---:|---:|
+| [Muse Wonder 1.0](results/wonder-max.json) | 15/15 (100%) | 15 | 1.00 | 3,022 / 4,508 | $0.102248 |
+| [Muse Spark 1.3](results/spark-max.json) | 15/15 (100%) | 16 | 1.07 | 3,296 / 19,384 | $0.086502 |
+
+Costs are token-usage estimates at the rates supplied for those runs, not
+reconciled invoices or the project's total spend. Reasoning tokens are
+reported separately where available and are not added to billed output
+tokens a second time. The benchmark predates subsequent checker hardening;
+the saved results are not a claim that every historical model proof has
+been replayed through the current checker.
+
+New runs append to `logs/runs.jsonl`, recording attempt diagnostics, usage,
+cost when known, and provenance. The UI displays real run logs and gives a
+VERIFIED banner only after the checker passes. It does not fabricate results.
+
+## Spending controls
+
+[budget.py](budget.py) coordinates participating API callers using
+`logs/spending.json`: **Meta $125; Claude API $40**. Both the real Meta
+transport and the optional Fable client reserve a conservative maximum
+before transmitting. Reliable usage settles a reservation; missing or
+malformed usage, transport failures, timeouts, and uncertain outcomes
+leave the full reservation pending.
+
+The current ledger was initialized with conservative external holds of
+**$25 Meta and $1 Claude** for activity outside its tracked calls. These
+are accounting buffers, not measured charges. Existing caps and holds
+are preserved when reopening the ledger. Do not delete it to reset spending.
+
+```powershell
+python budget.py --path logs/spending.json status
+```
+
+Specify this path: the standalone budget utility's default is
+`logs/budget.json`, while the project clients use `logs/spending.json`.
+
+The ledger uses exclusive locking, atomic writes, and decimal accounting.
+Corrupt state or a stale lock blocks further spending pending inspection.
+It cannot cap unrelated CLI/subscription activity, another application,
+or charges appearing late in a provider dashboard. Provider billing must
+be reconciled before releasing uncertain holds or treating the allowance
+as available cash. Model rates and reservation assumptions also need review
+if the provider changes pricing or token accounting.
+
+An additional per-run cap is available:
+
+```powershell
+python prover.py benchmark --model muse-wonder-1.0 --effort max --budget-usd 5 --input-rate-per-mtok 4 --output-rate-per-mtok 20 --json
+```
+
+The per-run cap needs both rates. Without supplied display rates, a run's
+reported cost can be unknown even though real API calls still use the shared
+ledger and its configured rates. Ledger rates currently use $4/$20 per
+million input/output tokens for Wonder and $1.25/$4.25 for Spark. They are
+configuration for this run, not a promise of current provider pricing.
+
+For an optional Fable critique, first create an explicitly reviewed public
+mathematics prompt file, then use:
+
+```powershell
+python research_client.py --prompt-file references/public-math-prompt.txt --output results/fable-critique.json --max-tokens 8192
+```
+
+That command uses the separate Claude API allowance. It does not use a
+Claude Code subscription. The client has no automatic retries or fallback;
+a truncated response is marked incomplete.
+
+## SAT: finite soundness and completeness
+
+[SATSearch.lean](SATSearch.lean) proves that enumeration covers all Boolean
+assignments of length `n`, has exactly `2 ^ n` entries, and that its search
+is sound and complete. A returned assignment satisfies the predicate/CNF;
+`none` means no assignment of that length satisfies it.
+[Recorded axiom reports](results/sat-lean-axioms.txt) contain only permitted
+foundational axioms.
+
+[sat_lab.py](sat_lab.py) separately implements brute force, DPLL with unit
+propagation, assignment checking, seeded examples, and deterministic work
+counters. Resource exhaustion produces `UNKNOWN`, not `UNSAT`.
+[The recorded benchmark](results/sat-benchmark.json) contains 24 instances
+with no disagreement between the two solvers when both return a decision.
+
+**The Python implementations are not formally connected to the Lean
+definitions.** Tests are finite implementation evidence; the Lean theorem
+does not verify Python DPLL or give a polynomial-time bound. See
+[RESEARCH.md](RESEARCH.md).
+
+```powershell
+python sat_lab.py bench --output results/sat-benchmark-new.json
+lean SATSearch.lean
+```
+
+## NAND circuits: an exact two-input result
+
+The circuit model has binary NAND gates, two variable inputs, no free
+constants or complemented inputs, and sharing of earlier signals.
+[CircuitBounds.lean](CircuitBounds.lean) verifies an XOR witness with four
+gates and excludes the enumerated circuits with at most three gates.
+[CircuitCoverage.lean](CircuitCoverage.lean) proves that enumeration
+matches an independent well-formedness predicate, closing the coverage
+gap. Together they establish **exactly four NAND gates for two-input XOR
+in this model**. See [CIRCUIT_COVERAGE.md](CIRCUIT_COVERAGE.md) and its
+[recorded axiom reports](results/circuit-coverage-axioms.txt).
+
+The independent Python search [covers all 16 two-input functions](results/circuit-n2.json).
+The [bounded three-input run](results/circuit-n3-bounded.json) reaches 210
+of 256 functions and reports 46 as unknown; it stops at its 100,000-state
+cap. These are finite results, not growing-input circuit lower bounds.
+More details are in [CIRCUIT_RESEARCH.md](CIRCUIT_RESEARCH.md).
+
+```powershell
+python circuit_lab.py --n 2
+python circuit_lab.py --n 3 --max-gates 4 --max-states 20000 --timeout 20
+lean -o CircuitBounds.olean CircuitBounds.lean
+$env:LEAN_PATH = (Get-Location).Path
+lean CircuitCoverage.lean
+```
+
+## General counting and Boolean-function existence
+
+Three additional Lean modules extend the circuit work beyond the two-input
+example, while keeping the conclusion conditional and nonconstructive:
+
+- [CircuitCounting.lean](CircuitCounting.lean) proves coverage and absence of
+  duplicate circuit descriptions, then the exact count
+  `D(n,s) = sum(k=0..s) (n+k) * product(i=0..k-1) (n+i)^2`.
+  This counts topologically ordered NAND descriptions with a chosen output,
+  not distinct Boolean functions. For `n >= 1`, it proves
+  `D(n,s) <= (s+1) * (n+s)^(2*s+1)`.
+- [CircuitSemantics.lean](CircuitSemantics.lean) proves that each truth-table
+  mask bit agrees with an independently defined pointwise Boolean evaluator
+  on assignments `j < 2^n`. It also proves bounded-mask/Boolean-function
+  correspondence, so a missing mask represents a missing function.
+- [HardFunction.lean](HardFunction.lean) combines the results:
+  when `n >= 1` and
+  `(s+1) * (n+s)^(2*s+1) < 2^(2^n)`, some Boolean function disagrees on at
+  least one assignment with every independently well-formed NAND circuit
+  having at most `s` gates. The main theorem is
+  `exists_hard_bool_function`.
+
+The modules passed Lean 4.35.0 checking and independent review. Recorded
+axiom reports for [counting](results/circuit-counting-axioms.txt),
+[semantics](results/circuit-semantics-axioms.txt), and
+[function existence](results/hard-function-axioms.txt) contain only the
+permitted foundational axioms.
+
+This formalizes a known counting argument. It does not name an explicit hard
+function, prove that one is in NP, or establish an asymptotic threshold for
+the arithmetic inequality. The existence theorem supplies no P-versus-NP
+separation and is not a novel discovery.
+
+Compile in dependency order from this directory:
+
+```powershell
+$env:LEAN_PATH = (Get-Location).Path
+lean -o CircuitCounting.olean CircuitCounting.lean
+lean -o CircuitSemantics.olean CircuitSemantics.lean
+lean HardFunction.lean
+```
+
+## Bounded synthesis with Z3
+
+[synthesis.py](synthesis.py), developed with Claude Code, encodes bounded
+NAND circuits in Z3. [requirements.txt](requirements.txt) pins
+`z3-solver==5.3.3.0` alongside Streamlit. It checks every returned witness
+with a separate pure-Python evaluator over all input assignments.
+
+The supported bounds are 1-4 inputs, 0-8 gates, and a 1-600,000 ms timeout
+per solver query. Search starts at zero gates; an exact minimum is reported
+only when every lower budget returned UNSAT and the witness checks.
+An UNKNOWN result at a lower budget prevents an exactness claim.
+
+[The two-input crosscheck](results/synthesis-crosscheck-n2.json) records
+agreement with the independent BFS minima for all 16 functions.
+[The three-input parity run](results/synthesis-parity3.json), target mask
+150 (`0x96`), records UNSAT for budgets 0-7 and a checked SAT witness at
+8 gates. Thus its reported minimum of eight is **exact solver evidence for
+the bounded encoding, not a Lean proof**. The UNSAT answers have not been
+exported as certificates checked by Lean.
+
+```powershell
+.\.venv\Scripts\python.exe synthesis.py --n 2 --target 0x6 --max-gates 4
+.\.venv\Scripts\python.exe synthesis.py --n 3 --target 0x96 --max-gates 8 --timeout-ms 60000
+.\.venv\Scripts\python.exe -m unittest tests.test_synthesis -v
+```
+
+Use `--output path.json` to create a new results file; existing files are
+not overwritten. Nine synthesis regression tests cover the small minima,
+malformed/tampered witnesses, caps, and UNKNOWN handling.
+
+## Tests and offline demo
+
+```powershell
+python -m unittest discover -s tests -v
+python demo.py
+```
+
+Unit tests cover proof filtering, exact axiom-report parsing, malformed usage,
+budget reservations, process limits, retries, and independent SAT/circuit
+checks. Real Lean integration tests also run when the pinned compiler is
+available; they skip when it is absent. API tests use fake transport and
+temporary ledgers, so this test command does not make paid model requests.
+
+The demo uses canned proof bodies with the real checker and logs separately
+to `logs/demo-runs.jsonl`. It is not a model benchmark. Missing Lean is
+reported as `tool_unavailable`.
+
+## Research limitations
+
+The fixed-theorem benchmark measures a small generate-and-check workflow.
+The SAT formalization proves exhaustive search correct. The circuit work proves
+a tiny finite minimum and a general conditional existence theorem by counting;
+the synthesis extension adds bounded solver evidence. None identifies a hard
+NP function, gives a polynomial-time algorithm for all SAT inputs, or rules out
+every such algorithm. There is no P-versus-NP solution, novel discovery, or
+claimed asymptotic breakthrough.
+
+Reproduction depends on the pinned toolchain, source, prompts, model version,
+and effort; hosted models may change. A worst-case complexity separation alone
+would also not establish the security of deployed cryptography.
+
+Final checkpoint verification: **149 Python tests passed** and all six research Lean sources compiled. See `results/verification.json` and `results/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.

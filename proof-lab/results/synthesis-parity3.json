@@ -1,0 +1,86 @@
+{
+  "n": 3,
+  "target": 150,
+  "max_gates": 8,
+  "timeout_ms_per_query": 10000,
+  "z3_version": "5.3.3.0 430d19e697e2ec9bad79ff210d41b4a7a5fcfa3e 430d19e",
+  "status": "SAT",
+  "gates": 8,
+  "exact": true,
+  "witness": {
+    "gates": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    "output": 10
+  },
+  "attempts": [
+    {
+      "k": 0,
+      "status": "UNSAT"
+    },
+    {
+      "k": 1,
+      "status": "UNSAT"
+    },
+    {
+      "k": 2,
+      "status": "UNSAT"
+    },
+    {
+      "k": 3,
+      "status": "UNSAT"
+    },
+    {
+      "k": 4,
+      "status": "UNSAT"
+    },
+    {
+      "k": 5,
+      "status": "UNSAT"
+    },
+    {
+      "k": 6,
+      "status": "UNSAT"
+    },
+    {
+      "k": 7,
+      "status": "UNSAT"
+    },
+    {
+      "k": 8,
+      "status": "SAT"
+    }
+  ],
+  "evidence": "z3 solver result for the bounded model (solver evidence, not a formal proof)"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "cancelled_no_output",
+  "provider": "Claude Code",
+  "effort": "max",
+  "result": null,
+  "usage_unknown": true,
+  "note": "No mathematical result was received before this stalled request was stopped."
+}

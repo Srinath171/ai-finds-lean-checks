@@ -1,0 +1,1000 @@
+{
+  "description": "Deterministic SAT experiment counters (nodes and literal checks). Counts are exact search-work counters, not timing-based complexity evidence.",
+  "max_nodes": 200000,
+  "results": [
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false
+        },
+        "num_vars": 3,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 0,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false
+        },
+        "num_vars": 3,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 0,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "expected": "SAT",
+      "kind": "seeded",
+      "name": "empty-formula",
+      "num_clauses": 0,
+      "num_vars": 3
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 0,
+          "nodes": 4,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 0,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "expected": "UNSAT",
+      "kind": "seeded",
+      "name": "empty-clause",
+      "num_clauses": 1,
+      "num_vars": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true
+        },
+        "num_vars": 1,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 2,
+          "nodes": 2,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true
+        },
+        "num_vars": 1,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 3,
+          "nodes": 1,
+          "unit_propagations": 1
+        },
+        "status": "SAT"
+      },
+      "expected": "SAT",
+      "kind": "seeded",
+      "name": "single-unit",
+      "num_clauses": 1,
+      "num_vars": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": null,
+        "num_vars": 1,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 3,
+          "nodes": 2,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": null,
+        "num_vars": 1,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 4,
+          "nodes": 1,
+          "unit_propagations": 1
+        },
+        "status": "UNSAT"
+      },
+      "expected": "UNSAT",
+      "kind": "seeded",
+      "name": "contradictory-units",
+      "num_clauses": 2,
+      "num_vars": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "num_vars": 3,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 20,
+          "nodes": 8,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true,
+          "2": true,
+          "3": true
+        },
+        "num_vars": 3,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 25,
+          "nodes": 1,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": "SAT",
+      "kind": "seeded",
+      "name": "unit-chain",
+      "num_clauses": 3,
+      "num_vars": 3
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 9,
+          "nodes": 4,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 12,
+          "nodes": 1,
+          "unit_propagations": 2
+        },
+        "status": "UNSAT"
+      },
+      "expected": "UNSAT",
+      "kind": "seeded",
+      "name": "unit-chain-conflict",
+      "num_clauses": 3,
+      "num_vars": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 16,
+          "nodes": 4,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": null,
+        "num_vars": 2,
+        "stats": {
+          "decisions": 1,
+          "literal_checks": 32,
+          "nodes": 3,
+          "unit_propagations": 2
+        },
+        "status": "UNSAT"
+      },
+      "expected": "UNSAT",
+      "kind": "seeded",
+      "name": "all-combinations-2sat-unsat",
+      "num_clauses": 4,
+      "num_vars": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": null,
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 323,
+          "nodes": 64,
+          "unit_propagations": 0
+        },
+        "status": "UNSAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": null,
+        "num_vars": 6,
+        "stats": {
+          "decisions": 1,
+          "literal_checks": 189,
+          "nodes": 3,
+          "unit_propagations": 9
+        },
+        "status": "UNSAT"
+      },
+      "expected": "UNSAT",
+      "kind": "seeded",
+      "name": "pigeonhole-3-into-2",
+      "num_clauses": 9,
+      "num_vars": 6
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 25,
+          "nodes": 7,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 1,
+          "literal_checks": 43,
+          "nodes": 2,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": "SAT",
+      "kind": "seeded",
+      "name": "pigeonhole-2-into-2",
+      "num_clauses": 4,
+      "num_vars": 4
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 17,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 4,
+          "literal_checks": 215,
+          "nodes": 5,
+          "unit_propagations": 1
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "seeded",
+      "name": "random-3cnf-seed-0",
+      "num_clauses": 12,
+      "num_vars": 6
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 618,
+          "nodes": 57,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 5,
+          "literal_checks": 963,
+          "nodes": 10,
+          "unit_propagations": 12
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "seeded",
+      "name": "random-3cnf-seed-7",
+      "num_clauses": 20,
+      "num_vars": 6
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false
+        },
+        "num_vars": 5,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 131,
+          "nodes": 17,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false
+        },
+        "num_vars": 5,
+        "stats": {
+          "decisions": 6,
+          "literal_checks": 412,
+          "nodes": 10,
+          "unit_propagations": 7
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "seeded",
+      "name": "random-3cnf-seed-42",
+      "num_clauses": 10,
+      "num_vars": 5
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 12,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 3,
+          "literal_checks": 102,
+          "nodes": 4,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n4-m8-seed0",
+      "num_clauses": 8,
+      "num_vars": 4,
+      "seed": 0
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 22,
+          "nodes": 3,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 2,
+          "literal_checks": 108,
+          "nodes": 3,
+          "unit_propagations": 1
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n4-m8-seed1",
+      "num_clauses": 8,
+      "num_vars": 4,
+      "seed": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": false,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 47,
+          "nodes": 5,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": false,
+          "4": false
+        },
+        "num_vars": 4,
+        "stats": {
+          "decisions": 2,
+          "literal_checks": 154,
+          "nodes": 4,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n4-m8-seed2",
+      "num_clauses": 8,
+      "num_vars": 4,
+      "seed": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 23,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 4,
+          "literal_checks": 273,
+          "nodes": 5,
+          "unit_propagations": 1
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m16-seed0",
+      "num_clauses": 16,
+      "num_vars": 6,
+      "seed": 0
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": true
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 231,
+          "nodes": 18,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": true
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 4,
+          "literal_checks": 373,
+          "nodes": 6,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m16-seed1",
+      "num_clauses": 16,
+      "num_vars": 6,
+      "seed": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 269,
+          "nodes": 25,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 2,
+          "literal_checks": 423,
+          "nodes": 4,
+          "unit_propagations": 6
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m16-seed2",
+      "num_clauses": 16,
+      "num_vars": 6,
+      "seed": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 40,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 3,
+          "literal_checks": 454,
+          "nodes": 4,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m24-seed0",
+      "num_clauses": 24,
+      "num_vars": 6,
+      "seed": 0
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 433,
+          "nodes": 33,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 6,
+          "literal_checks": 759,
+          "nodes": 9,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m24-seed1",
+      "num_clauses": 24,
+      "num_vars": 6,
+      "seed": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": true
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 435,
+          "nodes": 34,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": true,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": true
+        },
+        "num_vars": 6,
+        "stats": {
+          "decisions": 5,
+          "literal_checks": 878,
+          "nodes": 8,
+          "unit_propagations": 8
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n6-m24-seed2",
+      "num_clauses": 24,
+      "num_vars": 6,
+      "seed": 2
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false,
+          "7": false,
+          "8": false
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 34,
+          "nodes": 1,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": false,
+          "5": false,
+          "6": false,
+          "7": false,
+          "8": false
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 4,
+          "literal_checks": 467,
+          "nodes": 5,
+          "unit_propagations": 3
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n8-m24-seed0",
+      "num_clauses": 24,
+      "num_vars": 8,
+      "seed": 0
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": true,
+          "5": true,
+          "6": false,
+          "7": true,
+          "8": false
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 280,
+          "nodes": 27,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": false,
+          "4": true,
+          "5": true,
+          "6": false,
+          "7": true,
+          "8": false
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 3,
+          "literal_checks": 507,
+          "nodes": 4,
+          "unit_propagations": 4
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n8-m24-seed1",
+      "num_clauses": 24,
+      "num_vars": 8,
+      "seed": 1
+    },
+    {
+      "brute_force": {
+        "algorithm": "brute_force",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false,
+          "7": false,
+          "8": true
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 0,
+          "literal_checks": 403,
+          "nodes": 34,
+          "unit_propagations": 0
+        },
+        "status": "SAT"
+      },
+      "dpll": {
+        "algorithm": "dpll",
+        "assignment": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "4": false,
+          "5": false,
+          "6": false,
+          "7": false,
+          "8": true
+        },
+        "num_vars": 8,
+        "stats": {
+          "decisions": 3,
+          "literal_checks": 680,
+          "nodes": 5,
+          "unit_propagations": 7
+        },
+        "status": "SAT"
+      },
+      "expected": null,
+      "kind": "random-3cnf",
+      "name": "random-3cnf-n8-m24-seed2",
+      "num_clauses": 24,
+      "num_vars": 8,
+      "seed": 2
+    }
+  ]
+}

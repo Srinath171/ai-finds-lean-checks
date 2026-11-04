@@ -1,0 +1,63 @@
+{
+  "description": "Token-based estimates at published Standard rates, not provider billing. Excludes interrupted coding requests lacking usage reports and unrelated account activity. External holds remain in local ledger.",
+  "meta_completed_coding_runs": [
+    {
+      "run_log": "muse-circuit.jsonl",
+      "model": "muse-wonder-1.0",
+      "input_tokens": 1245504,
+      "cached_input_tokens": 1166456,
+      "output_tokens": 34421,
+      "reasoning_tokens_included_in_output": 16989,
+      "calls": 23,
+      "standard_rate_estimate_usd": 1.2379032
+    },
+    {
+      "run_log": "muse-counting.jsonl",
+      "model": "muse-wonder-1.0",
+      "input_tokens": 1882718,
+      "cached_input_tokens": 1642268,
+      "output_tokens": 74992,
+      "reasoning_tokens_included_in_output": 58205,
+      "calls": 21,
+      "standard_rate_estimate_usd": 2.7900936
+    },
+    {
+      "run_log": "muse-coverage.jsonl",
+      "model": "muse-wonder-1.0",
+      "input_tokens": 972223,
+      "cached_input_tokens": 909596,
+      "output_tokens": 23138,
+      "reasoning_tokens_included_in_output": 13157,
+      "calls": 20,
+      "standard_rate_estimate_usd": 0.8951872
+    },
+    {
+      "run_log": "muse-hard-function.jsonl",
+      "model": "muse-wonder-1.0",
+      "input_tokens": 395228,
+      "cached_input_tokens": 334892,
+      "output_tokens": 8487,
+      "reasoning_tokens_included_in_output": 5217,
+      "calls": 8,
+      "standard_rate_estimate_usd": 0.4780624
+    },
+    {
+      "run_log": "muse-semantics.jsonl",
+      "model": "muse-wonder-1.0",
+      "input_tokens": 1820146,
+      "cached_input_tokens": 1714004,
+      "output_tokens": 28964,
+      "reasoning_tokens_included_in_output": 16900,
+      "calls": 26,
+      "standard_rate_estimate_usd": 1.3466488
+    }
+  ],
+  "meta_known_coding_estimate_usd": 6.7478952,
+  "meta_catalog_api_estimate_usd": 0.193918,
+  "meta_rates_per_million": {
+    "input": 4,
+    "cached_input": 0.2,
+    "output": 20
+  },
+  "rates_source": "https://dev.meta.ai/docs/pricing-rate-limits"
+}

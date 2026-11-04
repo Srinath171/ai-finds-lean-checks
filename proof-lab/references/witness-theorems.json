@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "source_archive": "files/files.zip",
+  "source_entry": "theorems.json",
+  "source_archive_sha256": "18a21ec6dd81b6598cd41b09917ebf48be561e892be5a245a90952dc721daf6c",
+  "reviewed_date": "2026-11-04",
+  "verification_status": "unverified",
+  "execution_performed": false,
+  "purpose": "Reference data only: inspect and validate through the hardened prover before use. No P versus NP result is claimed.",
+  "theorems": [
+    {
+      "name": "add_comm_easy",
+      "group": "Warm-up",
+      "statement": "(a b : Nat) : a + b = b + a",
+      "reference": "by omega"
+    },
+    {
+      "name": "add_zero_easy",
+      "group": "Warm-up",
+      "statement": "(n : Nat) : n + 0 = n",
+      "reference": "by simp"
+    },
+    {
+      "name": "add_assoc_easy",
+      "group": "Warm-up",
+      "statement": "(a b c : Nat) : a + b + c = a + (b + c)",
+      "reference": "by omega"
+    },
+    {
+      "name": "double_eq_add",
+      "group": "Warm-up",
+      "statement": "(n : Nat) : 2 * n = n + n",
+      "reference": "by omega"
+    },
+    {
+      "name": "lt_succ_easy",
+      "group": "Warm-up",
+      "statement": "(n : Nat) : n < n + 1",
+      "reference": "by omega"
+    },
+    {
+      "name": "length_append_easy",
+      "group": "Warm-up",
+      "statement": "(l1 l2 : List Nat) : (l1 ++ l2).length = l1.length + l2.length",
+      "reference": "by simp"
+    },
+    {
+      "name": "reverse_reverse_easy",
+      "group": "Warm-up",
+      "statement": "(l : List Nat) : l.reverse.reverse = l",
+      "reference": "by simp"
+    },
+    {
+      "name": "and_swap",
+      "group": "Warm-up",
+      "statement": "(p q : Prop) : p ∧ q → q ∧ p",
+      "reference": "fun ⟨hp, hq⟩ => ⟨hq, hp⟩"
+    },
+    {
+      "name": "or_swap",
+      "group": "Warm-up",
+      "statement": "(p q : Prop) : p ∨ q → q ∨ p",
+      "reference": "fun h => h.elim Or.inr Or.inl"
+    },
+    {
+      "name": "not_not_bool",
+      "group": "Warm-up",
+      "statement": "(b : Bool) : (!(!b)) = b",
+      "reference": "by cases b <;> rfl"
+    },
+    {
+      "name": "sat_instance",
+      "group": "Find the certificate",
+      "statement": ": ∃ x y z : Bool, ((x || y) && (!x || z) && (!y || !z)) = true",
+      "reference": "⟨true, false, true, rfl⟩"
+    },
+    {
+      "name": "perfect_square",
+      "group": "Find the certificate",
+      "statement": ": ∃ n : Nat, n * n = 144",
+      "reference": "⟨12, rfl⟩"
+    },
+    {
+      "name": "two_numbers",
+      "group": "Find the certificate",
+      "statement": ": ∃ a b : Nat, a + b = 10 ∧ a * b = 21",
+      "reference": "⟨3, 7, by decide⟩"
+    },
+    {
+      "name": "subset_sum",
+      "group": "Find the certificate",
+      "statement": ": ∃ a b c d e f : Bool, (if a then 3 else 0) + (if b then 34 else 0) + (if c then 4 else 0) + (if d then 12 else 0) + (if e then 5 else 0) + (if f then 2 else 0) = 9",
+      "reference": "⟨true, false, true, false, false, true, rfl⟩"
+    },
+    {
+      "name": "graph_coloring",
+      "group": "Find the certificate",
+      "statement": ": ∃ c : Nat → Nat, ([(0,1),(1,2),(2,0),(2,3),(3,4),(4,0)].all (fun e => c e.1 != c e.2) && [0,1,2,3,4].all (fun v => c v < 3)) = true",
+      "reference": "⟨fun v => if v = 0 then 0 else if v = 1 then 1 else if v = 2 then 2 else if v = 3 then 0 else 1, rfl⟩"
+    }
+  ]
+}

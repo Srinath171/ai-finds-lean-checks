@@ -1,0 +1,688 @@
+{
+  "runs": [
+    {
+      "run_id": "20261104T111313Z-f068e70e9bec",
+      "started_at": "2026-11-04T11:13:22.968155+00:00",
+      "theorem_id": "nat_add_zero",
+      "theorem_name": "nat_add_zero",
+      "statement": "theorem nat_add_zero (n : Nat) : n + 0 = n",
+      "statement_sha256": "824f1c9ac18591c394c53498e7bfea4e0213602d7aa0119b1321c6346de98775",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "rfl",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_add_zero' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 950,
+            "total_tokens": 1150,
+            "reasoning_tokens": 939
+          },
+          "cost_usd": 0.0042875,
+          "elapsed_seconds": 9.481,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 200,
+        "output_tokens": 950,
+        "total_tokens": 1150,
+        "reasoning_tokens": 939
+      },
+      "cost_usd": 0.0042875,
+      "budget_usd": 5.0,
+      "reserved_or_measured_usd": 0.0042875,
+      "elapsed_seconds": 9.481,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111322Z-a812130a49f4",
+      "started_at": "2026-11-04T11:14:54.701587+00:00",
+      "theorem_id": "nat_zero_add",
+      "theorem_name": "nat_zero_add",
+      "statement": "theorem nat_zero_add (n : Nat) : 0 + n = n",
+      "statement_sha256": "c0b420c8aae89db412c7838b7174cc3cd3499b1e11b5ede63324c6941f057e71",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "induction n\nrfl\ndsimp\nsimp_all",
+          "verifier_status": "invalid_proof",
+          "verified": false,
+          "diagnostics": "C:\\Users\\email\\AppData\\Local\\Temp\\lean-check-0yv9ffvs\\candidate.lean:5:2: error: `dsimp` made no progress\n'nat_zero_add' depends on axioms: [sorryAx]",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 3672,
+            "total_tokens": 3872,
+            "reasoning_tokens": 3650
+          },
+          "cost_usd": 0.015856,
+          "elapsed_seconds": 36.159,
+          "axioms": null
+        },
+        {
+          "attempt": 2,
+          "proof": "induction n\nrfl\nsimp_all",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_zero_add' depends on axioms: [propext]",
+          "usage": {
+            "input_tokens": 274,
+            "output_tokens": 6177,
+            "total_tokens": 6451,
+            "reasoning_tokens": 6159
+          },
+          "cost_usd": 0.02659475,
+          "elapsed_seconds": 55.572,
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "attempt_count": 2,
+      "usage_totals": {
+        "input_tokens": 474,
+        "output_tokens": 9849,
+        "total_tokens": 10323,
+        "reasoning_tokens": 9809
+      },
+      "cost_usd": 0.04245075,
+      "budget_usd": 4.9957125,
+      "reserved_or_measured_usd": 0.04245075,
+      "elapsed_seconds": 91.732,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111454Z-c735f71fadcd",
+      "started_at": "2026-11-04T11:15:00.881141+00:00",
+      "theorem_id": "nat_add_comm",
+      "theorem_name": "nat_add_comm",
+      "statement": "theorem nat_add_comm (a b : Nat) : a + b = b + a",
+      "statement_sha256": "3ed5d61bb7d55bfc2532726550ca6fc372d23d0f35a2c785da604043b4d7668b",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "exact Nat.add_comm a b",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_add_comm' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 202,
+            "output_tokens": 611,
+            "total_tokens": 813,
+            "reasoning_tokens": 596
+          },
+          "cost_usd": 0.00284925,
+          "elapsed_seconds": 6.178,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 202,
+        "output_tokens": 611,
+        "total_tokens": 813,
+        "reasoning_tokens": 596
+      },
+      "cost_usd": 0.00284925,
+      "budget_usd": 4.953261749999999,
+      "reserved_or_measured_usd": 0.00284925,
+      "elapsed_seconds": 6.178,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111500Z-5a5f406c1201",
+      "started_at": "2026-11-04T11:15:06.026028+00:00",
+      "theorem_id": "nat_add_assoc",
+      "theorem_name": "nat_add_assoc",
+      "statement": "theorem nat_add_assoc (a b c : Nat) : (a + b) + c = a + (b + c)",
+      "statement_sha256": "48d8a59b3cd0e4f8ee48ae850f0535a6cf37bf5be1734c73d669f22c239fa2ea",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "exact Nat.add_assoc a b c",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_add_assoc' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 211,
+            "output_tokens": 491,
+            "total_tokens": 702,
+            "reasoning_tokens": 475
+          },
+          "cost_usd": 0.0023505,
+          "elapsed_seconds": 5.144,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 211,
+        "output_tokens": 491,
+        "total_tokens": 702,
+        "reasoning_tokens": 475
+      },
+      "cost_usd": 0.0023505,
+      "budget_usd": 4.9504125,
+      "reserved_or_measured_usd": 0.0023505,
+      "elapsed_seconds": 5.145,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111506Z-2479695ef944",
+      "started_at": "2026-11-04T11:15:11.343684+00:00",
+      "theorem_id": "nat_mul_one",
+      "theorem_name": "nat_mul_one",
+      "statement": "theorem nat_mul_one (n : Nat) : n * 1 = n",
+      "statement_sha256": "9e324ada7e3dc0b8420a96eb1899b1fd460db9d669cd7c69d26c9bcc0bdf9267",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "exact Nat.mul_one n",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_mul_one' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 450,
+            "total_tokens": 650,
+            "reasoning_tokens": 436
+          },
+          "cost_usd": 0.0021625,
+          "elapsed_seconds": 5.316,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 200,
+        "output_tokens": 450,
+        "total_tokens": 650,
+        "reasoning_tokens": 436
+      },
+      "cost_usd": 0.0021625,
+      "budget_usd": 4.948061999999999,
+      "reserved_or_measured_usd": 0.0021625,
+      "elapsed_seconds": 5.317,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111511Z-c57a4b7bc464",
+      "started_at": "2026-11-04T11:15:17.184534+00:00",
+      "theorem_id": "nat_mul_comm",
+      "theorem_name": "nat_mul_comm",
+      "statement": "theorem nat_mul_comm (a b : Nat) : a * b = b * a",
+      "statement_sha256": "786f4a790b779e03d1ea6635f2333f68da997e3da5354260c1c22ab46e2bdc34",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "exact Nat.mul_comm a b",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'nat_mul_comm' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 202,
+            "output_tokens": 650,
+            "total_tokens": 852,
+            "reasoning_tokens": 635
+          },
+          "cost_usd": 0.003015,
+          "elapsed_seconds": 5.839,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 202,
+        "output_tokens": 650,
+        "total_tokens": 852,
+        "reasoning_tokens": 635
+      },
+      "cost_usd": 0.003015,
+      "budget_usd": 4.9458994999999994,
+      "reserved_or_measured_usd": 0.003015,
+      "elapsed_seconds": 5.839,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111517Z-218f3e58c30b",
+      "started_at": "2026-11-04T11:15:32.470536+00:00",
+      "theorem_id": "list_append_nil",
+      "theorem_name": "list_append_nil",
+      "statement": "theorem list_append_nil (l : List Nat) : l ++ [] = l",
+      "statement_sha256": "980512e077dc0ef29803c70c465125a835a2babf33c46aa29ed26fab0bd4869f",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "induction l\nrfl\nsimp_all",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'list_append_nil' depends on axioms: [propext]",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 1497,
+            "total_tokens": 1697,
+            "reasoning_tokens": 1479
+          },
+          "cost_usd": 0.00661225,
+          "elapsed_seconds": 15.285,
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 200,
+        "output_tokens": 1497,
+        "total_tokens": 1697,
+        "reasoning_tokens": 1479
+      },
+      "cost_usd": 0.00661225,
+      "budget_usd": 4.942884499999999,
+      "reserved_or_measured_usd": 0.00661225,
+      "elapsed_seconds": 15.285,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111532Z-decf9b5911f0",
+      "started_at": "2026-11-04T11:15:36.355330+00:00",
+      "theorem_id": "list_nil_append",
+      "theorem_name": "list_nil_append",
+      "statement": "theorem list_nil_append (l : List Nat) : [] ++ l = l",
+      "statement_sha256": "e67875c541c4b7fec30ec3586fc099faccee2374f282a4c65d33f80f991998eb",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "rfl",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'list_nil_append' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 331,
+            "total_tokens": 531,
+            "reasoning_tokens": 320
+          },
+          "cost_usd": 0.00165675,
+          "elapsed_seconds": 3.884,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 200,
+        "output_tokens": 331,
+        "total_tokens": 531,
+        "reasoning_tokens": 320
+      },
+      "cost_usd": 0.00165675,
+      "budget_usd": 4.936272249999999,
+      "reserved_or_measured_usd": 0.00165675,
+      "elapsed_seconds": 3.884,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111536Z-4f151388dee8",
+      "started_at": "2026-11-04T11:15:44.738608+00:00",
+      "theorem_id": "list_append_assoc",
+      "theorem_name": "list_append_assoc",
+      "statement": "theorem list_append_assoc (a b c : List Nat) : (a ++ b) ++ c = a ++ (b ++ c)",
+      "statement_sha256": "40cf3fd53850b9062cf5a8442b28cdd9fea1e70de6045b6047ebde2539e2134e",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "exact List.append_assoc a b c",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'list_append_assoc' depends on axioms: [propext]",
+          "usage": {
+            "input_tokens": 212,
+            "output_tokens": 775,
+            "total_tokens": 987,
+            "reasoning_tokens": 759
+          },
+          "cost_usd": 0.00355875,
+          "elapsed_seconds": 8.382,
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 212,
+        "output_tokens": 775,
+        "total_tokens": 987,
+        "reasoning_tokens": 759
+      },
+      "cost_usd": 0.00355875,
+      "budget_usd": 4.934615499999999,
+      "reserved_or_measured_usd": 0.00355875,
+      "elapsed_seconds": 8.383,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111544Z-baf7b03836cb",
+      "started_at": "2026-11-04T11:16:01.190599+00:00",
+      "theorem_id": "prop_and_comm",
+      "theorem_name": "prop_and_comm",
+      "statement": "theorem prop_and_comm (P Q : Prop) : P Γêº Q ΓåÆ Q Γêº P",
+      "statement_sha256": "e137e0336eb80f890137a5e85bc1bf94633128e7ae2f906d3a6f6cf04a94a0c9",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "intro h\nexact And.intro h.right h.left",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'prop_and_comm' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 202,
+            "output_tokens": 1503,
+            "total_tokens": 1705,
+            "reasoning_tokens": 1483
+          },
+          "cost_usd": 0.00664025,
+          "elapsed_seconds": 16.451,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 202,
+        "output_tokens": 1503,
+        "total_tokens": 1705,
+        "reasoning_tokens": 1483
+      },
+      "cost_usd": 0.00664025,
+      "budget_usd": 4.931056749999999,
+      "reserved_or_measured_usd": 0.00664025,
+      "elapsed_seconds": 16.452,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111601Z-1acfb3e57641",
+      "started_at": "2026-11-04T11:16:04.653707+00:00",
+      "theorem_id": "prop_id",
+      "theorem_name": "prop_id",
+      "statement": "theorem prop_id (P : Prop) : P ΓåÆ P",
+      "statement_sha256": "c13b8a674afa9ce6f321f40aeda23b4b3a02f4b3525fa2593afab43da7c54dec",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "intro h\nexact h",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'prop_id' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 196,
+            "output_tokens": 302,
+            "total_tokens": 498,
+            "reasoning_tokens": 288
+          },
+          "cost_usd": 0.0015285,
+          "elapsed_seconds": 3.462,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 196,
+        "output_tokens": 302,
+        "total_tokens": 498,
+        "reasoning_tokens": 288
+      },
+      "cost_usd": 0.0015285,
+      "budget_usd": 4.924416499999999,
+      "reserved_or_measured_usd": 0.0015285,
+      "elapsed_seconds": 3.463,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111604Z-fd1a7a175bc8",
+      "started_at": "2026-11-04T11:16:08.713932+00:00",
+      "theorem_id": "prop_or_intro_left",
+      "theorem_name": "prop_or_intro_left",
+      "statement": "theorem prop_or_intro_left (P Q : Prop) : P ΓåÆ P Γê¿ Q",
+      "statement_sha256": "d2690e0e467cb5a7ebdc726ee1eab6f66a3efec8b01d153df266a4ca91bae790",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "intro h\nleft\nexact h",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'prop_or_intro_left' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 201,
+            "output_tokens": 399,
+            "total_tokens": 600,
+            "reasoning_tokens": 383
+          },
+          "cost_usd": 0.001947,
+          "elapsed_seconds": 4.06,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 201,
+        "output_tokens": 399,
+        "total_tokens": 600,
+        "reasoning_tokens": 383
+      },
+      "cost_usd": 0.001947,
+      "budget_usd": 4.922887999999999,
+      "reserved_or_measured_usd": 0.001947,
+      "elapsed_seconds": 4.06,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111608Z-2ca003fd5350",
+      "started_at": "2026-11-04T11:16:16.501352+00:00",
+      "theorem_id": "decide_two_add_two",
+      "theorem_name": "decide_two_add_two",
+      "statement": "theorem decide_two_add_two : 2 + 2 = 4",
+      "statement_sha256": "f9db2e8a3fb42744e1eeefa5850360fc90aa3cf3309b482657d5d5c7fad93b0e",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "decide",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'decide_two_add_two' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 198,
+            "output_tokens": 691,
+            "total_tokens": 889,
+            "reasoning_tokens": 680
+          },
+          "cost_usd": 0.00318425,
+          "elapsed_seconds": 7.787,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 198,
+        "output_tokens": 691,
+        "total_tokens": 889,
+        "reasoning_tokens": 680
+      },
+      "cost_usd": 0.00318425,
+      "budget_usd": 4.920940999999998,
+      "reserved_or_measured_usd": 0.00318425,
+      "elapsed_seconds": 7.787,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111616Z-481201014e36",
+      "started_at": "2026-11-04T11:16:20.028962+00:00",
+      "theorem_id": "decide_three_lt_seven",
+      "theorem_name": "decide_three_lt_seven",
+      "statement": "theorem decide_three_lt_seven : 3 < 7",
+      "statement_sha256": "2a16e74f79c31925188ddfc25edb3bcd56519eb01bf2be7062747f082758085d",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "decide",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'decide_three_lt_seven' does not depend on any axioms",
+          "usage": {
+            "input_tokens": 196,
+            "output_tokens": 287,
+            "total_tokens": 483,
+            "reasoning_tokens": 276
+          },
+          "cost_usd": 0.00146475,
+          "elapsed_seconds": 3.527,
+          "axioms": []
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 196,
+        "output_tokens": 287,
+        "total_tokens": 483,
+        "reasoning_tokens": 276
+      },
+      "cost_usd": 0.00146475,
+      "budget_usd": 4.917756749999998,
+      "reserved_or_measured_usd": 0.00146475,
+      "elapsed_seconds": 3.527,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    },
+    {
+      "run_id": "20261104T111620Z-4268487cb192",
+      "started_at": "2026-11-04T11:16:26.606797+00:00",
+      "theorem_id": "decide_two_mem_list",
+      "theorem_name": "decide_two_mem_list",
+      "statement": "theorem decide_two_mem_list : 2 Γêê [1, 2, 3]",
+      "statement_sha256": "6da7e5454c98395c3c617d2dd5f09cdfa633f6d4c437e3583fa1dcf8e188d929",
+      "lean_toolchain": "leanprover/lean4:v4.35.0",
+      "model": "muse-spark-1.3",
+      "effort": "max",
+      "status": "verified",
+      "verified": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "proof": "decide",
+          "verifier_status": "verified",
+          "verified": true,
+          "diagnostics": "'decide_two_mem_list' depends on axioms: [propext, Quot.sound]",
+          "usage": {
+            "input_tokens": 202,
+            "output_tokens": 598,
+            "total_tokens": 800,
+            "reasoning_tokens": 587
+          },
+          "cost_usd": 0.002794,
+          "elapsed_seconds": 6.577,
+          "axioms": [
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "attempt_count": 1,
+      "usage_totals": {
+        "input_tokens": 202,
+        "output_tokens": 598,
+        "total_tokens": 800,
+        "reasoning_tokens": 587
+      },
+      "cost_usd": 0.002794,
+      "budget_usd": 4.916291999999998,
+      "reserved_or_measured_usd": 0.002794,
+      "elapsed_seconds": 6.578,
+      "log_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\runs.jsonl"
+    }
+  ],
+  "summary": {
+    "total_runs": 15,
+    "verified_runs": 15,
+    "by_status": {
+      "verified": 15
+    },
+    "by_model": {
+      "muse-spark-1.3": {
+        "runs": 15,
+        "verified": 15
+      }
+    }
+  },
+  "remaining_budget_usd": 4.913497999999998
+}

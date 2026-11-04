@@ -1,0 +1,325 @@
+{
+  "description": "Offline replay of real model benchmark proof bodies using current hardened verifier; no new API calls.",
+  "verifier_sha256": "fef7d03129636160d6d94f1d8eed08ef64f825a701495ea21f252f93fe562de7",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "verified": 30,
+  "total": 30,
+  "results": [
+    {
+      "run_id": "20261104T111215Z-d18f8f112966",
+      "theorem_id": "nat_add_zero",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_zero' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111219Z-f98b8967cd6c",
+      "theorem_id": "nat_zero_add",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_zero_add' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111224Z-ce943129a052",
+      "theorem_id": "nat_add_comm",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111226Z-8949abc66053",
+      "theorem_id": "nat_add_assoc",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_assoc' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111231Z-10afd1b4b4fe",
+      "theorem_id": "nat_mul_one",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_mul_one' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111236Z-9b536cb20b3e",
+      "theorem_id": "nat_mul_comm",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_mul_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111240Z-73873ae9cd4c",
+      "theorem_id": "list_append_nil",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "propext"
+      ],
+      "diagnostics": "'list_append_nil' depends on axioms: [propext]"
+    },
+    {
+      "run_id": "20261104T111245Z-c04bc1a13f99",
+      "theorem_id": "list_nil_append",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'list_nil_append' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111248Z-09c7d13d879a",
+      "theorem_id": "list_append_assoc",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "propext"
+      ],
+      "diagnostics": "'list_append_assoc' depends on axioms: [propext]"
+    },
+    {
+      "run_id": "20261104T111251Z-42c3ab0f371a",
+      "theorem_id": "prop_and_comm",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_and_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111258Z-47961ef98ee6",
+      "theorem_id": "prop_id",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_id' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111301Z-70e5ace969c8",
+      "theorem_id": "prop_or_intro_left",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_or_intro_left' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111304Z-dd6344f69f32",
+      "theorem_id": "decide_two_add_two",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'decide_two_add_two' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111307Z-d34de1fb6c84",
+      "theorem_id": "decide_three_lt_seven",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'decide_three_lt_seven' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111310Z-b4b1326c205f",
+      "theorem_id": "decide_two_mem_list",
+      "model": "muse-wonder-1.0",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "diagnostics": "'decide_two_mem_list' depends on axioms: [propext, Quot.sound]"
+    },
+    {
+      "run_id": "20261104T111313Z-f068e70e9bec",
+      "theorem_id": "nat_add_zero",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_zero' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111322Z-a812130a49f4",
+      "theorem_id": "nat_zero_add",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "propext"
+      ],
+      "diagnostics": "'nat_zero_add' depends on axioms: [propext]"
+    },
+    {
+      "run_id": "20261104T111454Z-c735f71fadcd",
+      "theorem_id": "nat_add_comm",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111500Z-5a5f406c1201",
+      "theorem_id": "nat_add_assoc",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_add_assoc' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111506Z-2479695ef944",
+      "theorem_id": "nat_mul_one",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_mul_one' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111511Z-c57a4b7bc464",
+      "theorem_id": "nat_mul_comm",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'nat_mul_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111517Z-218f3e58c30b",
+      "theorem_id": "list_append_nil",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "propext"
+      ],
+      "diagnostics": "'list_append_nil' depends on axioms: [propext]"
+    },
+    {
+      "run_id": "20261104T111532Z-decf9b5911f0",
+      "theorem_id": "list_nil_append",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'list_nil_append' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111536Z-4f151388dee8",
+      "theorem_id": "list_append_assoc",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "propext"
+      ],
+      "diagnostics": "'list_append_assoc' depends on axioms: [propext]"
+    },
+    {
+      "run_id": "20261104T111544Z-baf7b03836cb",
+      "theorem_id": "prop_and_comm",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_and_comm' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111601Z-1acfb3e57641",
+      "theorem_id": "prop_id",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_id' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111604Z-fd1a7a175bc8",
+      "theorem_id": "prop_or_intro_left",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'prop_or_intro_left' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111608Z-2ca003fd5350",
+      "theorem_id": "decide_two_add_two",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'decide_two_add_two' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111616Z-481201014e36",
+      "theorem_id": "decide_three_lt_seven",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [],
+      "diagnostics": "'decide_three_lt_seven' does not depend on any axioms"
+    },
+    {
+      "run_id": "20261104T111620Z-4268487cb192",
+      "theorem_id": "decide_two_mem_list",
+      "model": "muse-spark-1.3",
+      "original_status": "verified",
+      "replay_status": "verified",
+      "verified": true,
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "diagnostics": "'decide_two_mem_list' depends on axioms: [propext, Quot.sound]"
+    }
+  ]
+}

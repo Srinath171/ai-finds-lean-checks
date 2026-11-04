@@ -1,0 +1,6 @@
+'gateSeqs_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'circuitsOfLen_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'no_wellformed_xor_up_to_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'xor_witness_wellformed' depends on axioms: [propext, Quot.sound]
+'exists_wellformed_xor_of_length_4' depends on axioms: [propext, Quot.sound]
+'xor_exact_minimum_4_wellformed' depends on axioms: [propext, Classical.choice, Quot.sound]

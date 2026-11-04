@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "note": "Immutable catalog. Theorem names and statements are fixed by the verifier; models supply only a proof body.",
+  "theorems": [
+    {
+      "id": "nat_add_zero",
+      "name": "nat_add_zero",
+      "statement": "theorem nat_add_zero (n : Nat) : n + 0 = n",
+      "category": "nat",
+      "description": "Right identity of natural-number addition."
+    },
+    {
+      "id": "nat_zero_add",
+      "name": "nat_zero_add",
+      "statement": "theorem nat_zero_add (n : Nat) : 0 + n = n",
+      "category": "nat",
+      "description": "Left identity of natural-number addition."
+    },
+    {
+      "id": "nat_add_comm",
+      "name": "nat_add_comm",
+      "statement": "theorem nat_add_comm (a b : Nat) : a + b = b + a",
+      "category": "nat",
+      "description": "Commutativity of natural-number addition."
+    },
+    {
+      "id": "nat_add_assoc",
+      "name": "nat_add_assoc",
+      "statement": "theorem nat_add_assoc (a b c : Nat) : (a + b) + c = a + (b + c)",
+      "category": "nat",
+      "description": "Associativity of natural-number addition."
+    },
+    {
+      "id": "nat_mul_one",
+      "name": "nat_mul_one",
+      "statement": "theorem nat_mul_one (n : Nat) : n * 1 = n",
+      "category": "nat",
+      "description": "Right identity of natural-number multiplication."
+    },
+    {
+      "id": "nat_mul_comm",
+      "name": "nat_mul_comm",
+      "statement": "theorem nat_mul_comm (a b : Nat) : a * b = b * a",
+      "category": "nat",
+      "description": "Commutativity of natural-number multiplication."
+    },
+    {
+      "id": "list_append_nil",
+      "name": "list_append_nil",
+      "statement": "theorem list_append_nil (l : List Nat) : l ++ [] = l",
+      "category": "list",
+      "description": "Appending the empty list on the right."
+    },
+    {
+      "id": "list_nil_append",
+      "name": "list_nil_append",
+      "statement": "theorem list_nil_append (l : List Nat) : [] ++ l = l",
+      "category": "list",
+      "description": "Appending the empty list on the left."
+    },
+    {
+      "id": "list_append_assoc",
+      "name": "list_append_assoc",
+      "statement": "theorem list_append_assoc (a b c : List Nat) : (a ++ b) ++ c = a ++ (b ++ c)",
+      "category": "list",
+      "description": "Associativity of list append."
+    },
+    {
+      "id": "prop_and_comm",
+      "name": "prop_and_comm",
+      "statement": "theorem prop_and_comm (P Q : Prop) : P ∧ Q → Q ∧ P",
+      "category": "prop",
+      "description": "Commutativity of conjunction."
+    },
+    {
+      "id": "prop_id",
+      "name": "prop_id",
+      "statement": "theorem prop_id (P : Prop) : P → P",
+      "category": "prop",
+      "description": "Identity implication."
+    },
+    {
+      "id": "prop_or_intro_left",
+      "name": "prop_or_intro_left",
+      "statement": "theorem prop_or_intro_left (P Q : Prop) : P → P ∨ Q",
+      "category": "prop",
+      "description": "Left introduction for disjunction."
+    },
+    {
+      "id": "decide_two_add_two",
+      "name": "decide_two_add_two",
+      "statement": "theorem decide_two_add_two : 2 + 2 = 4",
+      "category": "decide",
+      "description": "Finite arithmetic puzzle solved by decide."
+    },
+    {
+      "id": "decide_three_lt_seven",
+      "name": "decide_three_lt_seven",
+      "statement": "theorem decide_three_lt_seven : 3 < 7",
+      "category": "decide",
+      "description": "Finite ordering puzzle solved by decide."
+    },
+    {
+      "id": "decide_two_mem_list",
+      "name": "decide_two_mem_list",
+      "statement": "theorem decide_two_mem_list : 2 ∈ [1, 2, 3]",
+      "category": "decide",
+      "description": "Finite list-membership puzzle solved by decide."
+    }
+  ]
+}

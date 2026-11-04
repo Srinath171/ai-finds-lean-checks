@@ -1,0 +1,2 @@
+'xor_no_circuit_up_to_3' depends on axioms: [propext]
+'xor_witness_4' depends on axioms: [propext]

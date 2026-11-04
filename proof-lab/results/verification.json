@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T16:33:21.039027+00:00",
-  "python_tests_passed": 266,
-  "test_seconds": 19.518,
+  "checked_utc": "2026-11-04T17:19:18.157816+00:00",
+  "python_tests_passed": 312,
+  "test_seconds": 21.013,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 19,
+  "formal_source_count": 23,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -118,8 +118,32 @@
       "sha256": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
       "sha256_lf": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
       "compiled": true
+    },
+    {
+      "path": "frontier/SparseMonomial.lean",
+      "sha256": "8c10b6879751de7f7bc0e5f50e77352940cce1ac179c86eef47c0967240b9321",
+      "sha256_lf": "e47515aba0d088a7918a927ab17851a68d3267495b178e8d731c24683acd1b24",
+      "compiled": true
+    },
+    {
+      "path": "frontier/BooleanMobius.lean",
+      "sha256": "15bf404a342ba8e5680b06628d355a15b52d60daab4b73cb67312f4d1e893b02",
+      "sha256_lf": "15bf404a342ba8e5680b06628d355a15b52d60daab4b73cb67312f4d1e893b02",
+      "compiled": true
+    },
+    {
+      "path": "frontier/SparseCertificateBound.lean",
+      "sha256": "1f742f5b3b4c0ac2cd9d778b1697917bb0d9ca05ea7bf1c46bbd9c2da828bfa8",
+      "sha256_lf": "1f742f5b3b4c0ac2cd9d778b1697917bb0d9ca05ea7bf1c46bbd9c2da828bfa8",
+      "compiled": true
+    },
+    {
+      "path": "frontier/SubsetZeta.lean",
+      "sha256": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
+      "sha256_lf": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
+      "compiled": true
     }
   ],
-  "scope": "Full offline Python suite and all included Lean research sources; no skipped tests. API tests use mock transports. Existing compiler warnings remain in the log. Public model output is not a proof.",
+  "scope": "Full offline Python suite and all registered Lean research sources. No skipped tests; no API calls. Existing compiler warnings remain in the log. In-progress unregistered sources are excluded.",
   "log": "frontier/verification-output.txt"
 }

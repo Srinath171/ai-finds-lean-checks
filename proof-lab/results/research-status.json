@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T16:33:21.039027+00:00",
+  "checked_utc": "2026-11-04T17:19:18.157816+00:00",
   "status": "P_VS_NP_NOT_SOLVED",
   "original_deadline_utc": "2026-11-04T19:42:17Z",
   "phases": [
@@ -82,7 +82,7 @@
     "claim_status": "UNVERIFIED"
   },
   "active_api_requests": 0,
-  "current_activity": "Verified checkpoint publication; no automatic paid loop scheduled.",
+  "current_activity": "Publishing the verified algebraic and subset-zeta checkpoint; independently formalizing the diagonal-width boundary without paid calls.",
   "scope": "Snapshot only; live response state is ignored by Git. No generated output is executed or accepted as a proof.",
   "background_optimal_support": {
     "directory": "frontier/background-meta/optimal-support",
@@ -107,6 +107,42 @@
     "quantifiers": "For every n>=2, a cheaper parity phase and an optimal first gate give exact residual cost C-1; every optimal residual uses all n+1 coordinates. Violations of every linear hole cap occur beyond every arity threshold.",
     "scope": "Refutes one internal optimal-support premise; no MCSP oracle reduction, NP-hardness or PvsNP solution."
   },
-  "remaining_mathematical_blocker": "No unrestricted structured Partial-MCSP to total-MCSP reduction has been constructed. Automatic few-hole optimal support is refuted, so that proposed shortcut cannot provide the missing exact reduction.",
-  "setup_blockers": []
+  "remaining_mathematical_blocker": "Neither a general short-certificate guarantee nor an eligible-class SAT algorithm with the required uniform worst-case savings has been proved. The unrestricted Partial-MCSP to total-MCSP bridge also remains missing.",
+  "setup_blockers": [],
+  "additional_material_results": [
+    {
+      "status": "LEAN_VERIFIED",
+      "name": "Wide-clause rational sparse-certificate lower bound",
+      "source": "frontier/SparseCertificateBound.lean",
+      "scope": "Actual all-rational-point evaluation identity with arbitrary natural exponents and Boolean-axiom coefficients implies at least2^n nonzero records. Coefficientwise polynomial-ring equality is not implemented."
+    },
+    {
+      "status": "TESTED_IMPLEMENTATION",
+      "name": "Sparse NS compiler and exact checker",
+      "source": "frontier/sparse_ns.py",
+      "scope": "Bounded exact rational certificate checking; no polynomial witness-size guarantee."
+    },
+    {
+      "status": "TESTED_IMPLEMENTATION",
+      "name": "Compact factored and OR-chain sparse witnesses",
+      "sources": [
+        "frontier/wide_clause_certificate.py",
+        "frontier/tseitin_certificate.py"
+      ],
+      "scope": "Specific family: factored n24 residual924entries versus16777216 expansionrecords; extension-variable3CNF n10 sparse29records. No universal proof-system lower bound."
+    },
+    {
+      "status": "LEAN_VERIFIED_KERNEL_WITH_SEPARATELY_TESTED_PYTHON",
+      "name": "Subset-zeta all-values evaluation",
+      "sources": [
+        "frontier/SubsetZeta.lean",
+        "frontier/subset_zeta.py"
+      ],
+      "scope": "Kernel correctness and exact weight-addition count; Python refinement and bit complexity separate. No full SAT speedup or Williams reduction proved."
+    }
+  ],
+  "active_unverified_formal_work": [
+    "frontier/FiniteDimension.lean",
+    "frontier/DiagonalWidth.lean"
+  ]
 }

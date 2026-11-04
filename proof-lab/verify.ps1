@@ -20,7 +20,7 @@ try {
     $env:TMP = $testTemp
     & $pythonExe -m unittest discover -s tests -v
     if ($LASTEXITCODE -ne 0) { throw 'Python tests failed.' }
-    $sources = @('SATSearch.lean','CircuitBounds.lean','CircuitCoverage.lean','CircuitCounting.lean','CircuitSemantics.lean','HardFunction.lean','frontier\LexCounterexample.lean','frontier\AntiChecker.lean','frontier\AntiCheckerRepair.lean','frontier\ExplicitSchedule.lean','frontier\SampleInterpolation.lean','frontier\ParityTeaching.lean','frontier\DependencyBound.lean','frontier\CertificateBlowup.lean','frontier\MCSPScope.lean','frontier\FirstGateExtension.lean','frontier\CircuitRewiring.lean','frontier\GraphHoles.lean','frontier\OptimalSupport.lean')
+    $sources = @('SATSearch.lean','CircuitBounds.lean','CircuitCoverage.lean','CircuitCounting.lean','CircuitSemantics.lean','HardFunction.lean','frontier\LexCounterexample.lean','frontier\AntiChecker.lean','frontier\AntiCheckerRepair.lean','frontier\ExplicitSchedule.lean','frontier\SampleInterpolation.lean','frontier\ParityTeaching.lean','frontier\DependencyBound.lean','frontier\CertificateBlowup.lean','frontier\MCSPScope.lean','frontier\FirstGateExtension.lean','frontier\CircuitRewiring.lean','frontier\GraphHoles.lean','frontier\OptimalSupport.lean','frontier\SparseMonomial.lean','frontier\BooleanMobius.lean','frontier\SparseCertificateBound.lean','frontier\SubsetZeta.lean')
     foreach ($source in $sources) {
         $compiled = [IO.Path]::ChangeExtension($source,'.olean')
         & $leanExe -o $compiled $source

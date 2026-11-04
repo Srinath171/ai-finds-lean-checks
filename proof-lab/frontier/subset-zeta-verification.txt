@@ -1,0 +1,6 @@
+'SubsetZeta.kernel_correct' depends on axioms: [propext, Quot.sound]
+'SubsetZeta.kernel_cost' depends on axioms: [propext, Quot.sound]
+'SubsetZeta.additionCount_exact' depends on axioms: [propext]
+'SubsetZeta.allValues_correct' depends on axioms: [propext, Quot.sound]
+'SubsetZeta.allValues_histogram' depends on axioms: [propext, Quot.sound]
+'SubsetZeta.allValues_symmetric_output' depends on axioms: [propext, Quot.sound]

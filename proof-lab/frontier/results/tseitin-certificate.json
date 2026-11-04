@@ -1,0 +1,1905 @@
+{
+  "format": "tseitin-certificate-v1",
+  "source_sha256_lf": "3a31136e26851cb91037e7d0d1240e095e05d6864c319b3d065e41e1bcbd2af4",
+  "source_hash_normalization": "CRLF->LF, then CR->LF; all other bytes unchanged",
+  "report_hash_encoding": "UTF-8 JSON without report_sha256; sorted keys; separators comma/colon; ensure_ascii=True",
+  "scope": "This explicit extension-variable family has 3n-1 sparse coefficient records; the wide-clause lower bound does not transfer to this encoding. No general proof simulation, polynomial proof-size guarantee, or P-versus-NP conclusion.",
+  "count_formulas": {
+    "variables": "2n-1",
+    "clauses": "4n-2",
+    "literal_occurrences": "8n-6",
+    "coefficient_records": "3n-1",
+    "dense_exponent_entries": "(3n-1)(2n-1)"
+  },
+  "local_or_check": {
+    "passed": true,
+    "assignments_checked": 8,
+    "rows": [
+      {
+        "assignment": 0,
+        "clauses_hold": true,
+        "or_equivalence": true
+      },
+      {
+        "assignment": 1,
+        "clauses_hold": false,
+        "or_equivalence": false
+      },
+      {
+        "assignment": 2,
+        "clauses_hold": false,
+        "or_equivalence": false
+      },
+      {
+        "assignment": 3,
+        "clauses_hold": false,
+        "or_equivalence": false
+      },
+      {
+        "assignment": 4,
+        "clauses_hold": false,
+        "or_equivalence": false
+      },
+      {
+        "assignment": 5,
+        "clauses_hold": true,
+        "or_equivalence": true
+      },
+      {
+        "assignment": 6,
+        "clauses_hold": true,
+        "or_equivalence": true
+      },
+      {
+        "assignment": 7,
+        "clauses_hold": true,
+        "or_equivalence": true
+      }
+    ]
+  },
+  "projection_checks": [
+    {
+      "n": 1,
+      "passed": true,
+      "full_assignments_checked": 2,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    },
+    {
+      "n": 2,
+      "passed": true,
+      "full_assignments_checked": 8,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    },
+    {
+      "n": 3,
+      "passed": true,
+      "full_assignments_checked": 32,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    },
+    {
+      "n": 4,
+      "passed": true,
+      "full_assignments_checked": 128,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    },
+    {
+      "n": 5,
+      "passed": true,
+      "full_assignments_checked": 512,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    },
+    {
+      "n": 6,
+      "passed": true,
+      "full_assignments_checked": 2048,
+      "unique_gate_extension": true,
+      "extension_matches_prefix_or": true,
+      "projection_equals_wide_or": true,
+      "satisfying_assignments_with_units": 0
+    }
+  ],
+  "independent_expansion_checks": [
+    {
+      "n": 1,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    },
+    {
+      "n": 2,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    },
+    {
+      "n": 3,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    },
+    {
+      "n": 4,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    },
+    {
+      "n": 5,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    },
+    {
+      "n": 6,
+      "formal_residual_zero": true,
+      "residual_monomials": 0
+    }
+  ],
+  "cases": [
+    {
+      "n": 1,
+      "status": "VALID",
+      "counts": {
+        "variables": 1,
+        "clauses": 2,
+        "literal_occurrences": 2,
+        "maximum_clause_width": 1,
+        "coefficient_records": 2,
+        "dense_exponent_entries": 2
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 2,
+          "literal_occurrences": 2,
+          "supplied_monomials": 2,
+          "nonzero_monomials": 2,
+          "compiled_width": 3,
+          "factor_entries": 4
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 1,
+          "width": 3,
+          "degrees": [
+            1
+          ],
+          "support_sizes": [
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2
+          ],
+          "estimated_operations": 54,
+          "operations": 21,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 2,
+      "status": "VALID",
+      "counts": {
+        "variables": 3,
+        "clauses": 6,
+        "literal_occurrences": 10,
+        "maximum_clause_width": 3,
+        "coefficient_records": 5,
+        "dense_exponent_entries": 15
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 6,
+          "literal_occurrences": 10,
+          "supplied_monomials": 5,
+          "nonzero_monomials": 5,
+          "compiled_width": 6,
+          "factor_entries": 21
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 3,
+          "width": 6,
+          "degrees": [
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "estimated_operations": 1212,
+          "operations": 251,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 3,
+      "status": "VALID",
+      "counts": {
+        "variables": 5,
+        "clauses": 10,
+        "literal_occurrences": 18,
+        "maximum_clause_width": 3,
+        "coefficient_records": 8,
+        "dense_exponent_entries": 40
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 10,
+          "literal_occurrences": 18,
+          "supplied_monomials": 8,
+          "nonzero_monomials": 8,
+          "compiled_width": 9,
+          "factor_entries": 50
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 5,
+          "width": 9,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8
+          ],
+          "estimated_operations": 8721,
+          "operations": 996,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 4,
+      "status": "VALID",
+      "counts": {
+        "variables": 7,
+        "clauses": 14,
+        "literal_occurrences": 26,
+        "maximum_clause_width": 3,
+        "coefficient_records": 11,
+        "dense_exponent_entries": 77
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 14,
+          "literal_occurrences": 26,
+          "supplied_monomials": 11,
+          "nonzero_monomials": 11,
+          "compiled_width": 12,
+          "factor_entries": 91
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 7,
+          "width": 12,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            8,
+            10,
+            11
+          ],
+          "estimated_operations": 31968,
+          "operations": 2540,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 5,
+      "status": "VALID",
+      "counts": {
+        "variables": 9,
+        "clauses": 18,
+        "literal_occurrences": 34,
+        "maximum_clause_width": 3,
+        "coefficient_records": 14,
+        "dense_exponent_entries": 126
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 18,
+          "literal_occurrences": 34,
+          "supplied_monomials": 14,
+          "nonzero_monomials": 14,
+          "compiled_width": 15,
+          "factor_entries": 144
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 9,
+          "width": 15,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            9,
+            11,
+            13,
+            14
+          ],
+          "estimated_operations": 86625,
+          "operations": 5218,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 6,
+      "status": "VALID",
+      "counts": {
+        "variables": 11,
+        "clauses": 22,
+        "literal_occurrences": 42,
+        "maximum_clause_width": 3,
+        "coefficient_records": 17,
+        "dense_exponent_entries": 187
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 22,
+          "literal_occurrences": 42,
+          "supplied_monomials": 17,
+          "nonzero_monomials": 17,
+          "compiled_width": 18,
+          "factor_entries": 209
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 11,
+          "width": 18,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            12,
+            14,
+            16,
+            17
+          ],
+          "estimated_operations": 190476,
+          "operations": 9401,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 7,
+      "status": "VALID",
+      "counts": {
+        "variables": 13,
+        "clauses": 26,
+        "literal_occurrences": 50,
+        "maximum_clause_width": 3,
+        "coefficient_records": 20,
+        "dense_exponent_entries": 260
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 26,
+          "literal_occurrences": 50,
+          "supplied_monomials": 20,
+          "nonzero_monomials": 20,
+          "compiled_width": 21,
+          "factor_entries": 286
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 13,
+          "width": 21,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20
+          ],
+          "estimated_operations": 368193,
+          "operations": 15496,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 8,
+      "status": "VALID",
+      "counts": {
+        "variables": 15,
+        "clauses": 30,
+        "literal_occurrences": 58,
+        "maximum_clause_width": 3,
+        "coefficient_records": 23,
+        "dense_exponent_entries": 345
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 30,
+          "literal_occurrences": 58,
+          "supplied_monomials": 23,
+          "nonzero_monomials": 23,
+          "compiled_width": 24,
+          "factor_entries": 375
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 15,
+          "width": 24,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            23
+          ],
+          "estimated_operations": 650976,
+          "operations": 23946,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 9,
+      "status": "VALID",
+      "counts": {
+        "variables": 17,
+        "clauses": 34,
+        "literal_occurrences": 66,
+        "maximum_clause_width": 3,
+        "coefficient_records": 26,
+        "dense_exponent_entries": 442
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 34,
+          "literal_occurrences": 66,
+          "supplied_monomials": 26,
+          "nonzero_monomials": 26,
+          "compiled_width": 27,
+          "factor_entries": 476
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 17,
+          "width": 27,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            26
+          ],
+          "estimated_operations": 1074249,
+          "operations": 35230,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 10,
+      "status": "VALID",
+      "counts": {
+        "variables": 19,
+        "clauses": 38,
+        "literal_occurrences": 74,
+        "maximum_clause_width": 3,
+        "coefficient_records": 29,
+        "dense_exponent_entries": 551
+      },
+      "verification": {
+        "status": "VALID",
+        "reason": null,
+        "witness": null,
+        "stats": {
+          "clause_count": 38,
+          "literal_occurrences": 74,
+          "supplied_monomials": 29,
+          "nonzero_monomials": 29,
+          "compiled_width": 30,
+          "factor_entries": 589
+        },
+        "checker": {
+          "status": "VERIFIED_ZERO",
+          "witness": null,
+          "reason": null,
+          "nvars": 19,
+          "width": 30,
+          "degrees": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "support_sizes": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "basis_dimensions": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            29
+          ],
+          "estimated_operations": 1678620,
+          "operations": 49863,
+          "max_fraction_bits": 1
+        }
+      }
+    },
+    {
+      "n": 11,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 21,
+        "clauses": 42,
+        "literal_occurrences": 82,
+        "maximum_clause_width": 3,
+        "coefficient_records": 32,
+        "dense_exponent_entries": 672
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    },
+    {
+      "n": 12,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 23,
+        "clauses": 46,
+        "literal_occurrences": 90,
+        "maximum_clause_width": 3,
+        "coefficient_records": 35,
+        "dense_exponent_entries": 805
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    },
+    {
+      "n": 13,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 25,
+        "clauses": 50,
+        "literal_occurrences": 98,
+        "maximum_clause_width": 3,
+        "coefficient_records": 38,
+        "dense_exponent_entries": 950
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    },
+    {
+      "n": 14,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 27,
+        "clauses": 54,
+        "literal_occurrences": 106,
+        "maximum_clause_width": 3,
+        "coefficient_records": 41,
+        "dense_exponent_entries": 1107
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    },
+    {
+      "n": 15,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 29,
+        "clauses": 58,
+        "literal_occurrences": 114,
+        "maximum_clause_width": 3,
+        "coefficient_records": 44,
+        "dense_exponent_entries": 1276
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    },
+    {
+      "n": 16,
+      "status": "RESOURCE_LIMIT",
+      "counts": {
+        "variables": 31,
+        "clauses": 62,
+        "literal_occurrences": 122,
+        "maximum_clause_width": 3,
+        "coefficient_records": 47,
+        "dense_exponent_entries": 1457
+      },
+      "verification": {
+        "status": "RESOURCE_LIMIT",
+        "reason": "supplied_monomial_record_limit",
+        "witness": null
+      }
+    }
+  ],
+  "example_n10": {
+    "nvars": 19,
+    "clauses": [
+      [
+        -1,
+        11
+      ],
+      [
+        -2,
+        11
+      ],
+      [
+        1,
+        2,
+        -11
+      ],
+      [
+        -11,
+        12
+      ],
+      [
+        -3,
+        12
+      ],
+      [
+        11,
+        3,
+        -12
+      ],
+      [
+        -12,
+        13
+      ],
+      [
+        -4,
+        13
+      ],
+      [
+        12,
+        4,
+        -13
+      ],
+      [
+        -13,
+        14
+      ],
+      [
+        -5,
+        14
+      ],
+      [
+        13,
+        5,
+        -14
+      ],
+      [
+        -14,
+        15
+      ],
+      [
+        -6,
+        15
+      ],
+      [
+        14,
+        6,
+        -15
+      ],
+      [
+        -15,
+        16
+      ],
+      [
+        -7,
+        16
+      ],
+      [
+        15,
+        7,
+        -16
+      ],
+      [
+        -16,
+        17
+      ],
+      [
+        -8,
+        17
+      ],
+      [
+        16,
+        8,
+        -17
+      ],
+      [
+        -17,
+        18
+      ],
+      [
+        -9,
+        18
+      ],
+      [
+        17,
+        9,
+        -18
+      ],
+      [
+        -18,
+        19
+      ],
+      [
+        -10,
+        19
+      ],
+      [
+        18,
+        10,
+        -19
+      ],
+      [
+        -1
+      ],
+      [
+        -2
+      ],
+      [
+        -3
+      ],
+      [
+        -4
+      ],
+      [
+        -5
+      ],
+      [
+        -6
+      ],
+      [
+        -7
+      ],
+      [
+        -8
+      ],
+      [
+        -9
+      ],
+      [
+        -10
+      ],
+      [
+        19
+      ]
+    ],
+    "q_coeffs": [
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ],
+      [],
+      [],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          -1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ]
+      ],
+      [
+        [
+          1,
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    ],
+    "r_coeffs": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "report_sha256": "9ab3d7cef11e6eb9127a006261b88f051fc30dc2d2b1fff2ecd15ab15b2afd93"
+}

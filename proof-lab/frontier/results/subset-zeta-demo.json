@@ -1,0 +1,219 @@
+{
+  "counters": {
+    "histogram_additions": 1024,
+    "max_integer_bits": 11,
+    "scalar_additions": 524288,
+    "support_mask_or_operations": 4105,
+    "top_membership_checks": 65536,
+    "total_scalar_additions": 525312,
+    "validation_checks": 10851
+  },
+  "expected_scalar_additions": 524288,
+  "format": "subset-zeta-demo-v1",
+  "gate_counts_sha256": "612e1ee95c43cb3364402a665323ef6e49a52cb2cd3cfc7d3847a66ec04d7075",
+  "histogram_sha256": "445e60a92d50fe0eab48fd79fa66502e2bc96f9a11924d64251cf0b158aa50be",
+  "independent_sample_rows_checked": 24,
+  "input": {
+    "accept_counts_sha256": "687e7984591df3f542dbd124cfb9ec3dac1cede3f5f2cc708129103565159c4c",
+    "accepted_count_entries": 293,
+    "empty_and_gates": 122,
+    "first_supports": [
+      [
+        10,
+        11,
+        15
+      ],
+      [],
+      [
+        12,
+        0,
+        2
+      ],
+      [
+        12,
+        0,
+        14,
+        5,
+        15,
+        7,
+        3
+      ],
+      [
+        9,
+        6,
+        3,
+        10
+      ],
+      [
+        15,
+        15,
+        12,
+        14,
+        10,
+        5,
+        13,
+        6
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        10,
+        15,
+        0,
+        11,
+        15,
+        12,
+        13,
+        6
+      ]
+    ],
+    "gates": 1024,
+    "generator": "Python random.Random; widths uniform 0..min(n,8), literals sampled with replacement",
+    "n": 16,
+    "seed": 20261104,
+    "support_lists_sha256": "0515cf838b1cab3d35f49cbfd822248dd598286bc311280386a013d65aadd267",
+    "support_literal_entries": 4105,
+    "top_rule": "accept iff number of true bottom gates modulo 7 is 2 or 5"
+  },
+  "limits": {
+    "max_gates": 4096,
+    "max_input_bits": 128,
+    "max_n": 18
+  },
+  "maximum_true_gate_count": 1024,
+  "minimum_true_gate_count": 122,
+  "samples": [
+    {
+      "gate_count": 122,
+      "mask": 0,
+      "value": false
+    },
+    {
+      "gate_count": 231,
+      "mask": 3495,
+      "value": false
+    },
+    {
+      "gate_count": 194,
+      "mask": 6315,
+      "value": true
+    },
+    {
+      "gate_count": 205,
+      "mask": 8853,
+      "value": true
+    },
+    {
+      "gate_count": 243,
+      "mask": 12879,
+      "value": true
+    },
+    {
+      "gate_count": 237,
+      "mask": 16871,
+      "value": false
+    },
+    {
+      "gate_count": 232,
+      "mask": 19795,
+      "value": false
+    },
+    {
+      "gate_count": 333,
+      "mask": 22261,
+      "value": false
+    },
+    {
+      "gate_count": 209,
+      "mask": 22296,
+      "value": false
+    },
+    {
+      "gate_count": 315,
+      "mask": 22327,
+      "value": false
+    },
+    {
+      "gate_count": 307,
+      "mask": 24173,
+      "value": false
+    },
+    {
+      "gate_count": 368,
+      "mask": 24375,
+      "value": false
+    },
+    {
+      "gate_count": 133,
+      "mask": 32768,
+      "value": false
+    },
+    {
+      "gate_count": 238,
+      "mask": 35165,
+      "value": false
+    },
+    {
+      "gate_count": 199,
+      "mask": 38927,
+      "value": false
+    },
+    {
+      "gate_count": 220,
+      "mask": 40261,
+      "value": false
+    },
+    {
+      "gate_count": 152,
+      "mask": 40961,
+      "value": true
+    },
+    {
+      "gate_count": 346,
+      "mask": 44223,
+      "value": false
+    },
+    {
+      "gate_count": 177,
+      "mask": 53762,
+      "value": true
+    },
+    {
+      "gate_count": 256,
+      "mask": 55532,
+      "value": false
+    },
+    {
+      "gate_count": 262,
+      "mask": 59783,
+      "value": false
+    },
+    {
+      "gate_count": 238,
+      "mask": 62597,
+      "value": false
+    },
+    {
+      "gate_count": 191,
+      "mask": 63618,
+      "value": true
+    },
+    {
+      "gate_count": 1024,
+      "mask": 65535,
+      "value": true
+    }
+  ],
+  "satisfiable": true,
+  "satisfying_assignments": 18961,
+  "scope": "Exact bounded truth-table evaluation of positive AND gates under an explicit symmetric top gate. O(n*2^n) table work does not achieve a 2^n/n^k SAT saving; no full Williams implication, Python/Lean refinement, novelty, or P-versus-NP claim.",
+  "source_hash_normalization": "CRLF->LF, then CR->LF; all other source bytes unchanged",
+  "source_sha256_lf": "1c53b0807b99222b2e10ef03ca110c4812bc882520b16bf80508b669b7662c7b",
+  "status": "EVALUATED",
+  "table_entries": 65536,
+  "truth_table_sha256": "e157905c2c0642e12cd4dd911383bfc8adc4dab89ba1f56914a3f3c4773c885a",
+  "vector_hash_encoding": "UTF-8 compact JSON, ensure_ascii=True, no trailing newline",
+  "verification_scope": "All table entries computed; independent source-expression oracle checked only these sampled rows. Unit tests separately compare entire bounded tables."
+}

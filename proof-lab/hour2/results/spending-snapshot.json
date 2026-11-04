@@ -1,0 +1,38 @@
+{
+  "recorded_utc": "2026-11-04T20:36:54.030039+00:00",
+  "account_wide_invoice_verified": false,
+  "account_balance_verified": false,
+  "scope": "Local project ledger commitments, including conservative external holds and uncertain old reservations; not the provider account bill.",
+  "providers": {
+    "meta": {
+      "cap_usd": "115",
+      "committed_usd": "35.224672",
+      "available_usd": "79.775328",
+      "over_cap": false,
+      "external_hold_usd": "25",
+      "pending_count": 4,
+      "settled_count": 21,
+      "settled_api_usd": "8.741072",
+      "pending_reserved_usd": "1.483600"
+    },
+    "claude": {
+      "cap_usd": "40",
+      "committed_usd": "10.19390",
+      "available_usd": "29.80610",
+      "over_cap": false,
+      "external_hold_usd": "1",
+      "pending_count": 0,
+      "settled_count": 7,
+      "settled_api_usd": "9.19390",
+      "pending_reserved_usd": "0"
+    }
+  },
+  "known_prior_muse_cli_receipt_usd": "15.1559384",
+  "muse_cli_receipt_already_covered_by_meta_external_hold": true,
+  "phase_settled_api_cost_usd": {
+    "meta": "1.782136",
+    "claude": "3.36872"
+  },
+  "new_phase_owned_api_jobs_pending": 0,
+  "prior_meta_uncertain_reservations": 4
+}

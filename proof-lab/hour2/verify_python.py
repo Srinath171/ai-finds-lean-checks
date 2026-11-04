@@ -11,6 +11,8 @@ def main():
         'hour2.test_claude_guard',
         'hour2.test_joint_nand',
         'hour2.test_sat_boolean_mux',
+        'continuation.test_meta_guard',
+        'continuation.test_profile_sat',
     ]))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     return 0 if result.wasSuccessful() else 1

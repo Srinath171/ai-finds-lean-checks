@@ -30,3 +30,8 @@ hour2/claude-jobs/
 hour2/claude-locks/
 hour2/regular-claude/
 hour2/grok-scratch/
+
+continuation/jobs/
+continuation/bindings/
+continuation/locks/
+continuation/STOP

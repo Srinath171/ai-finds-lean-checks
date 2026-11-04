@@ -1,0 +1,2 @@
+Independent pairwise report replay PASS; complete state layers: [1, 3, 10, 27]
+All three actual DAG witnesses passed every row; no <=2-gate common state.

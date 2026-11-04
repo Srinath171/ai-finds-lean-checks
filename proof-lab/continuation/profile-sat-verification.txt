@@ -1,0 +1,36 @@
+test_combination_profile_convention (continuation.test_profile_sat.ProfileSatTests.test_combination_profile_convention) ... ok
+test_incremental_assumptions_do_not_leak_between_targets (continuation.test_profile_sat.ProfileSatTests.test_incremental_assumptions_do_not_leak_between_targets) ... ok
+test_input_permutation_inverse_and_eighty_classes (continuation.test_profile_sat.ProfileSatTests.test_input_permutation_inverse_and_eighty_classes) ... ok
+test_n2_all_48_joint_costs_against_complete_bfs (continuation.test_profile_sat.ProfileSatTests.test_n2_all_48_joint_costs_against_complete_bfs) ... ok
+test_n3_nand_and_nontrivial_witness_remapping (continuation.test_profile_sat.ProfileSatTests.test_n3_nand_and_nontrivial_witness_remapping) ... ok
+test_types_topology_and_targets (continuation.test_profile_sat.ProfileSatTests.test_types_topology_and_targets) ... ok
+test_unknown_deadline_and_query_caps_fail_closed (continuation.test_profile_sat.ProfileSatTests.test_unknown_deadline_and_query_caps_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.694s
+
+OK
+
+Independent static artifact audit
+{
+  "artifact_sha256_lf": "2f4a6e37cf922a67359c3008580b6230b371d8ecb46fdc7e20ce09eea1738b2d",
+  "audit": "PASS_STATIC_ARTIFACT_AND_ALL_SAT_WITNESSES",
+  "joint_pairs_checked": 24,
+  "max_ordinary_cost": 10,
+  "nontrivial_profile_groups": 12,
+  "ordinary_classes": 80,
+  "ordinary_functions_covered": 256,
+  "pair_domain": 1536,
+  "pair_orbits": 320,
+  "profiles": 308,
+  "query_count": 547,
+  "query_statuses": {
+    "SAT": 86,
+    "UNKNOWN": 1,
+    "UNSAT": 460
+  },
+  "scope": "Saved UNSAT results were checked for correct target/bound indexing but not independently proved or rerun. SAT witnesses, orbit coverage, profiles, joint inference, and CNF truth clauses were independently recomputed without importing the implementation.",
+  "source_sha256_lf": "1648d940b7de9a7cc6ec22b459837de303b8c2459613d268441363e1d203348a",
+  "test_source_sha256_lf": "52ecf989bec3b7ab971cbb263cbcb9ed00170c95ea4325d3388029de7d168d4b",
+  "unknowns_used_in_final_claims": 0
+}

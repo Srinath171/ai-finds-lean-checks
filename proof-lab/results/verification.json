@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T20:32:23.531280+00:00",
-  "python_tests_passed": 388,
-  "test_seconds": 21.778,
+  "checked_utc": "2026-11-04T22:37:49.691136+00:00",
+  "python_tests_passed": 410,
+  "test_seconds": 26.286,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 32,
+  "formal_source_count": 33,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -228,9 +228,16 @@
       "sha256_lf": "48ef2be1c4f626592fada39ad1088893e3b04c6ba3d4bc167054265ce4b7b9c7",
       "compiled": true,
       "verification_log": "hour2/positive-budget-counterexample-verification.txt"
+    },
+    {
+      "path": "continuation/PairwiseCompatibility.lean",
+      "sha256": "4e1f91a345f34abd87d9b7ef136bcae7e08f4eb3353b09cdb6032b687f7fab4a",
+      "sha256_lf": "d2476961712af06cde0a6d5448b5fe5aeb5426ae1acc57ab955ab72a880247b4",
+      "compiled": true,
+      "verification_log": "continuation/pairwise-compatibility-verification.txt"
     }
   ],
-  "scope": "Latest combined offline Python replay passed 388 tests in 21.778 seconds using the importable Windows-spawn-safe runner. Prior successful 324-, 334-, pre-fix 350-, and 353-test runs remain historical; the failed stdin-based 388-test attempt is recorded separately. All 32 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1+1+1+1+1-module postchecks. No single full 32-source Lean replay is claimed. No API calls during verification.",
+  "scope": "Latest combined offline Python replay passed 410 tests in 26.286 seconds using the importable Windows-spawn-safe runner and project-local TEMP. Prior successful runs of 324, 334, 350 (before the accounting fix), 353, and 388 tests remain historical; the failed stdin-based 388-test attempt remains separate. All 33 Lean modules are cumulatively compiled through the earlier 23-source full replay, separate 2+1+1+1+1+1+1+1 postchecks, and the independent PairwiseCompatibility postcheck. No single full 33-source Lean replay is claimed. This checkpoint made no API calls or real ledger changes.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -347,19 +354,21 @@
   "full_suite_test_seconds": 21.013,
   "source_hash_normalization": "sha256 hashes actual file bytes; sha256_lf normalizes CRLF to LF, then CR to LF; other bytes unchanged.",
   "latest_full_python_replay": {
-    "python_tests_passed": 388,
-    "test_seconds": 21.778,
+    "python_tests_passed": 410,
+    "test_seconds": 26.286,
     "exit_code": 0,
-    "log": "hour2/python-final-verification.txt",
+    "log": "continuation/python-resume-verification.txt",
     "runner": "python -B -m hour2.verify_python",
     "suite_breakdown": {
       "existing_tests": 353,
       "hour2.test_phase_guard": 10,
       "hour2.test_claude_guard": 9,
       "hour2.test_joint_nand": 10,
-      "hour2.test_sat_boolean_mux": 6
+      "hour2.test_sat_boolean_mux": 6,
+      "continuation.test_meta_guard": 15,
+      "continuation.test_profile_sat": 7
     },
-    "scope": "One combined offline unittest suite from an importable Windows-spawn-safe module, containing existing discovery and all four hour2 test modules. This execution did not replay Lean modules or make paid API calls."
+    "scope": "One combined offline unittest execution with project-local TEMP, existing test discovery, four hour2 modules, and both continuation modules. Includes the continuation guard deadline-race regression and focused profile tests; does not rerun the large n3 profile investigation or any Lean modules. API transports are mocked; no paid calls or real ledger changes."
   },
   "full_python_replay_history": [
     {
@@ -409,6 +418,30 @@
       "scope": "Full unittest discovery after the independently audited geometry/pipeline operation-accounting fixes and new regression tests; bounded Python checks only, with no Lean replay in this execution.",
       "historical_status": "PRIOR_353_TEST_SUITE",
       "note": "Full successful replay before the four hour2 test modules were added; preserved as historical evidence."
+    },
+    {
+      "python_tests_passed": 388,
+      "test_seconds": 21.778,
+      "exit_code": 0,
+      "log": "hour2/python-final-verification.txt",
+      "runner": "python -B -m hour2.verify_python",
+      "suite_breakdown": {
+        "existing_tests": 353,
+        "hour2.test_phase_guard": 10,
+        "hour2.test_claude_guard": 9,
+        "hour2.test_joint_nand": 10,
+        "hour2.test_sat_boolean_mux": 6
+      },
+      "scope": "One combined offline unittest suite from an importable Windows-spawn-safe module, containing existing discovery and all four hour2 test modules. This execution did not replay Lean modules or make paid API calls.",
+      "historical_status": "PRIOR_388_TEST_SUITE",
+      "note": "Successful combined replay before the two continuation test modules were added; the prior runner source hash is preserved below.",
+      "runner_source_at_replay": {
+        "path": "hour2/verify_python.py",
+        "sha256": "d3564fddaaef45389753e29ad1e19ee6554d265a4659919ef56dce805bce521e",
+        "sha256_lf": "53cea653a70b0bc34c1c5f7bb07d252893096d90a95f7a96f4be576fcbb12036",
+        "verification_log": "hour2/python-final-verification.txt",
+        "scope": "Importable Windows-spawn-safe runner assembling the old suite and four hour2 test modules in a single unittest execution."
+      }
     }
   ],
   "python_source_evidence": [
@@ -463,10 +496,43 @@
     },
     {
       "path": "hour2/verify_python.py",
-      "sha256": "d3564fddaaef45389753e29ad1e19ee6554d265a4659919ef56dce805bce521e",
-      "sha256_lf": "53cea653a70b0bc34c1c5f7bb07d252893096d90a95f7a96f4be576fcbb12036",
-      "verification_log": "hour2/python-final-verification.txt",
-      "scope": "Importable Windows-spawn-safe runner assembling the old suite and four hour2 test modules in a single unittest execution."
+      "sha256": "12a61b08afdbb734e3ac8f6b36f59238413e5384824c4604f27d44d0838e6ba7",
+      "sha256_lf": "69d3f9d259fd8034160d9ee3306702478fbf37d64df11783fff964512325bf61",
+      "verification_log": "continuation/python-resume-verification.txt",
+      "scope": "Importable Windows-spawn-safe runner assembling existing discovery, four hour2 modules, and two continuation modules in one unittest execution."
+    },
+    {
+      "path": "continuation/meta_guard.py",
+      "sha256": "8d8b9c35729de2d0690da6750e224add44734a99c32655e010d9853a519975a4",
+      "sha256_lf": "a8f00f338b13cd67b4b70a818aff6d3f9d43bab6eb43e81962211a0328fa3cc0",
+      "verification_log": "continuation/python-resume-verification.txt",
+      "scope": "Bounded Meta continuation guard, including recomputation of the transport timeout after ledger-lock waits. Offline mocked-transport tests only; no guarantee of provider-side cancellation or billing reconciliation.",
+      "test_source": {
+        "path": "continuation/test_meta_guard.py",
+        "sha256": "bb05630ef750e7d31c82346cc08fd343f81e08e18b495d342e246a007de03733",
+        "sha256_lf": "0fcb49aaadb01d3b8697babbe9bdef3c47f1ed7f88738e06b53cda5fcec7b957",
+        "tests_in_combined_suite": 15
+      }
+    },
+    {
+      "path": "continuation/profile_sat.py",
+      "sha256": "983e31737d0db0c73496e2ce187e8ab7ce5f36860d80ecb3d4591e562ee6713e",
+      "sha256_lf": "1648d940b7de9a7cc6ec22b459837de303b8c2459613d268441363e1d203348a",
+      "verification_log": "continuation/python-resume-verification.txt",
+      "scope": "Bounded three-input NAND scalar-profile investigation. Focused tests and independent saved-artifact audit validate SAT witnesses, orbit/grouping coverage, and bound indexing. Lower bounds remain Z3 UNSAT evidence, not formally checked certificates or a full independent-encoding replay.",
+      "test_source": {
+        "path": "continuation/test_profile_sat.py",
+        "sha256": "04d851ec6d73b97b2280866fd5b05b86e5d203c2200fc7f9e5d6f3a36ac0ef95",
+        "sha256_lf": "52ecf989bec3b7ab971cbb263cbcb9ed00170c95ea4325d3388029de7d168d4b",
+        "tests_in_combined_suite": 7
+      },
+      "independent_artifact_audit_log": "continuation/profile-sat-verification.txt",
+      "saved_artifact": {
+        "path": "continuation/results/profile-n3.json",
+        "sha256": "e4cf29594168af1ee5fec08cbb182353b2ab2aa574f71268681c618cdbd80959",
+        "sha256_lf": "2f4a6e37cf922a67359c3008580b6230b371d8ecb46fdc7e20ce09eea1738b2d",
+        "audit_scope": "Existing artifact audited without rerunning the investigation; retained UNKNOWN is not used in final exact-cost claims."
+      }
     }
   ],
   "nonpassing_verification_attempts": [
@@ -478,5 +544,20 @@
       "historical_status": "WINDOWS_STDIN_RUNNER_FAILURE",
       "scope": "The original combined suite was launched from stdin, which Windows multiprocessing could not import as its main module. The process-pool test raised BrokenProcessPool; this failed harness attempt is retained separately and is not a successful verification. The importable-module rerun passed all 388 tests."
     }
-  ]
+  ],
+  "continuation_formal_postcheck": {
+    "paths": [
+      "continuation/PairwiseCompatibility.lean"
+    ],
+    "exit_code": 0,
+    "log": "continuation/pairwise-compatibility-verification.txt",
+    "printed_axiom_checks": 6,
+    "axioms_seen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Independent root compilation and source inspection of actual shared-DAG predicates, bringing the cumulative Lean count to 33 without a combined 33-source replay. At that formal-postcheck time Python coverage was the earlier 388-test suite; continuation Python was excluded then. The later 410-test replay is recorded separately.",
+    "python_tests_at_postcheck": 388
+  }
 }

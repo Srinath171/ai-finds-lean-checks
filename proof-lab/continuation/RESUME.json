@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-11-04T22:35:08.096635+00:00",
+  "status": "RESUMED_BY_USER",
+  "authorization": "User explicitly requested continuing the process, mainly using Meta models. Existing total caps and project-only scope retained.",
+  "caps_usd": {
+    "meta": "115",
+    "claude": "40"
+  },
+  "guard_tests_passed": 15,
+  "test_seconds": 0.735,
+  "test_log": "continuation/meta-guard-verification.txt",
+  "guard_review": "Independent cached review identified ledger-wait deadline race; root moved final stop/clock checks after ledger reads, added regression, reviewed and passed tests.",
+  "guard_source_sha256_lf": {
+    "meta_guard.py": "a8f00f338b13cd67b4b70a818aff6d3f9d43bab6eb43e81962211a0328fa3cc0",
+    "test_meta_guard.py": "0fcb49aaadb01d3b8697babbe9bdef3c47f1ed7f88738e06b53cda5fcec7b957"
+  },
+  "old_ledgers_and_job_history_preserved": true
+}

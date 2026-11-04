@@ -1,0 +1,6 @@
+'PairwiseCompatibility.one_not_within_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairwiseCompatibility.joint_notX_two' depends on axioms: [propext, Quot.sound]
+'PairwiseCompatibility.joint_notY_two' depends on axioms: [propext, Quot.sound]
+'PairwiseCompatibility.triple_not_within_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairwiseCompatibility.triple_minimum_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PairwiseCompatibility.pairwise_not_common' depends on axioms: [propext, Classical.choice, Quot.sound]

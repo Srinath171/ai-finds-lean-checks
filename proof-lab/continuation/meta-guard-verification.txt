@@ -1,0 +1,20 @@
+test_binding_tamper_boolean_versions_and_changed_prompt_fail_closed (continuation.test_meta_guard.ContinuationGuardTests.test_binding_tamper_boolean_versions_and_changed_prompt_fail_closed) ... ok
+test_cancellation_interrupt_never_replays_post (continuation.test_meta_guard.ContinuationGuardTests.test_cancellation_interrupt_never_replays_post) ... ok
+test_caps_missing_ledger_and_budget_refusal_preserve_holds (continuation.test_meta_guard.ContinuationGuardTests.test_caps_missing_ledger_and_budget_refusal_preserve_holds) ... ok
+test_deadline_and_monotonic_budget_bound_cancel (continuation.test_meta_guard.ContinuationGuardTests.test_deadline_and_monotonic_budget_bound_cancel) ... ok
+test_expired_owned_active_resume_makes_no_http_or_key_lookup (continuation.test_meta_guard.ContinuationGuardTests.test_expired_owned_active_resume_makes_no_http_or_key_lookup) ... ok
+test_global_stop_before_start_never_keys_or_reserves (continuation.test_meta_guard.ContinuationGuardTests.test_global_stop_before_start_never_keys_or_reserves) ... ok
+test_id_mismatch_not_cancelled_under_unowned_id (continuation.test_meta_guard.ContinuationGuardTests.test_id_mismatch_not_cancelled_under_unowned_id) ... ok
+test_ledger_delay_past_cancel_deadline_never_enters_transport (continuation.test_meta_guard.ContinuationGuardTests.test_ledger_delay_past_cancel_deadline_never_enters_transport) ... ok
+test_malformed_limits_names_and_stale_lock (continuation.test_meta_guard.ContinuationGuardTests.test_malformed_limits_names_and_stale_lock) ... ok
+test_orphan_old_directory_and_wrong_ownership_fail_closed (continuation.test_meta_guard.ContinuationGuardTests.test_orphan_old_directory_and_wrong_ownership_fail_closed) ... ok
+test_request_cap_reserves_cancellation_slot (continuation.test_meta_guard.ContinuationGuardTests.test_request_cap_reserves_cancellation_slot) ... ok
+test_reservation_precedes_http_old_globals_unchanged_visible_only (continuation.test_meta_guard.ContinuationGuardTests.test_reservation_precedes_http_old_globals_unchanged_visible_only) ... ok
+test_stop_after_creation_cancels_only_owned_id_once (continuation.test_meta_guard.ContinuationGuardTests.test_stop_after_creation_cancels_only_owned_id_once) ... ok
+test_stop_race_after_key_prevents_post_and_keeps_hold (continuation.test_meta_guard.ContinuationGuardTests.test_stop_race_after_key_prevents_post_and_keeps_hold) ... ok
+test_unknown_submission_no_retry_or_deadline_extension (continuation.test_meta_guard.ContinuationGuardTests.test_unknown_submission_no_retry_or_deadline_extension) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.735s
+
+OK

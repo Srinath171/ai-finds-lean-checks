@@ -1,0 +1,26 @@
+{
+  "checked_utc": "2026-11-04T23:13:23.538029+00:00",
+  "previous_snapshot_path": "continuation/provider-results/budget-snapshot-20261104T230116Z.json",
+  "providers": {
+    "claude": {
+      "available_usd": "29.80610",
+      "cap_usd": "40",
+      "committed_usd": "10.19390",
+      "external_hold_usd": "1",
+      "over_cap": false,
+      "pending_count": 0,
+      "settled_count": 7
+    },
+    "meta": {
+      "available_usd": "70.224392",
+      "cap_usd": "115",
+      "committed_usd": "44.775608",
+      "external_hold_usd": "25",
+      "over_cap": false,
+      "pending_count": 5,
+      "settled_count": 26
+    }
+  },
+  "scope": "Read-only aggregate snapshot after the fifth terminal continuation job settled. At this timestamp five Meta reservations were pending: four older unresolved requests and one active audit reported by its controller. Subsequent activity may change these historical values; no live provider billing query was made.",
+  "source": "existing local budget ledger; no provider billing API called"
+}

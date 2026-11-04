@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE_EXACT_MATCH",
+  "n_ordinary": 3,
+  "total_inputs": 4,
+  "seconds_cap": 60,
+  "by_z_reads": [
+    {
+      "z_reads": 0,
+      "expected_distinct_functions": 3,
+      "checked_masks": 65536,
+      "accepted": 3
+    },
+    {
+      "z_reads": 1,
+      "expected_distinct_functions": 15,
+      "checked_masks": 65536,
+      "accepted": 15
+    },
+    {
+      "z_reads": 2,
+      "expected_distinct_functions": 58,
+      "checked_masks": 65536,
+      "accepted": 58
+    }
+  ],
+  "mismatches": [],
+  "elapsed_seconds": 29.922146,
+  "source_sha256_lf": "1431e91d3b76794603c7e7e9e61c4bd07d2c4e1eb4704538402cc8778d3cae18",
+  "independent_reference_sha256_lf": "e03499d0151828ac7bb83fca2b52b664e01bf81429938a5cd5e889cb2da9ea67"
+}

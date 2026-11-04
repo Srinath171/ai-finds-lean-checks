@@ -1,0 +1,35 @@
+test_all_smaller_unsat_uses_actual_upper_witness (continuation.test_low_cost_profiles.LowCostProfileTests.test_all_smaller_unsat_uses_actual_upper_witness) ... ok
+test_cache_is_38_exact_checked_targets (continuation.test_low_cost_profiles.LowCostProfileTests.test_cache_is_38_exact_checked_targets) ... ok
+test_five_input_engine_has_no_free_constants_or_complements (continuation.test_low_cost_profiles.LowCostProfileTests.test_five_input_engine_has_no_free_constants_or_complements) ... ok
+{"target": "4:36863", "status": "UNKNOWN", "queries": 2}
+{"target": "4:44782", "status": "UNKNOWN", "queries": 4}
+{"target": "4:35498", "status": "UNKNOWN", "queries": 6}
+{"target": "5:2298018040", "status": "UNKNOWN", "queries": 8}
+{"target": "4:44268", "status": "UNKNOWN", "queries": 10}
+{"target": "4:35064", "status": "UNKNOWN", "queries": 12}
+test_narrow_pass_caps_and_unknowns_preserve_bounds (continuation.test_low_cost_profiles.LowCostProfileTests.test_narrow_pass_caps_and_unknowns_preserve_bounds) ... ok
+test_new_boolean_engine_all_n2_cost_boundaries (continuation.test_low_cost_profiles.LowCostProfileTests.test_new_boolean_engine_all_n2_cost_boundaries) ... ok
+test_profile_comparison_preserves_unknown_and_checks_disjoint_bounds (continuation.test_low_cost_profiles.LowCostProfileTests.test_profile_comparison_preserves_unknown_and_checks_disjoint_bounds) ... ok
+test_query_and_wall_caps_leave_unknown_records (continuation.test_low_cost_profiles.LowCostProfileTests.test_query_and_wall_caps_leave_unknown_records) ... ok
+test_six_nand_cases_and_five_joint_two_upper_certificates (continuation.test_low_cost_profiles.LowCostProfileTests.test_six_nand_cases_and_five_joint_two_upper_certificates) ... ok
+test_strict_limits_and_witness_types (continuation.test_low_cost_profiles.LowCostProfileTests.test_strict_limits_and_witness_types) ... ok
+test_target_count_support_reduction_and_all_constructive_witnesses (continuation.test_low_cost_profiles.LowCostProfileTests.test_target_count_support_reduction_and_all_constructive_witnesses) ... ok
+test_unknown_does_not_promote_constructive_upper (continuation.test_low_cost_profiles.LowCostProfileTests.test_unknown_does_not_promote_constructive_upper) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.949s
+
+OK
+
+Independent static artifact audit
+{
+  "static_artifact_audit": "PASS",
+  "cases": 6,
+  "lower_UNSAT_at_three": 6,
+  "independently_verified_SAT_at_four": 6,
+  "J2_upper_witnesses_at_most_three": 5,
+  "unknown_queries": 0,
+  "full44target_search_run": false,
+  "source_sha256_lf": "6763809088b10abb2ddfc675ca31ea02e1883205b142c5c90ea81ff4929616dd",
+  "artifact_sha256_lf": "e5786a177a4451064added3441421fbb320b48b2d7e7141e138865d357c0096c"
+}

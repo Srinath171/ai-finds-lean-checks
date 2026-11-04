@@ -1,0 +1,198 @@
+{
+  "format": "read-once-nand-demo-v1",
+  "scope": "Bounded exact table computation plus ordinary proof; not Lean-formalized or a P-vs-NP solution.",
+  "table_encoding": "bit assignment; assignment=sum_i x_i*2^i",
+  "source_sha256_lf": "09544f8065f159c714a19b530b03e1a67a64329380dbc0ce84533986cd96f791",
+  "source_hash_normalization": "CRLF->LF then CR->LF; other bytes unchanged",
+  "report_hash_encoding": "compact sorted-key ASCII JSON excluding report_sha256, one terminal LF",
+  "limits": {
+    "max_n": 5,
+    "max_states": 512,
+    "max_table_lookups": 1000000
+  },
+  "examples": [
+    {
+      "name": "positive_leaf",
+      "n": 1,
+      "mask": 2,
+      "result": {
+        "status": "READ_ONCE",
+        "reason": "reconstructed positive-leaf NAND tree",
+        "counters": {
+          "table_lookups": 8,
+          "partition_checks": 0,
+          "states": 1,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0
+        ],
+        "gate_count": 0,
+        "witness": {
+          "gates": [],
+          "output": 0
+        }
+      }
+    },
+    {
+      "name": "negative_leaf",
+      "n": 1,
+      "mask": 1,
+      "result": {
+        "status": "NOT_READ_ONCE",
+        "reason": "no strict read-once NAND tree",
+        "counters": {
+          "table_lookups": 8,
+          "partition_checks": 0,
+          "states": 1,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "paid_zero",
+      "n": 3,
+      "mask": 0,
+      "result": {
+        "status": "NOT_READ_ONCE",
+        "reason": "no strict read-once NAND tree",
+        "counters": {
+          "table_lookups": 50,
+          "partition_checks": 0,
+          "states": 1,
+          "memo_hits": 0
+        },
+        "essential_inputs": []
+      }
+    },
+    {
+      "name": "paid_one",
+      "n": 3,
+      "mask": 255,
+      "result": {
+        "status": "NOT_READ_ONCE",
+        "reason": "no strict read-once NAND tree",
+        "counters": {
+          "table_lookups": 50,
+          "partition_checks": 0,
+          "states": 1,
+          "memo_hits": 0
+        },
+        "essential_inputs": []
+      }
+    },
+    {
+      "name": "nand2",
+      "n": 2,
+      "mask": 7,
+      "result": {
+        "status": "READ_ONCE",
+        "reason": "reconstructed positive-leaf NAND tree",
+        "counters": {
+          "table_lookups": 44,
+          "partition_checks": 1,
+          "states": 3,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0,
+          1
+        ],
+        "gate_count": 1,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ]
+          ],
+          "output": 2
+        }
+      }
+    },
+    {
+      "name": "nand3_not_a_two_gate_tree",
+      "n": 3,
+      "mask": 127,
+      "result": {
+        "status": "NOT_READ_ONCE",
+        "reason": "no strict read-once NAND tree",
+        "counters": {
+          "table_lookups": 181,
+          "partition_checks": 6,
+          "states": 5,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "name": "balanced4",
+      "n": 4,
+      "mask": 63624,
+      "result": {
+        "status": "READ_ONCE",
+        "reason": "reconstructed positive-leaf NAND tree",
+        "counters": {
+          "table_lookups": 197,
+          "partition_checks": 4,
+          "states": 7,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "gate_count": 3,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "output": 6
+        }
+      }
+    },
+    {
+      "name": "reused_z_nonunate",
+      "n": 4,
+      "mask": 57224,
+      "result": {
+        "status": "NOT_READ_ONCE",
+        "reason": "no strict read-once NAND tree",
+        "counters": {
+          "table_lookups": 199,
+          "partition_checks": 7,
+          "states": 1,
+          "memo_hits": 0
+        },
+        "essential_inputs": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "report_sha256": "9b085b2c9c19b222940da76477a31e3de330d649d710727937e6e1fcc0027f6e"
+}

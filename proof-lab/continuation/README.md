@@ -1,27 +1,34 @@
-# User-authorized continuation
+# Continuation checkpoint
 
-The user extended research with “continue until I say the stop,” superseding the original one-hour cutoff. The existing total caps remain $115 for Meta and $40 for Claude API. Deliberate file access remains within C:\Users\email\muse-spark-chat and the previously authorized task runtimes/accounts. The original hour2 configurations and financial history are preserved.
+Research resumed on the user's instruction at 22:30 UTC on 2026-11-04. Work stays in the existing project, with total local caps of **$115 Meta** and **$40 Claude API**. P versus NP remains unsolved by this project.
 
-P versus NP remains unsolved by this project. New work focuses on concrete, independently checkable gaps: formalizing common-witness compatibility and testing whether scalar complexity profiles determine shared-DAG cost. An absent finite counterexample is not a universal theorem. In-progress sources are not part of the verified registry until independently reviewed and compiled/tested.
+The continuation Meta guard has **15 passing offline tests**, including the ledger-wait deadline regression. Each job has an exclusive identity, an immutable bounded lifetime, budget reservation before transport, and STOP handling. Unknown charges retain their reservations. Later jobs are managed by their assigned controllers; this checkpoint is historical rather than a live job monitor.
 
-The dedicated Cursor agent continues observing one existing Grok request; no duplicate has been sent. All four hour2 Meta/Claude API requests are terminal and settled. Future paid requests require a separately reviewed, bounded continuation guard that retains every existing ledger hold and checks for an explicit stop before network activity. No unlimited paid loop is authorized by this implementation.
+The last successful complete Python replay is **410 tests in 26.286 seconds**. The subsequent **438-test attempt had 437 passes and one Windows `PermissionError`** during replacement of a test-local status file. Inspection found no live campaign status-writer race; the precise operating-system cause is unproven. Its isolated recheck passed (one test, 0.022 seconds), with no source change. That focused pass does not make the failed combined run green. All 28 new catalogue/profile tests passed within the combined attempt. See the [manifest](../results/verification.json), [failed combined log](python-c2-verification.txt), and [isolated recheck](python-campaign-focused-recheck.txt).
 
-See [the prior checkpoint](../hour2/CHECKPOINT.md) for exact actual-versus-reserved accounting and the verified 388-test/32-module record.
+There are **34 cumulatively compiled Lean modules**: the original full replay plus independent later compilations, not one combined 34-module run. The latest addition, [SixCaseSupport](SIX_CASE_SUPPORT.md), independently compiled with 12 standard-axiom dependency checks. It proves the six individual boundaries; it does not formally establish generic two-gate classification or refine the Python implementation.
 
-## Stop checkpoint
+Current mathematical artifacts:
 
-A later parent delegation explicitly ordered all research stopped on the original deadline, despite the direct user's intervening continuation instruction. Activity was paused for that instruction to be reconciled. `STOP` is set; no continuation paid requests were started.
+- [Three-input profiles](results/profile-n3.json): 80 scalar classes, 320 pair classes, and 308 profiles; no different-joint-cost collision. Lower bounds remain finite Z3 evidence.
+- [Two-gate catalogue](LOW_COST_TWO.md): complete finite enumeration of 61 functions and 915 pairs, represented by 22 input-permutation classes; nine catalogue tests passed.
+- [Six larger-support cases](LOW_COST_PROFILES.md): an ordinary counting/polarity proof, the separate Lean checks, and a twelve-query finite solver check support NAND-coordinate cost four. Eleven driver tests passed. The prepared 44-target profile campaign was not run.
+- [Solver-free small-input record](results/c2-truncated-n3.json): all gate prefixes through three gates yield 78 pairs and 16 truncated profiles, with no joint-cost collision. Eight tests passed. A profile value of four means at least four, not an exact cost; its `2*f+g` convention is explicitly related to the earlier `f+2*g` convention.
+- [Read-once NAND reconstruction](READ_ONCE_NAND.md) and [rectangle recovery](rectangle_recovery.py): independently reviewed, separate focused checks passed (nine and eleven tests respectively). These checks were not part of the 438-test attempt and have their own evidence in the manifest.
 
-Completed: PairwiseCompatibility.lean was compiled by its author and independently replayed by root; six printed axiom checks use only the standard axioms. It is the 33rd cumulatively compiled formal source, not part of an all 33 replay. The prior 388 Python tests do not include the new continuation tests.
+## Completed provider records
 
-The bounded profile investigation completed all 80 ordinary permutation classes and 320 pair classes, with 308 distinct scalar profiles and no differing-joint-cost collision found. Its lower bounds depend on Z3 and its encoding; independent code review remains unfinished. The author reports seven focused tests passed. This is not a general scalarization theorem.
+This checkpoint preserves **five terminal continuation jobs** in the [provider summary](provider-results/completed-summary.json): three visible mathematical answers and two output-token-limited results marked **NO_VISIBLE_ANSWER**. Their combined recorded cost is **$4.045912**. Only visible answer text and safe receipt metadata are included. Later receipts are outside this intermediate checkpoint.
 
-`meta_guard.py` and `test_meta_guard.py` are unfinished, untested drafts, not approved for live use. No workers or paid calls were launched through them. They are left outside the reviewed Git checkpoint pending review. All prior ledger holds and caps are unchanged.
+Local budget snapshot at **2026-11-04 23:13:23 UTC**:
 
-## Explicit user resume
+| Provider | Cap | Committed | Available | Pending reservations |
+|---|---:|---:|---:|---:|
+| Meta | $115 | $44.775608 | $70.224392 | 5 |
+| Claude API | $40 | $10.19390 | $29.80610 | 0 |
 
-The user explicitly resumed the process, mainly with Meta models. The STOP marker has been cleared after recording authorization in RESUME.json. Old hourly configurations, completed job states, and ledger holds remain unchanged. The local total caps remain Meta $115 and Claude API $40.
+These historical commitments include conservative external holds ($25 Meta, $1 Claude). At that timestamp, Meta had four older unresolved reservations and one active audit reservation. Later job activity changes these values. This is [local accounting](provider-results/budget-snapshot.json), not a live provider invoice.
 
-The continuation Meta guard is now reviewed and tested: 15 offline tests passed in 0.735 seconds after fixing a ledger-wait deadline race. Each job has a new exclusive identity and an immutable maximum 20-minute lifetime (15 minutes by default); the STOP file prevents new work and requests best-effort cancellation of an owned remote job. Unknown charges remain reserved. No paid requests occur on import or during tests. No account-wide invoice reconciliation is implied.
+## Historical pause
 
-The profile checker has now passed independent source/artifact review and seven focused tests. Its complete three-input result remains bounded Z3 evidence, without a general scalarization conclusion.
+An earlier stop delegation paused continuation work while instructions were reconciled. The user's explicit resume superseded that pause. Earlier hour2 configurations, completed job states, financial history, and unknown-charge holds were preserved. See the [earlier checkpoint](../hour2/CHECKPOINT.md) for its historical 388-test/32-module record.

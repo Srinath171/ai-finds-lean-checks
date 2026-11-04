@@ -1,0 +1,16 @@
+Root independent replay
+source_sha256_lf: 107c4502f277097a8c648bb34f294d71881c0f09a6825a0f6fbdcc8a7a864208
+exit_code: 0
+elapsed_seconds: 39.499
+'SixCaseSupport.avoidBadMasks4_true' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H1_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixCaseSupport.H2_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixCaseSupport.H3_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixCaseSupport.H4_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixCaseSupport.H5_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SixCaseSupport.H1_within_four' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H2_within_four' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H3_within_four' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H4_within_four' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H5_within_four' depends on axioms: [propext, Quot.sound]
+'SixCaseSupport.H6_exact_four_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]

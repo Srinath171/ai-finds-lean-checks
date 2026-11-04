@@ -1,0 +1,14 @@
+test_all_truth_tables_up_to_three_total_inputs (continuation.test_repeated_z_nand.RepeatedZNandTests.test_all_truth_tables_up_to_three_total_inputs) ... ok
+test_exact_wildcard_keys_and_syntactic_variable_sets (continuation.test_repeated_z_nand.RepeatedZNandTests.test_exact_wildcard_keys_and_syntactic_variable_sets) ... ok
+test_factor_options_handle_empty_groups_and_nonrectangles (continuation.test_repeated_z_nand.RepeatedZNandTests.test_factor_options_handle_empty_groups_and_nonrectangles) ... ok
+test_four_input_all_generated_functions_and_bounded_negative_samples (continuation.test_repeated_z_nand.RepeatedZNandTests.test_four_input_all_generated_functions_and_bounded_negative_samples) ... ok
+test_invalid_inputs_and_witness_rejection (continuation.test_repeated_z_nand.RepeatedZNandTests.test_invalid_inputs_and_witness_rejection) ... ok
+test_nonunate_fixture_and_hidden_singleton_slice (continuation.test_repeated_z_nand.RepeatedZNandTests.test_nonunate_fixture_and_hidden_singleton_slice) ... ok
+test_paid_constants_and_repeated_fanin (continuation.test_repeated_z_nand.RepeatedZNandTests.test_paid_constants_and_repeated_fanin) ... ok
+test_reference_tree_counts (continuation.test_repeated_z_nand.RepeatedZNandTests.test_reference_tree_counts) ... ok
+test_resource_limits_never_claim_nonrepresentability (continuation.test_repeated_z_nand.RepeatedZNandTests.test_resource_limits_never_claim_nonrepresentability) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.242s
+
+OK

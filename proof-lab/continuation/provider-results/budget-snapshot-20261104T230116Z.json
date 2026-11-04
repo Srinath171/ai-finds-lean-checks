@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-11-04T23:01:16.946711+00:00",
+  "providers": {
+    "claude": {
+      "available_usd": "29.80610",
+      "cap_usd": "40",
+      "committed_usd": "10.19390",
+      "external_hold_usd": "1",
+      "over_cap": false,
+      "pending_count": 0,
+      "settled_count": 7
+    },
+    "meta": {
+      "available_usd": "75.937900",
+      "cap_usd": "115",
+      "committed_usd": "39.062100",
+      "external_hold_usd": "25",
+      "over_cap": false,
+      "pending_count": 4,
+      "settled_count": 25
+    }
+  },
+  "scope": "Read-only aggregate snapshot. Commitments include conservative external holds and unresolved reservations; this is not a live provider billing balance.",
+  "source": "existing local budget ledger; no provider billing API called"
+}

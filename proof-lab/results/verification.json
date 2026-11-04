@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T22:37:49.691136+00:00",
+  "checked_utc": "2026-11-04T23:19:09.775564+00:00",
   "python_tests_passed": 410,
   "test_seconds": 26.286,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 33,
+  "formal_source_count": 34,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -235,9 +235,16 @@
       "sha256_lf": "d2476961712af06cde0a6d5448b5fe5aeb5426ae1acc57ab955ab72a880247b4",
       "compiled": true,
       "verification_log": "continuation/pairwise-compatibility-verification.txt"
+    },
+    {
+      "path": "continuation/SixCaseSupport.lean",
+      "sha256": "328383e31c5dd57805538b8963f5f00b1b038d09447d9c9d0532d664aa6c9498",
+      "sha256_lf": "107c4502f277097a8c648bb34f294d71881c0f09a6825a0f6fbdcc8a7a864208",
+      "compiled": true,
+      "verification_log": "continuation/six-case-root-verification.txt"
     }
   ],
-  "scope": "Latest combined offline Python replay passed 410 tests in 26.286 seconds using the importable Windows-spawn-safe runner and project-local TEMP. Prior successful runs of 324, 334, 350 (before the accounting fix), 353, and 388 tests remain historical; the failed stdin-based 388-test attempt remains separate. All 33 Lean modules are cumulatively compiled through the earlier 23-source full replay, separate 2+1+1+1+1+1+1+1 postchecks, and the independent PairwiseCompatibility postcheck. No single full 33-source Lean replay is claimed. This checkpoint made no API calls or real ledger changes.",
+  "scope": "Latest successful full Python replay remains 410 tests passed in 26.286 seconds. A later 438-test attempt had 437 passes and one Windows atomic-replace error in an existing isolated campaign test; its focused recheck passed, without upgrading that failed combined run. All 28 new finite-math tests passed in that attempt. Separately reviewed read-once (9 tests) and rectangle (11 tests) focused checks are recorded independently. All 34 Lean modules are cumulatively compiled through the earlier 23-source full replay and separate later postchecks; no full 34-source replay is claimed. Verification made no paid calls or real ledger changes.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -368,7 +375,14 @@
       "continuation.test_meta_guard": 15,
       "continuation.test_profile_sat": 7
     },
-    "scope": "One combined offline unittest execution with project-local TEMP, existing test discovery, four hour2 modules, and both continuation modules. Includes the continuation guard deadline-race regression and focused profile tests; does not rerun the large n3 profile investigation or any Lean modules. API transports are mocked; no paid calls or real ledger changes."
+    "scope": "One combined offline unittest execution with project-local TEMP, existing test discovery, four hour2 modules, and both continuation modules. Includes the continuation guard deadline-race regression and focused profile tests; does not rerun the large n3 profile investigation or any Lean modules. API transports are mocked; no paid calls or real ledger changes.",
+    "runner_source_at_replay": {
+      "path": "hour2/verify_python.py",
+      "sha256": "12a61b08afdbb734e3ac8f6b36f59238413e5384824c4604f27d44d0838e6ba7",
+      "sha256_lf": "69d3f9d259fd8034160d9ee3306702478fbf37d64df11783fff964512325bf61",
+      "verification_log": "continuation/python-resume-verification.txt",
+      "scope": "Importable Windows-spawn-safe runner assembling existing discovery, four hour2 modules, and two continuation modules in one unittest execution."
+    }
   },
   "full_python_replay_history": [
     {
@@ -496,10 +510,11 @@
     },
     {
       "path": "hour2/verify_python.py",
-      "sha256": "12a61b08afdbb734e3ac8f6b36f59238413e5384824c4604f27d44d0838e6ba7",
-      "sha256_lf": "69d3f9d259fd8034160d9ee3306702478fbf37d64df11783fff964512325bf61",
-      "verification_log": "continuation/python-resume-verification.txt",
-      "scope": "Importable Windows-spawn-safe runner assembling existing discovery, four hour2 modules, and two continuation modules in one unittest execution."
+      "sha256": "f1d1ab0dc1a8bdc9b81bc03868be4f3506643b5a552dc722e8b848a0079f14f4",
+      "sha256_lf": "f4220ef05090e3c215929c3e3656d257f4325094fbb6e1929a98319abd4fe5b9",
+      "verification_log": "continuation/python-c2-verification.txt",
+      "scope": "Windows-spawn-safe runner assembled 438 tests, including three new finite-math modules. The combined attempt failed one existing campaign atomic-replace test; all 28 new cases passed. Last successful full replay remains 410 tests.",
+      "execution_status": "438_TEST_COMBINED_ATTEMPT_FAILED_ONE_EXISTING_TEST"
     },
     {
       "path": "continuation/meta_guard.py",
@@ -533,6 +548,66 @@
         "sha256_lf": "2f4a6e37cf922a67359c3008580b6230b371d8ecb46fdc7e20ce09eea1738b2d",
         "audit_scope": "Existing artifact audited without rerunning the investigation; retained UNKNOWN is not used in final exact-cost claims."
       }
+    },
+    {
+      "path": "continuation/low_cost_two.py",
+      "sha256": "7658e2274353abea8e6c266511bd3f5ee5d3c2b1e6ddfbb630e5bf61d3f0a3db",
+      "sha256_lf": "29851895a31e804d22d008694f4d9743dc8b33e6152d3b1826b62cfc5b952054",
+      "verification_log": "continuation/python-c2-verification.txt",
+      "module_tests_passed_in_failed_combined_attempt": 9,
+      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "scope": "Complete finite two-gate catalogue: all 926 ordered lists, 915 pairs, 22 input-permutation classes; independent Boolean witnesses, no SAT or Lean-refinement claim.",
+      "test_source": {
+        "path": "continuation/test_low_cost_two.py",
+        "sha256": "11b8726eb8d1277f9f9737b310e950f7b7b95f2525fce4c4ae9b41521ab2c2c7",
+        "sha256_lf": "ba82962e0b9624fe98bd468fd21aee7e0723bb13a3290688d0d3d51c18c27457"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/low-cost-two-n5.json",
+        "sha256": "1dbb11150f5a7563475c89cc898feb9d8ea892edb76d007386cc3f1bd2826839",
+        "sha256_lf": "597066d99c13230a1e2910466eb00b0ad6c1ac3bbd014915ce1b9d39c3923050"
+      }
+    },
+    {
+      "path": "continuation/low_cost_profiles.py",
+      "sha256": "29ba72d8c13bd8c54654e622a43ad4ab311c620183ac6920919ebb9f3eebe67b",
+      "sha256_lf": "6763809088b10abb2ddfc675ca31ea02e1883205b142c5c90ea81ff4929616dd",
+      "verification_log": "continuation/python-c2-verification.txt",
+      "module_tests_passed_in_failed_combined_attempt": 11,
+      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "scope": "Only the six larger-support NAND coordinates were queried. Twelve local SAT queries and independently evaluated upper witnesses; full 44-target campaign unrun. Source includes separately tested interval/cache helpers.",
+      "test_source": {
+        "path": "continuation/test_low_cost_profiles.py",
+        "sha256": "a48386acf745f3c529c9027ebeac5c733cd26409a90c360ab069144f402feaf7",
+        "sha256_lf": "3f9071d1d2e9575a68db8292c6bb4632b96ba991d3093d12a2f5b59cf7bf8782"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/low-cost-nand-six.json",
+        "sha256": "e34baab6c02dc1a6341c620a3b1a73901fb8c8f7ef7722b3478a57f0daa36123",
+        "sha256_lf": "e5786a177a4451064added3441421fbb320b48b2d7e7141e138865d357c0096c"
+      },
+      "focused_verification_log": "continuation/low-cost-profile-tests.txt"
+    },
+    {
+      "path": "continuation/c2_truncated_profile.py",
+      "sha256": "82ff7a261046c06935c06ad082d5ef1ac7dceda08309d06e9f16ea3aca2cc6f0",
+      "sha256_lf": "82ff7a261046c06935c06ad082d5ef1ac7dceda08309d06e9f16ea3aca2cc6f0",
+      "verification_log": "continuation/python-c2-verification.txt",
+      "module_tests_passed_in_failed_combined_attempt": 8,
+      "overall_combined_status": "FAILED_UNRELATED_EXISTING_TEST",
+      "scope": "Solver-free enumeration of all gate prefixes through three gates. Truncation value four means cost at least four, not exact cost four. The explicit h-coordinate permutation reconciles the earlier profile convention; no Lean refinement claim.",
+      "test_source": {
+        "path": "continuation/test_c2_truncated_profile.py",
+        "sha256": "cea35c3270c85318ab951a795715f77f7a498a589fed3db8a9b9f8cbbbb84764",
+        "sha256_lf": "cea35c3270c85318ab951a795715f77f7a498a589fed3db8a9b9f8cbbbb84764"
+      },
+      "saved_artifact": {
+        "path": "continuation/results/c2-truncated-n3.json",
+        "sha256": "96c706900b283b45d9926bd98c490908e4bd7a461574efd5dc6cc2ccf237d52c",
+        "sha256_lf": "96c706900b283b45d9926bd98c490908e4bd7a461574efd5dc6cc2ccf237d52c",
+        "canonical_report_sha256": "34b1a1afeb323b4ec7b61ff5144ba47bd04d0aee62247a1677d137127d9d6411",
+        "canonical_hash_encoding": "UTF-8 compact sorted-key ASCII JSON excluding report_sha256, followed by one LF"
+      }
     }
   ],
   "nonpassing_verification_attempts": [
@@ -543,6 +618,18 @@
       "log": "hour2/python-stdin-attempt.txt",
       "historical_status": "WINDOWS_STDIN_RUNNER_FAILURE",
       "scope": "The original combined suite was launched from stdin, which Windows multiprocessing could not import as its main module. The process-pool test raised BrokenProcessPool; this failed harness attempt is retained separately and is not a successful verification. The importable-module rerun passed all 388 tests."
+    },
+    {
+      "tests_run": 438,
+      "tests_passed": 437,
+      "errors": 1,
+      "test_seconds": 28.203,
+      "exit_code": 1,
+      "log": "continuation/python-c2-verification.txt",
+      "historical_status": "WINDOWS_ATOMIC_REPLACE_ERROR",
+      "failing_test": "test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped",
+      "exception": "PermissionError [WinError 5] at frontier/campaign.py _atomic os.replace",
+      "scope": "One combined run failed in a fresh project-local test directory with mocked providers. The campaign controller uses an exclusive lock; no live campaign status-writer race was identified. Actual Windows sharing/permission cause is unproven. All 28 newly added tests passed; this attempt is not a green full-suite result."
     }
   ],
   "continuation_formal_postcheck": {
@@ -559,5 +646,100 @@
     ],
     "scope": "Independent root compilation and source inspection of actual shared-DAG predicates, bringing the cumulative Lean count to 33 without a combined 33-source replay. At that formal-postcheck time Python coverage was the earlier 388-test suite; continuation Python was excluded then. The later 410-test replay is recorded separately.",
     "python_tests_at_postcheck": 388
+  },
+  "six_case_formal_postcheck": {
+    "paths": [
+      "continuation/SixCaseSupport.lean"
+    ],
+    "exit_code": 0,
+    "test_seconds": 39.499,
+    "log": "continuation/six-case-root-verification.txt",
+    "printed_axiom_checks": 12,
+    "axioms_seen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "scope": "Independent root replay of six explicitly defined functions, each with a four-gate upper bound and exclusion of at most three gates. This is not a generic C(f)=2 classification/refinement theorem or a combined 34-source Lean replay."
+  },
+  "latest_full_python_attempt": {
+    "tests_run": 438,
+    "tests_passed": 437,
+    "errors": 1,
+    "test_seconds": 28.203,
+    "exit_code": 1,
+    "log": "continuation/python-c2-verification.txt",
+    "historical_status": "WINDOWS_ATOMIC_REPLACE_ERROR",
+    "failing_test": "test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped",
+    "exception": "PermissionError [WinError 5] at frontier/campaign.py _atomic os.replace",
+    "scope": "One combined run failed in a fresh project-local test directory with mocked providers. The campaign controller uses an exclusive lock; no live campaign status-writer race was identified. Actual Windows sharing/permission cause is unproven. All 28 newly added tests passed; this attempt is not a green full-suite result."
+  },
+  "focused_python_rechecks": [
+    {
+      "tests_passed": 1,
+      "test_seconds": 0.022,
+      "exit_code": 0,
+      "log": "continuation/python-campaign-focused-recheck.txt",
+      "selection": "test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped",
+      "source_changed": false,
+      "scope": "Isolated recheck passed after source/locking inspection. This does not convert the failed 438-test combined attempt into a full pass."
+    }
+  ],
+  "independent_focused_python_checks": [
+    {
+      "module": "continuation.test_read_once_nand",
+      "tests_passed": 9,
+      "test_seconds": 0.107,
+      "exit_code": 0,
+      "log": null,
+      "evidence": "Author-recorded exec tool result; actual source/report independently reviewed by root and primary_literature. No additional run was made just to create a logfile.",
+      "source": {
+        "path": "continuation/read_once_nand.py",
+        "sha256": "09544f8065f159c714a19b530b03e1a67a64329380dbc0ce84533986cd96f791",
+        "sha256_lf": "09544f8065f159c714a19b530b03e1a67a64329380dbc0ce84533986cd96f791"
+      },
+      "test_source": {
+        "path": "continuation/test_read_once_nand.py",
+        "sha256": "2c5d6543ed2ad9186e195b86019203c948fe56bb881bce3b5f8567b5ece94bcc",
+        "sha256_lf": "2c5d6543ed2ad9186e195b86019203c948fe56bb881bce3b5f8567b5ece94bcc"
+      },
+      "report": {
+        "path": "continuation/results/read-once-nand-demo.json",
+        "sha256": "274f0af5ea912c9fcbc2464467c4d920b16a4d40204ca9abe95c0b620f6c6229",
+        "sha256_lf": "274f0af5ea912c9fcbc2464467c4d920b16a4d40204ca9abe95c0b620f6c6229",
+        "canonical_report_sha256": "9b085b2c9c19b222940da76477a31e3de330d649d710727937e6e1fcc0027f6e"
+      },
+      "scope": "Separate focused check of the strict read-once NAND implementation; excluded from the 438-test attempt and not a general reconstruction theorem."
+    },
+    {
+      "module": "continuation.test_rectangle_recovery",
+      "tests_passed": 11,
+      "test_seconds": 0.016,
+      "subprocess_seconds": 0.1486622000229545,
+      "exit_code": 0,
+      "log": "continuation/results/rectangle-recovery-tests-20261104.txt",
+      "source_record": "continuation/results/rectangle-recovery-source-hashes-20261104.json",
+      "source": {
+        "path": "continuation/rectangle_recovery.py",
+        "sha256": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa",
+        "sha256_lf": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa"
+      },
+      "test_source": {
+        "path": "continuation/test_rectangle_recovery.py",
+        "sha256": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61",
+        "sha256_lf": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61"
+      },
+      "scope": "Separate focused check with 194 exhaustive genuine branch pairs and at most five inputs; source independently reviewed. Excluded from the 438-test attempt."
+    }
+  ],
+  "provider_results_checkpoint": {
+    "summary_path": "continuation/provider-results/completed-summary.json",
+    "sha256": "cda029bda305cdbe222df2714adcd36f6b140f2a8a28099a7ccd0be5f8a309ba",
+    "sha256_lf": "84fb0b1331fb4da6e3e7d0277e282942007bae911ad89d4e40776f1f3441395f",
+    "terminal_jobs": 5,
+    "visible_answers": 3,
+    "no_visible_answers": 2,
+    "recorded_api_cost_usd": "4.045912",
+    "scope": "Completed public visible answers and safe receipt metadata only; active audits are monitored separately."
   }
 }

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\Users\\email\\muse-spark-chat\\proof-lab\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "continuation.test_rectangle_recovery"
+  ],
+  "scope": "Focused rectangle recovery tests only; no full-suite rerun; no provider calls.",
+  "maximum_exhaustive_inputs": 5,
+  "exhaustive_branch_pairs": 194,
+  "timeout_seconds": 55,
+  "elapsed_seconds": 0.1486622000229545,
+  "exit_code": 0,
+  "source_sha256": {
+    "continuation/rectangle_recovery.py": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa",
+    "continuation/test_rectangle_recovery.py": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61"
+  },
+  "sources_unchanged_during_run": true
+}

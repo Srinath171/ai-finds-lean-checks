@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Users\\email\\muse-spark-chat\\proof-lab\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "continuation.test_rectangle_recovery"
+  ],
+  "scope": "Focused rectangle recovery tests only; no full-suite rerun; no provider calls.",
+  "maximum_exhaustive_inputs": 5,
+  "exhaustive_branch_pairs": 194,
+  "timeout_seconds": 55,
+  "elapsed_seconds": 0.1486622000229545,
+  "exit_code": 0,
+  "source_sha256": {
+    "continuation/rectangle_recovery.py": "bf02934110e61827f0f4371140790fad6248dab996fa32d90b87b1a0426872fa",
+    "continuation/test_rectangle_recovery.py": "8bf097ceeb2c2f7e368bc925a497f0385a63ae1fdfda0d9661829d07a30d6e61"
+  },
+  "sources_unchanged_during_run": true
+}
+
+test_all_zero_table_has_unique_semantic_constant_factors (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_all_zero_table_has_unique_semantic_constant_factors) ... ok
+test_empty_rectangle_and_singleton_slice_ambiguity (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_empty_rectangle_and_singleton_slice_ambiguity) ... ok
+test_exact_boolean_entry_types (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_exact_boolean_entry_types) ... ok
+test_exhaustive_genuine_branch_trees_through_five_inputs (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_exhaustive_genuine_branch_trees_through_five_inputs) ... ok
+test_explicit_table_dimensions_and_container_types (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_explicit_table_dimensions_and_container_types) ... ok
+test_full_rectangle_slice_and_exact_expected_factors (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_full_rectangle_slice_and_exact_expected_factors) ... ok
+test_label_partition_validation (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_label_partition_validation) ... ok
+test_nonrectangle_rejection_and_counterexample (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_nonrectangle_rejection_and_counterexample) ... ok
+test_permuted_input_and_group_label_order (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_permuted_input_and_group_label_order) ... ok
+test_second_slice_rejection_discards_partial_factors (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_second_slice_rejection_discards_partial_factors) ... ok
+test_semantic_factorization_does_not_claim_strict_nand_membership (continuation.test_rectangle_recovery.RectangleRecoveryTests.test_semantic_factorization_does_not_claim_strict_nand_membership) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.016s
+
+OK

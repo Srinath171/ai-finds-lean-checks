@@ -1,0 +1,6 @@
+test_interrupted_terminal_decision_stays_stopped (test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.022s
+
+OK

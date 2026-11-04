@@ -4,6 +4,8 @@ A local proof and finite-search laboratory: Meta models propose Lean proof
 bodies, a restricted checker validates them, and separate SAT and NAND-circuit
 experiments make the difference between finding and checking concrete.
 
+The latest additional research checkpoint is described in [hour2/README.md](hour2/README.md): exact shared-circuit extraction, scoped counterexamples, and independently cross-checked finite search.
+
 **This project does not solve P vs NP.** Its elementary theorems, exhaustive
 SAT-search correctness results, finite NAND bounds, and conditional counting results are known facts
 reproduced here, not novel mathematical discoveries.

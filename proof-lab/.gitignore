@@ -23,3 +23,10 @@ frontier/campaign-sparse-audit/
 frontier/campaign-mcsp/
 frontier/background-first-gate/
 frontier/background-meta/
+hour2/jobs/
+hour2/bindings/
+hour2/locks/
+hour2/claude-jobs/
+hour2/claude-locks/
+hour2/regular-claude/
+hour2/grok-scratch/

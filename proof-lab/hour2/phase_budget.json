@@ -1,0 +1,15 @@
+{
+  "caps_usd": {
+    "claude": "40",
+    "meta": "115"
+  },
+  "client_sha256_lf": "730551c9ff0f2215e207df0cfb599506e86863bfcfa88b18f76c78eddd4fcaed",
+  "deadline_utc": "2026-11-04T20:48:30+00:00",
+  "last_network_epoch": 1793825295.0,
+  "ledger_path": "C:\\Users\\email\\muse-spark-chat\\proof-lab\\logs\\spending.json",
+  "max_job_seconds": 1800,
+  "no_old_jobs_or_response_ids": true,
+  "phase_id": "hour2-20261104T194830Z",
+  "start_utc": "2026-11-04T19:48:30+00:00",
+  "version": 1
+}

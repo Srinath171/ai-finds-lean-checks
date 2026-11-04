@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-04T19:24:25.677235+00:00",
-  "python_tests_passed": 353,
-  "test_seconds": 21.453,
+  "checked_utc": "2026-11-04T20:32:23.531280+00:00",
+  "python_tests_passed": 388,
+  "test_seconds": 21.778,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 29,
+  "formal_source_count": 32,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -207,9 +207,30 @@
       "sha256_lf": "21c3f69c7b13bd0ab5cf628c630be4308e4115463c210073318469d4fddc3a41",
       "compiled": true,
       "verification_log": "frontier/graded-dimension-verification.txt"
+    },
+    {
+      "path": "hour2/GateExtraction.lean",
+      "sha256": "1517999853757fdb079366fada08ef8a252e9bd861a0607e45dc26adf729b653",
+      "sha256_lf": "fc424f8c511506cab4d99deedd4bb18223498b6236994cdbb5e3d1138973e290",
+      "compiled": true,
+      "verification_log": "hour2/gate-extraction-verification.txt"
+    },
+    {
+      "path": "hour2/AmplificationCounterexample.lean",
+      "sha256": "1f8345b1ab5c31ddb94bb18adfa0fcd8f1353b9d244ebb83dbaf02750b837772",
+      "sha256_lf": "38d4961b9c86717a8fbba0fddbca9f7c082eb59589177a41925edb21b5bf842b",
+      "compiled": true,
+      "verification_log": "hour2/amplification-counterexample-verification.txt"
+    },
+    {
+      "path": "hour2/PositiveBudgetCounterexample.lean",
+      "sha256": "a07bb74087d37152f34a237331bad704804c90a53bb96ec3feab8fd23ca5f5a6",
+      "sha256_lf": "48ef2be1c4f626592fada39ad1088893e3b04c6ba3d4bc167054265ce4b7b9c7",
+      "compiled": true,
+      "verification_log": "hour2/positive-budget-counterexample-verification.txt"
     }
   ],
-  "scope": "Latest full Python-only replay remains 353 tests passed in 21.453 seconds after operation-accounting fixes; no Python source changed for the GradedDimension formal-only addition. Prior 324-test, 334-test, and explicitly pre-fix 350-test runs remain historical. All 29 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1+1-module postchecks. No single full 29-source replay is claimed. No API calls during verification.",
+  "scope": "Latest combined offline Python replay passed 388 tests in 21.778 seconds using the importable Windows-spawn-safe runner. Prior successful 324-, 334-, pre-fix 350-, and 353-test runs remain historical; the failed stdin-based 388-test attempt is recorded separately. All 32 Lean modules are cumulatively compiled via the earlier 23-source full replay plus separate 2+1+1+1+1+1+1+1-module postchecks. No single full 32-source Lean replay is claimed. No API calls during verification.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -278,17 +299,67 @@
         "propext"
       ],
       "scope": "GradedDimension independently compiled as a formal-only addition after the earlier 23-source full replay and separate two-module, CoordinateChange, IsotropicDimension, and TriangularDimension postchecks. Three standard-axiom theorem outputs; Python remains the existing 353-test replay. Not a combined 29-source replay."
+    },
+    {
+      "paths": [
+        "hour2/GateExtraction.lean"
+      ],
+      "exit_code": 0,
+      "log": "hour2/gate-extraction-verification.txt",
+      "printed_axiom_checks": 6,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "One hour2 formal module independently compiled after the earlier 23-source full replay and separate 2+1+1+1+1-module postchecks. This is not a combined 32-source replay."
+    },
+    {
+      "paths": [
+        "hour2/AmplificationCounterexample.lean"
+      ],
+      "exit_code": 0,
+      "log": "hour2/amplification-counterexample-verification.txt",
+      "printed_axiom_checks": 6,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "One hour2 formal module independently compiled after the earlier 23-source full replay and separate 2+1+1+1+1-module postchecks. This is not a combined 32-source replay."
+    },
+    {
+      "paths": [
+        "hour2/PositiveBudgetCounterexample.lean"
+      ],
+      "exit_code": 0,
+      "log": "hour2/positive-budget-counterexample-verification.txt",
+      "printed_axiom_checks": 7,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "One hour2 formal module independently compiled after the earlier 23-source full replay and separate 2+1+1+1+1-module postchecks. This is not a combined 32-source replay."
     }
   ],
   "full_suite_python_tests_passed": 312,
   "full_suite_test_seconds": 21.013,
   "source_hash_normalization": "sha256 hashes actual file bytes; sha256_lf normalizes CRLF to LF, then CR to LF; other bytes unchanged.",
   "latest_full_python_replay": {
-    "python_tests_passed": 353,
-    "test_seconds": 21.453,
+    "python_tests_passed": 388,
+    "test_seconds": 21.778,
     "exit_code": 0,
-    "log": "frontier/python-normal-crossing-final-verification.txt",
-    "scope": "Full unittest discovery after the independently audited geometry/pipeline operation-accounting fixes and new regression tests; bounded Python checks only, with no Lean replay in this execution."
+    "log": "hour2/python-final-verification.txt",
+    "runner": "python -B -m hour2.verify_python",
+    "suite_breakdown": {
+      "existing_tests": 353,
+      "hour2.test_phase_guard": 10,
+      "hour2.test_claude_guard": 9,
+      "hour2.test_joint_nand": 10,
+      "hour2.test_sat_boolean_mux": 6
+    },
+    "scope": "One combined offline unittest suite from an importable Windows-spawn-safe module, containing existing discovery and all four hour2 test modules. This execution did not replay Lean modules or make paid API calls."
   },
   "full_python_replay_history": [
     {
@@ -329,6 +400,15 @@
           "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests."
         }
       ]
+    },
+    {
+      "python_tests_passed": 353,
+      "test_seconds": 21.453,
+      "exit_code": 0,
+      "log": "frontier/python-normal-crossing-final-verification.txt",
+      "scope": "Full unittest discovery after the independently audited geometry/pipeline operation-accounting fixes and new regression tests; bounded Python checks only, with no Lean replay in this execution.",
+      "historical_status": "PRIOR_353_TEST_SUITE",
+      "note": "Full successful replay before the four hour2 test modules were added; preserved as historical evidence."
     }
   ],
   "python_source_evidence": [
@@ -352,6 +432,51 @@
       "sha256_lf": "276748de405fc47f693b445906ddb484905d71ccd340d4d246352434edb0a297",
       "verification_log": "frontier/python-normal-crossing-final-verification.txt",
       "scope": "Bounded exact normal-crossing moment checker; tested Python implementation without a verified Lean refinement link or a universal theorem established by these tests."
+    },
+    {
+      "path": "hour2/phase_guard.py",
+      "sha256": "c4b8e48f6d74a85af4c84f9e31516c3c0ea8b61897b3a65aef3dc3932562a8d8",
+      "sha256_lf": "8dd9cad0a4c1bda86593ab7dcdad99c11cd16736f1b3a56e5a59210c5ad1729c",
+      "verification_log": "hour2/python-final-verification.txt",
+      "scope": "Bounded phase/deadline and shared-budget guard; offline mocked transport tests only, not a guarantee of remote cancellation or billing reconciliation."
+    },
+    {
+      "path": "hour2/claude_guard.py",
+      "sha256": "24aae9c3416d6921511ed9e862887027aacbf566fe1aa7bc1138b321a1377791",
+      "sha256_lf": "24aae9c3416d6921511ed9e862887027aacbf566fe1aa7bc1138b321a1377791",
+      "verification_log": "hour2/python-final-verification.txt",
+      "scope": "Bounded subprocess/API guard with shared-budget reservation; offline mocked tests only, not a guarantee of provider-side cancellation."
+    },
+    {
+      "path": "hour2/joint_nand.py",
+      "sha256": "de3be2db118b090694e0ba863f0fb0b14a08a766a1b4d69419a8569f809813ac",
+      "sha256_lf": "c1935531294b119f6a067ab41603356f42a145dde9c63038e6f1f609f1bf703c",
+      "verification_log": "hour2/python-final-verification.txt",
+      "scope": "Exact finite n1/n2 shared-output NAND state search and independently simulated witnesses; no asymptotic lower-bound or Lean-refinement claim."
+    },
+    {
+      "path": "hour2/sat_boolean_mux.py",
+      "sha256": "f8924ba7c0359ef31bc8585f8b77b46e2e4eb5b1ac9a44aab6fe79ace72c2b37",
+      "sha256_lf": "da67bfdac5a64eb037e9a9141b98c3dea0a7d40491016d5f8075471ae50a6876",
+      "verification_log": "hour2/python-final-verification.txt",
+      "scope": "Boolean one-hot NAND encoding; independent encoding corroboration in the same Z3 solver, with SAT witnesses independently evaluated. UNSAT is solver evidence, not a formally checked proof."
+    },
+    {
+      "path": "hour2/verify_python.py",
+      "sha256": "d3564fddaaef45389753e29ad1e19ee6554d265a4659919ef56dce805bce521e",
+      "sha256_lf": "53cea653a70b0bc34c1c5f7bb07d252893096d90a95f7a96f4be576fcbb12036",
+      "verification_log": "hour2/python-final-verification.txt",
+      "scope": "Importable Windows-spawn-safe runner assembling the old suite and four hour2 test modules in a single unittest execution."
+    }
+  ],
+  "nonpassing_verification_attempts": [
+    {
+      "tests_run": 388,
+      "errors": 1,
+      "test_seconds": 21.209,
+      "log": "hour2/python-stdin-attempt.txt",
+      "historical_status": "WINDOWS_STDIN_RUNNER_FAILURE",
+      "scope": "The original combined suite was launched from stdin, which Windows multiprocessing could not import as its main module. The process-pool test raised BrokenProcessPool; this failed harness attempt is retained separately and is not a successful verification. The importable-module rerun passed all 388 tests."
     }
   ]
 }

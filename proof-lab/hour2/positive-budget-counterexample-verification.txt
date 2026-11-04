@@ -1,0 +1,9 @@
+'PositiveBudgetCounterexample.f_not_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PositiveBudgetCounterexample.joint_minimum_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PositiveBudgetCounterexample.gadget_wellFormed' depends on axioms: [propext, Quot.sound]
+'PositiveBudgetCounterexample.gadget_computes_H2' depends on axioms: [propext]
+'PositiveBudgetCounterexample.H2_within_ten' depends on axioms: [propext, Quot.sound]
+'PositiveBudgetCounterexample.positive_budget_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PositiveBudgetCounterexample.scalarization_equivalence_false' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

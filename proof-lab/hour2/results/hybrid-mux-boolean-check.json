@@ -1,0 +1,125 @@
+{
+  "at_most_justification": "Any shorter circuit can be padded with unused NAND gates; output is free to select any input or gate. No duplicate or unused-gate restrictions.",
+  "lower_bound_scope": "Independent encoding corroboration from Z3 only; not an independent solver and not a Lean proof",
+  "model": "Primary inputs only, no free constants, repeated NAND fanins and free fanout, unrestricted output signal",
+  "results": [
+    {
+      "claim_scope": "Bounded solver evidence, not a formally checked lower-bound proof",
+      "clauses": 4282,
+      "elapsed_seconds": 0.023536,
+      "encoding": "Boolean truth bits; pairwise one-hot predecessor pairs and output selector; NAND CNF",
+      "gate_bound": 6,
+      "n": 3,
+      "status": "UNSAT",
+      "target": 118,
+      "timeout_ms": 30000,
+      "z3_version": "5.3.3"
+    },
+    {
+      "claim_scope": "Bounded solver evidence, not a formally checked lower-bound proof",
+      "clauses": 6370,
+      "elapsed_seconds": 0.016418,
+      "encoding": "Boolean truth bits; pairwise one-hot predecessor pairs and output selector; NAND CNF",
+      "gate_bound": 7,
+      "n": 3,
+      "status": "SAT",
+      "target": 118,
+      "timeout_ms": 30000,
+      "witness": {
+        "gates": [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "output": 9
+      },
+      "witness_independently_verified": true,
+      "z3_version": "5.3.3"
+    },
+    {
+      "claim_scope": "Bounded solver evidence, not a formally checked lower-bound proof",
+      "clauses": 4282,
+      "elapsed_seconds": 0.012404,
+      "encoding": "Boolean truth bits; pairwise one-hot predecessor pairs and output selector; NAND CNF",
+      "gate_bound": 6,
+      "n": 3,
+      "status": "UNSAT",
+      "target": 126,
+      "timeout_ms": 30000,
+      "z3_version": "5.3.3"
+    },
+    {
+      "claim_scope": "Bounded solver evidence, not a formally checked lower-bound proof",
+      "clauses": 6370,
+      "elapsed_seconds": 0.016017,
+      "encoding": "Boolean truth bits; pairwise one-hot predecessor pairs and output selector; NAND CNF",
+      "gate_bound": 7,
+      "n": 3,
+      "status": "SAT",
+      "target": 126,
+      "timeout_ms": 30000,
+      "witness": {
+        "gates": [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "output": 9
+      },
+      "witness_independently_verified": true,
+      "z3_version": "5.3.3"
+    }
+  ],
+  "source_hash_normalization": "CRLF and CR converted to LF",
+  "source_sha256_lf": "da67bfdac5a64eb037e9a9141b98c3dea0a7d40491016d5f8075471ae50a6876"
+}

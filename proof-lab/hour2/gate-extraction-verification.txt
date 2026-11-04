@@ -1,0 +1,6 @@
+'GateExtraction.extraction_wellFormed' depends on axioms: [propext, Quot.sound]
+'GateExtraction.extraction_eval' depends on axioms: [propext, Quot.sound]
+'GateExtraction.extraction_computes_graph' depends on axioms: [propext, Quot.sound]
+'GateExtraction.joint_budget_iff_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GateExtraction.joint_residual_minimum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GateExtraction.exists_joint_residual_minima' depends on axioms: [propext, Classical.choice, Quot.sound]

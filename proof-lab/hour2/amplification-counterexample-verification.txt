@@ -1,0 +1,6 @@
+'AmplificationCounterexample.joint_minimum_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AmplificationCounterexample.xor_wellFormed' depends on axioms: [propext, Quot.sound]
+'AmplificationCounterexample.xor_computes_H2' depends on axioms: [propext]
+'AmplificationCounterexample.H2_within_four' depends on axioms: [propext, Quot.sound]
+'AmplificationCounterexample.scalarization_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AmplificationCounterexample.scalarization_equivalence_false' depends on axioms: [propext, Classical.choice, Quot.sound]

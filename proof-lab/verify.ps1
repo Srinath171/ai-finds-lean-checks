@@ -18,9 +18,9 @@ try {
     New-Item -ItemType Directory -Path $testTemp -Force | Out-Null
     $env:TEMP = $testTemp
     $env:TMP = $testTemp
-    & $pythonExe -m unittest discover -s tests -v
+    & $pythonExe -B -m hour2.verify_python
     if ($LASTEXITCODE -ne 0) { throw 'Python tests failed.' }
-    $sources = @('SATSearch.lean','CircuitBounds.lean','CircuitCoverage.lean','CircuitCounting.lean','CircuitSemantics.lean','HardFunction.lean','frontier\LexCounterexample.lean','frontier\AntiChecker.lean','frontier\AntiCheckerRepair.lean','frontier\ExplicitSchedule.lean','frontier\SampleInterpolation.lean','frontier\ParityTeaching.lean','frontier\DependencyBound.lean','frontier\CertificateBlowup.lean','frontier\MCSPScope.lean','frontier\FirstGateExtension.lean','frontier\CircuitRewiring.lean','frontier\GraphHoles.lean','frontier\OptimalSupport.lean','frontier\SparseMonomial.lean','frontier\BooleanMobius.lean','frontier\SparseCertificateBound.lean','frontier\SubsetZeta.lean','frontier\FiniteDimension.lean','frontier\DiagonalWidth.lean','frontier\CoordinateChange.lean','frontier\IsotropicDimension.lean','frontier\TriangularDimension.lean','frontier\GradedDimension.lean')
+    $sources = @('SATSearch.lean','CircuitBounds.lean','CircuitCoverage.lean','CircuitCounting.lean','CircuitSemantics.lean','HardFunction.lean','frontier\LexCounterexample.lean','frontier\AntiChecker.lean','frontier\AntiCheckerRepair.lean','frontier\ExplicitSchedule.lean','frontier\SampleInterpolation.lean','frontier\ParityTeaching.lean','frontier\DependencyBound.lean','frontier\CertificateBlowup.lean','frontier\MCSPScope.lean','frontier\FirstGateExtension.lean','frontier\CircuitRewiring.lean','frontier\GraphHoles.lean','frontier\OptimalSupport.lean','frontier\SparseMonomial.lean','frontier\BooleanMobius.lean','frontier\SparseCertificateBound.lean','frontier\SubsetZeta.lean','frontier\FiniteDimension.lean','frontier\DiagonalWidth.lean','frontier\CoordinateChange.lean','frontier\IsotropicDimension.lean','frontier\TriangularDimension.lean','frontier\GradedDimension.lean','hour2\GateExtraction.lean','hour2\AmplificationCounterexample.lean','hour2\PositiveBudgetCounterexample.lean')
     foreach ($source in $sources) {
         $compiled = [IO.Path]::ChangeExtension($source,'.olean')
         & $leanExe -o $compiled $source

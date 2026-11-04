@@ -220,6 +220,18 @@ test_corrupted_assignments_rejected (test_sat_lab.TestVerifierAndValidation.test
 test_corrupted_formulas_rejected (test_sat_lab.TestVerifierAndValidation.test_corrupted_formulas_rejected) ... ok
 test_solvers_never_certify_bad_model (test_sat_lab.TestVerifierAndValidation.test_solvers_never_certify_bad_model) ... ok
 test_verifier_direct_cases (test_sat_lab.TestVerifierAndValidation.test_verifier_direct_cases) ... ok
+test_all_seven_projected_label_maps_and_conflict_witnesses (test_support_holes.SupportHolesTests.test_all_seven_projected_label_maps_and_conflict_witnesses) ... ok
+test_all_sixteen_ordinary_minima_match_existing_independent_results (test_support_holes.SupportHolesTests.test_all_sixteen_ordinary_minima_match_existing_independent_results) ... ok
+test_capped_never_means_no_circuit_or_exact_minimum (test_support_holes.SupportHolesTests.test_capped_never_means_no_circuit_or_exact_minimum) ... ok
+test_complete_state_counts_and_limits (test_support_holes.SupportHolesTests.test_complete_state_counts_and_limits) ... ok
+test_every_published_circuit_has_independent_full_boolean_verification (test_support_holes.SupportHolesTests.test_every_published_circuit_has_independent_full_boolean_verification) ... ok
+test_known_shared_graph_witness_and_essential_coordinates (test_support_holes.SupportHolesTests.test_known_shared_graph_witness_and_essential_coordinates) ... ok
+test_malformed_and_tampered_witnesses_are_rejected (test_support_holes.SupportHolesTests.test_malformed_and_tampered_witnesses_are_rejected) ... ok
+test_only_consistent_supports_have_reported_holes_and_exact_costs (test_support_holes.SupportHolesTests.test_only_consistent_supports_have_reported_holes_and_exact_costs) ... ok
+test_ordinary_xor_extension_ignores_auxiliary_coordinate (test_support_holes.SupportHolesTests.test_ordinary_xor_extension_ignores_auxiliary_coordinate) ... ok
+test_saved_result_matches_source_hash_and_recomputation (test_support_holes.SupportHolesTests.test_saved_result_matches_source_hash_and_recomputation) ... ok
+test_source_checkout_line_endings_leave_complete_report_unchanged (test_support_holes.SupportHolesTests.test_source_checkout_line_endings_leave_complete_report_unchanged) ... ok
+test_strict_malformed_search_parameters (test_support_holes.SupportHolesTests.test_strict_malformed_search_parameters) ... ok
 test_cli_rejects_bad_input (test_synthesis.SynthesisTests.test_cli_rejects_bad_input) ... ok
 test_corrupt_witness (test_synthesis.SynthesisTests.test_corrupt_witness) ... ok
 test_malformed_certificates (test_synthesis.SynthesisTests.test_malformed_certificates) ... ok
@@ -229,9 +241,9 @@ test_timeout_mocked_unknown (test_synthesis.SynthesisTests.test_timeout_mocked_u
 test_unknown_lower_budget_not_exact (test_synthesis.SynthesisTests.test_unknown_lower_budget_not_exact) ... ok
 test_xnor_min5 (test_synthesis.SynthesisTests.test_xnor_min5) ... ok
 test_xor_min4 (test_synthesis.SynthesisTests.test_xor_min4) ... ok
-test_missing_ledger_is_not_initialized (test_ui.ReadOnlyAppTests.test_missing_ledger_is_not_initialized) ... 2026-11-04 08:48:46.947 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_missing_ledger_is_not_initialized (test_ui.ReadOnlyAppTests.test_missing_ledger_is_not_initialized) ... 2026-11-04 09:29:32.810 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_page_shows_evidence_without_spend_or_ledger_changes (test_ui.ReadOnlyAppTests.test_page_shows_evidence_without_spend_or_ledger_changes) ... 2026-11-04 08:48:47.255 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_page_shows_evidence_without_spend_or_ledger_changes (test_ui.ReadOnlyAppTests.test_page_shows_evidence_without_spend_or_ledger_changes) ... 2026-11-04 09:29:33.150 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_actual_saved_model_results (test_ui.SavedSummaryTests.test_actual_saved_model_results) ... ok
 test_budget_columns_keep_holds_separate (test_ui.SavedSummaryTests.test_budget_columns_keep_holds_separate) ... ok
@@ -256,7 +268,7 @@ test_rejects_dangerous_or_out_of_scope_bodies (test_verifier.ValidatorTests.test
 test_rejects_statement_redefinition_and_unicode_identifiers (test_verifier.ValidatorTests.test_rejects_statement_redefinition_and_unicode_identifiers) ... ok
 
 ----------------------------------------------------------------------
-Ran 254 tests in 19.494s
+Ran 266 tests in 19.518s
 
 OK
 'findSat_sound' depends on axioms: [propext]
@@ -512,4 +524,26 @@ Hint: Replace the deprecated name:
 'FirstGateExtension.zeroFill_is_zero_completion' depends on axioms: [propext]
 'FirstGateExtension.zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FirstGateExtension.nonprojection_zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
-All tests and 16 research Lean files passed. No API calls were made.
+'FirstGateExtension.all_first_pairs_zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CircuitRewiring.rewire_wellFormed' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.rewire_eval' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.hasCircuit_rewire' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.sourceInput_append_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.length_graphRows' depends on axioms: [propext, Quot.sound]
+'GraphHoles.length_missingRows' depends on axioms: [propext, Quot.sound]
+'GraphHoles.nodup_graphRows' depends on axioms: [propext, Quot.sound]
+'GraphHoles.nodup_missingRows' depends on axioms: [propext, Quot.sound]
+'GraphHoles.graphRows_disjoint_missingRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.graph_or_missing_of_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.graph_and_missing_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.missingRows_enumerates_holes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.nodup_graph_missing_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GraphHoles.length_graph_missing_partition' depends on axioms: [propext, Quot.sound]
+'GraphHoles.mem_graphRows_iff_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.exists_cheapest_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.phase_no_zero_circuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.every_residual_coordinate_essential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.exists_optimal_full_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.no_universal_linear_hole_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.no_eventual_linear_hole_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+All tests and 19 research Lean files passed. No API calls were made.

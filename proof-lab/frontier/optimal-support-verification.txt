@@ -1,0 +1,6 @@
+'OptimalSupport.exists_cheapest_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.phase_no_zero_circuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.every_residual_coordinate_essential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.exists_optimal_full_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.no_universal_linear_hole_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OptimalSupport.no_eventual_linear_hole_cap' depends on axioms: [propext, Classical.choice, Quot.sound]

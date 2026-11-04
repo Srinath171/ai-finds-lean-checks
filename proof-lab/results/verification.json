@@ -1,8 +1,9 @@
 {
-  "checked_utc": "2026-11-04T15:55:13.087918+00:00",
-  "python_tests_passed": 254,
-  "test_seconds": 19.494,
+  "checked_utc": "2026-11-04T16:33:21.039027+00:00",
+  "python_tests_passed": 266,
+  "test_seconds": 19.518,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "formal_source_count": 19,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
@@ -99,15 +100,26 @@
       "sha256": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
       "sha256_lf": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
       "compiled": true
+    },
+    {
+      "path": "frontier/CircuitRewiring.lean",
+      "sha256": "f65252a62792c6400882258db7e866eb595bdf6b21b0d360ed2cdadcf621655b",
+      "sha256_lf": "e22f4cd2768e133bb046aef2c86d833b4a59f26888a21fb5eb3cb3e656ba2bdb",
+      "compiled": true
+    },
+    {
+      "path": "frontier/GraphHoles.lean",
+      "sha256": "05b61f044e48dbb529cb26084f9ffff1acd151d7a19da7e1265d5ba04ca29f21",
+      "sha256_lf": "76826755c8d55c84e5df161dedbea391108009e688fec9fc4e5495660b6e8ec9",
+      "compiled": true
+    },
+    {
+      "path": "frontier/OptimalSupport.lean",
+      "sha256": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
+      "sha256_lf": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
+      "compiled": true
     }
   ],
-  "formal_source_count": 16,
-  "scope": "Offline Python suite and included Lean sources; API tests use mock transports. Compiler warnings in older source are retained in the log. Model text is not a verified proof.",
-  "log": "frontier/verification-output.txt",
-  "post_suite_replay": {
-    "path": "frontier/FirstGateExtension.lean",
-    "log": "frontier/first-gate-verification.txt",
-    "exit_code": 0,
-    "reason": "Added all-first-pairs zero-fill strengthening after the full suite; changed source independently recompiled."
-  }
+  "scope": "Full offline Python suite and all included Lean research sources; no skipped tests. API tests use mock transports. Existing compiler warnings remain in the log. Public model output is not a proof.",
+  "log": "frontier/verification-output.txt"
 }

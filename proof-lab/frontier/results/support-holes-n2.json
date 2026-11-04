@@ -1,0 +1,1942 @@
+{
+  "format": "support-holes-n2-v2",
+  "source_sha256_lf": "92e7d96ff730c42c15b409a53bc8ee1b3cfdf65e36c85dbba4817fe23b2b4a56",
+  "source_hash_normalization": "CRLF->LF, then CR->LF; all other bytes unchanged",
+  "scope": "Exact finite n=2 experiment only; no asymptotic lower bound or P-versus-NP conclusion.",
+  "n": 2,
+  "M": 3,
+  "graph_rows": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ]
+  ],
+  "target_mask": 6,
+  "target_values": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "limits": {
+    "max_states": 65536,
+    "max_gates": 16,
+    "max_transitions": 2000000
+  },
+  "model": {
+    "gate": "binary NAND; repetition and sharing allowed; no free constants or complements",
+    "witness_indices": "original primary indices0,1,2; gate i has signal index3+i",
+    "assignment_order": "bit i of assignment is coordinate i; bit a of a mask is output on assignment a",
+    "search": "complete BFS over sets of graph-restricted four-row masks; no claim about a fixed off-graph extension"
+  },
+  "cases": [
+    {
+      "support": [
+        0
+      ],
+      "projection": {
+        "support": [
+          0
+        ],
+        "status": "INCONSISTENT",
+        "image_size": 2,
+        "hole_count": 0,
+        "holes": [],
+        "projected_labels": [
+          {
+            "pattern": 0,
+            "bits": [
+              0
+            ],
+            "graph_rows": [
+              0,
+              2
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 1,
+            "bits": [
+              1
+            ],
+            "graph_rows": [
+              1,
+              3
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "pattern": 0,
+            "rows": [
+              0,
+              2
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 1,
+            "rows": [
+              1,
+              3
+            ],
+            "labels": [
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      "circuit": {
+        "status": "NO_CIRCUIT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 4,
+        "transitions": 20,
+        "states_by_depth": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "mask": 6,
+        "min_gates": null,
+        "witness": null
+      }
+    },
+    {
+      "support": [
+        1
+      ],
+      "projection": {
+        "support": [
+          1
+        ],
+        "status": "INCONSISTENT",
+        "image_size": 2,
+        "hole_count": 0,
+        "holes": [],
+        "projected_labels": [
+          {
+            "pattern": 0,
+            "bits": [
+              0
+            ],
+            "graph_rows": [
+              0,
+              1
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 1,
+            "bits": [
+              1
+            ],
+            "graph_rows": [
+              2,
+              3
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "pattern": 0,
+            "rows": [
+              0,
+              1
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 1,
+            "rows": [
+              2,
+              3
+            ],
+            "labels": [
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      "circuit": {
+        "status": "NO_CIRCUIT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 4,
+        "transitions": 20,
+        "states_by_depth": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "mask": 6,
+        "min_gates": null,
+        "witness": null
+      }
+    },
+    {
+      "support": [
+        2
+      ],
+      "projection": {
+        "support": [
+          2
+        ],
+        "status": "INCONSISTENT",
+        "image_size": 2,
+        "hole_count": 0,
+        "holes": [],
+        "projected_labels": [
+          {
+            "pattern": 0,
+            "bits": [
+              0
+            ],
+            "graph_rows": [
+              3
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 1,
+            "bits": [
+              1
+            ],
+            "graph_rows": [
+              0,
+              1,
+              2
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "pattern": 1,
+            "rows": [
+              0,
+              1
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "circuit": {
+        "status": "NO_CIRCUIT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 4,
+        "transitions": 20,
+        "states_by_depth": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "mask": 6,
+        "min_gates": null,
+        "witness": null
+      }
+    },
+    {
+      "support": [
+        0,
+        1
+      ],
+      "projection": {
+        "support": [
+          0,
+          1
+        ],
+        "status": "CONSISTENT",
+        "image_size": 4,
+        "hole_count": 0,
+        "holes": [],
+        "projected_labels": [
+          {
+            "pattern": 0,
+            "bits": [
+              0,
+              0
+            ],
+            "graph_rows": [
+              0
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 1,
+            "bits": [
+              1,
+              0
+            ],
+            "graph_rows": [
+              1
+            ],
+            "labels": [
+              1
+            ]
+          },
+          {
+            "pattern": 2,
+            "bits": [
+              0,
+              1
+            ],
+            "graph_rows": [
+              2
+            ],
+            "labels": [
+              1
+            ]
+          },
+          {
+            "pattern": 3,
+            "bits": [
+              1,
+              1
+            ],
+            "graph_rows": [
+              3
+            ],
+            "labels": [
+              0
+            ]
+          }
+        ],
+        "conflicts": []
+      },
+      "circuit": {
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 1542,
+        "transitions": 88138,
+        "states_by_depth": [
+          1,
+          3,
+          10,
+          27,
+          56,
+          98,
+          157,
+          232,
+          291,
+          288,
+          214,
+          114,
+          41,
+          9,
+          1
+        ],
+        "mask": 6,
+        "min_gates": 4,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "output": 6
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 102,
+          "full_extension_values": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "graph_mask": 6,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "support": [
+        0,
+        2
+      ],
+      "projection": {
+        "support": [
+          0,
+          2
+        ],
+        "status": "INCONSISTENT",
+        "image_size": 3,
+        "hole_count": 1,
+        "holes": [
+          0
+        ],
+        "projected_labels": [
+          {
+            "pattern": 1,
+            "bits": [
+              1,
+              0
+            ],
+            "graph_rows": [
+              3
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 2,
+            "bits": [
+              0,
+              1
+            ],
+            "graph_rows": [
+              0,
+              2
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 3,
+            "bits": [
+              1,
+              1
+            ],
+            "graph_rows": [
+              1
+            ],
+            "labels": [
+              1
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "pattern": 2,
+            "rows": [
+              0,
+              2
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "circuit": {
+        "status": "NO_CIRCUIT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 32,
+        "transitions": 532,
+        "states_by_depth": [
+          1,
+          3,
+          6,
+          9,
+          8,
+          4,
+          1
+        ],
+        "mask": 6,
+        "min_gates": null,
+        "witness": null
+      }
+    },
+    {
+      "support": [
+        1,
+        2
+      ],
+      "projection": {
+        "support": [
+          1,
+          2
+        ],
+        "status": "INCONSISTENT",
+        "image_size": 3,
+        "hole_count": 1,
+        "holes": [
+          0
+        ],
+        "projected_labels": [
+          {
+            "pattern": 1,
+            "bits": [
+              1,
+              0
+            ],
+            "graph_rows": [
+              3
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 2,
+            "bits": [
+              0,
+              1
+            ],
+            "graph_rows": [
+              0,
+              1
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          },
+          {
+            "pattern": 3,
+            "bits": [
+              1,
+              1
+            ],
+            "graph_rows": [
+              2
+            ],
+            "labels": [
+              1
+            ]
+          }
+        ],
+        "conflicts": [
+          {
+            "pattern": 2,
+            "rows": [
+              0,
+              1
+            ],
+            "labels": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "circuit": {
+        "status": "NO_CIRCUIT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 32,
+        "transitions": 532,
+        "states_by_depth": [
+          1,
+          3,
+          6,
+          9,
+          8,
+          4,
+          1
+        ],
+        "mask": 6,
+        "min_gates": null,
+        "witness": null
+      }
+    },
+    {
+      "support": [
+        0,
+        1,
+        2
+      ],
+      "projection": {
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "status": "CONSISTENT",
+        "image_size": 4,
+        "hole_count": 4,
+        "holes": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "projected_labels": [
+          {
+            "pattern": 3,
+            "bits": [
+              1,
+              1,
+              0
+            ],
+            "graph_rows": [
+              3
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 4,
+            "bits": [
+              0,
+              0,
+              1
+            ],
+            "graph_rows": [
+              0
+            ],
+            "labels": [
+              0
+            ]
+          },
+          {
+            "pattern": 5,
+            "bits": [
+              1,
+              0,
+              1
+            ],
+            "graph_rows": [
+              1
+            ],
+            "labels": [
+              1
+            ]
+          },
+          {
+            "pattern": 6,
+            "bits": [
+              0,
+              1,
+              1
+            ],
+            "graph_rows": [
+              2
+            ],
+            "labels": [
+              1
+            ]
+          }
+        ],
+        "conflicts": []
+      },
+      "circuit": {
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "exhaustive": true,
+        "reason": null,
+        "visited_states": 1346,
+        "transitions": 79721,
+        "states_by_depth": [
+          1,
+          5,
+          15,
+          36,
+          71,
+          127,
+          202,
+          263,
+          266,
+          201,
+          109,
+          40,
+          9,
+          1
+        ],
+        "mask": 6,
+        "min_gates": 3,
+        "witness": {
+          "gates": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "output": 5
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 224,
+          "full_extension_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "graph_mask": 6,
+          "syntactic_support": [
+            0,
+            1,
+            2
+          ],
+          "dependency_support": [
+            0,
+            1,
+            2
+          ],
+          "semantic_support": [
+            0,
+            1,
+            2
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                4,
+                5
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                4,
+                6
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 2,
+              "assignments": [
+                1,
+                5
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ordinary_two_input_all_masks": {
+    "status": "EXHAUSTIVE_MINIMA",
+    "exact": true,
+    "exhaustive": true,
+    "reason": null,
+    "visited_states": 1542,
+    "transitions": 88138,
+    "states_by_depth": [
+      1,
+      3,
+      10,
+      27,
+      56,
+      98,
+      157,
+      232,
+      291,
+      288,
+      214,
+      114,
+      41,
+      9,
+      1
+    ],
+    "functions": [
+      {
+        "mask": 0,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 3,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "output": 5
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 0,
+          "full_extension_values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "graph_mask": 0,
+          "syntactic_support": [
+            0
+          ],
+          "dependency_support": [
+            0
+          ],
+          "semantic_support": [],
+          "essential_witnesses": []
+        }
+      },
+      {
+        "mask": 1,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 4,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "output": 6
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 17,
+          "full_extension_values": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "graph_mask": 1,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                1,
+                0
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 2,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 3,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "output": 5
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 34,
+          "full_extension_values": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "graph_mask": 2,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                1,
+                3
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 3,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 1,
+        "witness": {
+          "gates": [
+            [
+              1,
+              1
+            ]
+          ],
+          "output": 3
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 51,
+          "full_extension_values": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "graph_mask": 3,
+          "syntactic_support": [
+            1
+          ],
+          "dependency_support": [
+            1
+          ],
+          "semantic_support": [
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 4,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 3,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "output": 5
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 68,
+          "full_extension_values": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "graph_mask": 4,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                2,
+                3
+              ],
+              "values": [
+                1,
+                0
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 5,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 1,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ]
+          ],
+          "output": 3
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 85,
+          "full_extension_values": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "graph_mask": 5,
+          "syntactic_support": [
+            0
+          ],
+          "dependency_support": [
+            0
+          ],
+          "semantic_support": [
+            0
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 6,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 4,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "output": 6
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 102,
+          "full_extension_values": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "graph_mask": 6,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 7,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 1,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ]
+          ],
+          "output": 3
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 119,
+          "full_extension_values": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "graph_mask": 7,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                2,
+                3
+              ],
+              "values": [
+                1,
+                0
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                1,
+                3
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 8,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 2,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              3
+            ]
+          ],
+          "output": 4
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 136,
+          "full_extension_values": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "graph_mask": 8,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                2,
+                3
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                1,
+                3
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 9,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 5,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              6,
+              5
+            ]
+          ],
+          "output": 7
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 153,
+          "full_extension_values": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "graph_mask": 9,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                1,
+                0
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 10,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 0,
+        "witness": {
+          "gates": [],
+          "output": 0
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 170,
+          "full_extension_values": [
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "graph_mask": 10,
+          "syntactic_support": [
+            0
+          ],
+          "dependency_support": [
+            0
+          ],
+          "semantic_support": [
+            0
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 11,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 2,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "output": 4
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 187,
+          "full_extension_values": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "graph_mask": 11,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                2,
+                3
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 12,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 0,
+        "witness": {
+          "gates": [],
+          "output": 1
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 204,
+          "full_extension_values": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "graph_mask": 12,
+          "syntactic_support": [
+            1
+          ],
+          "dependency_support": [
+            1
+          ],
+          "semantic_support": [
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 13,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 2,
+        "witness": {
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "output": 4
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 221,
+          "full_extension_values": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "graph_mask": 13,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                1,
+                0
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                1,
+                3
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 14,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 3,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "output": 5
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 238,
+          "full_extension_values": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "graph_mask": 14,
+          "syntactic_support": [
+            0,
+            1
+          ],
+          "dependency_support": [
+            0,
+            1
+          ],
+          "semantic_support": [
+            0,
+            1
+          ],
+          "essential_witnesses": [
+            {
+              "coordinate": 0,
+              "assignments": [
+                0,
+                1
+              ],
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "coordinate": 1,
+              "assignments": [
+                0,
+                2
+              ],
+              "values": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "mask": 15,
+        "status": "FOUND_EXACT",
+        "exact": true,
+        "min_gates": 2,
+        "witness": {
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "output": 4
+        },
+        "verification": {
+          "valid": true,
+          "reason": null,
+          "full_extension_mask": 255,
+          "full_extension_values": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "graph_mask": 15,
+          "syntactic_support": [
+            0
+          ],
+          "dependency_support": [
+            0
+          ],
+          "semantic_support": [],
+          "essential_witnesses": []
+        }
+      }
+    ]
+  },
+  "summary": {
+    "consistent_supports": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "consistent_holes_and_costs": [
+      {
+        "support": [
+          0,
+          1
+        ],
+        "holes": 0,
+        "min_gates": 4,
+        "status": "FOUND_EXACT"
+      },
+      {
+        "support": [
+          0,
+          1,
+          2
+        ],
+        "holes": 4,
+        "min_gates": 3,
+        "status": "FOUND_EXACT"
+      }
+    ]
+  }
+}

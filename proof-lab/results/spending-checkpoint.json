@@ -1,16 +1,16 @@
 {
-  "checked_utc": "2026-11-04T15:53:11.045157+00:00",
+  "checked_utc": "2026-11-04T16:33:21.039027+00:00",
   "scope": "One atomic local ledger snapshot for cooperating research API callers, not account-wide invoices. External holds include coding/unreceipted use and are reserves, not charges.",
   "providers": {
     "meta": {
       "cap_usd": "125",
-      "committed_usd": "31.484256",
-      "available_usd": "93.515744",
+      "committed_usd": "31.909548",
+      "available_usd": "93.090452",
       "over_cap": false,
       "external_hold_usd": "25",
       "pending_count": 4,
-      "settled_count": 16,
-      "recorded_settled_usd": "5.000656",
+      "settled_count": 17,
+      "recorded_settled_usd": "5.425948",
       "pending_reservations_usd": "1.483600"
     },
     "claude": {
@@ -31,5 +31,6 @@
   "claude_account_wide_billing": "not verified",
   "claude_code": "regular subscription public-math critiques; API keys omitted from child environment",
   "last_fable_call": "Incomplete max_tokens response with no visible answer; recorded cost1.64735, settled.",
-  "background_first_gate_cost_usd": "0.74812"
+  "background_first_gate_cost_usd": "0.74812",
+  "background_optimal_support_cost_usd": "0.425292"
 }

@@ -1,0 +1,4 @@
+'CircuitRewiring.rewire_wellFormed' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.rewire_eval' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.hasCircuit_rewire' depends on axioms: [propext, Quot.sound]
+'CircuitRewiring.sourceInput_append_projection' depends on axioms: [propext, Classical.choice, Quot.sound]

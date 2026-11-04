@@ -1,0 +1,12 @@
+{
+  "name": "muse-spark-chat-demo",
+  "version": "1.0.0",
+  "description": "Small local Muse Spark chat demo. Node built-ins only, no dependencies.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}

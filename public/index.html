@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muse Spark Chat Demo</title>
+  <meta name="description" content="Small local demo chat UI for the Muse Spark Standard model." />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1>Muse Spark Chat</h1>
+        <p class="subtitle">Local demo &middot; Standard model <code>muse-spark-1.3</code></p>
+      </div>
+      <button type="button" id="clear-btn" class="btn btn-secondary">Clear conversation</button>
+    </div>
+  </header>
+
+  <main class="chat-wrap">
+    <section class="panel" aria-label="Chat">
+      <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Conversation messages" tabindex="-1">
+        <div class="message assistant">
+          <p class="meta">Spark</p>
+          <p class="text">Hello! Ask me anything. Your messages stay in this browser tab except for the chat request itself.</p>
+        </div>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <form id="chat-form" class="composer" action="/api/chat" method="post">
+        <div class="field">
+          <label for="input">Message</label>
+          <textarea id="input" name="message" rows="3" maxlength="4000" required
+            placeholder="Type a message, then press Send (Enter to send, Shift+Enter for a new line)"
+            aria-describedby="hint"></textarea>
+          <p id="hint" class="hint">History is capped at 30 messages. Requests time out after 30 seconds.</p>
+        </div>
+        <div class="actions">
+          <button type="submit" id="send-btn" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="foot">
+      <p>Runs locally on 127.0.0.1. Needs its own pay-as-you-go <code>MODEL_API_KEY</code>; never paste Muse login credentials here.</p>
+    </footer>
+  </main>
+</body>
+</html>

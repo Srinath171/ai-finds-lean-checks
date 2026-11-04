@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Small local Muse Spark chat demo. Node built-ins only, no dependencies.",
   "scripts": {
-    "start": "node server.js",
+    "start": "node --env-file=.env server.js",
     "test": "node --test tests/"
   },
   "engines": {

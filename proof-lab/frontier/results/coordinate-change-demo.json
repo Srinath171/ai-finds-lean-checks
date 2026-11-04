@@ -1,0 +1,2317 @@
+{
+  "format": "coordinate-change-demo-v1",
+  "source_sha256_lf": "a1dd7e3fa081dcfbaf360e26ccf885750c85a07f3c409100dc799d2f7229f99f",
+  "source_hash_normalization": "CRLF->LF, then CR->LF; all other bytes unchanged",
+  "report_hash_encoding": "UTF-8 JSON without report_sha256; sorted keys; separators comma/colon; ensure_ascii=True",
+  "scope": "Restricted one-term compilation and exact coordinate-change examples; no general PIT, Boolean invariance, or P-versus-NP claim.",
+  "formalization_scope": "Generic formal proof is separate; this Python AST and compiler have no verified Lean refinement link.",
+  "cases": [
+    {
+      "m": 0,
+      "original_ast": {
+        "nodes": 1,
+        "depth": 1,
+        "x_leaves": 0
+      },
+      "transformed_ast": {
+        "nodes": 1,
+        "depth": 1,
+        "x_leaves": 0
+      },
+      "original_one_term_compiler_status": "COMPILED",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 1,
+      "substitution_node_bound": 1,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 0,
+        "width": 2,
+        "degrees": [],
+        "support_sizes": [],
+        "basis_dimensions": [
+          1
+        ],
+        "estimated_operations": 2,
+        "operations": 2,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 1,
+      "original_ast": {
+        "nodes": 5,
+        "depth": 3,
+        "x_leaves": 1
+      },
+      "transformed_ast": {
+        "nodes": 9,
+        "depth": 5,
+        "x_leaves": 1
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 2,
+      "substitution_node_bound": 9,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 2,
+        "width": 2,
+        "degrees": [
+          1,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 26,
+        "operations": 10,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 2,
+      "original_ast": {
+        "nodes": 9,
+        "depth": 4,
+        "x_leaves": 2
+      },
+      "transformed_ast": {
+        "nodes": 17,
+        "depth": 6,
+        "x_leaves": 2
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 4,
+      "substitution_node_bound": 17,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 4,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 50,
+        "operations": 18,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 3,
+      "original_ast": {
+        "nodes": 13,
+        "depth": 5,
+        "x_leaves": 3
+      },
+      "transformed_ast": {
+        "nodes": 25,
+        "depth": 7,
+        "x_leaves": 3
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 8,
+      "substitution_node_bound": 25,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 6,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 74,
+        "operations": 26,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 4,
+      "original_ast": {
+        "nodes": 17,
+        "depth": 6,
+        "x_leaves": 4
+      },
+      "transformed_ast": {
+        "nodes": 33,
+        "depth": 8,
+        "x_leaves": 4
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 16,
+      "substitution_node_bound": 33,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 8,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 98,
+        "operations": 34,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 5,
+      "original_ast": {
+        "nodes": 21,
+        "depth": 7,
+        "x_leaves": 5
+      },
+      "transformed_ast": {
+        "nodes": 41,
+        "depth": 9,
+        "x_leaves": 5
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 32,
+      "substitution_node_bound": 41,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 10,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 122,
+        "operations": 42,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 6,
+      "original_ast": {
+        "nodes": 25,
+        "depth": 8,
+        "x_leaves": 6
+      },
+      "transformed_ast": {
+        "nodes": 49,
+        "depth": 10,
+        "x_leaves": 6
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 64,
+      "substitution_node_bound": 49,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 12,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 146,
+        "operations": 50,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 7,
+      "original_ast": {
+        "nodes": 29,
+        "depth": 9,
+        "x_leaves": 7
+      },
+      "transformed_ast": {
+        "nodes": 57,
+        "depth": 11,
+        "x_leaves": 7
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 128,
+      "substitution_node_bound": 57,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 14,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 170,
+        "operations": 58,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 8,
+      "original_ast": {
+        "nodes": 33,
+        "depth": 10,
+        "x_leaves": 8
+      },
+      "transformed_ast": {
+        "nodes": 65,
+        "depth": 12,
+        "x_leaves": 8
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 256,
+      "substitution_node_bound": 65,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 16,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 194,
+        "operations": 66,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 9,
+      "original_ast": {
+        "nodes": 37,
+        "depth": 11,
+        "x_leaves": 9
+      },
+      "transformed_ast": {
+        "nodes": 73,
+        "depth": 13,
+        "x_leaves": 9
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 512,
+      "substitution_node_bound": 73,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 18,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 218,
+        "operations": 74,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 10,
+      "original_ast": {
+        "nodes": 41,
+        "depth": 12,
+        "x_leaves": 10
+      },
+      "transformed_ast": {
+        "nodes": 81,
+        "depth": 14,
+        "x_leaves": 10
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 1024,
+      "substitution_node_bound": 81,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 20,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 242,
+        "operations": 82,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 11,
+      "original_ast": {
+        "nodes": 45,
+        "depth": 13,
+        "x_leaves": 11
+      },
+      "transformed_ast": {
+        "nodes": 89,
+        "depth": 15,
+        "x_leaves": 11
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 2048,
+      "substitution_node_bound": 89,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 22,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 266,
+        "operations": 90,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 12,
+      "original_ast": {
+        "nodes": 49,
+        "depth": 14,
+        "x_leaves": 12
+      },
+      "transformed_ast": {
+        "nodes": 97,
+        "depth": 16,
+        "x_leaves": 12
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 4096,
+      "substitution_node_bound": 97,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 24,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 290,
+        "operations": 98,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 13,
+      "original_ast": {
+        "nodes": 53,
+        "depth": 15,
+        "x_leaves": 13
+      },
+      "transformed_ast": {
+        "nodes": 105,
+        "depth": 17,
+        "x_leaves": 13
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 8192,
+      "substitution_node_bound": 105,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 26,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 314,
+        "operations": 106,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 14,
+      "original_ast": {
+        "nodes": 57,
+        "depth": 16,
+        "x_leaves": 14
+      },
+      "transformed_ast": {
+        "nodes": 113,
+        "depth": 18,
+        "x_leaves": 14
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 16384,
+      "substitution_node_bound": 113,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 28,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 338,
+        "operations": 114,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 15,
+      "original_ast": {
+        "nodes": 61,
+        "depth": 17,
+        "x_leaves": 15
+      },
+      "transformed_ast": {
+        "nodes": 121,
+        "depth": 19,
+        "x_leaves": 15
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 32768,
+      "substitution_node_bound": 121,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 30,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 362,
+        "operations": 122,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "m": 16,
+      "original_ast": {
+        "nodes": 65,
+        "depth": 18,
+        "x_leaves": 16
+      },
+      "transformed_ast": {
+        "nodes": 129,
+        "depth": 20,
+        "x_leaves": 16
+      },
+      "original_one_term_compiler_status": "UNSUPPORTED_FORM",
+      "transformed_compiler_status": "COMPILED",
+      "expanded_original_monomials_closed_form": 65536,
+      "substitution_node_bound": 129,
+      "status": "VERIFIED_ZERO",
+      "compiled_width": 1,
+      "residual_width": 2,
+      "normalized_factor_supports": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "checker": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 32,
+        "width": 2,
+        "degrees": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "support_sizes": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis_dimensions": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "estimated_operations": 386,
+        "operations": 130,
+        "max_fraction_bits": 1
+      }
+    }
+  ],
+  "boolean_pitfall": {
+    "original_boolean_values": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_boolean_point": {
+      "u": 0,
+      "v": 1
+    },
+    "back_substituted_value": 2,
+    "conclusion": "Formal zero identities are preserved; vanishing on the unchanged Boolean cube is not."
+  },
+  "report_sha256": "08e75732fca7ac4bc4569d1056cc319b519df49adb967263ffa34bd12fa9495c"
+}

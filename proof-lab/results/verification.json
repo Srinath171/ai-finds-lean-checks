@@ -1,162 +1,201 @@
 {
-  "checked_utc": "2026-11-04T17:34:00.695109+00:00",
-  "python_tests_passed": 312,
-  "test_seconds": 21.013,
+  "checked_utc": "2026-11-04T18:31:24.768322+00:00",
+  "python_tests_passed": 334,
+  "test_seconds": 20.758,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
-  "formal_source_count": 25,
+  "formal_source_count": 27,
   "formal_sources": [
     {
       "path": "SATSearch.lean",
       "sha256": "bc0a141734e4ec5fd785dae2bf7f547400136fb66fb193d37f68662e229434f9",
       "sha256_lf": "bc0a141734e4ec5fd785dae2bf7f547400136fb66fb193d37f68662e229434f9",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "CircuitBounds.lean",
       "sha256": "abe21091e640192ac77f1e83fbf25dfe36275c61d78cda7fbf67ad51b118998e",
       "sha256_lf": "abe21091e640192ac77f1e83fbf25dfe36275c61d78cda7fbf67ad51b118998e",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "CircuitCoverage.lean",
       "sha256": "1d63b5d27445a6ca82716e9d57b7b527571759ed6fcf0b872ff8527502c8d777",
       "sha256_lf": "1d63b5d27445a6ca82716e9d57b7b527571759ed6fcf0b872ff8527502c8d777",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "CircuitCounting.lean",
       "sha256": "9eef3b51b57ad1b2aba6021d063f2993e0e9095e038f0734267622cf26be6ece",
       "sha256_lf": "9eef3b51b57ad1b2aba6021d063f2993e0e9095e038f0734267622cf26be6ece",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "CircuitSemantics.lean",
       "sha256": "ded37d5d9d0a69916e0380ece6e2cbdeb6ba7c9ecb2ef4edc2cedc7495704511",
       "sha256_lf": "ded37d5d9d0a69916e0380ece6e2cbdeb6ba7c9ecb2ef4edc2cedc7495704511",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "HardFunction.lean",
       "sha256": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
       "sha256_lf": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/LexCounterexample.lean",
       "sha256": "7d7b3be09fe782dfa1cdf04046ecb8f2f95c781590bc30e1faf5aae28670474c",
       "sha256_lf": "7d7b3be09fe782dfa1cdf04046ecb8f2f95c781590bc30e1faf5aae28670474c",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/AntiChecker.lean",
       "sha256": "5b82d7bf7b84b47dc712a0cabbc9a242c49f068e699a68af226bee5641826d09",
       "sha256_lf": "b03c689924aff4895ffa8eeb22555096666e1d2754daae4e245e1b1cb85e7a53",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/AntiCheckerRepair.lean",
       "sha256": "e330d9b5d5bce5970b14353c73353c413f106f74a3f2612095a085c23eadbd01",
       "sha256_lf": "e330d9b5d5bce5970b14353c73353c413f106f74a3f2612095a085c23eadbd01",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/ExplicitSchedule.lean",
       "sha256": "005bb2bf8f3f46940a1c4df0bf654f12e62b544b0cec4f09338304cd56345d5e",
       "sha256_lf": "005bb2bf8f3f46940a1c4df0bf654f12e62b544b0cec4f09338304cd56345d5e",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/SampleInterpolation.lean",
       "sha256": "c60d4a86dd88bf2300caadb864fcc8930967fccf0a526c3221573860908c5f61",
       "sha256_lf": "38f410afeb4db3aeb94002b725ac1b3570cd709af8e7d7be7fea0175221d6636",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/ParityTeaching.lean",
       "sha256": "9fca9b8d13eba52646c6d0cbb151714308251d608474218c2491feabded41d15",
       "sha256_lf": "e7d97055ba18323845baac56d4cd6bd546c1637a97fa321dc03341e18bdf11dc",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/DependencyBound.lean",
       "sha256": "e4da563964b5c75c41c600c42b4e66b6208966cc2afa963a6f5c2ca2023b9fe7",
       "sha256_lf": "e4da563964b5c75c41c600c42b4e66b6208966cc2afa963a6f5c2ca2023b9fe7",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/CertificateBlowup.lean",
       "sha256": "1e83d7366f1465a7cee06e1f23ff80e88b25610f6074cf601f5a069890e58596",
       "sha256_lf": "1e83d7366f1465a7cee06e1f23ff80e88b25610f6074cf601f5a069890e58596",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/MCSPScope.lean",
       "sha256": "384aa7977ed0a227c2e11ddc700152133096a359f31a8646dbebff5846d3caf6",
       "sha256_lf": "384aa7977ed0a227c2e11ddc700152133096a359f31a8646dbebff5846d3caf6",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/FirstGateExtension.lean",
       "sha256": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
       "sha256_lf": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/CircuitRewiring.lean",
       "sha256": "f65252a62792c6400882258db7e866eb595bdf6b21b0d360ed2cdadcf621655b",
       "sha256_lf": "e22f4cd2768e133bb046aef2c86d833b4a59f26888a21fb5eb3cb3e656ba2bdb",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/GraphHoles.lean",
       "sha256": "05b61f044e48dbb529cb26084f9ffff1acd151d7a19da7e1265d5ba04ca29f21",
       "sha256_lf": "76826755c8d55c84e5df161dedbea391108009e688fec9fc4e5495660b6e8ec9",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/OptimalSupport.lean",
       "sha256": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
       "sha256_lf": "b3f55c3158d340728c6a516d7c3ac6fc888e62659bcb59d99087efde1ce981fa",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/SparseMonomial.lean",
       "sha256": "8c10b6879751de7f7bc0e5f50e77352940cce1ac179c86eef47c0967240b9321",
       "sha256_lf": "e47515aba0d088a7918a927ab17851a68d3267495b178e8d731c24683acd1b24",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/BooleanMobius.lean",
       "sha256": "15bf404a342ba8e5680b06628d355a15b52d60daab4b73cb67312f4d1e893b02",
       "sha256_lf": "15bf404a342ba8e5680b06628d355a15b52d60daab4b73cb67312f4d1e893b02",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/SparseCertificateBound.lean",
       "sha256": "1f742f5b3b4c0ac2cd9d778b1697917bb0d9ca05ea7bf1c46bbd9c2da828bfa8",
       "sha256_lf": "1f742f5b3b4c0ac2cd9d778b1697917bb0d9ca05ea7bf1c46bbd9c2da828bfa8",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/SubsetZeta.lean",
       "sha256": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
       "sha256_lf": "4d58e246b2cdbb2a85ef26cf95ac7b02157c0646ae56eb02838b208ccac6c0d0",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/verification-output.txt"
     },
     {
       "path": "frontier/FiniteDimension.lean",
       "sha256": "060e011e56b5c4954c35207c084a3665bbe9200301df97d974a3374812dd4ad7",
       "sha256_lf": "67bd9b4209bdc9e590516a08f5ed5023c13dffc92ac9fb39dbe60271a69a13ef",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/diagonal-width-verification.txt"
     },
     {
       "path": "frontier/DiagonalWidth.lean",
       "sha256": "7b6fc4e913c6c095dd091e7ecbc20eed9b88137a62560f81b51ee3d251b4adad",
       "sha256_lf": "7b6fc4e913c6c095dd091e7ecbc20eed9b88137a62560f81b51ee3d251b4adad",
-      "compiled": true
+      "compiled": true,
+      "verification_log": "frontier/diagonal-width-verification.txt"
+    },
+    {
+      "path": "frontier/CoordinateChange.lean",
+      "sha256": "a331922dfe714d6797947e402ac2268d4cb2c98c117b83e557a084679057d842",
+      "sha256_lf": "a331922dfe714d6797947e402ac2268d4cb2c98c117b83e557a084679057d842",
+      "compiled": true,
+      "verification_log": "frontier/coordinate-change-verification.txt"
+    },
+    {
+      "path": "frontier/IsotropicDimension.lean",
+      "sha256": "926ffb9f9ddb9e7f4b74f587ce3f819712227a123bd804f032b6e2d71e812d1e",
+      "sha256_lf": "12ec1c0569b3de738130e1b893ecbe2de558d19d6dbba2f471d123354de1b919",
+      "compiled": true,
+      "verification_log": "frontier/isotropic-dimension-verification.txt"
     }
   ],
-  "scope": "312 Python tests passed in the last full replay; all25currentLeanmodulescompiled. Two formal-only additions were replayed separately; exact source hashes recorded. No API calls during verification.",
+  "scope": "Latest full Python-only replay remains 334 tests passed in 20.758 seconds; Python sources did not change for this formal-only addition. The prior 324-test replay is retained in history. All 27 registered Lean modules have compiled across the earlier 23-source full replay, the two-module postcheck, the CoordinateChange postcheck, and the IsotropicDimension postcheck. No single full 27-source replay is claimed. No API calls during verification.",
   "log": "frontier/verification-output.txt",
   "full_suite_recorded_utc": "2026-11-04T17:19:18.157816+00:00",
   "full_suite_formal_source_count": 23,
@@ -169,6 +208,62 @@
       "exit_code": 0,
       "log": "frontier/diagonal-width-verification.txt",
       "scope": "Two new formal-only modules independently compiled after the full 312-test/23-source run; no Python implementation changed."
+    },
+    {
+      "paths": [
+        "frontier/CoordinateChange.lean"
+      ],
+      "exit_code": 0,
+      "log": "frontier/coordinate-change-verification.txt",
+      "printed_axiom_checks": 17,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "CoordinateChange independently compiled after the earlier full 312-test/23-source replay and two-module postcheck. Standard-axiom output for 17 theorem checks; not a combined 26-source replay."
+    },
+    {
+      "paths": [
+        "frontier/IsotropicDimension.lean"
+      ],
+      "exit_code": 0,
+      "log": "frontier/isotropic-dimension-verification.txt",
+      "printed_axiom_checks": 1,
+      "axioms_seen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "scope": "IsotropicDimension independently compiled as a formal-only addition after the 23-source full replay and later two-module and CoordinateChange postchecks. Python results remain the existing 334-test replay; not a combined 27-source replay."
+    }
+  ],
+  "full_suite_python_tests_passed": 312,
+  "full_suite_test_seconds": 21.013,
+  "source_hash_normalization": "sha256 hashes actual file bytes; sha256_lf normalizes CRLF to LF, then CR to LF; other bytes unchanged.",
+  "latest_full_python_replay": {
+    "python_tests_passed": 334,
+    "test_seconds": 20.758,
+    "exit_code": 0,
+    "log": "frontier/python-orbit-verification.txt",
+    "scope": "Full unittest discovery of the current Python suite including the bounded orbit-sparsity checker; this execution did not replay Lean modules."
+  },
+  "full_python_replay_history": [
+    {
+      "python_tests_passed": 324,
+      "test_seconds": 20.549,
+      "exit_code": 0,
+      "log": "frontier/python-coordinate-verification.txt",
+      "scope": "Full unittest discovery of the current Python suite; this execution did not replay Lean modules."
+    }
+  ],
+  "python_source_evidence": [
+    {
+      "path": "frontier/orbit_sparsity.py",
+      "sha256": "9ccd6473818fb64e437076c18c70ef4c859d96e55a57625131e5dd68729a91eb",
+      "sha256_lf": "9ccd6473818fb64e437076c18c70ef4c859d96e55a57625131e5dd68729a91eb",
+      "verification_log": "frontier/python-orbit-verification.txt",
+      "scope": "Bounded exact checker for explicitly supplied rational matrices; tested Python implementation only. No formal refinement or universal orbit-sparsity theorem is claimed."
     }
   ]
 }

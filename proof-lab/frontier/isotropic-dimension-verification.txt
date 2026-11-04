@@ -1,0 +1,1 @@
+'IsotropicDimension.isotropic_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]

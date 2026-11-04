@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-04T17:39:42.487435+00:00",
+  "checked_utc": "2026-11-04T18:35:06.410690+00:00",
   "status": "P_VS_NP_NOT_SOLVED",
   "original_deadline_utc": "2026-11-04T19:42:17Z",
   "phases": [
@@ -82,7 +82,7 @@
     "claim_status": "UNVERIFIED"
   },
   "active_api_requests": 0,
-  "current_activity": "Verified checkpoint complete; next paid probe skipped because primary literature already covers its target.",
+  "current_activity": "Checkpoint complete. Paid orbit probe stopped incomplete; no retry or paid loop. Exact moment obstruction blocks repeating the same abstract argument.",
   "scope": "Snapshot only; live response state is ignored by Git. No generated output is executed or accepted as a proof.",
   "background_optimal_support": {
     "directory": "frontier/background-meta/optimal-support",
@@ -107,7 +107,7 @@
     "quantifiers": "For every n>=2, a cheaper parity phase and an optimal first gate give exact residual cost C-1; every optimal residual uses all n+1 coordinates. Violations of every linear hole cap occur beyond every arity threshold.",
     "scope": "Refutes one internal optimal-support premise; no MCSP oracle reduction, NP-hardness or PvsNP solution."
   },
-  "remaining_mathematical_blocker": "Neither a general short-certificate guarantee nor an eligible-class SAT algorithm with the required uniform worst-case savings has been proved. The unrestricted Partial-MCSP to total-MCSP bridge also remains missing.",
+  "remaining_mathematical_blocker": "No general short-certificate guarantee, eligible-class uniform SAT saving, or unrestricted Partial-MCSP-to-total-MCSP bridge has been proved. The new restricted F5 orbit route additionally needs a product-specific structural lemma; bare rank/moment assumptions provably do not imply32terms.",
   "setup_blockers": [],
   "additional_material_results": [
     {
@@ -148,6 +148,21 @@
         "frontier/DiagonalWidth.lean"
       ],
       "scope": "H_m=product(x_i+y_i) has a verified4m+1-node formula, but every weighted original-coordinate product representation agreeing on Boolean inputs needsW>=2^m. No general PIT/circuit/proof-system impossibility."
+    },
+    {
+      "status": "LEAN_VERIFIED_WITH_SEPARATELY_TESTED_PYTHON",
+      "name": "Invertible coordinate escape and moved Boolean-domain preservation",
+      "sources": [
+        "frontier/CoordinateChange.lean",
+        "frontier/coordinate_change.py"
+      ],
+      "scope": "H_m becomes width one in new coordinates; global rational identities are preserved. Ordinary Boolean constraints must move to beta(u-v)=beta(v)=0; transformed-domain zero-SAT equivalence is checked. No automatic favorable basis search or general PIT."
+    },
+    {
+      "status": "LEAN_VERIFIED_CONDITIONAL_MATRIX_LEMMA",
+      "name": "Nondegenerate diagonal isotropy dimension bound",
+      "source": "frontier/IsotropicDimension.lean",
+      "scope": "Given actual ER=I, all d_k nonzero, and actual E diag(d) E^T=0, an explicit doubled right inverse proves2n<=t. Full orbit application, transversals, moments and rank-to-R bridge remain unformalized."
     }
   ],
   "active_unverified_formal_work": [],
@@ -157,5 +172,34 @@
     "source": "https://eccc.weizmann.ac.il/report/2015/136/download/",
     "source_statement": "Theorem1.1 includes the proposed subclass and every fixed polynomial gate bound.",
     "additional_meta_or_claude_api_cost_usd": "0"
-  }
+  },
+  "background_sparsity_orbit": {
+    "directory": "frontier/background-meta/sparsity-orbit",
+    "phase": "TERMINAL",
+    "remote_status": "incomplete",
+    "finished": true,
+    "incomplete": true,
+    "usage_status": "settled",
+    "cost_usd": "1.314964",
+    "error_category": null,
+    "claim_status": "UNVERIFIED",
+    "scope": "One public-math six-variable orbit-sparsity question. No code/source attachments or proof acceptance.",
+    "visible_answer_received": false,
+    "regular_claude_critiques_completed": 2
+  },
+  "draft_research_results": [
+    {
+      "status": "INDEPENDENTLY_AI_REVIEWED_NOT_FORMALIZED",
+      "name": "Orbit sparsity draft throughfour disjoint binary-cubic blocks",
+      "source": "frontier/SPARSITY_ORBIT_REVIEW.md",
+      "scope": "Draft minima2,4,8,16 underGL(2m,Q); not a proof of the general conjecture, general PIT or PvsNP."
+    },
+    {
+      "status": "EXPLICIT_MOMENT_OBSTRUCTION_WITH_EXACT_FINITE_CHECKS",
+      "source": "frontier/SPARSITY_MOMENT_OBSTRUCTION.md",
+      "evidence": "frontier/results/moment-obstruction.json",
+      "scope": "30exponentpoints withrank10/difference9, quadraticrank15 and all1001degree<=4 weightedmomentszero. Refutes only baremoment/rank sufficiency; its polynomial is not in the F5 orbit."
+    }
+  ],
+  "next_paid_probe_decision": "NOT_JUSTIFIED_ON_CURRENT_PREMISES: same MAX request produced no visible text at65536tokens; bare higher-moment rank claim has an explicit counterexample. No repeat sent."
 }

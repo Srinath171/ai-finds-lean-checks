@@ -1,6 +1,12 @@
 # Research checkpoint
 
-P vs NP remains unsolved. Verification records **312 passing Python tests and 25 compiled Lean research files**. The full23-source run had no skips; the two subsequent formal-only modules were independently replayed without repeating unchanged Python tests. No API calls occurred during verification. Exact hashes and scope are in [verification.json](results/verification.json).
+P vs NP remains unsolved. Verification records **334 passing Python tests and 27 compiled Lean research modules**. The latest full Python replay took 20.758s with no skips. Lean coverage comprises the earlier full 23-module run, independent FiniteDimension/DiagonalWidth replay, independent CoordinateChange replay, and independent IsotropicDimension replay; no single full 27-module replay is claimed. Exact hashes and log provenance are in [verification.json](results/verification.json).
+
+## Coordinate changes and soundness
+
+[CoordinateChange.lean](frontier/CoordinateChange.lean) checks generic rational expression substitution, both inverse linear maps, node/index bounds, and global zero-identity preservation. The compact formula product_i(x_i+y_i) becomes width one under u=x+y,v=y, so the earlier original-coordinate lower bound cannot be extended to arbitrary bases. Its separately tested [bounded compiler](frontier/COORDINATE_CHANGE_DEMO.md) applies actual substitution and affine normalization; at m=16 it verifies the transformed residual with 129 AST nodes and 130 exact checker operations.
+
+The same change moves the Boolean domain: x=y=1 maps to u=2,v=1. The formalization checks the correct constraints beta(u-v)=beta(v)=0 and satisfiability preservation on that moved domain. Reusing ordinary Boolean constraints on u,v would be unsound. These are exact scope and soundness results, not a general PIT algorithm or a P vs NP solution.
 
 ## General rational certificate result
 
@@ -22,10 +28,18 @@ This reconstructs one established evaluation component. It does not provide the 
 
 The earlier [optimal-support obstruction](frontier/OPTIMAL_SUPPORT.md) remains verified: exact-optimal partial extensions can require all n+1 total coordinates, with2^n holes beyond every requested starting arity. The unrestricted structured Partial-MCSP to total-MCSP reduction remains unconstructed.
 
+## Current focused research
+
+The [orbit-sparsity review](frontier/SPARSITY_ORBIT_REVIEW.md) gives an independently AI-reviewed but **unformalized** argument for exact monomial minima 2,4,8,16 through four blocks of product_i x_i*y_i*(x_i+y_i), under arbitrary invertible homogeneous rational linear changes. It does not prove the general conjecture: any smallest counterexample now starts at m>=5, with at least 4m terms. The key conditional rational matrix inequality is now separately [Lean verified](frontier/ISOTROPIC_DIMENSION.md), given an actual right inverse and nonzero weights. The full orbit argument and rank-to-right-inverse bridge remain unformalized.
+
+The [explicit 30-point moment obstruction](frontier/SPARSITY_MOMENT_OBSTRUCTION.md) supplies all 1,001 vanishing moments through degree 4, full exponent rank 10 and quadratic rank 15. It blocks deducing 32 terms from those bare premises; its associated polynomial is provably outside the F5 orbit. A new product-specific structural argument is still missing. No further paid probe of the refuted abstract premise is justified.
+
+The new exact supplied-matrix checker passes ten focused tests and the full 334-test suite. It verifies determinant and every nonzero coefficient for m<=3; it performs no matrix search or universal-proof inference.
+
 ## Spending, deadline and access
 
-No additional Meta or Claude API requests were made for this checkpoint. Local commitments INCLUDING holds remain **Meta $31.909548/$125; Claude API $6.82518/$40**. Recorded settled research API amounts are $5.425948 and $5.82518; four old uncertain Meta reservations stay held. These are cooperating-client records, not account-wide provider invoices. The last authorized Meta dashboard check did not load billing, so account-wide spending remains unverified. See [spending-checkpoint.json](results/spending-checkpoint.json).
+The single Wonder MAX probe ended incomplete after 65,536 output tokens, with no visible answer. Its recorded cost is $1.314964; no retry is running. Local commitments INCLUDING holds are **Meta $33.224512/$125; Claude API $6.82518/$40**. Recorded settled research API amounts are $6.740912 and $5.82518; four old uncertain Meta reservations stay held. These local cooperating-client records are not account-wide invoices. The last authorized Meta dashboard check did not load billing. See [spending-checkpoint.json](results/spending-checkpoint.json).
 
-No paid API job or automatic paid loop is active. The original deadline remains **2026-11-04 19:42:17 UTC**. All registered proof modules are complete; no setup input is pending. Deliberate file access/changes remain confined to the project and specifically authorized tools/accounts. Unrelated root application changes remain outside the research commit.
+No paid API job or automatic paid loop is active. Regular Claude subscription public-math critique is separate from API spending. The original deadline remains **2026-11-04 19:42:17 UTC**. No setup input is pending. Deliberate file access/changes remain confined to the project and specifically authorized tools/accounts; unrelated root application changes remain outside the research commit.
 
-The next contemplated positive-AND/SYM paid probe was not sent: primary literature already proves the requested restricted-class saving. The exact source and scope are recorded in [RESEARCH_ROUTES.md](frontier/RESEARCH_ROUTES.md). No new API spending resulted.
+The earlier contemplated positive-AND/SYM probe was not sent because primary literature already proves its target; see [RESEARCH_ROUTES.md](frontier/RESEARCH_ROUTES.md).

@@ -71,9 +71,10 @@ Lean 4.35.0 and independent review; their saved axiom reports are
 `results/circuit-semantics-axioms.txt`, and
 `results/hard-function-axioms.txt`.
 
-This is a known nonconstructive counting theorem. No explicit hard function,
-NP membership proof, asymptotic inequality threshold, or P-versus-NP result
-has been established.
+This is a known nonconstructive counting theorem. The later
+[ExplicitSchedule.lean](frontier/ExplicitSchedule.lean) supplies the general
+threshold n>=16, s=2^(floor(n/4)); it does not give an explicit hard NP
+function, an NP-membership proof for a selected hard family, or a P-versus-NP result.
 
 The new `synthesis.py` uses pinned Z3 5.3.3.0 to search circuits with at most
 four inputs and eight gates. It validates SAT witnesses independently in
@@ -91,11 +92,10 @@ synthesis result does not fill in the other unknown BFS functions.
 
 
 The referenced test files provide regression cases for the protections above.
-This note does not invent a test-pass count; consult the current test output
-or run `python -m unittest discover -s tests -v`. Real Lean tests need the
-pinned installation; API tests use fake transport. Nine synthesis tests were
-added after the earlier 133-test report; that historical report does not certify
-the expanded suite. The latest full suite has since passed; consult results/verification.json for its exact scope and source hashes.
+Run `python -m unittest discover -s tests -v` to replay the suite. Real Lean
+tests need the pinned installation; API tests use fake transport. The
+verification coverage below distinguishes the latest full Python run from
+the cumulative independent Lean-module replays.
 
 ## Remaining limitations
 
@@ -123,21 +123,35 @@ the expanded suite. The latest full suite has since passed; consult results/veri
   runtime lower bound or polynomial-time SAT algorithm. The formally verified
   search still enumerates `2 ^ n` assignments.
 
-Final checkpoint verification: **312 Python tests passed** and all twenty-three research Lean sources compiled. See `results/verification.json` and `frontier/verification-output.txt`. Windows budget concurrency also passed 50 threaded stress rounds and five multiprocessing rounds.
+## Verification coverage
+
+The latest full Python replay passed **334 tests** in **20.758 seconds**.
+Independent Lean replay coverage totals **27 research modules**: the earlier
+full 23-module run, subsequent checks of `FiniteDimension.lean` and
+`DiagonalWidth.lean`, the `CoordinateChange.lean` replay including moved
+Boolean-domain additions, and the `IsotropicDimension.lean` replay. This is
+cumulative module coverage;
+[verification.json](results/verification.json) records the run scopes and
+source hashes. The [main replay log](frontier/verification-output.txt) and
+the linked research notes provide the supporting evidence.
+
+Earlier Windows budget concurrency checks also passed 50 threaded stress
+rounds and five multiprocessing rounds. These historical checks are separate
+from the current Python-suite and Lean-module counts.
 
 ## Continued research audit
 
 The frontier mathematical review rejects the current routes as a solution and corrects the sample-only certificate proposal using an explicit NAND interpolation construction. Independent reviewers checked the two finite conjecture refutations and the general exponential counting inequality. The completed formal results have standard axiom dependencies only. The general SampleInterpolation theorem and finite-budget obstruction, and the all-width exact ParityTeaching minima, are now completed and replayed with independent well-formed circuit semantics. Their bounds and scopes are explicit; neither solves the complexity-class problem.
 
-The current offline replay passed 312 Python tests and twenty-three included Lean research sources. Campaign transport/limits/error metadata tests use mocks only. The live campaign stopped after two errors, retaining uncertain Meta reservations. A tiny connectivity request and a narrow MAX audit subsequently returned visible output. This does not diagnose the original errors as a particular HTTP status.
+Campaign transport/limits/error metadata regression tests use mocks only. The live campaign stopped after two errors, retaining uncertain Meta reservations. A tiny connectivity request and a narrow MAX audit subsequently returned visible output. This does not diagnose the original errors as a particular HTTP status.
 
-The Claude API client explicitly rejects caps above $40 and reserves the maximum expected charge before sending a request. The existing ledger was checked with the exact authorized caps. At the latest checkpoint, settled Claude API records total $5.82518; the additional $1 hold is a reserve, not another invoice. No fresh account-wide billing figure was verified. Regular Claude public-math audits disable tools and omit API-key environment variables; these mathematical audits deliberately attached no existing source files.
+The Claude API client explicitly rejects caps above $40 and reserves the maximum expected charge before sending a request. The existing ledger was checked with the exact authorized caps. At that historical checkpoint, settled Claude API records totaled $5.82518; the additional $1 hold is a reserve, not another invoice. No fresh account-wide billing figure was verified. Regular Claude public-math audits disable tools and omit API-key environment variables; these mathematical audits deliberately attached no existing source files.
 
 The explicit interpolation implementation is independently checked against Boolean evaluation and DNF semantics. It validates wiring in cost checks and rejects excessive aggregate verification work before simulation. Resource refusal is not a mathematical counterexample. Its ten focused tests passed; its full Lean circuit theorem is accepted with the separate looser bound 3+(3n+7)m, and the no-distinguisher corollary is also checked.
 
-## Recovery checkpoint and current research
+## Research recovery history
 
-The current report is **312 tests and 23 Lean research files**; see [PROGRESS.md](PROGRESS.md), [exact verification](results/verification.json), and [phase snapshot](results/research-status.json). The first follow-up stopped after two missing-visible-text responses. The repaired five-round algebraic batch and subsequent three-round audit completed without those errors. The MCSP phase stopped after two output-token-limit responses; the subsequent single background request completed. Both preserved the original 19:42 UTC deadline and unchanged API money guards; raw live state is ignored. Model proposals remain unverified.
+The historical [phase snapshot](results/research-status.json) records the recovery sequence. The first follow-up stopped after two missing-visible-text responses. The repaired five-round algebraic batch and subsequent three-round audit completed without those errors. The MCSP phase stopped after two output-token-limit responses; the subsequent single background request completed. Both preserved the original 19:42 UTC deadline and unchanged API money guards; raw live state is ignored. Model proposals remain unverified.
 
 [DependencyBound.lean](frontier/DependencyBound.lean) proves the general shared-circuit input-support bound. [CertificateBlowup.lean](frontier/CertificateBlowup.lean) checks the integer telescoping identity, exactly 3^n distinct nonzero exponent-vector terms, their evaluation bridge, and a tiny alternative certificate. It does not formalize a general polynomial ring over Q or encoding-cost theorem. [MCSPScope.lean](frontier/MCSPScope.lean) proves complete assignment coverage and the universal circuit threshold bound; [its note](frontier/MCSP_SCOPE.md) keeps arity n separate from input truth-table length N=2^n and labels the informal NP-verification discussion.
 
@@ -145,11 +159,11 @@ The [restricted diagonal PIT checker](frontier/DIAGONAL_PIT.md) uses exact ratio
 
 API recovery now preserves usage and completion metadata for null/empty visible answers. Research opt-in permits 32,768 tokens; catalog and CLI stay at 16,384. Incomplete output is neither checked as a proof nor sent as an accepted candidate. Meta's documentation explains that reasoning and visible output share the output budget: [reasoning token usage](https://dev.meta.ai/docs/reasoning#token-usage). The precise cause of the old missing-text responses was not recovered; old uncertain reservations remain held.
 
-The last Fable MAX audit returned no visible answer at its token limit and recorded $1.64735. The latest Claude API settled total is $5.82518, with a separate $1 reserve, under the unchanged $40 guard. Meta remains guarded at $125 for cooperating callers. Current commitments and reserves are in [spending-checkpoint.json](results/spending-checkpoint.json); they are not account-wide invoices, and the Meta billing page remains stuck loading. Regular Claude subscription critiques do not use the API key.
+At the recovery checkpoint, the Fable MAX audit returned no visible answer at its token limit and recorded $1.64735. That checkpoint recorded a Claude API settled total of $5.82518 and a separate $1 reserve, under the $40 guard. Meta remains guarded at $125 for cooperating callers. Current commitments and reserves are in [spending-checkpoint.json](results/spending-checkpoint.json); they are not account-wide invoices, and the Meta billing page remains stuck loading. Regular Claude subscription critiques do not use the API key.
 
 ## Verified first-gate checkpoint
 
-The current offline replay passes **312 Python tests and 23 Lean research sources**. [FirstGateExtension.lean](frontier/FirstGateExtension.lean) checks the exact first-gate partial-extension equivalence and a nonprojection zero-fill counterexample; [the note](frontier/FIRST_GATE_EXTENSION.md) gives its precise scope. This exposes a missing partial-to-total MCSP reduction and establishes no P vs NP result.
+[FirstGateExtension.lean](frontier/FirstGateExtension.lean) checks the exact first-gate partial-extension equivalence and a nonprojection zero-fill counterexample; [the note](frontier/FIRST_GATE_EXTENSION.md) gives its precise scope. This exposes a missing partial-to-total MCSP reduction and establishes no P vs NP result.
 
 Both synchronous MCSP requests stopped at the output-token limit with no visible answer. One [bounded background client](frontier/BACKGROUND_META.md) request then completed with visible public mathematics, followed by a regular Claude Code critique. Its recorded cost was $0.74812. The visible [model snapshot](frontier/results/first-gate-proposals.json) remains UNVERIFIED; a critique is not itself a proof. All five campaign phases and the background job are now stopped/completed; see [status](results/research-status.json). No API job is active in this snapshot.
 
@@ -159,24 +173,49 @@ The final first-gate strengthening also rules out OR-ing all four zero-filled fi
 
 ## General exact-support obstruction
 
-The latest full replay passes **312 Python tests and 23 Lean research sources**, without skipped tests. [OptimalSupport.lean](frontier/OptimalSupport.lean) now proves a general internal-shortcut refutation: every n>=2 has a cheaper parity-phase instance whose exact-optimal residual extensions require all n+1 total coordinates, leaving 2^n missing rows. The formal eventual-cap corollary gives arbitrarily large violations of every fixed linear cap. [The scope note](frontier/OPTIMAL_SUPPORT.md) explains the exact budget and total-support conditions; it supplies no P versus NP or MCSP-hardness theorem.
+[OptimalSupport.lean](frontier/OptimalSupport.lean) now proves a general internal-shortcut refutation: every n>=2 has a cheaper parity-phase instance whose exact-optimal residual extensions require all n+1 total coordinates, leaving 2^n missing rows. The formal eventual-cap corollary gives arbitrarily large violations of every fixed linear cap. [The scope note](frontier/OPTIMAL_SUPPORT.md) explains the exact budget and total-support conditions; it supplies no P versus NP or MCSP-hardness theorem.
 
 The proof uses independently checked [input rewiring](frontier/CIRCUIT_REWIRING.md) and [graph counts](frontier/GRAPH_HOLES.md). A separate [exact XOR2 experiment](frontier/results/support-holes-n2.json) confirms costs four versus three for the zero-hole and full-support cases. [The conditional-reduction review](frontier/SUPPORT_COMPLETION_REVIEW.md) preserves what remains valid and identifies the missing unrestricted reduction. The table-enumeration algorithm and its polynomial-time interpretation are not themselves encoded as Turing-machine theorems in Lean.
 
-One targeted Wonder MAX audit completed at recorded cost $0.425292, followed by a regular Claude subscription critique. [Visible model answers](frontier/results/optimal-support-proposals.json) are separate from proof certificates. Current local commitments are $31.909548/$125 for Meta and $6.82518/$40 for Claude API, including reserves. No paid job or repetitive loop is active; no setup input is pending. Account-wide billing remains unverified. See [current progress](PROGRESS.md), [verification](results/verification.json), and [spending](results/spending-checkpoint.json).
+One targeted Wonder MAX audit completed at recorded cost $0.425292, followed by a regular Claude subscription critique. [Visible model answers](frontier/results/optimal-support-proposals.json) are separate from proof certificates. The checkpoint recorded local commitments of $31.909548/$125 Meta and $6.82518/$40 Claude API, including reserves. These are historical local records, not account-wide invoices; see the [progress record](PROGRESS.md), [verification](results/verification.json), and [spending snapshot](results/spending-checkpoint.json).
 
 ## Algebraic proof-format and algorithm checkpoint
 
-The complete offline replay now passes **312 Python tests and 23 registered Lean research sources**, with no skipped tests. [The rational sparse bound](frontier/SPARSE_CERTIFICATE_BOUND.md) derives at least `2^n` nonzero records from the actual evaluated certificate, including arbitrary exponents and Boolean corrections. [The bounded compiler](frontier/SPARSE_NS.md) checks supplied sparse identities; it is tested independently but not formally refined to the Lean definitions.
+[The rational sparse bound](frontier/SPARSE_CERTIFICATE_BOUND.md) derives at least `2^n` nonzero records from the actual evaluated certificate, including arbitrary exponents and Boolean corrections. [The bounded compiler](frontier/SPARSE_NS.md) checks supplied sparse identities; it is tested independently but not formally refined to the Lean definitions.
 
 The [factored prefix witness](frontier/WIDE_CLAUSE_CERTIFICATE.md) and [OR-chain 3-CNF witness](frontier/TSEITIN_CERTIFICATE.md) demonstrate representation and encoding limits on that lower bound. The [subset-zeta kernel](frontier/SUBSET_ZETA.md) adds a verified standard evaluation component, not a complete fast SAT algorithm. [Primary-source route notes](frontier/RESEARCH_ROUTES.md) state the remaining gaps. No P versus NP result or novelty claim follows.
 
-This checkpoint used no additional paid model calls. Current local commitments, including reserves, remain $31.909548/$125 Meta and $6.82518/$40 Claude API. Account-wide billing is unverified. Further diagonal-width formalization is in progress and excluded from the passed-source count until independently compiled and registered; see [current progress](PROGRESS.md) and [verification](results/verification.json).
+The later diagonal-width and coordinate-change formalizations are now included in the cumulative replay coverage above.
 
 ## Verified diagonal-width boundary
 
-Current verification comprises **312 passing Python tests and 25 compiled Lean modules**. The full312-test/23-source run was followed by independent replay of the two new formal-only modules; unchanged Python tests were not repeated. Exact hashes and both logs are in [verification.json](results/verification.json).
+The diagonal-width modules are included in the cumulative Lean replay coverage above.
 
 [DiagonalWidth.lean](frontier/DiagonalWidth.lean) proves that product_i(x_i+y_i) has a `4m+1`-node arithmetic formula, while any weighted sum of products of functions of its fixed original coordinates needs at least `2^m` terms. It proves the actual term-to-matrix factorization and explicit tensor inverse. [FiniteDimension.lean](frontier/FiniteDimension.lean) derives the rational dimension inequality by pivot elimination; no rank bound is assumed. [The scope note](frontier/DIAGONAL_WIDTH.md) explains why this restricts a universal polynomial-width compiler into the current format, without ruling out coordinate changes, other PIT methods, general arithmetic circuits, or proof systems.
 
-No additional Meta or Claude API requests were needed. Local commitments including holds remain $31.909548/$125 and $6.82518/$40, respectively; account-wide billing remains unverified. P vs NP is still unsolved.
+P vs NP remains unsolved; these checked results establish the stated representation boundaries.
+
+## Verified coordinate change and Boolean-domain boundary
+
+[CoordinateChange.lean](frontier/CoordinateChange.lean) verifies the invertible
+rational change `u=x+y, v=y`, its generic expression-substitution law and
+size bound, and preservation of identities on **all rational inputs**.
+For the same H family, the new-coordinate representation has width exactly
+one while the original-coordinate lower bound remains `2^m`.
+
+The Boolean constraints must also move: they become
+`(u-v)^2-(u-v)=0` and `v^2-v=0`. Retaining standard Boolean constraints on
+u,v changes satisfiability. The file checks the original solution (1,1)
+to x+y=2, its correct image (2,1), and a transformed Boolean-axiom expression
+that equals 2 at the incorrectly admitted row (u,v)=(0,1).
+[The scope note](frontier/COORDINATE_CHANGE.md) distinguishes this sound
+constraint transport from Boolean-cube preservation, general coordinate
+selection, and a PIT or P-versus-NP algorithm.
+
+## Rational isotropy and the next restricted gap
+
+[IsotropicDimension.lean](frontier/IsotropicDimension.lean) proves the conditional rational inequality `ER=I`, nonzero diagonal `D`, and `EDE^T=0` imply `2n<=t`, through an explicit doubled right inverse. It was independently recompiled and audited; standard axioms only. Cumulative Lean coverage is 23+2+1+1 modules, not one combined 27-module replay. Python remains 334 passed tests.
+
+The [orbit-sparsity draft](frontier/SPARSITY_ORBIT_REVIEW.md) is independently AI-reviewed, **not Lean-formalized or human/peer-reviewed**. Its four-block conclusion is separate from the formal matrix lemma. The [explicit 30-point obstruction](frontier/SPARSITY_MOMENT_OBSTRUCTION.md) and [exact checks](frontier/results/moment-obstruction.json) show that bare higher-moment/rank conditions cannot establish the next 32-term bound; the missing step must use more of the product's structure. This is not a counterexample to the orbit conjecture or a PvsNP result.
+
+The single new Wonder MAX request exhausted 65,536 output tokens with no visible answer and recorded $1.314964. It was not retried. Two regular Claude subscription critiques produced visible mathematical reviews; [their recorded outcomes](frontier/results/sparsity-orbit-proposals.json) remain model output, not proof certificates. No paid request is active; see [current progress](PROGRESS.md) and [spending snapshot](results/spending-checkpoint.json).

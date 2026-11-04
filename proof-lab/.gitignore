@@ -18,3 +18,8 @@ generated_images/
 .verification-tmp/
 frontier/campaign-results/
 frontier/campaign-followup/
+frontier/campaign-recovery/
+frontier/campaign-sparse-audit/
+frontier/campaign-mcsp/
+frontier/background-first-gate/
+frontier/background-meta/

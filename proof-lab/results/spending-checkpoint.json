@@ -1,31 +1,35 @@
 {
-  "checked_utc": "2026-11-04T13:09:13.301314+00:00",
-  "scope": "Local cooperating API callers only, not account-wide billing. External holds reserve coding/unreceipted use; holds are not invoices.",
+  "checked_utc": "2026-11-04T15:53:11.045157+00:00",
+  "scope": "One atomic local ledger snapshot for cooperating research API callers, not account-wide invoices. External holds include coding/unreceipted use and are reserves, not charges.",
   "providers": {
     "meta": {
       "cap_usd": "125",
-      "committed_usd": "25.804684",
-      "available_usd": "99.195316",
+      "committed_usd": "31.484256",
+      "available_usd": "93.515744",
       "over_cap": false,
       "external_hold_usd": "25",
-      "pending_count": 2,
-      "settled_count": 2,
-      "recorded_settled_usd": "0.094908"
+      "pending_count": 4,
+      "settled_count": 16,
+      "recorded_settled_usd": "5.000656",
+      "pending_reservations_usd": "1.483600"
     },
     "claude": {
       "cap_usd": "40",
-      "committed_usd": "5.17783",
-      "available_usd": "34.82217",
+      "committed_usd": "6.82518",
+      "available_usd": "33.17482",
       "over_cap": false,
       "external_hold_usd": "1",
       "pending_count": 0,
-      "settled_count": 4,
-      "recorded_settled_usd": "4.17783"
+      "settled_count": 5,
+      "recorded_settled_usd": "5.82518",
+      "pending_reservations_usd": "0"
     }
   },
   "meta_coding_completed_receipt_estimate_usd": "15.1559384",
-  "meta_billing_status": "UI remains Loading billing; no fresh account balance verified.",
+  "coding_estimate_note": "Already covered by the Meta external hold; do not add it again to committed_usd.",
+  "meta_billing_status": "Latest authorized UI check still showed Loading billing; account-wide provider spend could not be verified.",
   "claude_account_wide_billing": "not verified",
-  "claude_code": "regular subscription public-math audits; no API key in child environment",
-  "api_campaign": "stopped after two errors; uncertain Meta reservations retained"
+  "claude_code": "regular subscription public-math critiques; API keys omitted from child environment",
+  "last_fable_call": "Incomplete max_tokens response with no visible answer; recorded cost1.64735, settled.",
+  "background_first_gate_cost_usd": "0.74812"
 }

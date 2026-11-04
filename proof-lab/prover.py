@@ -62,6 +62,8 @@ DEFAULT_MODEL = "muse-wonder-1.0"
 DEFAULT_EFFORT = "max"
 DEFAULT_MAX_TOKENS = 8192
 MAX_TOKENS_LIMIT = 16384
+RESEARCH_MAX_TOKENS_LIMIT = 32768
+ALLOWED_FINISH_REASONS = frozenset({"stop", "length", "content_filter", "tool_calls", "function_call"})
 MAX_ATTEMPTS_LIMIT = 5
 DEFAULT_TIMEOUT = 180.0
 
@@ -185,6 +187,8 @@ class ApiResult:
     content: str
     usage: dict[str, Optional[int]] = field(default_factory=dict)
     model: str = ""
+    finish_reason: Optional[str] = None
+    incomplete: bool = False
 
 
 # ---------------------------------------------------------------- catalog
@@ -680,14 +684,18 @@ def chat_completion(
     timeout: float = DEFAULT_TIMEOUT,
     api_key: Optional[str] = None,
     opener: Optional[Callable[..., Any]] = None,
+    research_mode: bool = False,
 ) -> ApiResult:
     """One HTTPS chat-completions call via urllib. No key in any error."""
     if model not in ALLOWED_MODELS:
         raise ApiError(f"model not allowed: {model!r} (allowed: {ALLOWED_MODELS})")
     if effort not in ALLOWED_EFFORTS:
         raise ApiError(f"effort not allowed: {effort!r}")
-    if type(max_tokens) is not int or not 1 <= max_tokens <= MAX_TOKENS_LIMIT:
-        raise ApiError(f"max_tokens must be an integer within 1..{MAX_TOKENS_LIMIT}")
+    if type(research_mode) is not bool:
+        raise ApiError("research_mode must be a boolean")
+    token_limit = RESEARCH_MAX_TOKENS_LIMIT if research_mode else MAX_TOKENS_LIMIT
+    if type(max_tokens) is not int or not 1 <= max_tokens <= token_limit:
+        raise ApiError(f"max_tokens must be an integer within 1..{token_limit}")
     if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
         raise ApiError("timeout must be finite and positive")
     key = api_key if api_key is not None else get_api_key()
@@ -741,11 +749,21 @@ def chat_completion(
         raise ApiError(f"API request failed: {str(exc).replace(key, '[REDACTED]')}") from None
     try:
         data = json.loads(raw_body.decode("utf-8"))
-        content = data["choices"][0]["message"]["content"]
+        choice = data["choices"][0]
+        content = choice["message"]["content"]
+        finish_reason = choice.get("finish_reason")
     except (ValueError, KeyError, IndexError, TypeError, AttributeError):
         raise ApiError("API response had an unexpected shape") from None
-    if not isinstance(content, str):
+    # A null visible answer is valid for exhausted reasoning budgets. Never read
+    # message.reasoning_content or any other hidden-reasoning field.
+    if content is not None and not isinstance(content, str):
         raise ApiError("API response content was not text")
+    if finish_reason is not None and not isinstance(finish_reason, str):
+        raise ApiError("API response had an unexpected shape")
+    content = content if isinstance(content, str) else ""
+    finish_reason = (finish_reason if finish_reason in ALLOWED_FINISH_REASONS
+                     else "unknown" if finish_reason is not None else None)
+    incomplete = not content.strip() or finish_reason not in (None, "stop")
     usage = _normalize_usage(data.get("usage"))
     if ledger is not None and reservation_id is not None:
         counts = (usage["input_tokens"], usage["output_tokens"])
@@ -756,7 +774,8 @@ def chat_completion(
                 ledger.settle(reservation_id, actual)
             except (BudgetError, OSError, ValueError) as exc:
                 raise ApiError(f"Spending ledger settlement failed: {exc}") from None
-    return ApiResult(content=content, usage=usage, model=model)
+    return ApiResult(content=content, usage=usage, model=model,
+                     finish_reason=finish_reason, incomplete=incomplete)
 
 
 def extract_proof_body(content: str) -> str:
@@ -850,10 +869,18 @@ def _coerce_api_result(raw: Any) -> ApiResult:
     if isinstance(raw, ApiResult):
         return raw
     if isinstance(raw, dict):
+        content = raw.get("content", "")
+        finish = raw.get("finish_reason")
+        if content is not None and not isinstance(content, str):
+            raise ApiError("model client returned invalid visible content")
+        if finish is not None and not isinstance(finish, str):
+            raise ApiError("model client returned invalid finish reason")
+        content = content or ""
+        finish = finish if finish in ALLOWED_FINISH_REASONS else "unknown" if finish is not None else None
         return ApiResult(
-            content=str(raw.get("content", "")),
-            usage=_normalize_usage(raw.get("usage")),
-            model=str(raw.get("model", "")),
+            content=content, usage=_normalize_usage(raw.get("usage")),
+            model=str(raw.get("model", "")), finish_reason=finish,
+            incomplete=bool(raw.get("incomplete")) or not content.strip() or finish not in (None, "stop"),
         )
     if isinstance(raw, str):
         return ApiResult(content=raw)
@@ -1021,6 +1048,8 @@ def prove_theorem(
         proof = extract_proof_body(api_result.content)
         record["proof"] = proof
         record["usage"] = api_result.usage
+        record["finish_reason"] = api_result.finish_reason
+        record["incomplete"] = api_result.incomplete or api_result.finish_reason not in (None, "stop")
         cost = _estimate_cost_usd(
             api_result.usage, input_rate_per_mtok, output_rate_per_mtok
         )
@@ -1035,9 +1064,12 @@ def prove_theorem(
             spent_usd += cost
 
         try:
-            result = checker(theorem, proof, timeout=timeout)
-            if isinstance(result, dict):
-                result = VerificationResult(**result)
+            if record["incomplete"]:
+                result = VerificationResult(False, "invalid_proof", "Model response is incomplete; no proof was checked.")
+            else:
+                result = checker(theorem, proof, timeout=timeout)
+                if isinstance(result, dict):
+                    result = VerificationResult(**result)
         except Exception as exc:
             result = VerificationResult(
                 False, "checker_error", f"{type(exc).__name__}: {exc}"
@@ -1052,6 +1084,9 @@ def prove_theorem(
         if on_attempt:
             on_attempt(record)
 
+        if record["incomplete"]:
+            status = "invalid_proof"
+            break  # Do not automatically spend more on an incomplete completion.
         if record["verified"]:
             status = "verified"
             break
@@ -1122,7 +1157,8 @@ def run_benchmark(
         runs.append(run)
         if remaining is not None:
             remaining -= run.get("reserved_or_measured_usd", 0)
-        if run["status"] in {"api_error", "tool_unavailable", "budget_exceeded"}:
+        if (run["status"] in {"api_error", "tool_unavailable", "budget_exceeded"}
+                or any(attempt.get("incomplete") for attempt in run.get("attempts", []))):
             break
     return {"runs": runs, "summary": summarize_logs(runs), "remaining_budget_usd": remaining}
 

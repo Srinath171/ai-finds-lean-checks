@@ -91,8 +91,9 @@ def _atomic(path, data):
 def _meta(prompt, timeout):
     from prover import chat_completion
     answer = chat_completion(model="muse-wonder-1.0", messages=[{"role": "user", "content": prompt}],
-                             effort="max", max_tokens=16384, timeout=timeout)
-    return {"text": answer.content, "usage": answer.usage, "model": answer.model}
+                             effort="max", max_tokens=32768, timeout=timeout, research_mode=True)
+    return {"text": answer.content, "usage": answer.usage, "model": answer.model,
+            "finish_reason": answer.finish_reason, "incomplete": answer.incomplete}
 
 
 def _fable(prompt, timeout):
@@ -184,7 +185,11 @@ def _budget_error(exc):
             or "budget" in type(exc).__name__.lower() or "ledger" in str(exc).lower())
 
 
-ERROR_CATEGORIES = frozenset({"missing_key", "transport", "unexpected_shape", "content_type", "ledger", "unknown"})
+ERROR_CATEGORIES = frozenset({"missing_key", "transport", "unexpected_shape", "content_type", "incomplete", "ledger", "unknown"})
+
+
+class IncompleteResponse(ValueError):
+    safe_error_category = "incomplete"
 
 
 def _safe_error_metadata(exc):
@@ -326,6 +331,8 @@ def run_campaign(*, output_dir=DEFAULT_OUTPUT, hours=7, max_rounds=12, use_claud
                 result = request(clients["meta"], prompt)
                 record["responses"]["meta"] = result
                 _atomic(record_path, record)
+                if result.get("incomplete") or result.get("finish_reason") not in (None, "stop"):
+                    raise IncompleteResponse("Incomplete visible response; usage retained")
                 text = result.get("text", "")
                 if _claims_solution(text):
                     state["status"], reason = "NEEDS_EXPERT_REVIEW", "full_solution_claim"
@@ -354,6 +361,8 @@ def run_campaign(*, output_dir=DEFAULT_OUTPUT, hours=7, max_rounds=12, use_claud
                         reply = request(clients[provider], provider_prompt)
                         record["responses"][provider] = reply
                         _atomic(record_path, record)
+                        if reply.get("incomplete"):
+                            raise IncompleteResponse("Incomplete critique; usage retained")
                         visible = reply.get("text", "")
                         if not isinstance(visible, str) or not visible.strip() or len(visible.encode("utf-8")) > MAX_TEXT:
                             raise ValueError("Empty or oversized critique")

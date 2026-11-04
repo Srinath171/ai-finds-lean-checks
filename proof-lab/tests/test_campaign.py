@@ -223,6 +223,29 @@ class CampaignTests(unittest.TestCase):
         self.assertNotIn("secret", json.dumps(saved))
         invalid = c.ProviderWorkerError({"category": "secret-sentinel", "http_status": True})
         self.assertEqual(c._safe_error_metadata(invalid), {"category": "unknown", "http_status": None})
+    def test_incomplete_meta_usage_persists_without_critique_or_claim_acceptance(self):
+        self.meta.side_effect=None
+        self.meta.return_value={"text":candidate(claim=True), "finish_reason":"length", "incomplete":True,
+                                "usage":{"input_tokens":10,"output_tokens":32768,"reasoning_tokens":32000}}
+        result=self.run_work()
+        self.assertEqual(result["status"],"NOT_SOLVED")
+        self.assertEqual(result["reason"],"repeated_error_or_empty_result")
+        self.assertEqual(self.meta.call_count,2)
+        self.critic.assert_not_called()
+        saved=json.loads((self.output/"round-001.json").read_text(encoding="utf-8"))
+        self.assertEqual(saved["responses"]["meta"]["finish_reason"],"length")
+        self.assertEqual(saved["responses"]["meta"]["usage"]["output_tokens"],32768)
+        self.assertEqual(saved["error_metadata"]["category"],"incomplete")
+        self.assertFalse(result["seen"])
+    def test_incomplete_critique_never_becomes_next_round_context(self):
+        self.critic.return_value={"text":"truncated-critique-sentinel", "incomplete":True,
+                                 "finish_reason":"length", "usage":{"output_tokens":100}}
+        result=self.run_work()
+        self.assertEqual(result["reason"],"repeated_error_or_empty_result")
+        self.assertNotIn("truncated-critique-sentinel",result["context"])
+        saved=json.loads((self.output/"round-001.json").read_text(encoding="utf-8"))
+        self.assertEqual(saved["responses"]["claude"]["usage"]["output_tokens"],100)
+        self.assertEqual(saved["error_metadata"]["category"],"incomplete")
     def test_missing_or_corrupt_status_refuses_reset(self):
         (self.output / "round-001.json").write_text("{}")
         with self.assertRaises(ValueError):
@@ -245,9 +268,10 @@ class CampaignTests(unittest.TestCase):
             with self.subTest(value=str(value)[:30]), self.assertRaises((ValueError, TypeError)):
                 c.parse_candidate(value)
     def test_provider_wrappers_parameters_only_mocked(self):
-        with mock.patch("prover.chat_completion", return_value=SimpleNamespace(content=candidate(), usage={}, model="muse-wonder-1.0")) as meta:
+        with mock.patch("prover.chat_completion", return_value=SimpleNamespace(content=candidate(), usage={}, model="muse-wonder-1.0", finish_reason="stop", incomplete=False)) as meta:
             c._meta(c.SEED, 7)
-            self.assertEqual(meta.call_args.kwargs["max_tokens"], 16384)
+            self.assertEqual(meta.call_args.kwargs["max_tokens"], 32768)
+            self.assertIs(meta.call_args.kwargs["research_mode"], True)
             self.assertEqual(meta.call_args.kwargs["effort"], "max")
             self.assertEqual(meta.call_args.kwargs["timeout"], 7)
         with mock.patch("research_client.ask_public_math", return_value={}) as fable:

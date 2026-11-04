@@ -1,0 +1,148 @@
+{
+  "format": "certificate-representation-blowup-v1",
+  "field": "Q",
+  "scope": "Finite exact implementation evidence only; no certificate-size, verification, NP/coNP, or P-vs-NP separation.",
+  "instance": "(y) AND (NOT y); x_1,...,x_n are unused ambient variables",
+  "identity": "P(1-y)+Py-sum_i Q_(i-1)*(x_i^2-x_i)-1=0",
+  "methods": [
+    "exact integer monomial dictionaries",
+    "exact Fraction RREF coefficient-span test",
+    "exhaustive Boolean evaluation of malformed residual"
+  ],
+  "bounds": {
+    "minimum_n": 1,
+    "maximum_n": 6,
+    "maximum_terms_per_P": 729
+  },
+  "experiments": [
+    {
+      "n": 1,
+      "variables_including_y": 2,
+      "product_sum_width": 4,
+      "P_monomials": 3,
+      "separate_coefficient_monomial_records": 7,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 2,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true
+    },
+    {
+      "n": 2,
+      "variables_including_y": 3,
+      "product_sum_width": 5,
+      "P_monomials": 9,
+      "separate_coefficient_monomial_records": 22,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 6,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true
+    },
+    {
+      "n": 3,
+      "variables_including_y": 4,
+      "product_sum_width": 6,
+      "P_monomials": 27,
+      "separate_coefficient_monomial_records": 67,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 18,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true
+    },
+    {
+      "n": 4,
+      "variables_including_y": 5,
+      "product_sum_width": 7,
+      "P_monomials": 81,
+      "separate_coefficient_monomial_records": 202,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 54,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true
+    },
+    {
+      "n": 5,
+      "variables_including_y": 6,
+      "product_sum_width": 8,
+      "P_monomials": 243,
+      "separate_coefficient_monomial_records": 607,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 162,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true,
+      "perturb_R5_constant_residual_monomials": 81,
+      "span_test_accepts_R5_perturbation": false,
+      "R5_perturbation_residual_on_boolean_cube": 1
+    },
+    {
+      "n": 6,
+      "variables_including_y": 7,
+      "product_sum_width": 9,
+      "P_monomials": 729,
+      "separate_coefficient_monomial_records": 1822,
+      "valid_residual_monomials": 0,
+      "span_test_accepts_valid": true,
+      "span_dimensions_after_each_variable": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "maximum_rref_entry_bits": 1,
+      "drop_last_boolean_term_residual_monomials": 486,
+      "span_test_accepts_dropped_term": false,
+      "dropped_term_residual_vanishes_on_entire_boolean_cube": true,
+      "perturb_R5_constant_residual_monomials": 81,
+      "span_test_accepts_R5_perturbation": false,
+      "R5_perturbation_residual_on_boolean_cube": 1
+    }
+  ]
+}

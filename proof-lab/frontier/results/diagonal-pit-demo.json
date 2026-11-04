@@ -1,0 +1,224 @@
+{
+  "scope": "Exact restricted polynomial identities, not Lean-verified code or general PIT",
+  "cases": [
+    {
+      "n": 6,
+      "problem": "telescoping residual",
+      "result": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 7,
+        "width": 9,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "support_sizes": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "basis_dimensions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "estimated_operations": 24921,
+        "operations": 2585,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "n": 12,
+      "problem": "telescoping residual",
+      "result": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 13,
+        "width": 15,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "support_sizes": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "basis_dimensions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "estimated_operations": 227745,
+        "operations": 14471,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "n": 16,
+      "problem": "telescoping residual",
+      "result": {
+        "status": "VERIFIED_ZERO",
+        "witness": null,
+        "reason": null,
+        "nvars": 17,
+        "width": 19,
+        "degrees": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "support_sizes": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "basis_dimensions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "estimated_operations": 622041,
+        "operations": 31095,
+        "max_fraction_bits": 1
+      }
+    },
+    {
+      "n": 3,
+      "problem": "one Boolean correction removed",
+      "result": {
+        "status": "NONZERO",
+        "witness": {
+          "exponents": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": {
+            "numerator": -1,
+            "denominator": 1
+          }
+        },
+        "reason": null,
+        "nvars": 4,
+        "width": 5,
+        "degrees": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "support_sizes": [
+          3,
+          3,
+          3,
+          2
+        ],
+        "basis_dimensions": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "estimated_operations": 2245,
+        "operations": 452,
+        "max_fraction_bits": 1
+      },
+      "independent_coefficient_witness_checked": true
+    }
+  ]
+}

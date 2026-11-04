@@ -1,70 +1,113 @@
 {
-  "checked_utc": "2026-11-04T13:14:30.616853+00:00",
-  "python_tests_passed": 207,
-  "test_seconds": 18.531,
+  "checked_utc": "2026-11-04T15:55:13.087918+00:00",
+  "python_tests_passed": 254,
+  "test_seconds": 19.494,
   "lean_toolchain": "leanprover/lean4:v4.35.0",
   "formal_sources": [
     {
       "path": "SATSearch.lean",
       "sha256": "bc0a141734e4ec5fd785dae2bf7f547400136fb66fb193d37f68662e229434f9",
+      "sha256_lf": "bc0a141734e4ec5fd785dae2bf7f547400136fb66fb193d37f68662e229434f9",
       "compiled": true
     },
     {
       "path": "CircuitBounds.lean",
       "sha256": "abe21091e640192ac77f1e83fbf25dfe36275c61d78cda7fbf67ad51b118998e",
+      "sha256_lf": "abe21091e640192ac77f1e83fbf25dfe36275c61d78cda7fbf67ad51b118998e",
       "compiled": true
     },
     {
       "path": "CircuitCoverage.lean",
       "sha256": "1d63b5d27445a6ca82716e9d57b7b527571759ed6fcf0b872ff8527502c8d777",
+      "sha256_lf": "1d63b5d27445a6ca82716e9d57b7b527571759ed6fcf0b872ff8527502c8d777",
       "compiled": true
     },
     {
       "path": "CircuitCounting.lean",
       "sha256": "9eef3b51b57ad1b2aba6021d063f2993e0e9095e038f0734267622cf26be6ece",
+      "sha256_lf": "9eef3b51b57ad1b2aba6021d063f2993e0e9095e038f0734267622cf26be6ece",
       "compiled": true
     },
     {
       "path": "CircuitSemantics.lean",
       "sha256": "ded37d5d9d0a69916e0380ece6e2cbdeb6ba7c9ecb2ef4edc2cedc7495704511",
+      "sha256_lf": "ded37d5d9d0a69916e0380ece6e2cbdeb6ba7c9ecb2ef4edc2cedc7495704511",
       "compiled": true
     },
     {
       "path": "HardFunction.lean",
       "sha256": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
+      "sha256_lf": "ddd0d6956e98ff6ad4d41236be6d485170990e0bbd863bddb89380fe66a7170e",
       "compiled": true
     },
     {
       "path": "frontier/LexCounterexample.lean",
       "sha256": "7d7b3be09fe782dfa1cdf04046ecb8f2f95c781590bc30e1faf5aae28670474c",
+      "sha256_lf": "7d7b3be09fe782dfa1cdf04046ecb8f2f95c781590bc30e1faf5aae28670474c",
       "compiled": true
     },
     {
       "path": "frontier/AntiChecker.lean",
       "sha256": "5b82d7bf7b84b47dc712a0cabbc9a242c49f068e699a68af226bee5641826d09",
+      "sha256_lf": "b03c689924aff4895ffa8eeb22555096666e1d2754daae4e245e1b1cb85e7a53",
       "compiled": true
     },
     {
       "path": "frontier/AntiCheckerRepair.lean",
       "sha256": "e330d9b5d5bce5970b14353c73353c413f106f74a3f2612095a085c23eadbd01",
+      "sha256_lf": "e330d9b5d5bce5970b14353c73353c413f106f74a3f2612095a085c23eadbd01",
       "compiled": true
     },
     {
       "path": "frontier/ExplicitSchedule.lean",
       "sha256": "005bb2bf8f3f46940a1c4df0bf654f12e62b544b0cec4f09338304cd56345d5e",
+      "sha256_lf": "005bb2bf8f3f46940a1c4df0bf654f12e62b544b0cec4f09338304cd56345d5e",
       "compiled": true
     },
     {
       "path": "frontier/SampleInterpolation.lean",
       "sha256": "c60d4a86dd88bf2300caadb864fcc8930967fccf0a526c3221573860908c5f61",
+      "sha256_lf": "38f410afeb4db3aeb94002b725ac1b3570cd709af8e7d7be7fea0175221d6636",
       "compiled": true
     },
     {
       "path": "frontier/ParityTeaching.lean",
       "sha256": "9fca9b8d13eba52646c6d0cbb151714308251d608474218c2491feabded41d15",
+      "sha256_lf": "e7d97055ba18323845baac56d4cd6bd546c1637a97fa321dc03341e18bdf11dc",
+      "compiled": true
+    },
+    {
+      "path": "frontier/DependencyBound.lean",
+      "sha256": "e4da563964b5c75c41c600c42b4e66b6208966cc2afa963a6f5c2ca2023b9fe7",
+      "sha256_lf": "e4da563964b5c75c41c600c42b4e66b6208966cc2afa963a6f5c2ca2023b9fe7",
+      "compiled": true
+    },
+    {
+      "path": "frontier/CertificateBlowup.lean",
+      "sha256": "1e83d7366f1465a7cee06e1f23ff80e88b25610f6074cf601f5a069890e58596",
+      "sha256_lf": "1e83d7366f1465a7cee06e1f23ff80e88b25610f6074cf601f5a069890e58596",
+      "compiled": true
+    },
+    {
+      "path": "frontier/MCSPScope.lean",
+      "sha256": "384aa7977ed0a227c2e11ddc700152133096a359f31a8646dbebff5846d3caf6",
+      "sha256_lf": "384aa7977ed0a227c2e11ddc700152133096a359f31a8646dbebff5846d3caf6",
+      "compiled": true
+    },
+    {
+      "path": "frontier/FirstGateExtension.lean",
+      "sha256": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
+      "sha256_lf": "561e023c6095ecb1acc90152b5aee65b5a9f978a18da65857c7b6d3b22164f53",
       "compiled": true
     }
   ],
-  "api_calls_during_verification": 0,
-  "scope": "Offline verification command only. All twelve included research sources compile; model proposals remain independently unverified."
+  "formal_source_count": 16,
+  "scope": "Offline Python suite and included Lean sources; API tests use mock transports. Compiler warnings in older source are retained in the log. Model text is not a verified proof.",
+  "log": "frontier/verification-output.txt",
+  "post_suite_replay": {
+    "path": "frontier/FirstGateExtension.lean",
+    "log": "frontier/first-gate-verification.txt",
+    "exit_code": 0,
+    "reason": "Added all-first-pairs zero-fill strengthening after the full suite; changed source independently recompiled."
+  }
 }

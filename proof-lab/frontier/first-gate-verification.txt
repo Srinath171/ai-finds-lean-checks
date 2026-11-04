@@ -1,0 +1,6 @@
+'FirstGateExtension.first_gate_extension_iff' depends on axioms: [propext, Quot.sound]
+'FirstGateExtension.first_gate_total_completion_iff' depends on axioms: [propext, Quot.sound]
+'FirstGateExtension.zeroFill_is_zero_completion' depends on axioms: [propext]
+'FirstGateExtension.zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstGateExtension.nonprojection_zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstGateExtension.all_first_pairs_zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]

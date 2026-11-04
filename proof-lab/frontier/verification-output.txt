@@ -8,12 +8,21 @@ test_numeric_aliases_rejected (test_antichecker.TestRejection.test_numeric_alias
 test_partial_coverage_rejected (test_antichecker.TestRejection.test_partial_coverage_rejected) ... ok
 test_public_solver_helpers_enforce_finite_integer_inputs (test_antichecker.TestRejection.test_public_solver_helpers_enforce_finite_integer_inputs) ... ok
 test_bad_response_retains_reservation (test_api_budget.ApiBudgetTests.test_bad_response_retains_reservation) ... ok
+test_benchmark_stops_after_incomplete_without_next_theorem_call (test_api_budget.ApiBudgetTests.test_benchmark_stops_after_incomplete_without_next_theorem_call) ... ok
 test_cap_denies_before_transport (test_api_budget.ApiBudgetTests.test_cap_denies_before_transport) ... ok
+test_catalog_records_incomplete_usage_without_checker_or_retry (test_api_budget.ApiBudgetTests.test_catalog_records_incomplete_usage_without_checker_or_retry) ... ok
+test_empty_overrun_records_actual_and_fails_closed (test_api_budget.ApiBudgetTests.test_empty_overrun_records_actual_and_fails_closed) ... ok
 test_existing_holds_and_caps_are_preserved (test_api_budget.ApiBudgetTests.test_existing_holds_and_caps_are_preserved) ... ok
 test_injected_opener_does_not_create_real_ledger (test_api_budget.ApiBudgetTests.test_injected_opener_does_not_create_real_ledger) ... ok
 test_invalid_token_limit_cannot_enter_transport (test_api_budget.ApiBudgetTests.test_invalid_token_limit_cannot_enter_transport) ... ok
+test_malformed_content_and_finish_types_remain_pending (test_api_budget.ApiBudgetTests.test_malformed_content_and_finish_types_remain_pending) ... ok
 test_missing_negative_boolean_usage_retains_reservation (test_api_budget.ApiBudgetTests.test_missing_negative_boolean_usage_retains_reservation) ... ok
+test_nonempty_length_and_unknown_reason_are_incomplete (test_api_budget.ApiBudgetTests.test_nonempty_length_and_unknown_reason_are_incomplete) ... ok
+test_null_and_empty_answers_settle_valid_usage_without_reasoning_disclosure (test_api_budget.ApiBudgetTests.test_null_and_empty_answers_settle_valid_usage_without_reasoning_disclosure) ... ok
+test_null_with_unknown_usage_retains_reservation (test_api_budget.ApiBudgetTests.test_null_with_unknown_usage_retains_reservation) ... ok
 test_overrun_records_actual_and_reports_error (test_api_budget.ApiBudgetTests.test_overrun_records_actual_and_reports_error) ... ok
+test_research_headroom_reserved_before_transport (test_api_budget.ApiBudgetTests.test_research_headroom_reserved_before_transport) ... ok
+test_research_opt_in_is_strict_and_catalog_cap_unchanged (test_api_budget.ApiBudgetTests.test_research_opt_in_is_strict_and_catalog_cap_unchanged) ... ok
 test_reserve_precedes_transport_and_exact_usage_settles (test_api_budget.ApiBudgetTests.test_reserve_precedes_transport_and_exact_usage_settles) ... ok
 test_transport_failure_retains_reservation (test_api_budget.ApiBudgetTests.test_transport_failure_retains_reservation) ... ok
 test_checker_rejects_suffix_report (test_audit_hardening.AxiomAuditTests.test_checker_rejects_suffix_report) ... ok
@@ -29,6 +38,27 @@ test_candidate_hash_matches_exact_source (test_audit_hardening.ReplayAuditTests.
 test_started_at_precedes_request_and_finish (test_audit_hardening.ReplayAuditTests.test_started_at_precedes_request_and_finish) ... ok
 test_exact_nonnegative_usage_only (test_audit_hardening.UsageAuditTests.test_exact_nonnegative_usage_only) ... ok
 test_malformed_injected_usage_keeps_reservation (test_audit_hardening.UsageAuditTests.test_malformed_injected_usage_keeps_reservation) ... ok
+test_deadline_and_request_cap_leave_cancellation_capacity (test_background_meta.BackgroundTests.test_deadline_and_request_cap_leave_cancellation_capacity) ... ok
+test_explicit_final_phase_excludes_commentary_analysis_and_redacts_key (test_background_meta.BackgroundTests.test_explicit_final_phase_excludes_commentary_analysis_and_redacts_key) ... ok
+test_hidden_reasoning_commentary_headers_and_raw_fields_never_saved (test_background_meta.BackgroundTests.test_hidden_reasoning_commentary_headers_and_raw_fields_never_saved) ... ok
+test_http_transport_rejects_redirect_and_bounds_wait (test_background_meta.BackgroundTests.test_http_transport_rejects_redirect_and_bounds_wait) ... ok
+test_incomplete_empty_response_still_settles_valid_usage (test_background_meta.BackgroundTests.test_incomplete_empty_response_still_settles_valid_usage) ... ok
+test_interrupted_cancellation_and_legacy_intent_never_replay_post (test_background_meta.BackgroundTests.test_interrupted_cancellation_and_legacy_intent_never_replay_post) ... ok
+test_invalid_response_shapes_and_stored_reasoning_usage_rejected (test_background_meta.BackgroundTests.test_invalid_response_shapes_and_stored_reasoning_usage_rejected) ... ok
+test_lock_ids_and_limits_are_fail_closed (test_background_meta.BackgroundTests.test_lock_ids_and_limits_are_fail_closed) ... ok
+test_malformed_creation_output_preserves_owned_id_for_cancellation (test_background_meta.BackgroundTests.test_malformed_creation_output_preserves_owned_id_for_cancellation) ... ok
+test_missing_invalid_or_inconsistent_usage_keeps_hold_even_empty (test_background_meta.BackgroundTests.test_missing_invalid_or_inconsistent_usage_keeps_hold_even_empty) ... ok
+test_missing_oversized_cap_and_insufficient_ledger_refuse (test_background_meta.BackgroundTests.test_missing_oversized_cap_and_insufficient_ledger_refuse) ... ok
+test_owned_receipt_tampering_and_unknown_state_fields_refuse (test_background_meta.BackgroundTests.test_owned_receipt_tampering_and_unknown_state_fields_refuse) ... ok
+test_queued_in_progress_and_all_terminal_statuses (test_background_meta.BackgroundTests.test_queued_in_progress_and_all_terminal_statuses) ... ok
+test_reserve_and_durable_submission_before_transport (test_background_meta.BackgroundTests.test_reserve_and_durable_submission_before_transport) ... ok
+test_resume_only_saved_owned_id_without_another_post (test_background_meta.BackgroundTests.test_resume_only_saved_owned_id_without_another_post) ... ok
+test_returned_id_mismatch_never_fetched_cancelled_or_settled (test_background_meta.BackgroundTests.test_returned_id_mismatch_never_fetched_cancelled_or_settled) ... ok
+test_settlement_resume_crash_window_and_inconsistent_state_rejected (test_background_meta.BackgroundTests.test_settlement_resume_crash_window_and_inconsistent_state_rejected) ... ok
+test_stop_before_transport_and_expired_deadline_make_no_request (test_background_meta.BackgroundTests.test_stop_before_transport_and_expired_deadline_make_no_request) ... ok
+test_stop_file_cancel_success_race_completion_and_failure (test_background_meta.BackgroundTests.test_stop_file_cancel_success_race_completion_and_failure) ... ok
+test_strict_saved_metadata_refuses_before_any_transport (test_background_meta.BackgroundTests.test_strict_saved_metadata_refuses_before_any_transport) ... ok
+test_unknown_post_never_auto_resubmits_or_releases_hold (test_background_meta.BackgroundTests.test_unknown_post_never_auto_resubmits_or_releases_hold) ... ok
 test_access_denied_after_observed_collision_recovers (test_budget.BudgetTests.test_access_denied_after_observed_collision_recovers) ... ok
 test_access_denied_with_existing_lock_waits_without_spending (test_budget.BudgetTests.test_access_denied_with_existing_lock_waits_without_spending) ... ok
 test_decimal_accounting_does_not_round_under (test_budget.BudgetTests.test_decimal_accounting_does_not_round_under) ... ok
@@ -58,6 +88,8 @@ test_escaped_full_solution_claim_stops (test_campaign.CampaignTests.test_escaped
 test_fixed_process_worker_and_budget_refusal (test_campaign.CampaignTests.test_fixed_process_worker_and_budget_refusal) ... ok
 test_full_solution_claim_never_marked_solved (test_campaign.CampaignTests.test_full_solution_claim_never_marked_solved) ... ok
 test_hard_caps_and_one_explicit_fable (test_campaign.CampaignTests.test_hard_caps_and_one_explicit_fable) ... ok
+test_incomplete_critique_never_becomes_next_round_context (test_campaign.CampaignTests.test_incomplete_critique_never_becomes_next_round_context) ... ok
+test_incomplete_meta_usage_persists_without_critique_or_claim_acceptance (test_campaign.CampaignTests.test_incomplete_meta_usage_persists_without_critique_or_claim_acceptance) ... ok
 test_interrupted_terminal_decision_stays_stopped (test_campaign.CampaignTests.test_interrupted_terminal_decision_stays_stopped) ... ok
 test_invalid_caps_fail_before_transport (test_campaign.CampaignTests.test_invalid_caps_fail_before_transport) ... ok
 test_missing_or_corrupt_status_refuses_reset (test_campaign.CampaignTests.test_missing_or_corrupt_status_refuses_reset) ... ok
@@ -109,6 +141,21 @@ test_bool_vs_mask (test_diagonal_lab.TestMissing.test_bool_vs_mask) ... ok
 test_lex_mex_vs_oracle_and_n1_n3 (test_diagonal_lab.TestMissing.test_lex_mex_vs_oracle_and_n1_n3) ... ok
 test_n2s3_xor6 (test_diagonal_lab.TestMissing.test_n2s3_xor6) ... ok
 test_saved_json_verifies (test_diagonal_lab.TestSavedExample.test_saved_json_verifies) ... ok
+test_actual_fraction_bit_and_operation_caps (test_diagonal_pit.DiagonalPITTests.test_actual_fraction_bit_and_operation_caps) ... ok
+test_actual_rows_preserved_instead_of_normalized_echelon_rows (test_diagonal_pit.DiagonalPITTests.test_actual_rows_preserved_instead_of_normalized_echelon_rows) ... ok
+test_blowup_identities_one_through_six (test_diagonal_pit.DiagonalPITTests.test_blowup_identities_one_through_six) ... ok
+test_column_rescaling_must_preserve_terminal_functional (test_diagonal_pit.DiagonalPITTests.test_column_rescaling_must_preserve_terminal_functional) ... ok
+test_dimension_degree_input_and_work_refusals_are_not_zero (test_diagonal_pit.DiagonalPITTests.test_dimension_degree_input_and_work_refusals_are_not_zero) ... ok
+test_dropping_boolean_correction_returns_independently_valid_witness (test_diagonal_pit.DiagonalPITTests.test_dropping_boolean_correction_returns_independently_valid_witness) ... ok
+test_large_identity_uses_span_without_sparse_expansion (test_diagonal_pit.DiagonalPITTests.test_large_identity_uses_span_without_sparse_expansion) ... ok
+test_malformed_coefficients_dimensions_and_limits (test_diagonal_pit.DiagonalPITTests.test_malformed_coefficients_dimensions_and_limits) ... ok
+test_seeded_rational_cases_against_independent_expansion (test_diagonal_pit.DiagonalPITTests.test_seeded_rational_cases_against_independent_expansion) ... ok
+test_sparse_binary_exponents_without_dense_expansion (test_diagonal_pit.DiagonalPITTests.test_sparse_binary_exponents_without_dense_expansion) ... ok
+test_sparse_dense_mixtures_and_explicit_zeros (test_diagonal_pit.DiagonalPITTests.test_sparse_dense_mixtures_and_explicit_zeros) ... ok
+test_sparse_input_refusals_and_preflight_use_union_size (test_diagonal_pit.DiagonalPITTests.test_sparse_input_refusals_and_preflight_use_union_size) ... ok
+test_witness_tampering_is_rejected (test_diagonal_pit.DiagonalPITTests.test_witness_tampering_is_rejected) ... ok
+test_zero_factors_zero_weights_and_different_degrees (test_diagonal_pit.DiagonalPITTests.test_zero_factors_zero_weights_and_different_degrees) ... ok
+test_zero_width_and_constant_terms (test_diagonal_pit.DiagonalPITTests.test_zero_width_and_constant_terms) ... ok
 test_all_sixteen_full_two_input_labelings (test_interpolation.TestConstruction.test_all_sixteen_full_two_input_labelings) ... ok
 test_consistent_duplicates_deduplicate_cost_conflicts_rejected (test_interpolation.TestConstruction.test_consistent_duplicates_deduplicate_cost_conflicts_rejected) ... ok
 test_empty_all_negative_and_one_input (test_interpolation.TestConstruction.test_empty_all_negative_and_one_input) ... ok
@@ -182,9 +229,9 @@ test_timeout_mocked_unknown (test_synthesis.SynthesisTests.test_timeout_mocked_u
 test_unknown_lower_budget_not_exact (test_synthesis.SynthesisTests.test_unknown_lower_budget_not_exact) ... ok
 test_xnor_min5 (test_synthesis.SynthesisTests.test_xnor_min5) ... ok
 test_xor_min4 (test_synthesis.SynthesisTests.test_xor_min4) ... ok
-test_missing_ledger_is_not_initialized (test_ui.ReadOnlyAppTests.test_missing_ledger_is_not_initialized) ... 2026-11-04 06:08:20.161 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_missing_ledger_is_not_initialized (test_ui.ReadOnlyAppTests.test_missing_ledger_is_not_initialized) ... 2026-11-04 08:48:46.947 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_page_shows_evidence_without_spend_or_ledger_changes (test_ui.ReadOnlyAppTests.test_page_shows_evidence_without_spend_or_ledger_changes) ... 2026-11-04 06:08:20.494 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_page_shows_evidence_without_spend_or_ledger_changes (test_ui.ReadOnlyAppTests.test_page_shows_evidence_without_spend_or_ledger_changes) ... 2026-11-04 08:48:47.255 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_actual_saved_model_results (test_ui.SavedSummaryTests.test_actual_saved_model_results) ... ok
 test_budget_columns_keep_holds_separate (test_ui.SavedSummaryTests.test_budget_columns_keep_holds_separate) ... ok
@@ -209,7 +256,7 @@ test_rejects_dangerous_or_out_of_scope_bodies (test_verifier.ValidatorTests.test
 test_rejects_statement_redefinition_and_unicode_identifiers (test_verifier.ValidatorTests.test_rejects_statement_redefinition_and_unicode_identifiers) ... ok
 
 ----------------------------------------------------------------------
-Ran 207 tests in 18.531s
+Ran 254 tests in 19.494s
 
 OK
 'findSat_sound' depends on axioms: [propext]
@@ -443,4 +490,26 @@ Hint: Replace the deprecated name:
 'ParityTeaching.even_circuit_minimum_two' depends on axioms: [propext, Quot.sound]
 'ParityTeaching.odd_samples_nodup' depends on axioms: [propext, Quot.sound]
 'ParityTeaching.even_samples_nodup' depends on axioms: [propext, Quot.sound]
-All tests and 12 research Lean files passed. No API calls were made.
+'DependencyBound.step_length' depends on axioms: [propext, Quot.sound]
+'DependencyBound.backward_agreement' depends on axioms: [propext, Quot.sound]
+'DependencyBound.exists_small_support' depends on axioms: [propext, Quot.sound]
+'DependencyBound.essential_inputs_le_gates_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DependencyBound.essential_inputs_le_budget_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CertificateBlowup.prefix_telescoping' depends on axioms: [propext, Quot.sound]
+'CertificateBlowup.contradictory_formula_certificate' depends on axioms: [propext, Quot.sound]
+'CertificateBlowup.trivial_certificate' depends on axioms: [propext, Quot.sound]
+'CertificateBlowup.mem_exponentVectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CertificateBlowup.sparseTerms_exact_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CertificateBlowup.explicit_sparse_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MCSPScope.allAssignments_length' depends on axioms: [propext, Quot.sound]
+'MCSPScope.mem_allAssignments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MCSPScope.allAssignments_nodup' depends on axioms: [propext, Quot.sound]
+'MCSPScope.universal_circuit_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MCSPScope.bounded_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MCSPScope.threshold_clipping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstGateExtension.first_gate_extension_iff' depends on axioms: [propext, Quot.sound]
+'FirstGateExtension.first_gate_total_completion_iff' depends on axioms: [propext, Quot.sound]
+'FirstGateExtension.zeroFill_is_zero_completion' depends on axioms: [propext]
+'FirstGateExtension.zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstGateExtension.nonprojection_zero_fill_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+All tests and 16 research Lean files passed. No API calls were made.

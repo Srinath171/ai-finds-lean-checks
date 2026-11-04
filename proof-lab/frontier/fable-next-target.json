@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "provider": "anthropic",
+  "model": "claude-fable-5",
+  "text": "",
+  "stop_reason": "max_tokens",
+  "incomplete": true,
+  "usage": {
+    "input_tokens": 895,
+    "output_tokens": 32768,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0,
+    "ephemeral_1h_input_tokens": 0
+  },
+  "usage_status": "settled",
+  "cost_usd": "1.64735",
+  "reserved_usd": "1.70847",
+  "reservation_id": "7bff522797144cb185b5bf61fb9f341f"
+}

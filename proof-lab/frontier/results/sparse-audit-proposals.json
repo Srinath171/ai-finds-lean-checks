@@ -1,0 +1,177 @@
+{
+  "source_phase": "campaign-sparse-audit",
+  "scope": "Visible public-math responses only; prompts/hidden reasoning omitted; independent reviews determine accepted claims.",
+  "rounds": [
+    {
+      "round": 1,
+      "claim_status": "UNVERIFIED_MODEL_OUTPUT",
+      "responses": {
+        "meta": {
+          "text": "{\"precise_candidate\":\"Lemma V (over Q, explicit clauses, unary n): For every n>=1, every CNF phi with n declared in unary and clauses given by explicit literal-occurrence lists, and every syntactically valid certificate listing sparse q_C for each clause C and sparse r_i for each i over Q, with binary numerators/denominators and dense exponent vectors in N^n with binary entries, let N=|phi|+|certificate| and m=1 plus the total number of listed monomials. A deterministic algorithm running in time polynomial in N accepts iff sum_C q_C F_C + sum_i r_i(x_i^2-x_i)=1 in Q[x_1,...,x_n], where F_C is the product over literal occurrences of (1-L). No polynomial bound on certificate size as a function of |phi| is asserted.\",\"proof_attempt\":\"Let P be the displayed sum minus 1. Index terms j by: the constant -1 term, with w=-1 and every univariate factor 1; each q_C monomial, with w equal to its coefficient and g_{j,i}=x_i^{a_i+neg_{C,i}}(1-x_i)^{pos_{C,i}}; and each r_k monomial, with w equal to its coefficient, g_{j,i}=x_i^{a_i} for i different from k, and g_{j,k}=-x_k^{a_k+1}+x_k^{a_k+2}. Then P=sum_{j=1}^m w_j product_i g_{j,i}(x_i). Each g_{j,i} is explicitly sparse with at most max(2,pos_{C,i}+1)<=|phi|+1 terms; its q-type coefficients are signed binomials binom(pos_{C,i},t), computable in polynomial time because pos_{C,i} is an explicit occurrence count at most |phi|, not a binary-encoded count. Let S_i be the union of all supports supp(g_{j,i}); |S_i|<=m(|phi|+1). For a prefix e_{<=i}, define v_e in Q^m by v_e(j)=w_j product_{k<=i} coeff(g_{j,k},e_k), and let V_i be the span of all v_e. Start with V_0=span{w}. If B_{i-1} spans V_{i-1}, then the children obtained by coordinatewise multiplication of rows in B_{i-1} by diag_j(coeff(g_{j,i},e)), for e in S_i, span V_i, because every longer prefix vector is obtained from its prefix vector by that same diagonal map and diagonal maps are linear. Choose B_i as a maximal independent subset of these children, retaining the original child vectors and their prefix witnesses. Since dim V_i<=m, |B_i|<=m and there are at most m|S_i| children. The coefficient of x^e in P is the dot product of v_e with the all-ones vector, so P=0 iff this dot product vanishes on the spanning set B_n; a nonzero dot product yields an explicit exponent tuple whose coefficient can be recomputed directly as sum_j w_j product_i coeff(g_{j,i},e_i). Original row entries have denominator only from w_j and numerator bit length O(|certificate|+n|phi|), since at most n integer binomial factors occur, each of at most |phi| bits. Clearing column j by denominator(w_j) preserves row independence; fraction-free Bareiss elimination then has intermediate entries bounded by minors, hence bit length O(m(B+log m)) by Hadamard for entry bit length B, polynomial in N. Elimination copies never feed back into retained original rows, so there is no cross-layer denominator compounding. Soundness is deterministic: an accepted formal identity evaluated at a Boolean satisfying assignment would give 0=1, impossible, so phi is unsatisfiable. Completeness is separate and unbounded: if phi is unsatisfiable, the F_C and x_i^2-x_i have no common complex zero, so Hilbert Nullstellensatz gives a complex representation of 1; truncating unknowns at that representation degree gives a linear system over Q solvable over C, hence over Q by rank invariance, producing some finite accepted Q certificate, with no size bound.\",\"missing_lemma\":\"The first unproved step toward any separation is a polynomial-size proof bound: there is no proved polynomial p such that every unsatisfiable phi has an accepted certificate of size at most p(|phi|). Lemma V neither supplies nor implies such a p; the degree and support of the Nullstellensatz representation obtained through rank invariance may be superpolynomial. Within Lemma V, the only non-expanded standard ingredient is the Bareiss-Hadamard bit bound used above. No NP-versus-coNP or P-versus-NP conclusion follows.\",\"falsifiable_test\":\"Take n=1 and phi=(x_1) and (not x_1), so F_1=1-x_1 and F_2=x_1. Certificate A with q_1=q_2=1 and r_1=0 must be accepted because the sum is 1. Certificate B, obtained by adding r_1=1, must be rejected because the sum is 1+x_1^2-x_1, with x_1 coefficient -1 and x_1^2 coefficient 1, although the added term vanishes at both Boolean points. Also, the zero polynomial x_1^{2^20}-x_1^{2^20}, given by two monomials, must be decided using S_1={2^20} in time polynomial in the binary input length, without enumerating exponents below 2^20. Accepting B, rejecting A, or requiring exponent-range enumeration falsifies the stated lemma or its complexity bound.\",\"claims_full_solution\":false}",
+          "model": "muse-wonder-1.0",
+          "usage": {
+            "input_tokens": 1293,
+            "output_tokens": 13877,
+            "total_tokens": 15170,
+            "reasoning_tokens": 12665
+          },
+          "finish_reason": "stop",
+          "incomplete": false
+        },
+        "claude": {
+          "text": "```json\n{\n  \"precise_candidate\": \"Audit verdict (UNVERIFIED): I found no flaw in the algorithmic part of Lemma V, as stated over Q with unary n, explicit clause occurrence lists, sparse q_C and r_i, binary rationals and binary exponent vectors. The first unsupported inference is in missing_lemma. It calls a polynomial certificate-size bound 'the first unproved step toward any separation'. That reverses the direction. Repaired Lemma V' keeps Lemma V and adds a corollary. Corollary: for every n, phi and certificate as in Lemma V, the relation Acc(phi,cert) is a Cook-Reckhow proof system for unsatisfiable CNF. It is decidable in deterministic time poly(N), sound, and complete. So if some polynomial p gave every unsatisfiable phi an accepted certificate of size at most p(|phi|), then CNF-UNSAT would be in NP, and NP=coNP would follow. The open direction relevant to separation is the opposite one. One would need: for some explicit family phi_n, every accepted certificate has size n^{omega(1)}. Even that would refute only this one system. It would not show NP != coNP, and it would not show P != NP.\",\n  \"proof_attempt\": \"Algorithm check, step by step. (1) A literal x_i contributes the factor 1-x_i, and a literal 1-x_i contributes x_i. So the factorisation of F_C into per-variable univariates is exact, including repeated literals and tautological clauses, since F_C is treated formally. (2) Each univariate x^{a}(1-x)^{p} expands to distinct exponents a..a+p with coefficients (-1)^t binom(p,t). Here p is an occurrence count, so the coefficients are computable in poly time. The product over i of binom(pos_{C,i},t_i) is at most 2^{|C|}, which is tighter than the stated n|phi| bits. (3) The spanning step is valid: v_{(e',e)} = D_e v_{e'}, and D_e is linear. So D_e applied to span(B_{i-1}) contains every child. Retained rows are genuine prefix vectors v_e, so a nonzero final dot product gives a true witness exponent. (4) Scaling coordinate j by den(w_j) is an invertible diagonal map, so independence is preserved. Bareiss intermediates on the stacked matrix (at most m basis rows plus at most m|S_i| children, m columns) are minors of order at most m. Hadamard then gives O(m(B+log m)) bits. Retained rows never pass through elimination. (5) Completeness via the weak Nullstellensatz over C, then degree truncation, then rank invariance Q to C, is valid. A direct 2^n-size construction also exists: sum the Boolean-point indicators, and charge each one to a clause it falsifies. Corollary proof: Acc is poly-time and sound by (1)-(5) and the Boolean-evaluation argument, and complete by (5). UNSAT is coNP-complete, so a polynomial size bound would put UNSAT in NP. Hence the stated missing_lemma points toward collapse, not separation.\",\n  \"missing_lemma\": \"This is the first genuinely open statement for this system, and it is not established here. Candidate: there are explicit unsatisfiable CNFs phi_n, of size poly(n), such that every certificate accepted by the Lemma V verifier has n^{omega(1)} listed monomials. Known degree lower bounds for Nullstellensatz or polynomial-calculus refutations, for example of pigeonhole or Tseitin formulas, are leads only. They measure degree, or expanded monomial count, of dense representations. They do not obviously transfer to this measure, which counts monomials of q_C against factored F_C. A factored clause of width w hides up to 2^w expanded monomials, and binary exponents allow unbounded degree at small listed size. So a degree lower bound alone does not give a listed-size lower bound here. Separately, the Bareiss/Hadamard bound is used as a standard cited fact and is not re-derived.\",\n  \"falsifiable_test\": \"The original second test is not an instance of Lemma V, because a bare zero polynomial is not a certificate. Repaired test with K=2^20: n=1, phi=(x_1) AND (NOT x_1), so F_1=1-x_1 and F_2=x_1. Certificate A: q_1=1+x_1^K, q_2=1, r_1=x_1^{K-1}. The formal sum is 1-x_1+x_1^K-x_1^{K+1}+x_1+x_1^{K+1}-x_1^K = 1, so A must be accepted. Here S_1={0,1,K-1+1,K+1}={0,1,K,K+1}, so the verifier must not enumerate exponents below K. Certificate B: A with r_1 deleted. The sum is 1+x_1^K-x_1^{K+1}, and P vanishes at x_1=0 and x_1=1 but is formally nonzero. B must be rejected, with a witness exponent K or K+1 whose coefficient recomputes to +1 or -1. Any of the following falsifies the poly(N) claim or its soundness: accepting B, rejecting A, a running time growing with K rather than log K, or a basis size exceeding m=6 for A.\"\n  ,\n  \"claims_full_solution\": false\n}\n```",
+          "model": "opus",
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 5428,
+            "cache_read_input_tokens": 1407,
+            "output_tokens": 9459,
+            "output_tokens_details": {
+              "thinking_tokens": 7645
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 5428,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "global",
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 9459,
+                "cache_read_input_tokens": 1407,
+                "cache_creation_input_tokens": 5428,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 5428
+                },
+                "type": "message"
+              }
+            ],
+            "speed": "standard",
+            "fallback_credit": null
+          }
+        }
+      },
+      "error_metadata": null
+    },
+    {
+      "round": 2,
+      "claim_status": "UNVERIFIED_MODEL_OUTPUT",
+      "responses": {
+        "meta": {
+          "text": "{\"precise_candidate\": \"Lemma V'' (UNVERIFIED; over Q only): For every integer n>=1, every CNF phi whose input declares n in unary and lists every literal occurrence explicitly, and every syntactically valid certificate listing sparse q_C for each clause C and sparse r_i for each i, with nonzero binary denominators, binary integer numerators, and dense length-n binary nonnegative exponent vectors, let N be the total bit length of phi plus certificate and m=1 plus the total number of listed monomials. A deterministic algorithm running in time polynomial in N accepts iff sum_C q_C F_C + sum_i r_i(x_i^2-x_i)=1 in Q[x_1,...,x_n], where F_C is the product over literal occurrences of (1-L). Thus Acc(phi,cert) is a sound and complete Cook-Reckhow proof system for UNSAT. No polynomial bound on certificate size as a function of |phi| is asserted.\", \"proof_attempt\": \"Let P be the displayed sum minus 1. Write P=sum_{j=1}^m w_j product_i g_{j,i}(x_i): j indexes the constant -1 term, each listed q_C-monomial with g_{j,i}=x_i^{a_i+neg_{C,i}}(1-x_i)^{pos_{C,i}}, and each listed r_k-monomial with g_{j,i}=x_i^{a_i} for i!=k and g_{j,k}=-x_k^{a_k+1}+x_k^{a_k+2}. Here pos_{C,i} and neg_{C,i} are explicit occurrence counts, so pos_{C,i}<=|phi| and each univariate expansion has at most |phi|+1 terms, with signed binomial coefficients of bit length at most |phi|. Let S_i be the union of the supports of the g_{j,i}; |S_i|<=m(|phi|+1). For a prefix e, define v_e(j)=w_j product_{k<=i} coeff(g_{j,k},e_k), and let V_i be their span. If B_{i-1} consists of actual prefix vectors spanning V_{i-1}, then all children D_e b, where b is in B_{i-1}, e is in S_i, and D_e=diag_j(coeff(g_{j,i},e)), span V_i, because v_{(e',e)}=D_e v_{e'}. Choose B_i as a maximal independent subset of these children, retaining original vectors and prefix witnesses; |B_i|<=dim V_i<=m. Exponents outside product_i S_i have coefficient 0, and for e in that product the coefficient of x^e in P is the dot product of v_e with the all-ones vector, so P=0 iff every row of B_n has dot product 0; a nonzero row gives a witness exponent whose coefficient is recomputed directly. For bit size, entries of actual rows are w_j times a product of at most n integer binomial-type factors, hence after multiplying column j by den(w_j) all entries are integers of bit length B<=N+n(|phi|+1)+1=O(N^2). Testing children by Bareiss elimination on stacked selected rows uses only minors of order at most m; by Hadamard their bit length is at most m(B+(1/2)log2 m)=O(N^3). There are at most m|S_i| children per layer and n<=N layers, so the total time is polynomial in N, and elimination copies never alter retained rows. Soundness is deterministic: an accepted identity evaluated at a Boolean satisfying assignment would give 0=1. Completeness is separate and unbounded: if phi is unsatisfiable, the F_C and x_i^2-x_i have no common complex zero, so the weak Nullstellensatz gives a complex identity; fixing that finite monomial support gives a linear system over Q solvable over C, hence over Q by rank invariance, yielding some finite accepted rational certificate with no size estimate.\", \"missing_lemma\": \"The first unproved step toward any separation is not a polynomial certificate upper bound; such a bound would put UNSAT in NP and imply NP=coNP. What is unproved is the opposite statement for this one system: there exists an explicit family of unsatisfiable CNFs phi_t with |phi_t|=t^{O(1)} such that every certificate accepted for phi_t has bit length t^{omega(1)}. Degree lower bounds for dense Nullstellensatz representations do not automatically transfer, because one listed q-monomial multiplied by a width-w clause factor encodes up to 2^w expanded monomials and binary exponents allow enormous degree at small listed size. Even if proved, that lower bound would refute only this proof system, not every Cook-Reckhow system, and would imply neither NP!=coNP nor P!=NP.\", \"falsifiable_test\": \"Let n=1, phi=(x_1) and (not x_1), so F_1=1-x_1 and F_2=x_1, and let K=2^20. Certificate A: q_1=1+x_1^K, q_2=1, r_1=x_1^{K-1}. It must be accepted, since (1+x_1^K)(1-x_1)+x_1+x_1^{K-1}(x_1^2-x_1)=1; here m=5 and S_1={0,1,K,K+1}. Certificate B: the same with r_1=0 must be rejected, with witness exponent K of coefficient +1 or K+1 of coefficient -1, although the residual x_1^K-x_1^{K+1} vanishes at both Boolean points. Rejecting A, accepting B, using a basis larger than 5 for A, or running in time growing with K rather than with its 20-bit encoding falsifies the lemma or its polynomial bound.\", \"claims_full_solution\": false}",
+          "model": "muse-wonder-1.0",
+          "usage": {
+            "input_tokens": 3694,
+            "output_tokens": 11008,
+            "total_tokens": 14702,
+            "reasoning_tokens": 9743
+          },
+          "finish_reason": "stop",
+          "incomplete": false
+        },
+        "claude": {
+          "text": "```json\n{\n  \"precise_candidate\": \"Repair V''' (UNVERIFIED; over Q with exact rational arithmetic; same input conventions as V''). The first unsupported inference in V'' is the sentence 'after multiplying column j by den(w_j) all entries are integers'. It supports both the bit bound and the choice of rows that are eliminated. The proof never states (a) why independence survives the rescaling, or (b) that the acceptance dot product must NOT be taken on the rescaled copies. On those copies the ones-dot computes sum_j den(w_j) v_e(j), which is not coeff(P,x^e). Repair: write w_j=a_j/d_j in lowest terms, Lambda=lcm_j d_j (bit length <=N), and u_j=Lambda/d_j. Define integer rows z_e(j)=a_j*prod_{k<=i} coeff(g_{j,k},e_k). Then v_e=diag(1/d_j) z_e. Because this diagonal map is invertible, for every finite prefix set {v_e} is independent iff {z_e} is. For every full tuple e, Lambda*coeff(P,x^e)=u.z_e. Run the entire basis recursion on z-rows only, retaining actual z_e with prefix witnesses and using Bareiss copies only for rank. Accept iff u.z=0 for every retained full-length row. Tightened size bound: for a q-monomial of clause C, prod_i |coeff| <= prod_i 2^{pos_{C,i}} <= 2^{|C|}. So every z-entry has bit length <= N+|phi|+1, and every minor of order <=m has bit length <= m(N+|phi|+2+log2 m)=O(N^2), improving the O(N^3) of V''.\",\n  \"proof_attempt\": \"Diagonal step: z_{(e',e)}=D_e z_{e'} holds exactly as for v. So the span argument of V'' transfers verbatim to Z_i=span{z_e}, and Z_i=diag(d_j)V_i has the same dimension, at most m. Exactness of the test: coeff(P,x^e)=sum_j (a_j/d_j) prod_k coeff(g_{j,k},e_k)=(1/Lambda) u.z_e. The map f(z)=u.z is linear. It vanishes on all z_e with e in prod_i S_i iff it vanishes on a spanning set B_n of retained actual rows. A retained row with f!=0 carries a prefix-witness tuple e whose coefficient f(z_e)/Lambda is nonzero, and that coefficient is recomputed directly. Bit sizes: z-entries are closed-form products, never outputs of elimination, so they do not grow across layers. The r_k entries are +-a_j and the constant-term entry is -1. Bareiss intermediates are minors of (|B|+1) x m integer matrices with |B|<=m, so Hadamard gives the stated bound. Counts: |S_i|<=m(|phi|+1), at most m|S_i| children per layer, and n<=N layers. Also m<=N+1, since each listed monomial carries an n-bit dense vector. Total time is poly(N). Soundness: an accepted certificate is a formal identity, and evaluating it at a satisfying Boolean assignment gives 0=1. Completeness (no size bound) follows as in V'' via the weak Nullstellensatz plus rank invariance from Q to C. I found no counterexample to the repaired lemma. Structurally it is whitebox identity testing of a width-m read-once product of sparse univariates in the fixed order x_1..x_n. Raz-Shpilka-style ROABP testing is a lead only and is not relied on.\",\n  \"missing_lemma\": \"After the repair, the algorithmic lemma appears closed. The first unproved step toward anything stronger is still a certificate-size lower bound. The following transfer lemma (sketched, UNVERIFIED) sharpens what is needed. Take any accepted certificate and replace each q_C by its multilinearization ML(q_C), setting every exponent >=1 to 1. This never increases the number of q-monomials. Since x^a-x lies in (x^2-x) for every a>=1, sum_C ML(q_C)F_C-1 lies in the ideal of the Boolean axioms, so some rational r' completes a formal identity. Hence N >= T(phi)-1, where T(phi) is the minimum total number of monomials in multilinear q_C over all formal Q-Nullstellensatz refutations with UNRESTRICTED r_i. Unproved: an explicit unsatisfiable family phi_t with |phi_t|=t^{O(1)} and T(phi_t)=t^{omega(1)}. Known NS degree lower bounds do not give this by themselves, because each clause factor counts as a single generator regardless of its expansion. Even such a bound would refute only this proof system and would imply neither NP!=coNP nor P!=NP.\",\n  \"falsifiable_test\": \"Setup: n=1, phi=(x_1) and (not x_1), so F_1=1-x_1 and F_2=x_1. Certificate C: q_1=1/2 (one monomial), q_2=1, r_1=0. The residual is P=-1/2+x_1/2, which is nonzero. So C must be rejected, with witness exponent 0 (coefficient -1/2) or 1 (coefficient 1/2). Its v-rows are (-1,1/2,0) at e=0 and (0,-1/2,1) at e=1. The den-rescaled copies (-1,1,0) and (0,-1,1) both have ones-dot 0, so an implementation that tests acceptance on rescaled copies wrongly ACCEPTS a non-identity. Certificate D: q_1=1/2+1/2 (two listed constant monomials), q_2=1, r_1=0. Its residual is 0, so it must be accepted. The rescaled ones-dot gives 1 at e=0 and -1 at e=1, so that implementation wrongly REJECTS. With the repair, Lambda=2, u=(2,1,2) for C and u=(2,1,1,2) for D. Then u.z gives -1 and 1 for C (equal to Lambda times the true coefficients) and 0 and 0 for D. Also re-run V'' tests A and B with K=2^20. Any divergence from these values, a basis larger than m, or running time growing with K rather than with log K falsifies V'''.\",\n  \"claims_full_solution\": false\n}\n```",
+          "model": "opus",
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 5443,
+            "cache_read_input_tokens": 1407,
+            "output_tokens": 16565,
+            "output_tokens_details": {
+              "thinking_tokens": 14381
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 5443,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "global",
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 16565,
+                "cache_read_input_tokens": 1407,
+                "cache_creation_input_tokens": 5443,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 5443
+                },
+                "type": "message"
+              }
+            ],
+            "speed": "standard",
+            "fallback_credit": null
+          }
+        }
+      },
+      "error_metadata": null
+    },
+    {
+      "round": 3,
+      "claim_status": "UNVERIFIED_MODEL_OUTPUT",
+      "responses": {
+        "meta": {
+          "text": "{\n  \"precise_candidate\": \"Lemma V'''' (UNVERIFIED, over Q only): For every n>=1, every CNF phi with n declared in unary and all literal occurrences explicit, and every self-delimiting certificate listing sparse q_C for each clause C and sparse r_i for each i, with binary integer numerators, nonzero binary denominators, and dense length-n binary nonnegative exponent vectors (malformed strings rejected), let N be the total bit length of phi plus certificate and m=1 plus the number of listed monomials. A deterministic algorithm running in time polynomial in N accepts iff sum_C q_C F_C+sum_i r_i(x_i^2-x_i)=1 in Q[x_1,...,x_n], where F_C=prod_{occurrences}(1-L) and L is x_i or 1-x_i. Thus this is a sound and complete, but not polynomially bounded, Cook-Reckhow proof system for UNSAT.\",\n  \"proof_attempt\": \"Write P=(displayed sum)-1 as sum_{j=1}^m w_j prod_i g_{j,i}(x_i): j is the -1 term, a listed q_C monomial c x^a with g_{j,i}=x_i^{a_i+neg_{C,i}}(1-x_i)^{pos_{C,i}}, or a listed r_k monomial with g_{j,i}=x_i^{a_i} for i!=k and g_{j,k}=-x_k^{a_k+1}+x_k^{a_k+2}. Let S_i be the union of the Q-supports of the g_{j,i}; |S_i|<=m(|phi|+1), since pos_{C,i} are explicit occurrence counts and binomial coefficients are nonzero over Q. Write w_j=a_j/d_j reduced (0 as 0/1), Lambda=lcm_j d_j (bit length <=N), u_j=Lambda/d_j, and for a prefix e let z_e(j)=a_j prod_{k<=i} coeff(g_{j,k},e_k). For full e, Lambda*[x^e]P=u.z_e; outside prod_i S_i the coefficient is 0. Start with the empty-prefix row and maintain B_i consisting of actual rows z_e, with stored prefixes, spanning all i-prefix rows, plus columns J_i with |J_i|=|B_i| and det B_i[J_i]!=0. Children D_e b, where D_e=diag_j(coeff(g_{j,i},e)), b in B_{i-1}, e in S_i, span layer i because z_{(e',e)}=D_e z_{e'}. Test child c by Cramer: with D=det B[J] and D_t the determinant replacing row t of B[J] by c[J], c lies in span(B) iff sum_t D_t B_t[j]=D c[j] for all coordinates j (empty B: iff c=0). If independent, the residual c-(D_t/D)B is nonzero outside J, and adjoining such a coordinate gives a nonzero extended determinant; searching coordinates restores the invariant, so |B_i|<=m. Determinants use fraction-free Bareiss; the Sylvester identity makes intermediates minors of the row-permuted integer matrix. Z-row entries have bit length <=N+|phi|+1: |a_j|<2^N and, for q-rows, prod_i|coeff|<=prod_i 2^{pos_{C,i}}<=2^{|phi|}, while r/constant rows contribute factor <=1. Hence minors have O(N^2) bits. There are <=n m^2(|phi|+1)=O(N^4) children and O(m) determinants per child, giving a crude O(N^{14}) bit-operation bound. Accept iff u.b=0 for every b in B_n; a nonzero b gives a stored exponent with coefficient (u.z_e)/Lambda, directly recomputable. Soundness: at a Boolean satisfying assignment all F_C and x_i^2-x_i vanish, so acceptance would give 0=1. Completeness is separate and size-unbounded: unsatisfiability gives no common complex zero; the weak Nullstellensatz gives a complex identity, and its finite monomial support gives a rational linear system solvable over C, hence over Q by rank invariance.\",\n  \"missing_lemma\": \"The first unproved step toward any separation is a certificate-size lower bound for this one system, not a polynomial upper bound (which would imply NP=coNP). Multilinearizing q_C monomials, replacing each exponent >=1 by 1, does not increase q-monomial count and changes sum_C q_C F_C only by an element of (x_i^2-x_i)_i, so unrestricted r_i' complete a refutation; hence certificate bit length is at least T(phi)-1, where T(phi) is the least total number of multilinear q-monomials in any Q-Nullstellensatz refutation with unrestricted r_i. UNPROVED: an explicit unsatisfiable family phi_t with |phi_t|=t^{O(1)} and T(phi_t)=t^{omega(1)}. Dense degree lower bounds do not imply this, because one listed monomial times F_C encodes many expanded monomials and binary exponents encode huge degree cheaply. Even proving it would refute only this Cook-Reckhow system, implying neither NP!=coNP nor P!=NP.\",\n  \"falsifiable_test\": \"Let K=2^20. (1) n=1, phi=(x1)(not x1): certificate A, q_1=1+x1^K, q_2=1, r_1=x1^{K-1}, must accept; B, the same with r_1=0, must reject with witness exponent K of coefficient +1 or K+1 of coefficient -1, although the residual vanishes at both Boolean points. (2) C: q_1=1/2, q_2=1, r_1=0 must reject, coefficient -1/2 at exponent 0 or +1/2 at 1; D: q_1=1/2+1/2, q_2=1, r_1=0 must accept. Taking the ones-dot on denominator-rescaled rows instead of u.z reverses both verdicts. (3) n=2 with the same clauses on x1: q_{(x1)}=1, q_{(not x1)}=1+x2^K, r_1=r_2=0 must reject with witness (1,K) of coefficient 1; deleting x2^K must accept. Any contrary verdict, any |B_i|>m, or running time growing with K rather than log K=20 falsifies the lemma or its bound.\",\n  \"claims_full_solution\": false\n}",
+          "model": "muse-wonder-1.0",
+          "usage": {
+            "input_tokens": 3991,
+            "output_tokens": 23762,
+            "total_tokens": 27753,
+            "reasoning_tokens": 22326
+          },
+          "finish_reason": "stop",
+          "incomplete": false
+        },
+        "claude": {
+          "text": "```json\n{\n  \"precise_candidate\": \"Critique (UNVERIFIED). I checked the verifier argument in proof_attempt and found no break. The checked steps are: the univariate factorisation F_C=prod_i x_i^{neg_{C,i}}(1-x_i)^{pos_{C,i}}; the identity z_{(e',e)}=D_e z_{e'}; the Cramer membership test and the extension of J; the bound |B_i|<=m; Lambda*[x^e]P=u.z_e; Hadamard and Bareiss bit bounds; and the counts of children and determinants. The O(N^14) bound is loose; I count about O(N^12). The first unsupported inference is in missing_lemma. It calls a superpolynomial lower bound on T(phi_t) UNPROVED and the first unproved step. That bound is in fact elementary. Lemma W (UNVERIFIED, over Q): for every n>=1, let phi_n=(x_1 v ... v x_n) AND (not x_1) AND ... AND (not x_n), with n+1 clauses and 2n literal occurrences. Every accepted certificate in the stated format lists at least 2^n-1 monomials in q_{(not x_1)},...,q_{(not x_n)} plus at least one in q_{(x_1 v...v x_n)}. So it has bit length >= n(2^n-1) while |phi_n|=O(n log n), and T(phi_n)=2^n exactly. phi_n also has an n-step tree-like resolution refutation. So the system is unconditionally not polynomially bounded and does not p-simulate tree-like resolution.\",\n  \"proof_attempt\": \"Write F_0=prod_i(1-x_i) for the wide clause. For each i, F_{(not x_i)}=1-(1-x_i)=x_i. Evaluate the formal identity at points of {0,1}^n: every r_i b_i vanishes, so q_0(x)F_0(x)+sum_i q_i(x)x_i=1 pointwise. F_0 is 1 at 0^n and 0 elsewhere. At 0^n each x_i term vanishes, so q_0(0)=1 and q_0 is nonzero, giving at least one monomial. Elsewhere sum_i q_i(x)x_i equals OR_n(x). On the cube, each listed monomial c*x^a of q_i times x_i equals the single multilinear monomial c*x^{supp(a) union {i}}. Multilinear representations of functions on {0,1}^n over Q are unique. OR_n=1-prod(1-x_i)=sum_{S nonempty}(-1)^{|S|+1}x^S has 2^n-1 nonzero coefficients. Hence the q_i together list at least 2^n-1 monomials. Each listed monomial carries a dense length-n exponent vector of at least n bits. Matching upper bound: q_0=1, r_i=0, and q_i=sum over S with min S=i of (-1)^{|S|+1}x^{S\\\\{i}}. Then sum_i q_i x_i=1-F_0 formally, so the total is exactly 2^n q-monomials. The degree-free collapse noted in the candidate does not rescue the system. Each q-monomial contributes only positive literals, so a subcube on which variables are fixed to 0 costs exponentially many monomials. This is the wide-positive-clause phenomenon familiar from 0/1-basis algebraic proof systems.\",\n  \"missing_lemma\": \"Repair: allow subcube monomials. Format S: each q_C monomial is c*x^a*prod_i(1-x_i)^{b_i}, with a binary-encoded and b in {0,1}^n given densely. The factor becomes g_{j,i}=x_i^{a_i+neg_{C,i}}(1-x_i)^{pos_{C,i}+b_i}. Support stays at most |phi|+2 per variable, and coefficients stay at most 2^{|phi|+n}. So the same layered rank verifier applies with the bound N+|phi|+n+1. This needs re-checking but appears direct. Format S does not handle unary-encoded large b_i, and binary-encoded large b_i would break the support bound. Format S p-simulates tree-like resolution, as a sketch: each leaf of a decision tree is a subcube on which some clause C is falsified, so its indicator is F_C times one subcube monomial, and the leaves sum to 1. The first unproved step: an explicit unsatisfiable family psi_t with |psi_t|=t^{O(1)} such that every Q-weighted family of subcube monomials, each attached to a clause it lies inside, summing to 1 on {0,1}^n, has t^{omega(1)} members. Uniqueness of the multilinear expansion gives no such bound here, because subcubes are not monomials. Any proof must respect cancellation between rational weights, so a nonnegative cover bound alone is insufficient. A lower bound would still refute only Format S. It would not give NP!=coNP, and it would not say anything about P vs NP.\",\n  \"falsifiable_test\": \"Use n=3 and phi_3=(x1 v x2 v x3)(not x1)(not x2)(not x3). (1) The original format must accept q_0=1, q_1=1-x2-x3+x2x3, q_2=1-x3, q_3=1, r=0. That is 8 q-monomials. (2) For each assignment of 7 exponent tuples to q_0..q_3, solve the linear system for rational coefficients with unrestricted r_i. Equivalently, require sum_i q_i x_i to equal OR_3 after multilinearisation. Lemma W predicts infeasibility every time. Any accepted certificate with at most 7 q-monomials refutes Lemma W. (3) Large exponents must not help. Adding x2^K with K=2^20 to q_1 and compensating with r_2 must still need 8 q-monomials, and verifier time must scale with log K. (4) Format S must accept q_0=(1-x1)(1-x2)(1-x3)-free form q_0=1, q_1=1, q_2=(1-x1), q_3=(1-x1)(1-x2), which is 4 monomials. The identity is formal: x1+(1-x1)[x2+(1-x2)(x3+(1-x3))]=1. Rejection, or a residual needing r_i, falsifies the repair's encoding claim.\",\n  \"claims_full_solution\": false\n}\n```",
+          "model": "opus",
+          "usage": {
+            "input_tokens": 2,
+            "cache_creation_input_tokens": 5772,
+            "cache_read_input_tokens": 1407,
+            "output_tokens": 17340,
+            "output_tokens_details": {
+              "thinking_tokens": 15173
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 5772,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "global",
+            "iterations": [
+              {
+                "input_tokens": 2,
+                "output_tokens": 17340,
+                "cache_read_input_tokens": 1407,
+                "cache_creation_input_tokens": 5772,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 5772
+                },
+                "type": "message"
+              }
+            ],
+            "speed": "standard",
+            "fallback_credit": null
+          }
+        }
+      },
+      "error_metadata": null
+    }
+  ]
+}

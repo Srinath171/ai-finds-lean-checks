@@ -1,0 +1,28 @@
+{
+  "recorded_utc": "2026-11-05T00:19:03.115326+00:00",
+  "offline_unit_tests": {
+    "count": 7,
+    "passed": 7,
+    "elapsed_seconds": 0.001,
+    "exit_code": 0
+  },
+  "real_harmless_process_smoke": {
+    "status": "PASS",
+    "worker_exited": true,
+    "descendant_exited": true,
+    "elapsed_after_stop_seconds": 0.003474,
+    "exit_code": 0
+  },
+  "scope": "One owned harmless worker and sleeping child; no providers, credentials, ledger mutations, or unrelated process access.",
+  "hash_normalization": "CRLF to LF, then CR to LF",
+  "source_sha256_lf": {
+    "winjob.py": "07da155d0dd1bad9e015df57ea9171438e5a9b3df888953e823a3bdb8c9cb416",
+    "test_winjob.py": "bf8952e76b3923e408658c05fe76e968cd0853c797dd8f10628592a9b6222351",
+    "winjob_smoke.py": "05fe965c8bd926d535e5f881021e9747db664551eba71fa2c72a9bf7a845e23a"
+  },
+  "references": [
+    "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects",
+    "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-assignprocesstojobobject",
+    "https://learn.microsoft.com/en-us/windows/win32/procthread/nested-jobs"
+  ]
+}

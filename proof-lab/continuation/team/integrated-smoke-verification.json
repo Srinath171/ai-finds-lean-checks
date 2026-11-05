@@ -1,0 +1,17 @@
+{
+  "scope": "Owned harmless simulation only; no provider calls",
+  "status": "PASS",
+  "detached_heartbeat_confirmed": true,
+  "run_id": "26e6681ca15b47e3a8b9f30f464f2b34",
+  "ledger_sha256": "CFA834930AAC56CBC3AEEAA153E724294BE8ED241EAD04298CEAA8E03F05876B",
+  "still_live_process_ids": [],
+  "owned_process_ids": [
+    41872,
+    29220,
+    43424,
+    28352,
+    24220
+  ],
+  "recorded_utc": "2026-11-05T00:45:02.3023450+00:00",
+  "ledger_unchanged": true
+}

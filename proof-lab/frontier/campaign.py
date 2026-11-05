@@ -165,9 +165,14 @@ def _capture(args, prompt, timeout, *, env=None, popen=subprocess.Popen, capture
                 stream.close()
 
 
-def claude_critique(prompt, timeout=180, *, popen=subprocess.Popen, capture_limit=MAX_CAPTURE):
+def claude_critique(prompt, timeout=180, *, popen=subprocess.Popen, capture_limit=MAX_CAPTURE,
+                    effort="high", max_budget_usd="2"):
+    if effort not in ("low", "medium", "high", "xhigh", "max"):
+        raise ValueError("Invalid critique effort")
+    if type(max_budget_usd) is not str or not re.fullmatch(r"(?:[1-9][0-9]?(?:\.[0-9]{1,4})?)", max_budget_usd):
+        raise ValueError("Invalid critique budget")
     args = [str(CLAUDE), "--safe-mode", "--strict-mcp-config", "--model", "opus",
-            "--effort", "high", "--max-budget-usd", "2", "--tools=", "--no-session-persistence",
+            "--effort", effort, "--max-budget-usd", max_budget_usd, "--tools=", "--no-session-persistence",
             "-p", "--output-format", "json"]
     # Preserve subscription discovery and Windows runtime, not API-key variables.
     env = {k: os.environ[k] for k in ("SystemRoot", "WINDIR", "PATH", "TEMP", "TMP", "USERPROFILE",

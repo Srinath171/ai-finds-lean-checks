@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE_UNVERIFIED",
+  "started_utc": "2026-11-04T23:07:52.417140+00:00",
+  "pid": 45624,
+  "timeout_seconds": 600,
+  "model_alias": "opus",
+  "effort": "high",
+  "billing": "subscription; informational list price only",
+  "prompt_sha256": "1a5cea1a221abb1348e24f5fced51ecd0ec789e79622ca944448673b247f373a",
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 3733,
+    "cache_read_input_tokens": 649,
+    "output_tokens": 25049
+  },
+  "list_price_usd": 0.5309818,
+  "visible_sha256": "e4764fd83a77a3395ae2586a465f5fed3242b0c84e0d66ab999d232a97055641",
+  "finished_utc": "2026-11-04T23:12:00.055995+00:00",
+  "elapsed_seconds": 247.638
+}

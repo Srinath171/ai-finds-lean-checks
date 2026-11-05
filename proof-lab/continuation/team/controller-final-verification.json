@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 1.609,
+  "source_unchanged": true,
+  "sha256_lf": {
+    "controller.py": "8f72ca5ebf8e6e620b2458cb5a4faf15000d78dce2a9c0053ddffe10635bd9a2",
+    "runtime.py": "652782d0b0bf05d63ff5398df9a8d6c73dce86ec3074e4d41a3dd4a80741c465",
+    "test_controller.py": "e7c3c64d0b92cb691f56466db312a296e8202576a632d11db166530cb038f779",
+    "test_subscription.py": "34e8715a9db404654a01c247ecc5fa7a074988c81d0a02692dc9be990e328d7c",
+    "winjob.py": "07da155d0dd1bad9e015df57ea9171438e5a9b3df888953e823a3bdb8c9cb416",
+    "test_winjob.py": "bf8952e76b3923e408658c05fe76e968cd0853c797dd8f10628592a9b6222351",
+    "research_queue.json": "f8e999233f808e222237ed1763e202b770a0f0da259c484ea99e38e22e411d07"
+  },
+  "providers_called": false,
+  "ledger_accessed": false,
+  "runtime_note": "Native isolated bootstrap fixture; all process providers mocked. Independent real native identity and root detached stop smoke passed."
+}

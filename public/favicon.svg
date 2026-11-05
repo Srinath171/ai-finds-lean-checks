@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #0f5f4d; }
+    .bubble { fill: #ffffff; }
+    .spark { fill: #0f5f4d; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #4ec39a; }
+      .bubble { fill: #0b1512; }
+      .spark { fill: #4ec39a; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <rect class="bubble" x="12" y="13" width="40" height="29" rx="9"/>
+  <polygon class="bubble" points="24,40 24,50 33,40"/>
+  <path class="spark" d="M32,19 C33.2,24 34,24.8 39,26 C34,27.2 33.2,28 32,33 C30.8,28 30,27.2 25,26 C30,24.8 30.8,24 32,19 Z"/>
+</svg>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muse Spark Chat Demo</title>
   <meta name="description" content="Small local demo chat UI for the Muse Spark Standard model." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="/app.js" defer></script>
 </head>
@@ -15,7 +16,10 @@
         <h1>Muse Spark Chat</h1>
         <p class="subtitle">Local demo &middot; Standard model <code>muse-spark-1.3</code></p>
       </div>
-      <button type="button" id="clear-btn" class="btn btn-secondary">Clear conversation</button>
+      <div class="topbar-actions">
+        <button type="button" id="theme-toggle" class="btn btn-secondary" aria-pressed="false">Dark mode</button>
+        <button type="button" id="clear-btn" class="btn btn-secondary">Clear conversation</button>
+      </div>
     </div>
   </header>
 

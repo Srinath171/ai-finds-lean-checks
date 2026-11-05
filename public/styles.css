@@ -21,8 +21,33 @@
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141311;
+  --panel: #1e1d1a;
+  --ink: #f1eee6;
+  --muted: #b7b3a6;
+  --line: #35322c;
+  --accent: #4ec39a;
+  --accent-ink: #0b1512;
+  --user-bg: #4ec39a;
+  --user-ink: #0b1512;
+  --assistant-bg: #2a2823;
+  --assistant-ink: #f1eee6;
+  --error-bg: #3a1d19;
+  --error-ink: #ffd9d4;
+  --error-line: #7a3a34;
+  --focus: #9be9c8;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* No stored choice yet: follow the OS before app.js runs. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #141311;
     --panel: #1e1d1a;
     --ink: #f1eee6;
@@ -65,6 +90,12 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 

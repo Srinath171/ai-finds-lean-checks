@@ -12,6 +12,59 @@
   const clearBtn = document.getElementById('clear-btn');
   const statusEl = document.getElementById('status');
   const errorEl = document.getElementById('error');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  const THEME_KEY = 'theme';
+
+  function systemTheme() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  }
+
+  function storedTheme() {
+    try {
+      const value = window.localStorage.getItem(THEME_KEY);
+      return value === 'dark' || value === 'light' ? value : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    const isDark = theme === 'dark';
+    themeToggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  function initTheme() {
+    applyTheme(storedTheme() || systemTheme());
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      try {
+        window.localStorage.setItem(THEME_KEY, next);
+      } catch {
+        // Private browsing etc.: still apply for this session.
+      }
+      applyTheme(next);
+    });
+    // No stored choice: keep following the OS if it changes.
+    if (!storedTheme() && window.matchMedia) {
+      const query = window.matchMedia('(prefers-color-scheme: dark)');
+      const onChange = (event) => {
+        if (!storedTheme()) applyTheme(event.matches ? 'dark' : 'light');
+      };
+      if (typeof query.addEventListener === 'function') {
+        query.addEventListener('change', onChange);
+      } else if (typeof query.addListener === 'function') {
+        query.addListener(onChange);
+      }
+    }
+  }
+
+  initTheme();
 
   /** @type {{role: string, content: string}[]} */
   let history = [];

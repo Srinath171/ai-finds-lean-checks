@@ -1,0 +1,52 @@
+{
+  "timestamp_utc": "2026-11-05T00:29:29.113682+00:00",
+  "status": "PASS",
+  "command": [
+    "C:\\Users\\email\\muse-spark-chat\\proof-lab\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "continuation.team.test_controller",
+    "-v"
+  ],
+  "exit_code": 0,
+  "wrapper_elapsed_seconds": 1.544,
+  "source_bytes_unchanged": true,
+  "before": {
+    "continuation/team/controller.py": {
+      "sha256": "473f4c7557663c1eabf9b6cd77045a53ac173966584434e0fe8a7adeb0d3b1ce",
+      "sha256_lf": "473f4c7557663c1eabf9b6cd77045a53ac173966584434e0fe8a7adeb0d3b1ce"
+    },
+    "continuation/team/test_controller.py": {
+      "sha256": "6d820e284af1dc812b99e55f6d3dbd762cbbaa6395134b350afbc220bd21c8de",
+      "sha256_lf": "6d820e284af1dc812b99e55f6d3dbd762cbbaa6395134b350afbc220bd21c8de"
+    }
+  },
+  "after": {
+    "continuation/team/controller.py": {
+      "sha256": "473f4c7557663c1eabf9b6cd77045a53ac173966584434e0fe8a7adeb0d3b1ce",
+      "sha256_lf": "473f4c7557663c1eabf9b6cd77045a53ac173966584434e0fe8a7adeb0d3b1ce"
+    },
+    "continuation/team/test_controller.py": {
+      "sha256": "6d820e284af1dc812b99e55f6d3dbd762cbbaa6395134b350afbc220bd21c8de",
+      "sha256_lf": "6d820e284af1dc812b99e55f6d3dbd762cbbaa6395134b350afbc220bd21c8de"
+    }
+  },
+  "log": "continuation/team/controller-tests.txt",
+  "scope": "21 isolated offline tests with fake processes. No network/provider/budget calls or real processes under test. Does not replace actual Windows process-tree stop smoke.",
+  "earlier_attempts": [
+    {
+      "tests": 21,
+      "passed": 20,
+      "errors": 1,
+      "seconds": 1.252,
+      "reason": "A fixture tried to initialize a run explicitly stopped before launch; corrected to create a new separate run, leaving the stopped run unchanged."
+    },
+    {
+      "tests": 21,
+      "passed": 21,
+      "seconds": 1.345,
+      "note": "Passed before final source-bound replay; not used for frozen source attestation."
+    }
+  ]
+}

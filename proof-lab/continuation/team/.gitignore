@@ -1,0 +1,7 @@
+runs/
+CURRENT.json
+STOP
+supervisor.lock
+creation.lock
+*.tmp
+__pycache__/

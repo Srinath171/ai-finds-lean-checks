@@ -1,0 +1,21 @@
+{
+  "exit_code": 0,
+  "launched_pid": 17656,
+  "reported_pid": 17656,
+  "pid_matches": true,
+  "identity": {
+    "pid": 17656,
+    "executable": "C:\\Users\\email\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "project_root": "C:\\Users\\email\\muse-spark-chat\\proof-lab",
+    "utf8_mode": 1,
+    "isolated": 1,
+    "no_site": 1
+  },
+  "elapsed_seconds": 0.174,
+  "stderr_empty": true,
+  "no_provider_or_ledger_calls": true,
+  "source_hashes_lf": {
+    "controller.py": "f4cd328f80635bf120600912db6323859d51cf45cbf9be71a4ef01964ddb52bf",
+    "runtime.py": "652782d0b0bf05d63ff5398df9a8d6c73dce86ec3074e4d41a3dd4a80741c465"
+  }
+}

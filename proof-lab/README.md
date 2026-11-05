@@ -1,5 +1,7 @@
 # AI Finds, Lean Checks
 
+> **For judges (60-second summary):** Meta models (Muse Spark 1.3 and Muse Wonder 1.0) propose Lean 4 proof bodies, and a hardened checker accepts a proof only if Lean verifies it with standard axioms. Both models proved 15/15 benchmark theorems. The lab also formalizes SAT-search correctness, an exact 4-gate NAND bound for XOR, and the counting argument for hard Boolean functions (29 Lean modules, 353 Python tests). It does not solve P vs NP; see "Research limitations" below.
+
 A local proof and finite-search laboratory: Meta models propose Lean proof
 bodies, a restricted checker validates them, and separate SAT and NAND-circuit
 experiments make the difference between finding and checking concrete.
